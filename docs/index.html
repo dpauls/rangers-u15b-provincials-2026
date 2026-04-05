@@ -66,6 +66,21 @@
             padding: 0.75rem; border-radius: 4px; overflow-x: auto; max-height: 60vh; overflow-y: auto;
         }
 
+        .scenario-table { font-size: 0.82rem; border-collapse: collapse; width: 100%; }
+        .scenario-table th { position: sticky; top: 0; background: var(--pico-background-color); z-index: 1; font-size: 0.75rem; }
+        .scenario-table td, .scenario-table th { padding: 0.3rem 0.45rem; text-align: center; border-bottom: 1px solid var(--pico-muted-border-color); }
+        .scenario-table td:first-child, .scenario-table th:first-child { text-align: right; }
+        .scenario-table td:last-child { text-align: left; }
+        .scenario-table .cell-us { font-weight: bold; color: #2e7d32; }
+        .scenario-table .cell-tie { color: var(--pico-muted-color); font-style: italic; }
+        .scenario-table .cell-other { }
+        .scenario-table .winner-us { background: #e8f5e9; font-weight: bold; }
+        .scenario-table .winner-other { }
+        .scenario-table .row-gd { background: #fff8e1; }
+        .scenario-table .tb-row td { padding: 0.2rem 0.45rem; font-size: 0.75rem; background: var(--pico-card-background-color); border-bottom: none; }
+        .scenario-table .tb-toggle { cursor: pointer; text-decoration: underline; color: var(--pico-primary); font-size: 0.7rem; }
+        .tb-detail { font-size: 0.75rem; color: var(--pico-muted-color); white-space: pre-wrap; font-family: monospace; padding: 0.25rem 0; }
+
         .game-card {
             display: flex; justify-content: space-between; align-items: center;
             padding: 0.4rem 0; border-bottom: 1px solid var(--pico-muted-border-color); font-size: 0.9rem;
@@ -187,7 +202,18 @@ function renderStandings(rows, showAdv, ourTeam) {
     return `<div style="overflow-x:auto"><table>${thead}<tbody>${tbody}</tbody></table></div>`;
 }
 
-function renderScenarios(sc, ourTeamName, ourPool) {
+function parseLabel(label) {
+    // "KANwin" -> {winner: "KAN", type: "win"}
+    // "tie" -> {winner: null, type: "tie"}
+    if (label === 'tie') return { winner: null, type: 'tie' };
+    return { winner: label.replace('win', ''), type: 'win' };
+}
+
+function gameHeader(game) {
+    return `${game.home} v ${game.away}`;
+}
+
+function renderScenarios(sc, ourTeamName, ourPool, ourTeam) {
     if (!sc) return '';
     let html = '';
 
@@ -218,18 +244,62 @@ function renderScenarios(sc, ourTeamName, ourPool) {
         html += `<p><small>* ${sc.gd_dependent} scenario${sc.gd_dependent !== 1 ? 's' : ''} depend on goal differential/goals against (actual scores matter).</small></p>`;
     }
 
-    // Detailed scenario list
-    if (sc.scenarios && sc.scenarios.length > 0 && sc.scenarios.length <= 729) {
-        let detail = '';
+    // Scenario table
+    if (sc.scenarios && sc.scenarios.length > 0 && sc.remaining_info) {
+        const games = sc.remaining_info;
+
+        // Column headers: #, Game1, Game2, ..., Pool Winner
+        let thead = '<tr><th>#</th>';
+        games.forEach(g => { thead += `<th>${esc(g.home)}<br>v<br>${esc(g.away)}</th>`; });
+        thead += '<th>Pool Winner</th></tr>';
+
+        let tbody = '';
         sc.scenarios.forEach((s, i) => {
-            const flag = s.gd_dep ? ' *' : '';
-            detail += `#${String(i+1).padStart(3)}  ${s.labels.join('  ')}  →  ${s.advancing.join(', ')} (${s.pts}pts)${flag}\n`;
-            s.tiebreakers.forEach(tb => {
-                detail += `  TB: ${tb.teams.length}-way tie at ${tb.pts}pts: ${tb.teams.join(', ')}\n`;
-                tb.lines.forEach(l => detail += l + '\n');
+            const hasTB = s.tiebreakers && s.tiebreakers.length > 0;
+            const isOurWin = s.advancing.includes(ourTeam);
+            const rowCls = s.gd_dep ? ' class="row-gd"' : '';
+            const rowId = `sc-${i}`;
+
+            tbody += `<tr${rowCls}>`;
+            tbody += `<td>${i + 1}${s.gd_dep ? '*' : ''}</td>`;
+
+            // Game result cells
+            s.labels.forEach((label, gi) => {
+                const p = parseLabel(label);
+                if (p.type === 'tie') {
+                    tbody += `<td class="cell-tie">Tie</td>`;
+                } else if (p.winner === ourTeam) {
+                    tbody += `<td class="cell-us">${esc(p.winner)}</td>`;
+                } else {
+                    tbody += `<td class="cell-other">${esc(p.winner)}</td>`;
+                }
             });
+
+            // Pool winner cell
+            const winner = s.advancing[0];
+            const winCls = winner === ourTeam ? 'winner-us' : 'winner-other';
+            let winnerText = esc(winner) + ` (${s.pts}pts)`;
+            if (hasTB) {
+                winnerText += ` <span class="tb-toggle" onclick="document.getElementById('${rowId}').style.display=document.getElementById('${rowId}').style.display==='none'?'':'none'">TB</span>`;
+            }
+            tbody += `<td class="${winCls}">${winnerText}</td>`;
+            tbody += '</tr>';
+
+            // Tiebreaker detail row (hidden by default)
+            if (hasTB) {
+                let tbDetail = '';
+                s.tiebreakers.forEach(tb => {
+                    tbDetail += `${tb.teams.length}-way tie at ${tb.pts}pts: ${tb.teams.join(', ')}\n`;
+                    tb.lines.forEach(l => tbDetail += l.trim() + '\n');
+                });
+                tbody += `<tr id="${rowId}" class="tb-row" style="display:none"><td></td><td colspan="${games.length + 1}"><div class="tb-detail">${esc(tbDetail.trim())}</div></td></tr>`;
+            }
         });
-        html += `<details><summary>All ${total} Scenarios</summary><div class="scenario-detail">${esc(detail)}</div></details>`;
+
+        html += `<details><summary>All ${total} Scenarios</summary>`;
+        html += `<div style="overflow-x:auto;max-height:70vh;overflow-y:auto;">`;
+        html += `<table class="scenario-table"><thead>${thead}</thead><tbody>${tbody}</tbody></table>`;
+        html += `</div></details>`;
     }
 
     return html;
@@ -291,7 +361,7 @@ async function loadAndRender() {
         const showAdv = d.scenarios && d.scenarios.total > 1;
         document.getElementById('standings-area').innerHTML = renderStandings(d.standings, showAdv, d.our_team);
 
-        document.getElementById('scenarios-area').innerHTML = renderScenarios(d.scenarios, d.our_team_name, d.our_pool);
+        document.getElementById('scenarios-area').innerHTML = renderScenarios(d.scenarios, d.our_team_name, d.our_pool, d.our_team);
 
         document.getElementById('upcoming-area').innerHTML =
             d.upcoming && d.upcoming.length > 0
