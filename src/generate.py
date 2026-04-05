@@ -84,12 +84,23 @@ def build_scenario_data(analysis, our_team):
                 'lines': tb['lines'],
                 'gd_dep': tb['gd_dep'],
             })
+        # Classify resolution type
+        if not tb_info:
+            res_type = 'clean'  # no tiebreaker needed
+        elif any('UNRESOLVED' in line for tb in tb_info for line in tb['lines']):
+            res_type = 'unresolved'  # couldn't resolve with available data
+        elif sc['gd_dependent']:
+            res_type = 'score_dependent'  # GD or GA decided it
+        else:
+            res_type = 'tiebreaker'  # resolved by wins or h2h (deterministic)
+
         scenarios.append({
             'labels': sc['labels'],
             'advancing': res['advancing'],
             'eliminated': res['eliminated'],
             'pts': sc['standings'][res['advancing'][0]]['PTS'],
             'gd_dep': sc['gd_dependent'],
+            'res_type': res_type,
             'tiebreakers': tb_info,
         })
 

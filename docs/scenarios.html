@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scenario Analysis - Kanata Rangers Provincials</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        :root { --pico-font-size: 15px; }
+        body { padding-top: 0.5rem; }
+        .container { max-width: 1100px; }
+        h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+        .subtitle { color: var(--pico-muted-color); font-size: 0.85rem; margin-bottom: 1rem; }
+
+        .scenario-bar {
+            display: flex; height: 28px; border-radius: 4px;
+            overflow: hidden; margin-bottom: 0.75rem;
+        }
+        .bar-in { background: #2e7d32; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; }
+        .bar-out { background: #c62828; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+
+        /* Legend */
+        .legend { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; font-size: 0.82rem; }
+        .legend-item { display: flex; align-items: center; gap: 0.35rem; }
+        .legend-swatch { width: 18px; height: 18px; border-radius: 3px; border: 1px solid #ccc; }
+
+        /* Scenario table */
+        .sc-table { font-size: 0.82rem; border-collapse: collapse; width: 100%; }
+        .sc-table th {
+            position: sticky; top: 0; background: var(--pico-background-color);
+            z-index: 1; font-size: 0.75rem; padding: 0.4rem 0.5rem;
+            border-bottom: 2px solid var(--pico-muted-border-color);
+        }
+        .sc-table td { padding: 0.3rem 0.5rem; text-align: center; border-bottom: 1px solid var(--pico-muted-border-color); }
+        .sc-table td:first-child { text-align: right; width: 2.5rem; }
+
+        /* Resolution type row colors */
+        .row-clean { }
+        .row-tiebreaker { background: #e3f2fd; }         /* light blue */
+        .row-score_dependent { background: #fff8e1; }     /* light yellow */
+        .row-unresolved { background: #fce4ec; }          /* light pink */
+
+        /* Cell styles */
+        .cell-us { font-weight: bold; color: #2e7d32; }
+        .cell-tie { color: #888; font-style: italic; }
+        .cell-other { color: #333; }
+        .cell-gd-game { font-weight: bold; text-decoration: underline; }
+
+        /* Winner column */
+        .winner-us { font-weight: bold; color: #2e7d32; }
+        .winner-other { color: #333; }
+
+        /* Resolution badge */
+        .res-badge {
+            display: inline-block; font-size: 0.65rem; padding: 0.1rem 0.35rem;
+            border-radius: 3px; margin-left: 0.3rem; vertical-align: middle;
+        }
+        .res-clean { background: #e8f5e9; color: #2e7d32; }
+        .res-tiebreaker { background: #e3f2fd; color: #1565c0; }
+        .res-score_dependent { background: #fff8e1; color: #f57f17; }
+        .res-unresolved { background: #fce4ec; color: #c62828; }
+
+        /* TB toggle */
+        .tb-toggle {
+            cursor: pointer; color: var(--pico-primary); font-size: 0.7rem;
+            text-decoration: underline; margin-left: 0.25rem;
+        }
+
+        /* TB detail row */
+        .tb-row td {
+            padding: 0.25rem 0.5rem; font-size: 0.75rem;
+            background: #f5f5f5; border-bottom: 2px solid var(--pico-muted-border-color);
+        }
+        .tb-detail {
+            font-family: monospace; font-size: 0.75rem; color: #555;
+            white-space: pre-wrap; padding: 0.25rem 0; line-height: 1.4;
+        }
+
+        /* Filter buttons */
+        .filters { margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .filters button { font-size: 0.8rem; padding: 0.3rem 0.7rem; }
+        .filters button.active { font-weight: bold; }
+
+        .back-link { font-size: 0.9rem; margin-bottom: 1rem; display: block; }
+        .loading { text-align: center; padding: 2rem; color: var(--pico-muted-color); }
+
+        @media (max-width: 600px) {
+            :root { --pico-font-size: 13px; }
+            .sc-table td, .sc-table th { padding: 0.2rem 0.3rem; }
+        }
+    </style>
+</head>
+<body>
+<main class="container">
+    <a href="./" class="back-link">&larr; Back to main page</a>
+    <h1 id="title">Scenario Analysis</h1>
+    <p id="subtitle" class="subtitle">Loading...</p>
+
+    <div id="summary"></div>
+    <div id="legend"></div>
+    <div id="filters"></div>
+    <div id="table-area"><p class="loading">Loading scenarios...</p></div>
+
+    <footer style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--pico-muted-border-color); font-size: 0.8rem; color: var(--pico-muted-color);">
+        <p>This page does not auto-refresh. <a href="./">Return to live page</a> for latest standings.</p>
+    </footer>
+</main>
+
+<script>
+const DATA_URL = 'data/state.json';
+let currentFilter = 'all';
+let stateData = null;
+
+function esc(s) {
+    if (s == null) return '';
+    const d = document.createElement('div');
+    d.textContent = String(s);
+    return d.innerHTML;
+}
+
+function parseLabel(label) {
+    if (label === 'tie') return { winner: null, type: 'tie' };
+    return { winner: label.replace('win', ''), type: 'win' };
+}
+
+const RES_LABELS = {
+    clean: 'No tiebreaker',
+    tiebreaker: 'Tiebreaker (deterministic)',
+    score_dependent: 'Score-dependent',
+    unresolved: 'Unresolved',
+};
+const RES_COLORS = {
+    clean: '#e8f5e9',
+    tiebreaker: '#e3f2fd',
+    score_dependent: '#fff8e1',
+    unresolved: '#fce4ec',
+};
+
+function renderLegend() {
+    return `<div class="legend">
+        <div class="legend-item"><div class="legend-swatch" style="background:#fff;"></div> No tiebreaker needed</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#e3f2fd;"></div> Tiebreaker (wins/h2h - deterministic)</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#fff8e1;"></div> Score-dependent (GD/GA decides - margins matter)</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#fce4ec;"></div> Unresolved (data insufficient)</div>
+    </div>`;
+}
+
+function renderFilters(sc, ourTeam) {
+    const counts = { all: sc.scenarios.length, our_in: 0, our_out: 0, clean: 0, tiebreaker: 0, score_dependent: 0, unresolved: 0 };
+    sc.scenarios.forEach(s => {
+        counts[s.res_type] = (counts[s.res_type] || 0);
+        // Already counted in init
+        if (s.advancing.includes(ourTeam)) counts.our_in++;
+        else counts.our_out++;
+    });
+    // Recount by type
+    counts.clean = sc.scenarios.filter(s => s.res_type === 'clean').length;
+    counts.tiebreaker = sc.scenarios.filter(s => s.res_type === 'tiebreaker').length;
+    counts.score_dependent = sc.scenarios.filter(s => s.res_type === 'score_dependent').length;
+    counts.unresolved = sc.scenarios.filter(s => s.res_type === 'unresolved').length;
+
+    const btns = [
+        { key: 'all', label: `All (${counts.all})` },
+        { key: 'our_in', label: `We advance (${counts.our_in})` },
+        { key: 'our_out', label: `We're out (${counts.our_out})` },
+        { key: 'tiebreaker', label: `Tiebreaker (${counts.tiebreaker})` },
+        { key: 'score_dependent', label: `Score-dependent (${counts.score_dependent})` },
+        { key: 'unresolved', label: `Unresolved (${counts.unresolved})` },
+    ];
+    return `<div class="filters">${btns.map(b =>
+        `<button class="${currentFilter === b.key ? 'active' : ''}" onclick="setFilter('${b.key}')">${b.label}</button>`
+    ).join('')}</div>`;
+}
+
+function shouldShow(s, ourTeam) {
+    if (currentFilter === 'all') return true;
+    if (currentFilter === 'our_in') return s.advancing.includes(ourTeam);
+    if (currentFilter === 'our_out') return !s.advancing.includes(ourTeam);
+    return s.res_type === currentFilter;
+}
+
+function renderTable(sc, ourTeam) {
+    const games = sc.remaining_info;
+    if (!games || !sc.scenarios) return '<p>No scenarios to display.</p>';
+
+    let thead = '<tr><th>#</th>';
+    games.forEach(g => {
+        thead += `<th>${esc(g.home)}<br>v<br>${esc(g.away)}</th>`;
+    });
+    thead += '<th>Pool Winner</th><th>How</th></tr>';
+
+    let tbody = '';
+    let visibleCount = 0;
+    sc.scenarios.forEach((s, i) => {
+        if (!shouldShow(s, ourTeam)) return;
+        visibleCount++;
+
+        const hasTB = s.tiebreakers && s.tiebreakers.length > 0;
+        const rowId = `sc-${i}`;
+
+        tbody += `<tr class="row-${s.res_type}">`;
+        tbody += `<td>${i + 1}</td>`;
+
+        // Game result cells
+        s.labels.forEach((label) => {
+            const p = parseLabel(label);
+            if (p.type === 'tie') {
+                tbody += `<td class="cell-tie">Tie</td>`;
+            } else if (p.winner === ourTeam) {
+                tbody += `<td class="cell-us">${esc(p.winner)}</td>`;
+            } else {
+                tbody += `<td class="cell-other">${esc(p.winner)}</td>`;
+            }
+        });
+
+        // Pool winner
+        const winner = s.advancing[0];
+        const winCls = winner === ourTeam ? 'winner-us' : 'winner-other';
+        tbody += `<td class="${winCls}">${esc(winner)} (${s.pts}pts)</td>`;
+
+        // Resolution type badge + TB toggle
+        let howCell = `<span class="res-badge res-${s.res_type}">${esc(RES_LABELS[s.res_type] || s.res_type)}</span>`;
+        if (hasTB) {
+            howCell += ` <span class="tb-toggle" onclick="toggleTB('${rowId}')">details</span>`;
+        }
+        tbody += `<td style="text-align:left">${howCell}</td>`;
+        tbody += '</tr>';
+
+        // TB detail row
+        if (hasTB) {
+            let tbDetail = '';
+            s.tiebreakers.forEach(tb => {
+                tbDetail += `${tb.teams.length}-way tie at ${tb.pts}pts: ${tb.teams.join(', ')}\n`;
+                tb.lines.forEach(l => tbDetail += l.trim() + '\n');
+            });
+            tbody += `<tr id="${rowId}" class="tb-row" style="display:none"><td></td><td colspan="${games.length + 2}"><div class="tb-detail">${esc(tbDetail.trim())}</div></td></tr>`;
+        }
+    });
+
+    if (visibleCount === 0) {
+        return '<p>No scenarios match this filter.</p>';
+    }
+
+    return `<div style="overflow-x:auto;"><table class="sc-table"><thead>${thead}</thead><tbody>${tbody}</tbody></table></div>`;
+}
+
+function toggleTB(id) {
+    const el = document.getElementById(id);
+    if (el) el.style.display = el.style.display === 'none' ? '' : 'none';
+}
+
+function setFilter(key) {
+    currentFilter = key;
+    render();
+}
+
+function render() {
+    if (!stateData) return;
+    const d = stateData;
+    const sc = d.scenarios;
+    const ourTeam = d.our_team;
+
+    document.getElementById('title').textContent = `Pool ${d.our_pool} Scenario Analysis`;
+    document.getElementById('subtitle').textContent =
+        `${d.our_team_name} \u00b7 ${d.tournament.name} \u00b7 Last updated: ${new Date(d.generated_at).toLocaleString()}`;
+
+    if (!sc || sc.remaining_games === 0) {
+        document.getElementById('summary').innerHTML = '<p>All pool games are complete. No scenarios to analyze.</p>';
+        document.getElementById('table-area').innerHTML = '';
+        return;
+    }
+
+    const total = sc.total;
+    const ours = sc.our_count;
+    const inPct = (ours / total * 100).toFixed(1);
+    const outCount = total - ours;
+    const outPct = (100 - inPct).toFixed(1);
+
+    let summary = `<p><strong>${sc.remaining_games}</strong> game${sc.remaining_games !== 1 ? 's' : ''} remaining &middot; <strong>${total}</strong> possible outcomes &middot; <strong>${d.our_team_name}</strong> wins the pool in <strong>${ours}</strong> (${inPct}%)</p>`;
+    summary += `<div class="scenario-bar">`;
+    if (ours > 0) summary += `<div class="bar-in" style="width:${inPct}%">${ours} IN</div>`;
+    if (outCount > 0) summary += `<div class="bar-out" style="width:${outPct}%">${outCount} OUT</div>`;
+    summary += `</div>`;
+
+    document.getElementById('summary').innerHTML = summary;
+    document.getElementById('legend').innerHTML = renderLegend();
+    document.getElementById('filters').innerHTML = renderFilters(sc, ourTeam);
+    document.getElementById('table-area').innerHTML = renderTable(sc, ourTeam);
+}
+
+async function load() {
+    try {
+        const resp = await fetch(DATA_URL + '?t=' + Date.now());
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        stateData = await resp.json();
+        render();
+    } catch (err) {
+        document.getElementById('table-area').innerHTML =
+            `<p class="loading">Could not load data.<br><small>${esc(err.message)}</small></p>`;
+    }
+}
+
+load();
+</script>
+</body>
+</html>

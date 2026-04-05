@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-05T15:45:12.836303",
+  "generated_at": "2026-04-05T16:10:45.222957",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -175,6 +175,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -194,6 +195,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -213,6 +215,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -232,6 +235,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -251,6 +255,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -270,6 +275,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -289,6 +295,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -308,6 +315,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -341,6 +349,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -375,6 +384,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -394,6 +404,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -425,6 +436,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -444,6 +456,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -463,6 +476,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -482,6 +496,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "score_dependent",
         "tiebreakers": [
           {
             "teams": [
@@ -519,6 +534,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -538,6 +554,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -571,6 +588,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -590,6 +608,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -621,6 +640,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -640,6 +660,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -659,6 +680,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -678,6 +700,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -709,6 +732,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -728,6 +752,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -747,6 +772,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -780,6 +806,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -799,6 +826,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -818,6 +846,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "score_dependent",
         "tiebreakers": [
           {
             "teams": [
@@ -855,6 +884,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -874,6 +904,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "score_dependent",
         "tiebreakers": [
           {
             "teams": [
@@ -906,6 +937,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -925,6 +957,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -958,6 +991,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -977,6 +1011,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -996,6 +1031,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1015,6 +1051,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -1046,6 +1083,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1065,6 +1103,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1084,6 +1123,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "score_dependent",
         "tiebreakers": [
           {
             "teams": [
@@ -1116,6 +1156,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1135,6 +1176,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1154,6 +1196,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1173,6 +1216,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1192,6 +1236,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1211,6 +1256,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1230,6 +1276,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1249,6 +1296,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1268,6 +1316,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "score_dependent",
         "tiebreakers": [
           {
             "teams": [
@@ -1301,6 +1350,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "score_dependent",
         "tiebreakers": [
           {
             "teams": [
@@ -1333,6 +1383,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "score_dependent",
         "tiebreakers": [
           {
             "teams": [
@@ -1365,6 +1416,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1384,6 +1436,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1403,6 +1456,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1422,6 +1476,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1441,6 +1496,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1460,6 +1516,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -1494,6 +1551,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1513,6 +1571,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1532,6 +1591,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1551,6 +1611,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1570,6 +1631,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1589,6 +1651,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1608,6 +1671,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -1641,6 +1705,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -1674,6 +1739,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -1707,6 +1773,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1726,6 +1793,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1745,6 +1813,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1764,6 +1833,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1783,6 +1853,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1802,6 +1873,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1821,6 +1893,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1840,6 +1913,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1859,6 +1933,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1878,6 +1953,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1897,6 +1973,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1916,6 +1993,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1935,6 +2013,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1954,6 +2033,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -1973,6 +2053,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       }
     ]
@@ -2184,6 +2265,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -2220,6 +2302,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2241,6 +2324,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -2277,6 +2361,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2298,6 +2383,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -2333,6 +2419,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2354,6 +2441,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -2390,6 +2478,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2411,6 +2500,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -2447,6 +2537,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2468,6 +2559,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2489,6 +2581,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2510,6 +2603,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -2545,6 +2639,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2566,6 +2661,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2587,6 +2683,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -2623,6 +2720,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2644,6 +2742,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2665,6 +2764,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2686,6 +2786,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2707,6 +2808,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2728,6 +2830,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2749,6 +2852,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2770,6 +2874,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2791,6 +2896,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -2825,6 +2931,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -2861,6 +2968,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -2897,6 +3005,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2918,6 +3027,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2939,6 +3049,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -2975,6 +3086,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -2996,6 +3108,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3017,6 +3130,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -3052,6 +3166,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3073,6 +3188,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3094,6 +3210,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3115,6 +3232,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3136,6 +3254,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3157,6 +3276,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3178,6 +3298,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -3211,6 +3332,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -3244,6 +3366,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -3277,6 +3400,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3298,6 +3422,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3319,6 +3444,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3340,6 +3466,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3361,6 +3488,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3382,6 +3510,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3403,6 +3532,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3424,6 +3554,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3445,6 +3576,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3466,6 +3598,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3487,6 +3620,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3508,6 +3642,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3529,6 +3664,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -3565,6 +3701,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -3601,6 +3738,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -3635,6 +3773,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3656,6 +3795,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3677,6 +3817,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3698,6 +3839,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3719,6 +3861,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3740,6 +3883,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3761,6 +3905,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3782,6 +3927,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3803,6 +3949,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3824,6 +3971,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3845,6 +3993,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3866,6 +4015,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3887,6 +4037,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3908,6 +4059,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3929,6 +4081,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3950,6 +4103,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3971,6 +4125,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -3992,6 +4147,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4013,6 +4169,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -4046,6 +4203,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -4079,6 +4237,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -4112,6 +4271,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4133,6 +4293,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4154,6 +4315,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4175,6 +4337,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -4211,6 +4374,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -4246,6 +4410,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4267,6 +4432,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4288,6 +4454,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4309,6 +4476,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4330,6 +4498,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4351,6 +4520,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4372,6 +4542,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4393,6 +4564,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4414,6 +4586,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4435,6 +4608,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4456,6 +4630,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -4491,6 +4666,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4512,6 +4688,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -4545,6 +4722,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4566,6 +4744,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -4604,6 +4783,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4625,6 +4805,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4646,6 +4827,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4667,6 +4849,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4688,6 +4871,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4709,6 +4893,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4730,6 +4915,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4751,6 +4937,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -4787,6 +4974,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4808,6 +4996,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4829,6 +5018,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4850,6 +5040,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -4885,6 +5076,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4906,6 +5098,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -4944,6 +5137,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4965,6 +5159,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -4986,6 +5181,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5007,6 +5203,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -5040,6 +5237,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5061,6 +5259,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5082,6 +5281,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5103,6 +5303,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5124,6 +5325,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5145,6 +5347,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5166,6 +5369,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -5199,6 +5403,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5220,6 +5425,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5241,6 +5447,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -5274,6 +5481,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5295,6 +5503,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5316,6 +5525,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5337,6 +5547,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5358,6 +5569,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5379,6 +5591,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5400,6 +5613,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -5435,6 +5649,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -5470,6 +5685,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -5505,6 +5721,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5526,6 +5743,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -5561,6 +5779,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5582,6 +5801,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5603,6 +5823,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -5636,6 +5857,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5657,6 +5879,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5678,6 +5901,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5699,6 +5923,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -5732,6 +5957,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5753,6 +5979,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5774,6 +6001,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5795,6 +6023,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -5828,6 +6057,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -5861,6 +6091,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -5895,6 +6126,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5916,6 +6148,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5937,6 +6170,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5958,6 +6192,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -5979,6 +6214,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6000,6 +6236,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6021,6 +6258,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6042,6 +6280,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6063,6 +6302,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6084,6 +6324,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6105,6 +6346,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6126,6 +6368,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6147,6 +6390,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -6181,6 +6425,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6202,6 +6447,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6223,84 +6469,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
-        "tiebreakers": [
-          {
-            "teams": [
-              "DUR",
-              "NHT"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule ii (h2h among DUR,NHT):",
-              "        NHT: 2pts (beat DUR)",
-              "        DUR: 0pts (lost to NHT)",
-              "        \u2192 NHT advance / DUR eliminated"
-            ],
-            "gd_dep": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "LONwin",
-          "DURwin",
-          "NHTwin",
-          "DURwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "DUR"
-        ],
-        "eliminated": [
-          "LON",
-          "NHT",
-          "WAT"
-        ],
-        "pts": 5,
-        "gd_dep": false,
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "LONwin",
-          "DURwin",
-          "NHTwin",
-          "DURwin",
-          "tie",
-          "DURwin"
-        ],
-        "advancing": [
-          "DUR"
-        ],
-        "eliminated": [
-          "LON",
-          "NHT",
-          "WAT"
-        ],
-        "pts": 6,
-        "gd_dep": false,
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "LONwin",
-          "DURwin",
-          "NHTwin",
-          "DURwin",
-          "WATwin",
-          "NHTwin"
-        ],
-        "advancing": [
-          "NHT"
-        ],
-        "eliminated": [
-          "DUR",
-          "LON",
-          "WAT"
-        ],
-        "pts": 4,
-        "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -6324,6 +6493,87 @@
           "DURwin",
           "NHTwin",
           "DURwin",
+          "tie",
+          "tie"
+        ],
+        "advancing": [
+          "DUR"
+        ],
+        "eliminated": [
+          "LON",
+          "NHT",
+          "WAT"
+        ],
+        "pts": 5,
+        "gd_dep": false,
+        "res_type": "clean",
+        "tiebreakers": []
+      },
+      {
+        "labels": [
+          "LONwin",
+          "DURwin",
+          "NHTwin",
+          "DURwin",
+          "tie",
+          "DURwin"
+        ],
+        "advancing": [
+          "DUR"
+        ],
+        "eliminated": [
+          "LON",
+          "NHT",
+          "WAT"
+        ],
+        "pts": 6,
+        "gd_dep": false,
+        "res_type": "clean",
+        "tiebreakers": []
+      },
+      {
+        "labels": [
+          "LONwin",
+          "DURwin",
+          "NHTwin",
+          "DURwin",
+          "WATwin",
+          "NHTwin"
+        ],
+        "advancing": [
+          "NHT"
+        ],
+        "eliminated": [
+          "DUR",
+          "LON",
+          "WAT"
+        ],
+        "pts": 4,
+        "gd_dep": false,
+        "res_type": "tiebreaker",
+        "tiebreakers": [
+          {
+            "teams": [
+              "DUR",
+              "NHT"
+            ],
+            "pts": 4,
+            "lines": [
+              "      Rule ii (h2h among DUR,NHT):",
+              "        NHT: 2pts (beat DUR)",
+              "        DUR: 0pts (lost to NHT)",
+              "        \u2192 NHT advance / DUR eliminated"
+            ],
+            "gd_dep": false
+          }
+        ]
+      },
+      {
+        "labels": [
+          "LONwin",
+          "DURwin",
+          "NHTwin",
+          "DURwin",
           "WATwin",
           "tie"
         ],
@@ -6337,6 +6587,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6358,6 +6609,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6379,6 +6631,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6400,6 +6653,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6421,6 +6675,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -6454,6 +6709,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -6489,6 +6745,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -6522,6 +6779,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6543,6 +6801,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6564,6 +6823,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6585,6 +6845,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6606,6 +6867,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6627,6 +6889,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6648,6 +6911,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6669,6 +6933,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6690,6 +6955,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6711,6 +6977,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6732,6 +6999,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -6768,6 +7036,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6789,6 +7058,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -6825,6 +7095,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -6861,6 +7132,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6882,6 +7154,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6903,6 +7176,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6924,6 +7198,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6945,6 +7220,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6966,6 +7242,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -6987,6 +7264,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7008,6 +7286,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7029,6 +7308,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7050,6 +7330,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7071,6 +7352,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -7104,6 +7386,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7125,6 +7408,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -7158,6 +7442,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7179,6 +7464,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -7214,6 +7500,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7235,6 +7522,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7256,6 +7544,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7277,6 +7566,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7298,6 +7588,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7319,6 +7610,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7340,6 +7632,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7361,6 +7654,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7382,6 +7676,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7403,6 +7698,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7424,6 +7720,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -7460,6 +7757,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -7496,6 +7794,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7517,6 +7816,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7538,6 +7838,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7559,6 +7860,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7580,6 +7882,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7601,6 +7904,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -7637,6 +7941,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7658,6 +7963,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7679,6 +7985,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7700,6 +8007,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7721,6 +8029,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -7754,6 +8063,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7775,6 +8085,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -7808,6 +8119,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7829,6 +8141,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7850,6 +8163,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -7885,6 +8199,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7906,6 +8221,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7927,6 +8243,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7948,6 +8265,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7969,6 +8287,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -7990,6 +8309,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8011,6 +8331,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8032,6 +8353,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -8068,6 +8390,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -8104,6 +8427,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -8138,6 +8462,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8159,6 +8484,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8180,6 +8506,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8201,6 +8528,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8222,6 +8550,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8243,6 +8572,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8264,6 +8594,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8285,6 +8616,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -8320,6 +8652,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -8356,6 +8689,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8377,6 +8711,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -8410,6 +8745,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8431,6 +8767,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8452,6 +8789,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8473,6 +8811,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -8511,6 +8850,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8532,6 +8872,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -8567,6 +8908,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8588,6 +8930,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -8621,6 +8964,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8642,6 +8986,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8663,6 +9008,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8684,6 +9030,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -8717,6 +9064,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8738,6 +9086,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8759,6 +9108,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -8794,6 +9144,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8815,6 +9166,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8836,6 +9188,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -8874,6 +9227,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8895,6 +9249,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -8928,6 +9283,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -8949,6 +9305,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -8984,6 +9341,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9005,6 +9363,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9026,6 +9385,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9047,6 +9407,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -9080,6 +9441,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9101,6 +9463,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9122,6 +9485,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -9155,6 +9519,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9176,6 +9541,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9197,6 +9563,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9218,6 +9585,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9239,6 +9607,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9260,6 +9629,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9281,6 +9651,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9302,6 +9673,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9323,6 +9695,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -9357,6 +9730,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -9390,6 +9764,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -9423,6 +9798,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9444,6 +9820,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9465,6 +9842,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9486,6 +9864,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9507,6 +9886,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9528,6 +9908,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -9564,6 +9945,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9585,6 +9967,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9606,6 +9989,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9627,6 +10011,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9648,6 +10033,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9669,6 +10055,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9690,6 +10077,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -9725,6 +10113,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -9760,6 +10149,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -9795,6 +10185,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9816,6 +10207,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9837,6 +10229,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9858,6 +10251,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9879,6 +10273,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9900,6 +10295,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9921,6 +10317,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9942,6 +10339,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9963,6 +10361,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -9984,6 +10383,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10005,6 +10405,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10026,6 +10427,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10047,6 +10449,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10068,6 +10471,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10089,6 +10493,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10110,6 +10515,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10131,6 +10537,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -10164,6 +10571,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10185,6 +10593,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10206,6 +10615,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -10239,6 +10649,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10260,6 +10671,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10281,6 +10693,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -10314,6 +10727,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10335,6 +10749,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10356,6 +10771,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -10389,6 +10805,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -10422,6 +10839,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10443,6 +10861,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10464,6 +10883,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10485,6 +10905,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10506,6 +10927,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10527,6 +10949,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10548,6 +10971,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -10581,6 +11005,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10602,6 +11027,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10623,6 +11049,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10644,6 +11071,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -10677,6 +11105,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10698,6 +11127,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10719,6 +11149,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10740,6 +11171,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -10775,6 +11207,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10796,6 +11229,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10817,6 +11251,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10838,6 +11273,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10859,6 +11295,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10880,6 +11317,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10901,6 +11339,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -10934,6 +11373,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -10967,6 +11407,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -10988,6 +11429,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -11021,6 +11463,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11042,6 +11485,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -11075,6 +11519,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11096,6 +11541,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -11131,6 +11577,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11152,6 +11599,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -11185,6 +11633,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11206,6 +11655,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -11239,6 +11689,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11260,6 +11711,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11281,6 +11733,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11302,6 +11755,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -11335,6 +11789,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11356,6 +11811,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11377,6 +11833,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -11410,6 +11867,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11431,6 +11889,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11452,6 +11911,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -11487,6 +11947,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11508,6 +11969,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11529,6 +11991,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11550,6 +12013,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -11583,6 +12047,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11604,6 +12069,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11625,6 +12091,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11646,6 +12113,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -11679,6 +12147,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11700,6 +12169,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11721,6 +12191,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -11754,6 +12225,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11775,6 +12247,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11796,6 +12269,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -11829,6 +12303,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11850,6 +12325,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11871,6 +12347,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11892,6 +12369,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11913,6 +12391,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11934,6 +12413,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -11955,6 +12435,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -11988,6 +12469,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -12021,6 +12503,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -12054,6 +12537,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12075,6 +12559,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12096,6 +12581,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12117,6 +12603,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12138,6 +12625,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12147,69 +12635,6 @@
           "NHTwin",
           "DURwin",
           "LONwin",
-          "DURwin"
-        ],
-        "advancing": [
-          "DUR"
-        ],
-        "eliminated": [
-          "LON",
-          "NHT",
-          "WAT"
-        ],
-        "pts": 6,
-        "gd_dep": false,
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "DURwin",
-          "NHTwin",
-          "DURwin",
-          "tie",
-          "NHTwin"
-        ],
-        "advancing": [
-          "NHT"
-        ],
-        "eliminated": [
-          "DUR",
-          "LON",
-          "WAT"
-        ],
-        "pts": 5,
-        "gd_dep": false,
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "DURwin",
-          "NHTwin",
-          "DURwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "DUR"
-        ],
-        "eliminated": [
-          "LON",
-          "NHT",
-          "WAT"
-        ],
-        "pts": 5,
-        "gd_dep": false,
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "DURwin",
-          "NHTwin",
-          "DURwin",
-          "tie",
           "DURwin"
         ],
         "advancing": [
@@ -12222,6 +12647,73 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
+        "tiebreakers": []
+      },
+      {
+        "labels": [
+          "tie",
+          "DURwin",
+          "NHTwin",
+          "DURwin",
+          "tie",
+          "NHTwin"
+        ],
+        "advancing": [
+          "NHT"
+        ],
+        "eliminated": [
+          "DUR",
+          "LON",
+          "WAT"
+        ],
+        "pts": 5,
+        "gd_dep": false,
+        "res_type": "clean",
+        "tiebreakers": []
+      },
+      {
+        "labels": [
+          "tie",
+          "DURwin",
+          "NHTwin",
+          "DURwin",
+          "tie",
+          "tie"
+        ],
+        "advancing": [
+          "DUR"
+        ],
+        "eliminated": [
+          "LON",
+          "NHT",
+          "WAT"
+        ],
+        "pts": 5,
+        "gd_dep": false,
+        "res_type": "clean",
+        "tiebreakers": []
+      },
+      {
+        "labels": [
+          "tie",
+          "DURwin",
+          "NHTwin",
+          "DURwin",
+          "tie",
+          "DURwin"
+        ],
+        "advancing": [
+          "DUR"
+        ],
+        "eliminated": [
+          "LON",
+          "NHT",
+          "WAT"
+        ],
+        "pts": 6,
+        "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12243,6 +12735,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12264,6 +12757,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12285,6 +12779,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12306,6 +12801,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12327,6 +12823,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -12361,6 +12858,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12382,6 +12880,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12403,6 +12902,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -12436,6 +12936,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12457,6 +12958,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12478,6 +12980,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -12511,6 +13014,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12532,6 +13036,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -12565,6 +13070,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12586,6 +13092,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12607,6 +13114,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12628,6 +13136,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -12661,6 +13170,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -12696,6 +13206,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12717,6 +13228,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12738,6 +13250,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12759,6 +13272,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -12794,6 +13308,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12815,6 +13330,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12836,6 +13352,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -12871,6 +13388,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12892,6 +13410,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12913,6 +13432,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -12948,6 +13468,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12969,6 +13490,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -12990,6 +13512,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -13023,6 +13546,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -13056,6 +13580,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13077,6 +13602,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13098,6 +13624,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13119,6 +13646,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13140,6 +13668,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13161,6 +13690,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13182,6 +13712,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13203,6 +13734,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13224,6 +13756,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13245,6 +13778,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13266,6 +13800,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -13299,6 +13834,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13320,6 +13856,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -13355,6 +13892,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13376,6 +13914,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -13414,6 +13953,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13435,6 +13975,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13456,6 +13997,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13477,6 +14019,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13498,6 +14041,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13519,6 +14063,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13540,6 +14085,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13561,6 +14107,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -13597,6 +14144,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13618,6 +14166,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13639,6 +14188,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13660,6 +14210,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -13693,6 +14244,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13714,6 +14266,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -13752,6 +14305,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13773,6 +14327,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13794,6 +14349,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13815,6 +14371,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -13850,6 +14407,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13871,6 +14429,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13892,6 +14451,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13913,6 +14473,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13934,6 +14495,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13955,6 +14517,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -13976,6 +14539,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -14011,6 +14575,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14032,6 +14597,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14053,6 +14619,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -14089,6 +14656,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14110,6 +14678,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14131,6 +14700,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -14167,6 +14737,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14188,6 +14759,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14209,6 +14781,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -14245,6 +14818,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14266,6 +14840,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14287,6 +14862,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -14321,6 +14897,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14342,6 +14919,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14363,6 +14941,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14384,6 +14963,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14405,6 +14985,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14426,6 +15007,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14447,6 +15029,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14468,6 +15051,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14489,6 +15073,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -14525,6 +15110,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14546,6 +15132,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14567,6 +15154,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -14603,6 +15191,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14624,6 +15213,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14645,6 +15235,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14666,6 +15257,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14687,6 +15279,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14708,6 +15301,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -14744,6 +15338,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14765,6 +15360,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14786,6 +15382,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14807,6 +15404,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14828,6 +15426,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -14861,6 +15460,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -14896,6 +15496,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -14929,6 +15530,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14950,6 +15552,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14971,6 +15574,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -14992,6 +15596,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15013,6 +15618,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -15048,6 +15654,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15069,6 +15676,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -15102,6 +15710,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15123,6 +15732,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -15156,6 +15766,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15177,6 +15788,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15198,6 +15810,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15219,6 +15832,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -15254,6 +15868,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15275,6 +15890,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15296,6 +15912,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -15329,6 +15946,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15350,6 +15968,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -15383,6 +16002,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15404,6 +16024,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15425,6 +16046,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -15461,6 +16083,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15482,6 +16105,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -15518,6 +16142,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15539,6 +16164,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15560,6 +16186,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15581,6 +16208,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15602,6 +16230,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15623,6 +16252,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15644,6 +16274,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -15680,6 +16311,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15701,6 +16333,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15722,6 +16355,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15743,6 +16377,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15764,6 +16399,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15785,6 +16421,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15806,6 +16443,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15827,6 +16465,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15848,6 +16487,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -15882,6 +16522,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -15918,6 +16559,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -15954,6 +16596,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15975,6 +16618,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -15996,6 +16640,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16017,6 +16662,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16038,6 +16684,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16059,6 +16706,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16080,6 +16728,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16101,6 +16750,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16110,69 +16760,6 @@
           "NHTwin",
           "DURwin",
           "LONwin",
-          "DURwin"
-        ],
-        "advancing": [
-          "DUR"
-        ],
-        "eliminated": [
-          "LON",
-          "NHT",
-          "WAT"
-        ],
-        "pts": 5,
-        "gd_dep": false,
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "NHTwin",
-          "tie",
-          "NHTwin",
-          "DURwin",
-          "tie",
-          "NHTwin"
-        ],
-        "advancing": [
-          "NHT"
-        ],
-        "eliminated": [
-          "DUR",
-          "LON",
-          "WAT"
-        ],
-        "pts": 6,
-        "gd_dep": false,
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "NHTwin",
-          "tie",
-          "NHTwin",
-          "DURwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "NHT"
-        ],
-        "eliminated": [
-          "DUR",
-          "LON",
-          "WAT"
-        ],
-        "pts": 5,
-        "gd_dep": false,
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "NHTwin",
-          "tie",
-          "NHTwin",
-          "DURwin",
-          "tie",
           "DURwin"
         ],
         "advancing": [
@@ -16185,6 +16772,73 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
+        "tiebreakers": []
+      },
+      {
+        "labels": [
+          "NHTwin",
+          "tie",
+          "NHTwin",
+          "DURwin",
+          "tie",
+          "NHTwin"
+        ],
+        "advancing": [
+          "NHT"
+        ],
+        "eliminated": [
+          "DUR",
+          "LON",
+          "WAT"
+        ],
+        "pts": 6,
+        "gd_dep": false,
+        "res_type": "clean",
+        "tiebreakers": []
+      },
+      {
+        "labels": [
+          "NHTwin",
+          "tie",
+          "NHTwin",
+          "DURwin",
+          "tie",
+          "tie"
+        ],
+        "advancing": [
+          "NHT"
+        ],
+        "eliminated": [
+          "DUR",
+          "LON",
+          "WAT"
+        ],
+        "pts": 5,
+        "gd_dep": false,
+        "res_type": "clean",
+        "tiebreakers": []
+      },
+      {
+        "labels": [
+          "NHTwin",
+          "tie",
+          "NHTwin",
+          "DURwin",
+          "tie",
+          "DURwin"
+        ],
+        "advancing": [
+          "DUR"
+        ],
+        "eliminated": [
+          "LON",
+          "NHT",
+          "WAT"
+        ],
+        "pts": 5,
+        "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16206,6 +16860,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16227,6 +16882,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16248,6 +16904,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16269,6 +16926,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16290,6 +16948,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16311,6 +16970,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -16346,6 +17006,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16367,6 +17028,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16388,6 +17050,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -16423,6 +17086,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16444,6 +17108,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16465,6 +17130,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -16500,6 +17166,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16521,6 +17188,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16542,6 +17210,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -16578,6 +17247,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16599,6 +17269,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16620,6 +17291,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16641,6 +17313,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16662,6 +17335,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16683,6 +17357,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16704,6 +17379,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16725,6 +17401,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -16758,6 +17435,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16779,6 +17457,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16800,6 +17479,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -16833,6 +17513,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16854,6 +17535,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16875,6 +17557,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -16909,6 +17592,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16930,6 +17614,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16951,6 +17636,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16972,6 +17658,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -16993,6 +17680,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17014,6 +17702,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17035,6 +17724,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17056,6 +17746,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17077,6 +17768,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -17110,6 +17802,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -17143,6 +17836,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17164,6 +17858,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -17199,6 +17894,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17220,6 +17916,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17241,6 +17938,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17262,6 +17960,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -17300,6 +17999,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17321,6 +18021,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -17354,6 +18055,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17375,6 +18077,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17396,6 +18099,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17417,6 +18121,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17438,6 +18143,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -17473,6 +18179,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -17506,6 +18213,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17527,6 +18235,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17548,6 +18257,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17569,6 +18279,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -17602,6 +18313,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17623,6 +18335,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -17661,6 +18374,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17682,6 +18396,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -17717,6 +18432,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17738,6 +18454,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -17771,6 +18488,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17792,6 +18510,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17813,6 +18532,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17834,6 +18554,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -17870,6 +18591,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17891,6 +18613,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17912,6 +18635,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -17947,6 +18671,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17968,6 +18693,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -17989,6 +18715,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18010,6 +18737,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18031,6 +18759,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18052,6 +18781,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18073,6 +18803,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -18106,6 +18837,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18127,6 +18859,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18148,6 +18881,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -18181,6 +18915,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18202,6 +18937,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18223,6 +18959,7 @@
         ],
         "pts": 5,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -18256,6 +18993,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18277,6 +19015,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18298,6 +19037,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18319,6 +19059,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18340,6 +19081,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18361,6 +19103,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18382,6 +19125,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18403,6 +19147,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18424,6 +19169,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18445,6 +19191,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18466,6 +19213,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18487,6 +19235,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18508,6 +19257,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -18542,6 +19292,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18563,6 +19314,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18584,6 +19336,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -18620,6 +19373,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18641,6 +19395,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18662,6 +19417,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -18698,6 +19454,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18719,6 +19476,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18740,6 +19498,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18761,6 +19520,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18782,6 +19542,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18803,6 +19564,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18824,6 +19586,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18845,6 +19608,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18866,6 +19630,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18887,6 +19652,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18908,6 +19674,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -18941,6 +19708,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18962,6 +19730,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -18983,6 +19752,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -19016,6 +19786,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19037,6 +19808,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19058,6 +19830,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -19091,6 +19864,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19112,6 +19886,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19133,6 +19908,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -19168,6 +19944,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -19204,6 +19981,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19225,6 +20003,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19246,6 +20025,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19267,6 +20047,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19288,6 +20069,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19309,6 +20091,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19330,6 +20113,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -19366,6 +20150,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19387,6 +20172,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19408,6 +20194,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -19444,6 +20231,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19465,6 +20253,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19486,6 +20275,7 @@
         ],
         "pts": 4,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -19520,6 +20310,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19541,6 +20332,7 @@
         ],
         "pts": 6,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19562,6 +20354,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19583,6 +20376,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19604,6 +20398,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19625,6 +20420,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19646,6 +20442,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19667,6 +20464,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19688,6 +20486,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -19724,6 +20523,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -19759,6 +20559,7 @@
         ],
         "pts": 5,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19780,6 +20581,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -19816,6 +20618,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19837,6 +20640,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -19873,6 +20677,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19894,6 +20699,7 @@
         ],
         "pts": 3,
         "gd_dep": true,
+        "res_type": "unresolved",
         "tiebreakers": [
           {
             "teams": [
@@ -19929,6 +20735,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -19950,6 +20757,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
@@ -19986,6 +20794,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "clean",
         "tiebreakers": []
       },
       {
@@ -20007,6 +20816,7 @@
         ],
         "pts": 4,
         "gd_dep": false,
+        "res_type": "tiebreaker",
         "tiebreakers": [
           {
             "teams": [
