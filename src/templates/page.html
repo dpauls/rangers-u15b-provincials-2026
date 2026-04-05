@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="120">
+    <title>{{ our_team_name }} - U15B Provincials 2026</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        :root {
+            --pico-font-size: 15px;
+        }
+        body { padding-top: 0.5rem; }
+        .container { max-width: 900px; }
+        header h1 { margin-bottom: 0.25rem; font-size: 1.5rem; }
+        header p { margin-bottom: 0.5rem; color: var(--pico-muted-color); font-size: 0.85rem; }
+
+        .live-banner {
+            background: #d32f2f;
+            color: white;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+        .live-banner .live-dot {
+            display: inline-block;
+            width: 10px; height: 10px;
+            background: white;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.92; } }
+
+        .narrative-card {
+            background: var(--pico-card-background-color);
+            border-left: 4px solid var(--pico-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+        .narrative-card h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
+
+        table { font-size: 0.85rem; margin-bottom: 1rem; }
+        th, td { padding: 0.35rem 0.5rem; }
+        .team-us { font-weight: bold; }
+        .status-clinched { color: #2e7d32; font-weight: bold; }
+        .status-eliminated { color: #c62828; }
+        .status-alive { color: #1565c0; }
+
+        .scenario-bar {
+            display: flex;
+            height: 28px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+        }
+        .scenario-bar .in { background: #2e7d32; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; }
+        .scenario-bar .out { background: #c62828; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+
+        .event-log { list-style: none; padding: 0; }
+        .event-log li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--pico-muted-border-color);
+            font-size: 0.9rem;
+        }
+        .event-log .event-time { color: var(--pico-muted-color); font-size: 0.8rem; }
+        .event-log .event-type-goal { border-left: 3px solid #2e7d32; padding-left: 0.75rem; }
+        .event-log .event-type-final { border-left: 3px solid var(--pico-primary); padding-left: 0.75rem; }
+        .event-log .event-type-info { border-left: 3px solid var(--pico-muted-color); padding-left: 0.75rem; }
+
+        .bracket-round { margin-bottom: 1rem; }
+        .bracket-game {
+            background: var(--pico-card-background-color);
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .bracket-game .round-label { font-size: 0.75rem; color: var(--pico-muted-color); text-transform: uppercase; }
+
+        details summary { cursor: pointer; font-weight: 600; }
+        details[open] summary { margin-bottom: 0.5rem; }
+        .scenario-detail { font-family: monospace; font-size: 0.8rem; white-space: pre-wrap; background: var(--pico-card-background-color); padding: 0.75rem; border-radius: 4px; overflow-x: auto; }
+
+        .game-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--pico-muted-border-color);
+            font-size: 0.9rem;
+        }
+        .game-card:last-child { border-bottom: none; }
+        .game-card .score { font-weight: bold; font-size: 1rem; }
+
+        @media (max-width: 600px) {
+            :root { --pico-font-size: 14px; }
+            th, td { padding: 0.25rem 0.35rem; }
+        }
+    </style>
+</head>
+<body>
+<main class="container">
+
+    <!-- Header -->
+    <header>
+        <h1>{{ our_team_name }}</h1>
+        <p>{{ tournament.name }} &middot; {{ tournament.location }} &middot; {{ tournament.dates }}</p>
+        <p>Last updated: {{ generated_at }} &middot; Auto-refreshes every 2 min</p>
+    </header>
+
+    <!-- Live Scores Banner -->
+    {% if live_games %}
+    {% for game in live_games %}
+    <div class="live-banner">
+        <span class="live-dot"></span> <strong>LIVE</strong>:
+        <span{% if game.home_id == our_team %} class="team-us"{% endif %}>{{ game.home_name }}</span>
+        <strong>{{ game.home_score }}</strong> -
+        <strong>{{ game.away_score }}</strong>
+        <span{% if game.away_id == our_team %} class="team-us"{% endif %}>{{ game.away_name }}</span>
+        (in progress)
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <!-- Claude's Take / Narrative -->
+    {% if narrative %}
+    <div class="narrative-card">
+        <h3>The Latest</h3>
+        {{ narrative }}
+    </div>
+    {% endif %}
+
+    <!-- Event Log -->
+    {% if event_log %}
+    <details open>
+        <summary>Recent Updates ({{ event_log|length }})</summary>
+        <ul class="event-log">
+            {% for event in event_log|reverse %}
+            <li class="event-type-{{ event.type|default('info') }}">
+                <span class="event-time">{{ event.time }}</span><br>
+                <strong>{{ event.headline }}</strong>
+                {% if event.detail %}<br>{{ event.detail }}{% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </details>
+    {% endif %}
+
+    <!-- Pool C Standings -->
+    <h2>Pool {{ our_pool }} Standings</h2>
+    <div style="overflow-x: auto;">
+    <table>
+        <thead>
+            <tr>
+                <th>Team</th>
+                <th>GP</th>
+                <th>W</th>
+                <th>L</th>
+                <th>T</th>
+                <th>PTS</th>
+                <th>GF</th>
+                <th>GA</th>
+                <th>GD</th>
+                {% if scenarios and scenarios.total > 1 %}
+                <th>Adv%</th>
+                {% endif %}
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in standings %}
+            <tr{% if row.is_us %} class="team-us"{% endif %}>
+                <td{% if row.is_us %} class="team-us"{% endif %}>{{ row.name }}</td>
+                <td>{{ row.gp }}</td>
+                <td>{{ row.w }}</td>
+                <td>{{ row.l }}</td>
+                <td>{{ row.t }}</td>
+                <td><strong>{{ row.pts }}</strong></td>
+                <td>{{ row.gf }}</td>
+                <td>{{ row.ga }}</td>
+                <td>{{ row.gd_str }}</td>
+                {% if scenarios and scenarios.total > 1 %}
+                <td>{{ row.adv_pct }}%</td>
+                {% endif %}
+                <td class="status-{{ row.status|lower }}">{{ row.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <!-- Scenario Analysis -->
+    {% if scenarios and scenarios.total > 1 %}
+    <h2>Scenario Analysis</h2>
+    <p>
+        With <strong>{{ scenarios.remaining_games }}</strong> game{{ 's' if scenarios.remaining_games != 1 }} remaining,
+        there are <strong>{{ scenarios.total }}</strong> possible outcomes.
+        <strong>{{ our_team_name }}</strong> win{{ 's' if scenarios.our_count != 1 }} Pool {{ our_pool }} in
+        <strong>{{ scenarios.our_count }}</strong> of {{ scenarios.total }} scenarios
+        (<strong>{{ scenarios.our_pct }}%</strong>).
+    </p>
+
+    <div class="scenario-bar">
+        {% set in_pct = (scenarios.our_count / scenarios.total * 100)|round(1) %}
+        {% set out_pct = 100 - in_pct %}
+        {% if in_pct > 0 %}
+        <div class="in" style="width: {{ in_pct }}%">{{ scenarios.our_count }} IN</div>
+        {% endif %}
+        {% if out_pct > 0 %}
+        <div class="out" style="width: {{ out_pct }}%">{{ scenarios.our_losses }} OUT</div>
+        {% endif %}
+    </div>
+
+    {% if scenarios.gd_dependent > 0 %}
+    <p><small>* {{ scenarios.gd_dependent }} scenarios depend on goal differential/goals against (actual scores matter, not just W/L/T).</small></p>
+    {% endif %}
+
+    <details>
+        <summary>All {{ scenarios.total }} Scenarios</summary>
+        <div class="scenario-detail">
+{%- for sc in scenarios.scenarios %}
+{%- set res = sc.result %}
+{%- set flag = ' *' if sc.gd_dependent else '' %}
+#{{ loop.index }}  {{ sc.labels|join('  ') }}  →  {{ res.advancing|join(', ') }} ({{ sc.standings[res.advancing[0]].PTS }}pts){{ flag }}
+{%- for tb in res.tb_details %}
+  TB: {{ tb.teams|length }}-way tie at {{ tb.pts }}pts: {{ tb.teams|join(', ') }}
+{%- for line in tb.lines %}
+{{ line }}
+{%- endfor %}
+{% endfor %}
+{%- endfor %}
+        </div>
+    </details>
+    {% elif scenarios and scenarios.total == 1 %}
+    <p><strong>All pool games are complete.</strong>
+    {% set winner = scenarios.scenarios[0].result.advancing[0] %}
+    Pool {{ our_pool }} winner: <strong>{{ winner }}</strong>
+    {% if winner == our_team %} -- That's us! On to the quarter-finals!{% endif %}
+    </p>
+    {% endif %}
+
+    <!-- Upcoming Games -->
+    {% if upcoming %}
+    <h2>Coming Up</h2>
+    {% for game in upcoming %}
+    <div class="game-card">
+        <div>
+            <span{% if game.home_id == our_team %} class="team-us"{% endif %}>{{ game.home_name }}</span>
+            vs
+            <span{% if game.away_id == our_team %} class="team-us"{% endif %}>{{ game.away_name }}</span>
+        </div>
+        <div style="text-align: right; font-size: 0.8rem; color: var(--pico-muted-color);">
+            Game #{{ game.game_id }}<br>
+            {{ game.date }}
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <!-- Completed Games -->
+    {% if completed %}
+    <details{% if completed|length <= 4 %} open{% endif %}>
+        <summary>Completed Games ({{ completed|length }})</summary>
+        {% for game in completed %}
+        <div class="game-card">
+            <div>
+                <span{% if game.home_id == our_team %} class="team-us"{% endif %}>{{ game.home_name }}</span>
+                <span class="score">{{ game.home_score }}</span> -
+                <span class="score">{{ game.away_score }}</span>
+                <span{% if game.away_id == our_team %} class="team-us"{% endif %}>{{ game.away_name }}</span>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--pico-muted-color);">Final</div>
+        </div>
+        {% endfor %}
+    </details>
+    {% endif %}
+
+    <!-- Pool F Watch -->
+    <h2>Pool {{ qf_pool }} Watch <small style="font-weight: normal; color: var(--pico-muted-color);">(Quarter-final opponent)</small></h2>
+    <div style="overflow-x: auto;">
+    <table>
+        <thead>
+            <tr>
+                <th>Team</th>
+                <th>GP</th>
+                <th>W</th>
+                <th>L</th>
+                <th>T</th>
+                <th>PTS</th>
+                <th>GF</th>
+                <th>GA</th>
+                <th>GD</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in qf_standings %}
+            <tr>
+                <td>{{ row.name }}</td>
+                <td>{{ row.gp }}</td>
+                <td>{{ row.w }}</td>
+                <td>{{ row.l }}</td>
+                <td>{{ row.t }}</td>
+                <td><strong>{{ row.pts }}</strong></td>
+                <td>{{ row.gf }}</td>
+                <td>{{ row.ga }}</td>
+                <td>{{ row.gd_str }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    {% if qf_upcoming %}
+    <details>
+        <summary>Pool {{ qf_pool }} Upcoming Games ({{ qf_upcoming|length }})</summary>
+        {% for game in qf_upcoming %}
+        <div class="game-card">
+            <div>{{ game.home_name }} vs {{ game.away_name }}</div>
+            <div style="text-align: right; font-size: 0.8rem; color: var(--pico-muted-color);">{{ game.date }}</div>
+        </div>
+        {% endfor %}
+    </details>
+    {% endif %}
+
+    <!-- Bracket -->
+    <h2>Bracket</h2>
+    {% for game in bracket %}
+    <div class="bracket-game">
+        <div class="round-label">{{ game.round }}</div>
+        {% if game.status == 'final' %}
+            <strong>{{ game.home_name }}</strong> {{ game.home_score }} - {{ game.away_score }} <strong>{{ game.away_name }}</strong>
+            <span style="color: var(--pico-muted-color);"> (Final)</span>
+        {% elif game.status == 'in_progress' %}
+            <strong>{{ game.home_name }}</strong> {{ game.home_score|default(0) }} - {{ game.away_score|default(0) }} <strong>{{ game.away_name }}</strong>
+            <span style="color: #d32f2f;"> (Live)</span>
+        {% else %}
+            {{ game.label }} &middot; {{ game.date }}
+        {% endif %}
+    </div>
+    {% endfor %}
+
+    <!-- Footer -->
+    <footer style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--pico-muted-border-color); font-size: 0.8rem; color: var(--pico-muted-color);">
+        <p>
+            Analysis powered by Python scenario engine + Claude AI.
+            Data from OWHA. Updates every ~90 sec during games.
+            <br>
+            <a href="https://github.com/dpauls/rangers-u15b-provincials-2026">Source on GitHub</a>
+        </p>
+    </footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kanata Rangers - U15B Provincials 2026</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        :root { --pico-font-size: 15px; }
+        body { padding-top: 0.5rem; }
+        .container { max-width: 900px; }
+        header h1 { margin-bottom: 0.25rem; font-size: 1.5rem; }
+        header p { margin-bottom: 0.5rem; color: var(--pico-muted-color); font-size: 0.85rem; }
+        #updated { font-size: 0.8rem; color: var(--pico-muted-color); }
+
+        .live-banner {
+            background: #d32f2f; color: white;
+            padding: 0.6rem 1rem; border-radius: 8px; margin-bottom: 1rem;
+        }
+        .live-dot {
+            display: inline-block; width: 10px; height: 10px;
+            background: white; border-radius: 50%; margin-right: 0.5rem;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        .narrative-card {
+            background: var(--pico-card-background-color);
+            border-left: 4px solid var(--pico-primary);
+            padding: 1rem 1.25rem; border-radius: 4px; margin-bottom: 1.5rem;
+        }
+        .narrative-card h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem; }
+
+        table { font-size: 0.85rem; margin-bottom: 1rem; }
+        th, td { padding: 0.35rem 0.5rem; }
+        .team-us { font-weight: bold; }
+        .status-CLINCHED { color: #2e7d32; font-weight: bold; }
+        .status-ELIMINATED { color: #c62828; }
+        .status-ALIVE { color: #1565c0; }
+
+        .scenario-bar {
+            display: flex; height: 28px; border-radius: 4px;
+            overflow: hidden; margin-bottom: 0.75rem;
+        }
+        .bar-in { background: #2e7d32; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; }
+        .bar-out { background: #c62828; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+
+        .event-log { list-style: none; padding: 0; }
+        .event-log li { padding: 0.5rem 0; border-bottom: 1px solid var(--pico-muted-border-color); font-size: 0.9rem; }
+        .event-time { color: var(--pico-muted-color); font-size: 0.8rem; }
+        .evt-goal { border-left: 3px solid #2e7d32; padding-left: 0.75rem; }
+        .evt-final { border-left: 3px solid var(--pico-primary); padding-left: 0.75rem; }
+        .evt-info { border-left: 3px solid var(--pico-muted-color); padding-left: 0.75rem; }
+
+        .bracket-game {
+            background: var(--pico-card-background-color);
+            padding: 0.5rem 0.75rem; border-radius: 4px; margin-bottom: 0.5rem; font-size: 0.9rem;
+        }
+        .round-label { font-size: 0.75rem; color: var(--pico-muted-color); text-transform: uppercase; }
+
+        details summary { cursor: pointer; font-weight: 600; }
+        details[open] summary { margin-bottom: 0.5rem; }
+        .scenario-detail {
+            font-family: monospace; font-size: 0.78rem; white-space: pre-wrap;
+            background: var(--pico-card-background-color);
+            padding: 0.75rem; border-radius: 4px; overflow-x: auto; max-height: 60vh; overflow-y: auto;
+        }
+
+        .game-card {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0.4rem 0; border-bottom: 1px solid var(--pico-muted-border-color); font-size: 0.9rem;
+        }
+        .game-card:last-child { border-bottom: none; }
+        .score { font-weight: bold; font-size: 1rem; }
+
+        .loading { text-align: center; padding: 2rem; color: var(--pico-muted-color); }
+
+        @media (max-width: 600px) {
+            :root { --pico-font-size: 14px; }
+            th, td { padding: 0.25rem 0.35rem; }
+        }
+    </style>
+</head>
+<body>
+<main class="container">
+    <header>
+        <h1 id="team-name">Kanata Rangers</h1>
+        <p id="tournament-info">OWHA U15B Provincials 2026</p>
+        <p id="updated">Loading...</p>
+    </header>
+
+    <div id="live-banner-area"></div>
+    <div id="narrative-area"></div>
+    <div id="event-log-area"></div>
+
+    <h2 id="pool-header">Pool Standings</h2>
+    <div id="standings-area"><p class="loading">Loading standings...</p></div>
+
+    <div id="scenarios-area"></div>
+    <div id="upcoming-area"></div>
+    <div id="completed-area"></div>
+
+    <h2 id="qf-header">Opponent Pool Watch</h2>
+    <div id="qf-standings-area"></div>
+    <div id="qf-upcoming-area"></div>
+
+    <h2>Bracket</h2>
+    <div id="bracket-area"></div>
+
+    <footer style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--pico-muted-border-color); font-size: 0.8rem; color: var(--pico-muted-color);">
+        <p>Analysis powered by Python scenario engine + Claude AI. Data from OWHA.<br>
+        <a href="https://github.com/dpauls/rangers-u15b-provincials-2026">Source on GitHub</a></p>
+    </footer>
+</main>
+
+<script>
+const DATA_URL = 'data/state.json';
+const REFRESH_MS = 120000; // 2 minutes
+
+function esc(s) {
+    if (s == null) return '';
+    const d = document.createElement('div');
+    d.textContent = String(s);
+    return d.innerHTML;
+}
+
+function cls(teamId, ourTeam) {
+    return teamId === ourTeam ? ' class="team-us"' : '';
+}
+
+function fmtDate(iso) {
+    if (!iso) return '';
+    const d = new Date(iso);
+    const day = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()];
+    let h = d.getHours(), m = d.getMinutes();
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    return `${day} ${h}:${String(m).padStart(2,'0')} ${ampm}`;
+}
+
+function fmtGenerated(iso) {
+    const d = new Date(iso);
+    return d.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+}
+
+function renderLiveBanner(liveGames, ourTeam) {
+    if (!liveGames || liveGames.length === 0) return '';
+    return liveGames.map(g => `
+        <div class="live-banner">
+            <span class="live-dot"></span> <strong>LIVE</strong>:
+            <span${cls(g.home, ourTeam)}>${esc(g.home_name)}</span>
+            <strong>${g.home_score || 0}</strong> -
+            <strong>${g.away_score || 0}</strong>
+            <span${cls(g.away, ourTeam)}>${esc(g.away_name)}</span>
+            (in progress)
+        </div>
+    `).join('');
+}
+
+function renderNarrative(narrative) {
+    if (!narrative) return '';
+    return `<div class="narrative-card"><h3>The Latest</h3><p>${esc(narrative)}</p></div>`;
+}
+
+function renderEventLog(events) {
+    if (!events || events.length === 0) return '';
+    const items = [...events].reverse().map(e => {
+        const typeCls = e.type === 'goal' ? 'evt-goal' : e.type === 'final' ? 'evt-final' : 'evt-info';
+        return `<li class="${typeCls}">
+            <span class="event-time">${esc(e.time)}</span><br>
+            <strong>${esc(e.headline)}</strong>
+            ${e.detail ? '<br>' + esc(e.detail) : ''}
+        </li>`;
+    }).join('');
+    return `<details open><summary>Recent Updates (${events.length})</summary><ul class="event-log">${items}</ul></details>`;
+}
+
+function renderStandings(rows, showAdv, ourTeam) {
+    const advHeader = showAdv ? '<th>Adv%</th>' : '';
+    const thead = `<thead><tr><th>Team</th><th>GP</th><th>W</th><th>L</th><th>T</th><th>PTS</th><th>GF</th><th>GA</th><th>GD</th>${advHeader}<th>Status</th></tr></thead>`;
+    const tbody = rows.map(r => {
+        const usCls = r.is_us ? ' class="team-us"' : '';
+        const gd = r.gd > 0 ? `+${r.gd}` : String(r.gd);
+        const advCell = showAdv ? `<td>${r.adv_pct}%</td>` : '';
+        return `<tr${usCls}><td${usCls}>${esc(r.name)}</td><td>${r.gp}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td><strong>${r.pts}</strong></td><td>${r.gf}</td><td>${r.ga}</td><td>${gd}</td>${advCell}<td class="status-${r.status}">${r.status}</td></tr>`;
+    }).join('');
+    return `<div style="overflow-x:auto"><table>${thead}<tbody>${tbody}</tbody></table></div>`;
+}
+
+function renderScenarios(sc, ourTeamName, ourPool) {
+    if (!sc) return '';
+    let html = '';
+
+    if (sc.remaining_games === 0) {
+        const winner = sc.winner || '?';
+        const isUs = sc.our_count > 0;
+        html += `<p><strong>All pool games are complete.</strong> Pool ${esc(ourPool)} winner: <strong>${esc(winner)}</strong>`;
+        if (isUs) html += ` -- That's us! On to the quarter-finals!`;
+        html += `</p>`;
+        return html;
+    }
+
+    const total = sc.total;
+    const ours = sc.our_count;
+    const inPct = (ours / total * 100).toFixed(1);
+    const outCount = total - ours;
+    const outPct = (100 - inPct).toFixed(1);
+
+    html += `<h2>Scenario Analysis</h2>`;
+    html += `<p>With <strong>${sc.remaining_games}</strong> game${sc.remaining_games !== 1 ? 's' : ''} remaining, there are <strong>${total}</strong> possible outcomes. <strong>${esc(ourTeamName)}</strong> win${ours !== 1 ? 's' : ''} Pool ${esc(ourPool)} in <strong>${ours}</strong> of ${total} scenarios (<strong>${inPct}%</strong>).</p>`;
+
+    html += `<div class="scenario-bar">`;
+    if (ours > 0) html += `<div class="bar-in" style="width:${inPct}%">${ours} IN</div>`;
+    if (outCount > 0) html += `<div class="bar-out" style="width:${outPct}%">${outCount} OUT</div>`;
+    html += `</div>`;
+
+    if (sc.gd_dependent > 0) {
+        html += `<p><small>* ${sc.gd_dependent} scenario${sc.gd_dependent !== 1 ? 's' : ''} depend on goal differential/goals against (actual scores matter).</small></p>`;
+    }
+
+    // Detailed scenario list
+    if (sc.scenarios && sc.scenarios.length > 0 && sc.scenarios.length <= 729) {
+        let detail = '';
+        sc.scenarios.forEach((s, i) => {
+            const flag = s.gd_dep ? ' *' : '';
+            detail += `#${String(i+1).padStart(3)}  ${s.labels.join('  ')}  →  ${s.advancing.join(', ')} (${s.pts}pts)${flag}\n`;
+            s.tiebreakers.forEach(tb => {
+                detail += `  TB: ${tb.teams.length}-way tie at ${tb.pts}pts: ${tb.teams.join(', ')}\n`;
+                tb.lines.forEach(l => detail += l + '\n');
+            });
+        });
+        html += `<details><summary>All ${total} Scenarios</summary><div class="scenario-detail">${esc(detail)}</div></details>`;
+    }
+
+    return html;
+}
+
+function renderGames(games, label, ourTeam, isFinal) {
+    if (!games || games.length === 0) return '';
+    const items = games.map(g => {
+        if (isFinal) {
+            return `<div class="game-card"><div>
+                <span${cls(g.home, ourTeam)}>${esc(g.home_name)}</span>
+                <span class="score">${g.home_score}</span> -
+                <span class="score">${g.away_score}</span>
+                <span${cls(g.away, ourTeam)}>${esc(g.away_name)}</span>
+            </div><div style="font-size:0.8rem;color:var(--pico-muted-color)">Final</div></div>`;
+        }
+        return `<div class="game-card"><div>
+            <span${cls(g.home, ourTeam)}>${esc(g.home_name)}</span> vs
+            <span${cls(g.away, ourTeam)}>${esc(g.away_name)}</span>
+        </div><div style="text-align:right;font-size:0.8rem;color:var(--pico-muted-color)">#${g.game_id}<br>${fmtDate(g.date)}</div></div>`;
+    }).join('');
+
+    const open = !isFinal || games.length <= 4 ? ' open' : '';
+    return `<details${open}><summary>${esc(label)} (${games.length})</summary>${items}</details>`;
+}
+
+function renderBracket(bracket) {
+    if (!bracket || bracket.length === 0) return '';
+    return bracket.map(g => {
+        let content;
+        if (g.status === 'final') {
+            content = `<strong>${esc(g.home_name || g.home || 'TBD')}</strong> ${g.home_score} - ${g.away_score} <strong>${esc(g.away_name || g.away || 'TBD')}</strong> <span style="color:var(--pico-muted-color)">(Final)</span>`;
+        } else if (g.status === 'in_progress') {
+            content = `<strong>${esc(g.home_name || 'TBD')}</strong> ${g.home_score||0} - ${g.away_score||0} <strong>${esc(g.away_name || 'TBD')}</strong> <span style="color:#d32f2f">(Live)</span>`;
+        } else {
+            content = `${esc(g.label)} &middot; ${fmtDate(g.date)}`;
+        }
+        return `<div class="bracket-game"><div class="round-label">${esc(g.round)}</div>${content}</div>`;
+    }).join('');
+}
+
+async function loadAndRender() {
+    try {
+        const resp = await fetch(DATA_URL + '?t=' + Date.now());
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const d = await resp.json();
+
+        document.getElementById('team-name').textContent = d.our_team_name;
+        document.getElementById('tournament-info').textContent =
+            `${d.tournament.name} \u00b7 ${d.tournament.location} \u00b7 ${d.tournament.dates}`;
+        document.getElementById('updated').textContent =
+            `Last updated: ${fmtGenerated(d.generated_at)} \u00b7 Auto-refreshes every 2 min`;
+
+        document.getElementById('live-banner-area').innerHTML = renderLiveBanner(d.live_games, d.our_team);
+        document.getElementById('narrative-area').innerHTML = renderNarrative(d.narrative);
+        document.getElementById('event-log-area').innerHTML = renderEventLog(d.event_log);
+
+        document.getElementById('pool-header').textContent = `Pool ${d.our_pool} Standings`;
+        const showAdv = d.scenarios && d.scenarios.total > 1;
+        document.getElementById('standings-area').innerHTML = renderStandings(d.standings, showAdv, d.our_team);
+
+        document.getElementById('scenarios-area').innerHTML = renderScenarios(d.scenarios, d.our_team_name, d.our_pool);
+
+        document.getElementById('upcoming-area').innerHTML =
+            d.upcoming && d.upcoming.length > 0
+                ? '<h2>Coming Up</h2>' + renderGames(d.upcoming, 'Upcoming Games', d.our_team, false)
+                : '';
+
+        document.getElementById('completed-area').innerHTML =
+            d.completed && d.completed.length > 0
+                ? renderGames(d.completed, 'Completed Games', d.our_team, true)
+                : '';
+
+        document.getElementById('qf-header').textContent = `Pool ${d.qf_pool} Watch (Quarter-final opponent)`;
+        document.getElementById('qf-standings-area').innerHTML = renderStandings(d.qf_standings, false, null);
+        document.getElementById('qf-upcoming-area').innerHTML =
+            renderGames(d.qf_upcoming, `Pool ${d.qf_pool} Upcoming`, null, false);
+
+        document.getElementById('bracket-area').innerHTML = renderBracket(d.bracket);
+
+    } catch (err) {
+        console.error('Failed to load state:', err);
+        document.getElementById('standings-area').innerHTML =
+            `<p class="loading">Could not load data. Will retry in 2 minutes.<br><small>${esc(err.message)}</small></p>`;
+    }
+}
+
+// Initial load + periodic refresh
+loadAndRender();
+setInterval(loadAndRender, REFRESH_MS);
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "tournament": {
+    "name": "OWHA U15B Provincials 2026",
+    "location": "Chesswood Arenas, Toronto",
+    "dates": "April 10-12, 2026",
+    "our_team": "KAN"
+  },
+  "teams": {
+    "KAN": {"name": "Kanata Rangers", "number": 1755, "pool": "C", "is_us": true},
+    "ENS": {"name": "Ennismore Eagles", "number": 6463, "pool": "C"},
+    "KIN": {"name": "Kincardine Kinucks", "number": 8704, "pool": "C"},
+    "WIN": {"name": "Windsor Wildcats", "number": 4764, "pool": "C"},
+    "DUR": {"name": "Durham West Lightning", "number": 314, "pool": "F"},
+    "LON": {"name": "London Devilettes", "number": 646, "pool": "F"},
+    "NHT": {"name": "North Halton Twisters", "number": 2519, "pool": "F"},
+    "WAT": {"name": "Waterloo Ravens", "number": 1173, "pool": "F"}
+  },
+  "pools": {
+    "C": {"teams": ["KAN", "ENS", "KIN", "WIN"], "advance_count": 1},
+    "F": {"teams": ["DUR", "LON", "NHT", "WAT"], "advance_count": 1}
+  },
+  "tiebreakers": ["wins", "h2h", "goal_diff", "goals_against", "penalty_minutes"],
+  "pool_games": [
+    {"game_id": 142, "date": "2026-04-10T09:15", "pool": "C", "home": "KIN", "away": "WIN", "home_score": null, "away_score": null, "status": "scheduled"},
+    {"game_id": 143, "date": "2026-04-10T09:15", "pool": "C", "home": "KAN", "away": "ENS", "home_score": null, "away_score": null, "status": "scheduled"},
+    {"game_id": 162, "date": "2026-04-10T15:45", "pool": "C", "home": "WIN", "away": "KAN", "home_score": null, "away_score": null, "status": "scheduled"},
+    {"game_id": 163, "date": "2026-04-10T15:45", "pool": "C", "home": "ENS", "away": "KIN", "home_score": null, "away_score": null, "status": "scheduled"},
+    {"game_id": 700, "date": "2026-04-11T10:30", "pool": "C", "home": "KIN", "away": "KAN", "home_score": null, "away_score": null, "status": "scheduled"},
+    {"game_id": 701, "date": "2026-04-11T10:30", "pool": "C", "home": "WIN", "away": "ENS", "home_score": null, "away_score": null, "status": "scheduled"},
+    {"game_id": 148, "date": "2026-04-10T10:45", "pool": "F", "home": "LON", "away": "NHT", "home_score": null, "away_score": null, "status": "scheduled"},
+    {"game_id": 149, "date": "2026-04-10T10:45", "pool": "F", "home": "WAT", "away": "DUR", "home_score": null, "away_score": null, "status": "scheduled"},
+    {"game_id": 168, "date": "2026-04-10T17:15", "pool": "F", "home": "NHT", "away": "WAT", "home_score": null, "away_score": null, "status": "scheduled"},
+    {"game_id": 169, "date": "2026-04-10T17:15", "pool": "F", "home": "DUR", "away": "LON", "home_score": null, "away_score": null, "status": "scheduled"},
+    {"game_id": 706, "date": "2026-04-11T12:00", "pool": "F", "home": "LON", "away": "WAT", "home_score": null, "away_score": null, "status": "scheduled"},
+    {"game_id": 707, "date": "2026-04-11T12:00", "pool": "F", "home": "NHT", "away": "DUR", "home_score": null, "away_score": null, "status": "scheduled"}
+  ],
+  "bracket": [
+    {"game_id": 726, "round": "QF", "date": "2026-04-11T18:45", "label": "C1 vs F1", "home": null, "away": null, "home_score": null, "away_score": null, "status": "pending"},
+    {"game_id": 1121, "round": "SF", "date": "2026-04-12T09:30", "label": "W725 vs W726", "home": null, "away": null, "home_score": null, "away_score": null, "status": "pending"},
+    {"game_id": 1128, "round": "Gold", "date": "2026-04-12T14:00", "label": "Gold Medal", "home": null, "away": null, "home_score": null, "away_score": null, "status": "pending"},
+    {"game_id": 1129, "round": "Bronze", "date": "2026-04-12T14:00", "label": "Bronze Medal", "home": null, "away": null, "home_score": null, "away_score": null, "status": "pending"}
+  ],
+  "event_log": []
+}
