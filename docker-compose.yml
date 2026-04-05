@@ -1,0 +1,14 @@
+services:
+  tracker:
+    build: .
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - GIT_USER_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
+      - GIT_USER_EMAIL=${GIT_USER_EMAIL:-tracker@example.com}
+    volumes:
+      # Mount git credentials so the container can push
+      - ~/.gitconfig:/root/.gitconfig:ro
+      - ~/.git-credentials:/root/.git-credentials:ro
+      # Persist data across restarts
+      - ./data:/app/data
+      - ./docs:/app/docs
