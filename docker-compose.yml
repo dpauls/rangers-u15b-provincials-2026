@@ -30,5 +30,6 @@ services:
       - ~/.git-credentials:/root/.git-credentials:ro
       - ./data:/app/data
       - ./docs:/app/docs
+      - ./test:/app/test
     command: ["--mock-dir", "test/mock_responses", "--once", "--interval", "5"]
     profiles: ["test"]
