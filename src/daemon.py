@@ -370,6 +370,26 @@ def main():
     # Always generate and push current state on startup
     log.info('Initial generate and push...')
     generate(str(DATA_PATH), skip_narrative=True)
+
+    # Generate welcome narrative if no events yet and narrative enabled
+    if not args.skip_narrative and not tournament_data.get('event_log'):
+        log.info('Generating welcome narrative...')
+        our_team = tournament_data['tournament']['our_team']
+        our_pool = tournament_data['teams'][our_team]['pool']
+        our_analysis = enumerate_scenarios(our_pool, tournament_data)
+        from generate import build_standings, build_scenario_data, build_games_list
+        standings = build_standings(our_pool, tournament_data, our_analysis)
+        scenario_data = build_scenario_data(our_analysis, our_team)
+        qf_standings = build_standings('F', tournament_data, enumerate_scenarios('F', tournament_data))
+        upcoming = build_games_list(our_pool, tournament_data, 'scheduled')
+        welcome = generate_overall_narrative(
+            standings, scenario_data, tournament_data['teams'][our_team]['name'],
+            our_pool, qf_standings, [], upcoming)
+        if welcome:
+            state = json.loads(STATE_PATH.read_text())
+            state['narrative'] = welcome
+            STATE_PATH.write_text(json.dumps(state, indent=2))
+
     if not args.skip_push:
         git_push()
 

@@ -6,12 +6,43 @@
     <title>Kanata Rangers - U15B Provincials 2026</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <style>
-        :root { --pico-font-size: 16px; }
-        body { padding-top: 0.5rem; }
+        :root {
+            --pico-font-size: 16px;
+            --rangers-blue: #0038A8;
+            --rangers-red: #CE1126;
+        }
+        body { padding-top: 0; }
         .container { max-width: 900px; }
-        header h1 { margin-bottom: 0.25rem; font-size: 1.5rem; }
-        header p { margin-bottom: 0.5rem; color: var(--pico-muted-color); font-size: 0.85rem; }
-        #updated { font-size: 0.8rem; color: var(--pico-muted-color); }
+
+        .site-header {
+            background: linear-gradient(135deg, var(--rangers-blue) 0%, #002878 100%);
+            color: white;
+            padding: 1rem 1.25rem;
+            margin: 0 -1.25rem 1rem;
+            border-bottom: 4px solid var(--rangers-red);
+        }
+        .site-header-inner {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .site-header img {
+            height: 60px;
+            width: auto;
+        }
+        .site-header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+        }
+        .site-header p {
+            margin: 0.15rem 0 0;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+        }
+        #updated { font-size: 0.8rem; color: var(--pico-muted-color); margin-bottom: 0.5rem; }
 
         .live-banner {
             background: #d32f2f; color: white;
@@ -26,16 +57,16 @@
 
         .narrative-card {
             background: var(--pico-card-background-color);
-            border-left: 4px solid var(--pico-primary);
+            border-left: 4px solid var(--rangers-blue);
             padding: 1rem 1.25rem; border-radius: 4px; margin-bottom: 1.5rem;
         }
-        .narrative-card h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem; }
-        .narrative-card h4 { margin-top: 0.75rem; margin-bottom: 0.25rem; font-size: 0.95rem; }
+        .narrative-card h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem; color: var(--rangers-blue); }
+        .narrative-card h4 { margin-top: 0.75rem; margin-bottom: 0.25rem; font-size: 0.95rem; color: var(--rangers-blue); }
         .narrative-card p { margin-bottom: 0.5rem; font-size: 0.9rem; line-height: 1.5; }
 
         table { font-size: 0.85rem; margin-bottom: 1rem; }
         th, td { padding: 0.35rem 0.5rem; }
-        .team-us { font-weight: bold; }
+        .team-us { font-weight: bold; color: var(--rangers-blue); }
         .status-CLINCHED { color: #2e7d32; font-weight: bold; }
         .status-ELIMINATED { color: #c62828; }
         .status-ALIVE { color: #1565c0; }
@@ -81,11 +112,16 @@
 </head>
 <body>
 <main class="container">
-    <header>
-        <h1 id="team-name">Kanata Rangers</h1>
-        <p id="tournament-info">OWHA U15B Provincials 2026</p>
-        <p id="updated">Loading...</p>
-    </header>
+    <div class="site-header">
+        <div class="site-header-inner">
+            <img src="https://cloud.rampinteractive.com/kanatagirlshockeyassociation/css/img/assocLogo.svg" alt="KGHA">
+            <div>
+                <h1 id="team-name">Kanata Rangers</h1>
+                <p id="tournament-info">OWHA U15B Provincials 2026</p>
+            </div>
+        </div>
+    </div>
+    <p id="updated">Loading...</p>
 
     <div id="live-banner-area"></div>
     <div id="narrative-area"></div>

@@ -165,7 +165,7 @@ def generate(data_path='data/tournament.json', skip_narrative=False):
     qf_analysis = enumerate_scenarios(qf_pool, data)
 
     state = {
-        'generated_at': datetime.now().isoformat(),
+        'generated_at': datetime.now().astimezone().isoformat(),
         'tournament': data['tournament'],
         'our_team': our_team,
         'our_team_name': data['teams'][our_team]['name'],
