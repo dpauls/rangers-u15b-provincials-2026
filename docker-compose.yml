@@ -15,7 +15,7 @@ services:
       - ./docs:/app/docs
     restart: unless-stopped
 
-  # For testing with mock data (run with: docker compose run mock-test)
+  # Step through mock tournament (run with: podman-compose run mock-test)
   mock-test:
     build: .
     environment:
@@ -31,5 +31,24 @@ services:
       - ./data:/app/data
       - ./docs:/app/docs
       - ./test:/app/test
-    command: ["--mock-dir", "test/mock_responses", "--once", "--interval", "5"]
+    command: ["--mock-dir", "test/mock_responses", "--once"]
+    profiles: ["test"]
+
+  # Reset mock simulation to step 0 (run with: podman-compose run mock-reset)
+  mock-reset:
+    build: .
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - GIT_AUTHOR_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
+      - GIT_AUTHOR_EMAIL=${GIT_USER_EMAIL:-tracker@example.com}
+      - GIT_COMMITTER_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
+      - GIT_COMMITTER_EMAIL=${GIT_USER_EMAIL:-tracker@example.com}
+    volumes:
+      - ~/.gitconfig:/root/.gitconfig:ro
+      - ~/.git-credentials:/root/.git-credentials:ro
+      - ./.git:/app/.git
+      - ./data:/app/data
+      - ./docs:/app/docs
+      - ./test:/app/test
+    command: ["--mock-dir", "test/mock_responses", "--mock-reset", "--once"]
     profiles: ["test"]

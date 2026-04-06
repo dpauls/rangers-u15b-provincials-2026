@@ -360,9 +360,16 @@ def main():
         mock_source = MockDataSource(args.mock_dir)
         if args.mock_reset:
             mock_source.reset()
-            # Also reset tournament data to clean state
+            # Clear event log and reset all game scores to clean state
+            tournament_data['event_log'] = []
+            tournament_data.pop('_narrative', None)
+            for g in tournament_data.get('pool_games', []):
+                g['home_score'] = None
+                g['away_score'] = None
+                g['status'] = 'scheduled'
+            DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
             tournament_data = load_team_map()
-            log.info('Mock data reset to step 0')
+            log.info('Mock data reset to step 0 (scores cleared, events cleared)')
 
     prev_scenarios = None
     log.info(f'Daemon starting. Mock: {args.mock_dir or "OFF"}, Narrative: {not args.skip_narrative}, Push: {not args.skip_push}')
