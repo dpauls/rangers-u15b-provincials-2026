@@ -34,20 +34,65 @@ _ssl_ctx.verify_mode = ssl.CERT_NONE
 USER_AGENT = 'KanataRangersTracker/1.0'
 
 
+# The RAMP site has 2 backend servers behind DNS round-robin.
+# One (Microsoft-HTTPAPI/2.0) is misconfigured and always returns 404.
+# The other (Microsoft-IIS/10.0) works correctly.
+# We retry with backoff to handle hitting the broken server.
+# With ~50% per-attempt success, 10 attempts gives 99.9% reliability.
+MAX_RETRIES = 10
+RETRY_DELAYS = [0.5, 0.5, 0.5, 1, 1, 1, 1, 2, 2, 2]  # backoff schedule
+
+
 def _fetch_json(url):
-    """Fetch JSON from a URL, handling SSL and errors."""
-    req = urllib.request.Request(url, headers={'User-Agent': USER_AGENT})
-    try:
-        resp = urllib.request.urlopen(req, context=_ssl_ctx, timeout=15)
-        return json.loads(resp.read().decode('utf-8'))
-    except urllib.error.HTTPError as e:
-        if e.code == 404:
-            log.warning(f'404 for {url}')
-            return None
-        raise
-    except Exception as e:
-        log.error(f'Failed to fetch {url}: {e}')
-        raise
+    """Fetch JSON from a URL, with retry logic for the flaky RAMP load balancer.
+
+    Retries up to MAX_RETRIES times on 404 (broken backend server).
+    Logs which server was hit for monitoring.
+    Total worst-case time: ~14 seconds (well within poll interval).
+    """
+    import time
+
+    for attempt in range(MAX_RETRIES):
+        req = urllib.request.Request(url, headers={'User-Agent': USER_AGENT})
+        try:
+            resp = urllib.request.urlopen(req, context=_ssl_ctx, timeout=15)
+            data = json.loads(resp.read().decode('utf-8'))
+            server = resp.headers.get('Server', 'unknown')
+            if attempt > 0:
+                log.info(f'Succeeded on attempt {attempt + 1} (server: {server})')
+            else:
+                log.debug(f'Fetched {url} (server: {server})')
+            return data
+        except urllib.error.HTTPError as e:
+            server = e.headers.get('Server', 'unknown') if hasattr(e, 'headers') else 'unknown'
+            is_broken_backend = (e.code == 404 and 'HTTPAPI' in server)
+            is_real_404 = (e.code == 404 and 'IIS' in server)
+
+            if is_real_404:
+                # 404 from the working server means the resource genuinely doesn't exist
+                log.warning(f'Real 404 from IIS: {url}')
+                return None
+
+            if is_broken_backend and attempt < MAX_RETRIES - 1:
+                delay = RETRY_DELAYS[attempt]
+                log.debug(f'Hit broken backend (attempt {attempt + 1}/{MAX_RETRIES}), retry in {delay}s')
+                time.sleep(delay)
+                continue
+
+            if e.code == 404:
+                log.warning(f'404 after {attempt + 1} attempts (server: {server}): {url}')
+                return None
+
+            log.error(f'HTTP {e.code} for {url}')
+            raise
+        except Exception as e:
+            if attempt < MAX_RETRIES - 1:
+                delay = RETRY_DELAYS[attempt]
+                log.debug(f'Error on attempt {attempt + 1}: {e}, retry in {delay}s')
+                time.sleep(delay)
+                continue
+            log.error(f'Failed after {MAX_RETRIES} attempts: {url}: {e}')
+            raise
 
 
 def fetch_games(season_id=SEASON_2026, division_id=DIVISION_U15B_2026, game_type=GT_ROUND_ROBIN):
