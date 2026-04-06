@@ -30,6 +30,8 @@
             padding: 1rem 1.25rem; border-radius: 4px; margin-bottom: 1.5rem;
         }
         .narrative-card h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .narrative-card h4 { margin-top: 0.75rem; margin-bottom: 0.25rem; font-size: 0.95rem; }
+        .narrative-card p { margin-bottom: 0.5rem; font-size: 0.9rem; line-height: 1.5; }
 
         table { font-size: 0.85rem; margin-bottom: 1rem; }
         th, td { padding: 0.35rem 0.5rem; }
@@ -152,9 +154,30 @@ function renderLiveBanner(liveGames, ourTeam) {
     `).join('');
 }
 
+function mdToHtml(text) {
+    // Convert simple markdown to HTML: **bold**, paragraphs on double-newline
+    if (!text) return '';
+    // Escape HTML first
+    let s = esc(text);
+    // Bold: **text**
+    s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    // Split into paragraphs on double-newline or **heading** patterns
+    // Add paragraph breaks before bold headings that start a new section
+    s = s.replace(/<strong>([^<]+)<\/strong>\s*/g, '</p><h4>$1</h4><p>');
+    // Clean up leading empty paragraph
+    s = s.replace(/^<\/p>/, '');
+    // Ensure trailing paragraph is closed
+    if (!s.endsWith('</p>')) s += '</p>';
+    // Remove empty paragraphs
+    s = s.replace(/<p>\s*<\/p>/g, '');
+    // Wrap if no paragraph tags at start
+    if (!s.startsWith('<h4>') && !s.startsWith('<p>')) s = '<p>' + s;
+    return s;
+}
+
 function renderNarrative(narrative) {
     if (!narrative) return '';
-    return `<div class="narrative-card"><h3>The Latest</h3><p>${esc(narrative)}</p></div>`;
+    return `<div class="narrative-card"><h3>The Latest</h3>${mdToHtml(narrative)}</div>`;
 }
 
 function renderEventLog(events) {
@@ -164,7 +187,7 @@ function renderEventLog(events) {
         return `<li class="${typeCls}">
             <span class="event-time">${esc(e.time)}</span><br>
             <strong>${esc(e.headline)}</strong>
-            ${e.detail ? '<br>' + esc(e.detail) : ''}
+            ${e.detail ? '<br>' + mdToHtml(e.detail) : ''}
         </li>`;
     }).join('');
     return `<details open><summary>Recent Updates (${events.length})</summary><ul class="event-log">${items}</ul></details>`;
