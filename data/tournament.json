@@ -90,9 +90,9 @@
       "pool": "C",
       "home": "KIN",
       "away": "WIN",
-      "home_score": 3,
-      "away_score": 2,
-      "status": "final"
+      "home_score": null,
+      "away_score": null,
+      "status": "scheduled"
     },
     {
       "game_id": 143,
@@ -100,9 +100,9 @@
       "pool": "C",
       "home": "KAN",
       "away": "ENS",
-      "home_score": 2,
-      "away_score": 0,
-      "status": "final"
+      "home_score": null,
+      "away_score": null,
+      "status": "scheduled"
     },
     {
       "game_id": 162,
@@ -251,30 +251,5 @@
       "status": "pending"
     }
   ],
-  "event_log": [
-    {
-      "time": "Mon Apr 06, 08:47 PM",
-      "type": "goal",
-      "headline": "Game #142 underway: Kincardine Kinucks 1 - 0 Windsor Wildcats",
-      "detail": null
-    },
-    {
-      "time": "Mon Apr 06, 08:47 PM",
-      "type": "goal",
-      "headline": "Game #143 underway: Kanata Rangers 1 - 0 Ennismore Eagles",
-      "detail": null
-    },
-    {
-      "time": "Mon Apr 06, 08:51 PM",
-      "type": "final",
-      "headline": "FINAL: Kincardine Kinucks 3 - 2 Windsor Wildcats",
-      "detail": "The Kincardine win over Windsor helped Kanata Rangers significantly - their chances of advancing jumped from 35% to 51%. Rangers are now tied for first place in Pool C with Kincardine, both having 2 points."
-    },
-    {
-      "time": "Mon Apr 06, 08:51 PM",
-      "type": "final",
-      "headline": "FINAL: Kanata Rangers 2 - 0 Ennismore Eagles",
-      "detail": "The Kanata Rangers' 2-0 win over Ennismore significantly boosted their playoff chances from 35% to 51% - they now advance in just over half of all possible remaining scenarios. With 2 points and tied for first place in Pool C, the Rangers have put themselves in a strong position to secure one of the top spots needed to move on."
-    }
-  ]
+  "event_log": []
 }
