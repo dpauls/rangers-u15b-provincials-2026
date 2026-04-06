@@ -367,6 +367,12 @@ def main():
     prev_scenarios = None
     log.info(f'Daemon starting. Mock: {args.mock_dir or "OFF"}, Narrative: {not args.skip_narrative}, Push: {not args.skip_push}')
 
+    # Always generate and push current state on startup
+    log.info('Initial generate and push...')
+    generate(str(DATA_PATH), skip_narrative=True)
+    if not args.skip_push:
+        git_push()
+
     while True:
         try:
             changed, tournament_data, prev_scenarios = run_cycle(
