@@ -289,13 +289,34 @@ def detect_changes(prev_games, curr_games):
 
 
 class MockDataSource:
-    """Reads API responses from local JSON files for testing."""
+    """Reads API responses from local JSON files for testing.
+
+    Persists current step in a .mock_step file so repeated --once
+    invocations advance through the sequence.
+    """
 
     def __init__(self, mock_dir):
         self.mock_dir = Path(mock_dir)
-        self.step = 0
         self._files = sorted(self.mock_dir.glob('step_*.json'))
-        log.info(f'MockDataSource: {len(self._files)} steps in {mock_dir}')
+        self._step_file = self.mock_dir / '.mock_step'
+        self.step = self._load_step()
+        log.info(f'MockDataSource: {len(self._files)} steps in {mock_dir}, starting at step {self.step}')
+
+    def _load_step(self):
+        if self._step_file.exists():
+            try:
+                return int(self._step_file.read_text().strip())
+            except ValueError:
+                return 0
+        return 0
+
+    def _save_step(self):
+        self._step_file.write_text(str(self.step))
+
+    def reset(self):
+        """Reset to step 0."""
+        self.step = 0
+        self._save_step()
 
     def fetch_games(self):
         if self.step >= len(self._files):
@@ -304,6 +325,7 @@ class MockDataSource:
         data = json.loads(self._files[self.step].read_text())
         log.info(f'MockDataSource: step {self.step} -> {self._files[self.step].name}')
         self.step += 1
+        self._save_step()
         return data
 
 

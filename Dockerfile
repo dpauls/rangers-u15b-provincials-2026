@@ -12,14 +12,20 @@ COPY src/ src/
 COPY data/ data/
 COPY docs/ docs/
 COPY scripts/ scripts/
+COPY test/ test/
 
 # API key and git config injected at runtime via environment variables:
 #   ANTHROPIC_API_KEY  - for Claude narrative generation
 #   GIT_USER_NAME      - for git commit author
 #   GIT_USER_EMAIL     - for git commit author email
-# Git push credentials: mount your .gitconfig and credential store, or use GH_TOKEN
+# Git push credentials: mount .gitconfig and credential store, or use GH_TOKEN
 
 ENV PYTHONUNBUFFERED=1
 
-# Default: run the generator once (daemon.py will be the entrypoint later)
-CMD ["python3", "src/generate.py"]
+# Configure git inside container (overridden by mounted .gitconfig if present)
+RUN git config --global --add safe.directory /app
+
+# Default: run the daemon
+# Override with --mock-dir, --skip-narrative, --once, etc.
+ENTRYPOINT ["python3", "src/daemon.py"]
+CMD []

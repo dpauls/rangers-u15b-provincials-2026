@@ -4,3 +4,4 @@ __pycache__/
 venv/
 .venv/
 data/tournament_test.json
+test/mock_responses/.mock_step

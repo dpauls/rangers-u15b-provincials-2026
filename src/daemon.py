@@ -338,6 +338,7 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
 def main():
     parser = argparse.ArgumentParser(description='Kanata Rangers tournament tracker daemon')
     parser.add_argument('--mock-dir', help='Use mock data from directory instead of live API')
+    parser.add_argument('--mock-reset', action='store_true', help='Reset mock data to step 0')
     parser.add_argument('--once', action='store_true', help='Run one cycle and exit')
     parser.add_argument('--skip-narrative', action='store_true', help='Skip Claude API calls')
     parser.add_argument('--skip-push', action='store_true', help='Skip git push')
@@ -357,6 +358,11 @@ def main():
     mock_source = None
     if args.mock_dir:
         mock_source = MockDataSource(args.mock_dir)
+        if args.mock_reset:
+            mock_source.reset()
+            # Also reset tournament data to clean state
+            tournament_data = load_team_map()
+            log.info('Mock data reset to step 0')
 
     prev_scenarios = None
     log.info(f'Daemon starting. Mock: {args.mock_dir or "OFF"}, Narrative: {not args.skip_narrative}, Push: {not args.skip_push}')

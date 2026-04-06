@@ -3,8 +3,10 @@ services:
     build: .
     environment:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
-      - GIT_USER_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
-      - GIT_USER_EMAIL=${GIT_USER_EMAIL:-tracker@example.com}
+      - GIT_AUTHOR_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
+      - GIT_AUTHOR_EMAIL=${GIT_USER_EMAIL:-tracker@example.com}
+      - GIT_COMMITTER_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
+      - GIT_COMMITTER_EMAIL=${GIT_USER_EMAIL:-tracker@example.com}
     volumes:
       # Mount git credentials so the container can push
       - ~/.gitconfig:/root/.gitconfig:ro
@@ -12,3 +14,21 @@ services:
       # Persist data across restarts
       - ./data:/app/data
       - ./docs:/app/docs
+    restart: unless-stopped
+
+  # For testing with mock data (run with: docker compose run mock-test)
+  mock-test:
+    build: .
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - GIT_AUTHOR_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
+      - GIT_AUTHOR_EMAIL=${GIT_USER_EMAIL:-tracker@example.com}
+      - GIT_COMMITTER_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
+      - GIT_COMMITTER_EMAIL=${GIT_USER_EMAIL:-tracker@example.com}
+    volumes:
+      - ~/.gitconfig:/root/.gitconfig:ro
+      - ~/.git-credentials:/root/.git-credentials:ro
+      - ./data:/app/data
+      - ./docs:/app/docs
+    command: ["--mock-dir", "test/mock_responses", "--once", "--interval", "5"]
+    profiles: ["test"]
