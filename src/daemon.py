@@ -201,7 +201,7 @@ def process_changes(changes, tournament_data, prev_scenarios, skip_narrative=Fal
             if not skip_narrative:
                 detail = generate_game_final_comment(
                     game_info, standings, prev_scenarios, curr_scenarios,
-                    our_team, our_team_name, our_pool)
+                    our_team, our_team_name, our_pool, teams)
 
             events.append(create_event('final', headline, detail))
 

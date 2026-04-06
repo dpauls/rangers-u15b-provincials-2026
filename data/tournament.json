@@ -10,42 +10,50 @@
       "name": "Kanata Rangers",
       "number": 1755,
       "pool": "C",
-      "is_us": true
+      "is_us": true,
+      "ranking": 18
     },
     "ENS": {
       "name": "Ennismore Eagles",
       "number": 6463,
-      "pool": "C"
+      "pool": "C",
+      "ranking": 25
     },
     "KIN": {
       "name": "Kincardine Kinucks",
       "number": 8704,
-      "pool": "C"
+      "pool": "C",
+      "ranking": 3
     },
     "WIN": {
       "name": "Windsor Wildcats",
       "number": 4764,
-      "pool": "C"
+      "pool": "C",
+      "ranking": 41
     },
     "DUR": {
       "name": "Durham West Lightning",
       "number": 314,
-      "pool": "F"
+      "pool": "F",
+      "ranking": 29
     },
     "LON": {
       "name": "London Devilettes",
       "number": 646,
-      "pool": "F"
+      "pool": "F",
+      "ranking": 5
     },
     "NHT": {
       "name": "North Halton Twisters",
       "number": 2519,
-      "pool": "F"
+      "pool": "F",
+      "ranking": 37
     },
     "WAT": {
       "name": "Waterloo Ravens",
       "number": 1173,
-      "pool": "F"
+      "pool": "F",
+      "ranking": 13
     }
   },
   "pools": {

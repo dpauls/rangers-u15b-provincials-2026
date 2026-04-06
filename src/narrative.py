@@ -45,11 +45,18 @@ def _call(prompt, max_tokens=MAX_TOKENS):
         return None
 
 
+def _rank_str(r):
+    """Format ranking for prompt: '#18' or '' if no ranking."""
+    rank = r.get('ranking')
+    return f' (ranked #{rank} provincially)' if rank else ''
+
+
 def generate_overall_narrative(standings, scenarios, our_team_name, our_pool,
                                 qf_pool_standings, completed_games, upcoming_games):
     """Generate 2-3 paragraph tournament overview for the main page."""
     standings_str = '\n'.join(
-        f"  {r['name']}: {r['w']}W-{r['l']}L-{r['t']}T, {r['pts']}pts (GF={r['gf']} GA={r['ga']})"
+        f"  {r['name']} [provincial rank #{r.get('ranking', '?')}]: "
+        f"{r['w']}W-{r['l']}L-{r['t']}T, {r['pts']}pts (GF={r['gf']} GA={r['ga']})"
         + (' ← US' if r.get('is_us') else '')
         for r in standings
     )
@@ -93,24 +100,29 @@ Scenario analysis: {sc_summary}
 Quarterfinal opponent pool (Pool {qf_pool_standings[0]['name'].split()[0] if qf_pool_standings else '?'} watch):
 {qf_str}
 
+The provincial rankings indicate pre-tournament strength. Lower rank = stronger team.
+A lower-ranked team beating a higher-ranked team is an upset worth noting.
+
 Write 2-3 short paragraphs for hockey parents reading on their phones at the rink. Cover:
 1. Where {our_team_name} stands right now in Pool {our_pool}
-2. What the next game means and what result we need
-3. Who to root for in other pool games and why
+2. What the next game means and what result we need -- reference the opponent's ranking
+3. Who to root for in other pool games and why -- note when a result would be an upset based on rankings
 
-Be conversational and specific. Reference actual team names and scenarios. No jargon. No filler.
+When discussing matchups, mention rankings naturally (e.g., "our #18 Rangers face #3 Kincardine" or
+"an upset by #25 Ennismore over #3 Kincardine would help us").
+Be conversational and specific. No jargon. No filler.
 Keep it under 200 words total."""
 
     return _call(prompt)
 
 
 def generate_game_final_comment(game, standings, prev_scenarios, curr_scenarios,
-                                 our_team, our_team_name, our_pool):
+                                 our_team, our_team_name, our_pool, teams=None):
     """Generate 1-2 sentence commentary when a game finishes."""
     is_our_game = (game['home'] == our_team or game['away'] == our_team)
 
     standings_str = ', '.join(
-        f"{r['name'].split('#')[0].strip()} {r['pts']}pts"
+        f"{r['name'].split('#')[0].strip()} (#{r.get('ranking','?')}) {r['pts']}pts"
         for r in standings
     )
 
@@ -122,6 +134,18 @@ def generate_game_final_comment(game, standings, prev_scenarios, curr_scenarios,
     home_name = game.get('home_name', game['home'])
     away_name = game.get('away_name', game['away'])
 
+    # Get rankings for the two teams
+    home_rank = teams.get(game['home'], {}).get('ranking', '?') if teams else '?'
+    away_rank = teams.get(game['away'], {}).get('ranking', '?') if teams else '?'
+
+    # Determine if this was an upset (lower-ranked team won)
+    upset_note = ''
+    winner_rank = home_rank if game['home_score'] > game['away_score'] else away_rank
+    loser_rank = away_rank if game['home_score'] > game['away_score'] else home_rank
+    if isinstance(winner_rank, int) and isinstance(loser_rank, int):
+        if winner_rank > loser_rank:
+            upset_note = f'\nThis was an UPSET: the #{winner_rank} team beat the #{loser_rank} team!'
+
     clinch_note = ''
     if curr_scenarios and curr_count == curr_total:
         clinch_note = f'\n{our_team_name} has CLINCHED first place in Pool {our_pool}!'
@@ -130,13 +154,15 @@ def generate_game_final_comment(game, standings, prev_scenarios, curr_scenarios,
 
     prompt = f"""A game just finished at the OWHA U15B Provincial Championships.
 
-Result: {home_name} {game['home_score']} - {game['away_score']} {away_name} (Pool {our_pool})
+Result: {home_name} (ranked #{home_rank}) {game['home_score']} - {game['away_score']} {away_name} (ranked #{away_rank}) (Pool {our_pool})
 {'This was OUR game.' if is_our_game else 'We were not playing in this game.'}
+{upset_note}
 
 Updated standings: {standings_str}
 Scenario impact: {our_team_name} now advances in {curr_count} of {curr_total} scenarios (was {prev_count}/{prev_total}).
 {clinch_note}
 
+If this was an upset based on rankings, mention it. Lower rank number = stronger team.
 Write 1-2 sentences explaining what this result means for {our_team_name}. Be specific. Parents are reading on phones."""
 
     return _call(prompt, max_tokens=200)

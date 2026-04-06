@@ -45,6 +45,7 @@ def build_standings(pool_id, data, analysis):
         rows.append({
             'id': tid,
             'name': teams[tid]['name'],
+            'ranking': teams[tid].get('ranking'),
             'is_us': teams[tid].get('is_us', False),
             'gp': gp, 'w': s['W'], 'l': s['L'], 't': s['T'],
             'pts': s['PTS'], 'gf': s['GF'], 'ga': s['GA'], 'gd': gd,
