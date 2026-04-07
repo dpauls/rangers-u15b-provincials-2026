@@ -90,9 +90,9 @@
       "pool": "C",
       "home": "KIN",
       "away": "WIN",
-      "home_score": 1,
-      "away_score": 0,
-      "status": "in_progress"
+      "home_score": null,
+      "away_score": null,
+      "status": "scheduled"
     },
     {
       "game_id": 143,
@@ -100,9 +100,9 @@
       "pool": "C",
       "home": "KAN",
       "away": "ENS",
-      "home_score": 1,
-      "away_score": 0,
-      "status": "in_progress"
+      "home_score": null,
+      "away_score": null,
+      "status": "scheduled"
     },
     {
       "game_id": 162,
@@ -251,20 +251,7 @@
       "status": "pending"
     }
   ],
-  "event_log": [
-    {
-      "time": "Tue Apr 07, 05:13 PM",
-      "type": "goal",
-      "headline": "Game #142 underway: Kincardine Kinucks 1 - 0 Windsor Wildcats",
-      "detail": null
-    },
-    {
-      "time": "Tue Apr 07, 05:13 PM",
-      "type": "goal",
-      "headline": "Game #143 underway: Kanata Rangers 1 - 0 Ennismore Eagles",
-      "detail": null
-    }
-  ],
+  "event_log": [],
   "scouting": {
     "description": "This season we've faced several teams heading to Provincials across 5 tournaments. We swept St. Catharines Brock Jr. Badgers in two meetings (6-0, 2-0). Against the rest... let's just say we're looking for redemption. Of note: Durham West Lightning (#29) is in our quarterfinal opponent's pool (Pool F) -- they beat us 2-0 in November, but they're not the favourite to win their pool. In tournament play, anything can happen!",
     "matchups": [
@@ -408,5 +395,9 @@
       }
     }
   },
-  "_narrative": "Great start for the Rangers! We're currently tied for first in Pool C after taking a 1-0 lead over Ennismore. Meanwhile, Kincardine (ranked #3 in the province) is also up 1-0 on Windsor. If both games finish as they stand, we'll have 3 points and be tied with the tournament favorites.\n\nOur next game against Kincardine on Friday morning is massive. They're the #3 seed while we're #18, so beating them would be a huge upset that puts us in excellent position to win the pool. Even a tie keeps us very much alive - we'd need to beat Windsor in our final game, which should be manageable given they're ranked #41.\n\nFor the other games, we want Windsor to beat Ennismore on Friday. That would eliminate a potential rival for pool position. The Kincardine-Windsor result doesn't matter much to us since we play both teams anyway. Bottom line: we control our own destiny. Beat Kincardine and we're likely pool champs. Lose but beat Windsor, and we probably still advance. Out of 72 possible tournament scenarios, we win the pool in 22 of them."
+  "_narrative": "**Where We Stand**\nWe're tied for first in Pool C at 0-0-0 with everyone else, as the tournament is just getting started. All four teams are sitting at zero points heading into opening games.\n\n**Our Next Game**\nWe face the Ennismore Eagles on Friday April 10th at 9:15 AM to kick off our tournament. Rankings suggest we match up well against the #25 Eagles, but they'll come out hungry and anything can happen in tournament hockey.\n\n**Around the Pool**\nAt the same time as our game, #3 Kincardine takes on #41 Windsor at 9:15 AM - we'll want Windsor to keep that one competitive. Later at 3:45 PM, we face Windsor while Ennismore battles the top-ranked Kinucks. Our scenario analysis shows we win the pool in 156 out of 729 possible combinations, so multiple paths exist if we take care of business.",
+  "_coaches_corner": {
+    "don_cherry": "I'll tell ya what, these Kanata Rangers girls got heart and they're gonna shock some people in this tournament - don't you worry about that #18 ranking, kids, rankings don't score goals!",
+    "talking_points": "Here are your talking points for the pre-game meeting:\n\n\u2022 **Fresh start energy**: First game of Provincials means everyone starts 0-0 \u2014 use those opening game nerves as fuel and set the tone for how we want to play this entire tournament.\n\n\u2022 **Stay disciplined and smart**: We've kept our penalty minutes at zero so far \u2014 maintain that clean play because every power play against us could be the difference in a tight pool where only winners advance.\n\n\u2022 **Respect but don't fear**: Ennismore is ranked #25 provincially so they earned their spot here, but rankings don't score goals \u2014 we control this game with our effort and execution.\n\n\u2022 **Win-or-go-home mentality**: With only pool winners advancing, every single game is elimination hockey \u2014 we need the full 2 points today to put ourselves in control of our own destiny."
+  }
 }
