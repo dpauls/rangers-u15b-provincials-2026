@@ -515,7 +515,8 @@ def main():
             opp_ranking = tournament_data['teams'].get(opp_id, {}).get('ranking', '?')
             talking = generate_pregame_talking_points(
                 our_team_name, opp_name, opp_ranking,
-                [], 0, 'First game of the tournament.', 'Every game matters -- only the pool winner advances.')
+                [], 0, 'First game of the tournament.',
+                'No games played yet.', 'Every game matters -- only the pool winner advances.')
             if talking:
                 coaches_corner['talking_points'] = talking
 
