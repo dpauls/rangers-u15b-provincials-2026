@@ -1,4 +1,5 @@
 services:
+  # Live tracker (tournament day)
   tracker:
     build: .
     environment:
@@ -16,7 +17,9 @@ services:
       - ./logs:/app/logs
     restart: unless-stopped
 
-  # Step through mock tournament (run with: podman-compose run mock-test)
+  # Step through mock tournament (default: no push, view at localhost:8000)
+  #   podman-compose run mock-test                    # local only
+  #   podman-compose run mock-test --push             # push to GitHub Pages
   mock-test:
     build: .
     environment:
@@ -33,10 +36,12 @@ services:
       - ./docs:/app/docs
       - ./test:/app/test
       - ./logs:/app/logs
-    command: ["--mock-dir", "test/mock_responses", "--once"]
+    command: ["--mock-dir", "test/mock_responses", "--once", "--skip-push"]
     profiles: ["test"]
 
-  # Reset mock simulation to step 0 (run with: podman-compose run mock-reset)
+  # Reset mock to step 0 (default: no push)
+  #   podman-compose run mock-reset                   # local only
+  #   podman-compose run mock-reset --push            # push to GitHub Pages
   mock-reset:
     build: .
     environment:
@@ -53,5 +58,5 @@ services:
       - ./docs:/app/docs
       - ./test:/app/test
       - ./logs:/app/logs
-    command: ["--mock-dir", "test/mock_responses", "--mock-reset", "--once"]
+    command: ["--mock-dir", "test/mock_responses", "--mock-reset", "--once", "--skip-push"]
     profiles: ["test"]

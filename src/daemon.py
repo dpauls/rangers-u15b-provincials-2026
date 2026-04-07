@@ -434,10 +434,15 @@ def main():
     parser.add_argument('--mock-reset', action='store_true', help='Reset mock data to step 0')
     parser.add_argument('--once', action='store_true', help='Run one cycle and exit')
     parser.add_argument('--skip-narrative', action='store_true', help='Skip Claude API calls')
-    parser.add_argument('--skip-push', action='store_true', help='Skip git push')
+    parser.add_argument('--skip-push', action='store_true', help='Skip git push (default for mock testing)')
+    parser.add_argument('--push', action='store_true', help='Force git push (overrides --skip-push)')
     parser.add_argument('--interval', type=int, help='Override poll interval (seconds)')
     parser.add_argument('--data', default=None, help='Path to tournament.json')
     args = parser.parse_args()
+
+    # --push overrides --skip-push
+    if args.push:
+        args.skip_push = False
 
     logging.basicConfig(
         level=logging.INFO,
