@@ -1,0 +1,2 @@
+# Generated files: always accept remote version on merge conflicts
+docs/data/state.json merge=ours
