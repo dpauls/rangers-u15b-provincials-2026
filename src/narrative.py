@@ -7,6 +7,7 @@ Uses Sonnet for fast, cheap commentary. Falls back gracefully if API is unavaila
 import json
 import logging
 import os
+from pathlib import Path
 
 log = logging.getLogger(__name__)
 
