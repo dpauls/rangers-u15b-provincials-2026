@@ -230,13 +230,13 @@ function renderEventLog(events) {
     return `<details open><summary>Recent Updates (${events.length})</summary><ul class="event-log">${items}</ul></details>`;
 }
 
-function renderStandings(rows, showAdv, ourTeam) {
-    const advHeader = showAdv ? '<th>Adv%</th>' : '';
+function renderStandings(rows, showAdv, ourTeam, scenarioTotal) {
+    const advHeader = showAdv ? '<th title="Scenarios where this team wins the pool out of all possible remaining game outcomes">Scenarios</th>' : '';
     const thead = `<thead><tr><th>Team</th><th>GP</th><th>W</th><th>L</th><th>T</th><th>PTS</th><th>GF</th><th>GA</th><th>GD</th>${advHeader}<th>Status</th></tr></thead>`;
     const tbody = rows.map(r => {
         const usCls = r.is_us ? ' class="team-us"' : '';
         const gd = r.gd > 0 ? `+${r.gd}` : String(r.gd);
-        const advCell = showAdv ? `<td>${r.adv_pct}%</td>` : '';
+        const advCell = showAdv ? `<td>${r.adv_count}/${scenarioTotal} (${r.adv_pct}%)</td>` : '';
         const rankStr = r.ranking ? ` <span class="ranking">(#${r.ranking})</span>` : '';
         return `<tr${usCls}><td${usCls}>${esc(r.name)}${rankStr}</td><td>${r.gp}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td><strong>${r.pts}</strong></td><td>${r.gf}</td><td>${r.ga}</td><td>${gd}</td>${advCell}<td class="status-${r.status}">${r.status}</td></tr>`;
     }).join('');
@@ -267,7 +267,7 @@ function renderScenarios(sc, ourTeamName, ourPool, ourTeam) {
     if (sc.scenarios) sc.scenarios.forEach(s => { typeCounts[s.res_type] = (typeCounts[s.res_type] || 0) + 1; });
 
     html += `<h2>Scenario Analysis</h2>`;
-    html += `<p>With <strong>${sc.remaining_games}</strong> game${sc.remaining_games !== 1 ? 's' : ''} remaining, there are <strong>${total}</strong> possible outcomes. <strong>${esc(ourTeamName)}</strong> win${ours !== 1 ? 's' : ''} Pool ${esc(ourPool)} in <strong>${ours}</strong> of ${total} scenarios (<strong>${inPct}%</strong>).</p>`;
+    html += `<p>With <strong>${sc.remaining_games}</strong> game${sc.remaining_games !== 1 ? 's' : ''} remaining, there are <strong>${total}</strong> possible scenarios (each remaining game can be a win, loss, or tie for either team). <strong>${esc(ourTeamName)}</strong> win${ours !== 1 ? 's' : ''} Pool ${esc(ourPool)} in <strong>${ours} of ${total}</strong> scenarios. <em>Note: these aren't predictions — they simply count outcomes without weighting for team strength.</em></p>`;
 
     html += `<div class="scenario-bar">`;
     if (ours > 0) html += `<div class="bar-in" style="width:${inPct}%">${ours} IN</div>`;
@@ -341,7 +341,8 @@ async function loadAndRender() {
 
         document.getElementById('pool-header').textContent = `Pool ${d.our_pool} Standings`;
         const showAdv = d.scenarios && d.scenarios.total > 1;
-        document.getElementById('standings-area').innerHTML = renderStandings(d.standings, showAdv, d.our_team);
+        const scenarioTotal = d.scenarios ? d.scenarios.total : 0;
+        document.getElementById('standings-area').innerHTML = renderStandings(d.standings, showAdv, d.our_team, scenarioTotal);
 
         document.getElementById('scenarios-area').innerHTML = renderScenarios(d.scenarios, d.our_team_name, d.our_pool, d.our_team);
 

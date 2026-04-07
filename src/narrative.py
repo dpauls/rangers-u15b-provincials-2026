@@ -77,8 +77,8 @@ def generate_overall_narrative(standings, scenarios, our_team_name, our_pool,
     ) or '  No data yet.'
 
     if scenarios and scenarios.get('total', 0) > 1:
-        sc_summary = (f"{our_team_name} wins Pool {our_pool} in {scenarios['our_count']} "
-                      f"of {scenarios['total']} scenarios ({scenarios['our_pct']}%).")
+        sc_summary = (f"Out of {scenarios['total']} possible combinations of remaining game outcomes, "
+                      f"{our_team_name} wins Pool {our_pool} in {scenarios['our_count']} of them.")
     elif scenarios and scenarios.get('total') == 1:
         sc_summary = f"All pool games are complete."
     else:
@@ -102,6 +102,15 @@ Quarterfinal opponent pool (Pool {qf_pool_standings[0]['name'].split()[0] if qf_
 
 The provincial rankings indicate pre-tournament strength. Lower rank = stronger team.
 A lower-ranked team beating a higher-ranked team is an upset worth noting.
+
+IMPORTANT about scenario numbers: The scenario analysis counts how many possible
+combinations of remaining game outcomes (win/loss/tie) result in us winning the pool.
+These are NOT probabilities or predictions -- they treat all outcomes as equally likely,
+which they aren't (ties are rarer, higher-ranked teams win more often). So NEVER say
+"29% chance" or "60% probability". Instead say things like "we win the pool in 49 out
+of 81 possible outcome combinations" or "the majority of scenarios have us advancing"
+or "only a narrow set of outcomes would knock us out". Use the numbers to illustrate
+how many paths exist, not to predict likelihood.
 
 Write 2-3 short paragraphs for hockey parents reading on their phones at the rink. Cover:
 1. Where {our_team_name} stands right now in Pool {our_pool}
@@ -159,10 +168,12 @@ Result: {home_name} (ranked #{home_rank}) {game['home_score']} - {game['away_sco
 {upset_note}
 
 Updated standings: {standings_str}
-Scenario impact: {our_team_name} now advances in {curr_count} of {curr_total} scenarios (was {prev_count}/{prev_total}).
+Scenario impact: Out of {curr_total} remaining outcome combinations, {our_team_name} wins the pool in {curr_count} (was {prev_count} of {prev_total}).
 {clinch_note}
 
 If this was an upset based on rankings, mention it. Lower rank number = stronger team.
+IMPORTANT: Scenario counts are NOT probabilities. Don't say "X% chance". Instead say
+things like "we win the pool in X out of Y outcome combinations" or "most paths have us advancing".
 Write 1-2 sentences explaining what this result means for {our_team_name}. Be specific. Parents are reading on phones."""
 
     return _call(prompt, max_tokens=200)
