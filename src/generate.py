@@ -208,6 +208,7 @@ def generate(data_path='data/tournament.json', skip_narrative=False):
         'bracket': build_bracket(data),
         'event_log': data.get('event_log', []),
         'narrative': None,
+        'scouting': data.get('scouting'),
     }
 
     output_dir = Path(__file__).parent.parent / 'docs' / 'data'

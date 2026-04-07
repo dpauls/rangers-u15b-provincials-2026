@@ -378,6 +378,57 @@ Keep it under 200 words total."""
     return _call(prompt)
 
 
+def generate_pregame_talking_points(our_team_name, opponent_name, opponent_ranking,
+                                     our_recent_results, our_pim, standings,
+                                     scenarios_summary, what_at_stake):
+    """Generate pre-game talking points for the team meeting."""
+    results_str = '\n'.join(f'  - {r}' for r in (our_recent_results or [])) or '  No games yet.'
+
+    prompt = f"""You are helping the coaching staff of the {our_team_name} prepare
+talking points for a pre-game team meeting at the OWHA U15B Provincials.
+
+Next opponent: {opponent_name} (provincial ranking #{opponent_ranking})
+Our recent results at this tournament:
+{results_str}
+
+Our penalty minutes so far: {our_pim}
+Current standings context: {standings}
+What's at stake: {what_at_stake}
+
+Generate 3-4 concise bullet points for the coaching staff. Cover:
+- Momentum/mindset (bouncing back from a loss OR building on a win)
+- Discipline (mention PIMs if they were high)
+- What we know about the opponent (ranking, what their results suggest)
+- Strategic awareness (do we need a win? Is a tie OK? Does GD matter?)
+
+Keep each bullet to 1-2 sentences. Practical, motivating, not generic.
+These are U15 girls -- age-appropriate language."""
+
+    return _call(prompt, max_tokens=300)
+
+
+def generate_don_cherry(context, our_team_name='Kanata Rangers'):
+    """Generate a Don Cherry-style commentary snippet."""
+    prompt = f"""You are Don Cherry from Coach's Corner on Hockey Night in Canada.
+You're commenting on the {our_team_name} U15B girls team at the OWHA Provincial Championships.
+
+Current situation: {context}
+
+Give a 2-3 sentence Don Cherry-style take. Rules:
+- Open with "I'll tell ya..." or "Now listen..." or "You kids out there..."
+- Short, punchy, interrupted sentences -- thinking out loud
+- Champion toughness, effort, heart, Canadian pride
+- Reference specific game situations when possible
+- Get excited: "Beauty!" for great plays
+- If they lost: encouraging, "you dust yourself off", "that's hockey"
+- If they won: fired up, "THAT'S how you play hockey!"
+- Remember these are U15 GIRLS -- be extra encouraging about girls growing the game
+- Keep it fun and family-friendly
+- Occasional tangent is on-brand"""
+
+    return _call(prompt, max_tokens=200)
+
+
 # ── CLI test ────────────────────────────────────────────────────
 
 if __name__ == '__main__':

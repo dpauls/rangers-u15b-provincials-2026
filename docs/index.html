@@ -104,6 +104,34 @@
         .loading { text-align: center; padding: 2rem; color: var(--pico-muted-color); }
 
         .ranking { color: var(--pico-muted-color); font-size: 0.8em; }
+
+        .don-cherry {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0; padding: 1rem 1.25rem; border-radius: 8px;
+            margin-top: 0.75rem; font-style: italic; line-height: 1.6;
+            border-left: 4px solid #f9a825;
+            display: flex; gap: 1rem; align-items: flex-start;
+        }
+        .don-cherry img {
+            width: 60px; height: 60px; border-radius: 50%; object-fit: cover;
+            flex-shrink: 0; border: 2px solid #f9a825;
+        }
+        .don-cherry .cherry-label {
+            font-style: normal; font-weight: bold; color: #f9a825;
+            font-size: 0.85rem; margin-bottom: 0.25rem;
+        }
+
+        .talking-points { list-style: disc; padding-left: 1.5rem; margin: 0.5rem 0; }
+        .talking-points li { margin-bottom: 0.4rem; font-size: 0.9rem; }
+
+        .scouting-matchup {
+            padding: 0.4rem 0; border-bottom: 1px solid var(--pico-muted-border-color);
+            font-size: 0.9rem;
+        }
+        .scouting-matchup:last-child { border-bottom: none; }
+        .scouting-result-win { color: #2e7d32; font-weight: bold; }
+        .scouting-result-loss { color: #c62828; }
+
         @media (max-width: 600px) {
             :root { --pico-font-size: 15px; }
             th, td { padding: 0.25rem 0.35rem; }
@@ -134,12 +162,12 @@
     <div id="upcoming-area"></div>
     <div id="completed-area"></div>
 
-    <h2 id="qf-header">Opponent Pool Watch</h2>
-    <div id="qf-standings-area"></div>
-    <div id="qf-upcoming-area"></div>
+    <div id="coaches-corner-area"></div>
 
     <h2>Bracket</h2>
     <div id="bracket-area"></div>
+
+    <div id="beyond-pool-area"></div>
 
     <footer style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--pico-muted-border-color); font-size: 0.8rem; color: var(--pico-muted-color);">
         <p>Analysis powered by Python scenario engine + Claude AI. Data from OWHA.<br>
@@ -328,6 +356,75 @@ function renderBracket(bracket) {
     }).join('');
 }
 
+function renderCoachesCorner(d) {
+    let html = '<h2>Coach\'s Corner</h2>';
+
+    // Pre-game talking points
+    if (d.coaches_corner && d.coaches_corner.talking_points) {
+        html += '<h3 style="font-size:1rem;margin-bottom:0.5rem">Pre-Game Talking Points</h3>';
+        html += mdToHtml(d.coaches_corner.talking_points);
+    }
+
+    // Don Cherry Says
+    if (d.coaches_corner && d.coaches_corner.don_cherry) {
+        html += `<div class="don-cherry">
+            <img src="https://m.media-amazon.com/images/S/pv-target-images/7ad2dcc3d97429ef7f5a2161868a1e85b24e5e55339b4394d31629d105af6be7.jpg" alt="Don Cherry">
+            <div>
+                <div class="cherry-label">Don Cherry Says</div>
+                ${esc(d.coaches_corner.don_cherry)}
+            </div>
+        </div>`;
+    }
+
+    if (!d.coaches_corner || (!d.coaches_corner.talking_points && !d.coaches_corner.don_cherry)) {
+        return '';  // Nothing to show yet
+    }
+    return html;
+}
+
+function renderBeyondPool(d) {
+    if (!d.scouting && !d.qf_standings) return '';
+
+    let html = '<h2>Beyond Pool Play</h2>';
+
+    // QF Opponent Pool
+    if (d.qf_standings) {
+        html += `<h3 style="font-size:1rem">Quarterfinal Opponent: Pool ${esc(d.qf_pool)} Winner</h3>`;
+        html += `<p style="font-size:0.9rem">The winner of Pool ${esc(d.qf_pool)} faces our pool winner in the Quarter-Final Saturday evening.</p>`;
+        html += renderStandings(d.qf_standings, false, null, 0);
+
+        if (d.qf_upcoming && d.qf_upcoming.length > 0) {
+            html += renderGames(d.qf_upcoming, `Pool ${d.qf_pool} Upcoming`, null, false);
+        }
+    }
+
+    // Scouting Report
+    if (d.scouting) {
+        html += '<h3 style="font-size:1rem;margin-top:1.5rem">Scouting Report</h3>';
+        html += `<p style="font-size:0.9rem">${esc(d.scouting.description)}</p>`;
+
+        if (d.scouting.pool_f_note) {
+            html += `<p style="font-size:0.85rem;color:var(--pico-muted-color)">${esc(d.scouting.pool_f_note)}</p>`;
+        }
+
+        if (d.scouting.matchups && d.scouting.matchups.length > 0) {
+            html += '<details><summary>Tournament History vs Provincial Teams</summary>';
+            d.scouting.matchups.forEach(m => {
+                const poolTag = m.pool ? ` (Pool ${esc(m.pool)})` : '';
+                const rankTag = m.ranking ? ` #${m.ranking}` : '';
+                html += `<div style="margin-top:0.5rem;font-weight:600;font-size:0.9rem">${esc(m.opponent)}${rankTag}${poolTag}</div>`;
+                m.games.forEach(g => {
+                    const cls = g.result === 'win' ? 'scouting-result-win' : 'scouting-result-loss';
+                    html += `<div class="scouting-matchup"><span class="${cls}">${esc(g.score)}</span> <span style="color:var(--pico-muted-color);font-size:0.8rem">${esc(g.date)} &middot; ${esc(g.tournament)}</span></div>`;
+                });
+            });
+            html += '</details>';
+        }
+    }
+
+    return html;
+}
+
 async function loadAndRender() {
     try {
         const resp = await fetch(DATA_URL + '?t=' + Date.now());
@@ -361,12 +458,9 @@ async function loadAndRender() {
                 ? renderGames(d.completed, 'Completed Games', d.our_team, true)
                 : '';
 
-        document.getElementById('qf-header').textContent = `Pool ${d.qf_pool} Watch (Quarter-final opponent)`;
-        document.getElementById('qf-standings-area').innerHTML = renderStandings(d.qf_standings, false, null);
-        document.getElementById('qf-upcoming-area').innerHTML =
-            renderGames(d.qf_upcoming, `Pool ${d.qf_pool} Upcoming`, null, false);
-
+        document.getElementById('coaches-corner-area').innerHTML = renderCoachesCorner(d);
         document.getElementById('bracket-area').innerHTML = renderBracket(d.bracket);
+        document.getElementById('beyond-pool-area').innerHTML = renderBeyondPool(d);
 
     } catch (err) {
         console.error('Failed to load state:', err);

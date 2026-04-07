@@ -251,5 +251,42 @@
       "status": "pending"
     }
   ],
-  "event_log": []
+  "event_log": [],
+  "scouting": {
+    "description": "This season we've faced 5 teams heading to Provincials across tournament play. We swept St. Catharines Brock Jr. Badgers in two meetings. Against the rest... let's just say we're looking for redemption at Provincials.",
+    "pool_f_note": "We haven't faced any Pool F teams in league play -- they're from different regions. We did meet Durham West Lightning once at a November tournament.",
+    "matchups": [
+      {"opponent": "Durham West Lightning", "pool": "F", "ranking": 29, "games": [
+        {"date": "Nov 15, 2025", "tournament": "November Tournament", "score": "DUR 2 - KAN 0", "result": "loss"}
+      ]},
+      {"opponent": "Georgina Golden Hawks", "pool": "A", "ranking": 1, "games": [
+        {"date": "Sep 19, 2025", "tournament": "September Tournament", "score": "GEO 2 - KAN 0", "result": "loss"},
+        {"date": "Sep 21, 2025", "tournament": "September Tournament", "score": "GEO 4 - KAN 2", "result": "loss"},
+        {"date": "Feb 7, 2026", "tournament": "February Tournament", "score": "KAN 1 - GEO 3", "result": "loss"}
+      ]},
+      {"opponent": "Toronto Leaside Wildcats", "pool": "G/H", "ranking": null, "games": [
+        {"date": "Sep 19, 2025", "tournament": "September Tournament", "score": "KAN 2 - TLW 3", "result": "loss"}
+      ]},
+      {"opponent": "North Bay Junior Lakers", "pool": "H", "ranking": null, "games": [
+        {"date": "Oct 17, 2025", "tournament": "October Tournament", "score": "KAN 0 - NBL 1", "result": "loss"}
+      ]},
+      {"opponent": "St. Catharines Brock Jr. Badgers", "pool": "other", "ranking": null, "games": [
+        {"date": "Oct 17, 2025", "tournament": "October Tournament", "score": "KAN 6 - STK 0", "result": "win"},
+        {"date": "Feb 8, 2026", "tournament": "February Tournament", "score": "KAN 2 - STK 0", "result": "win"}
+      ]},
+      {"opponent": "Woolwich Wild", "pool": "E", "ranking": null, "games": [
+        {"date": "Feb 7, 2026", "tournament": "February Tournament", "score": "KAN 1 - WW 0", "result": "win"}
+      ]}
+    ],
+    "ranking_records": {
+      "KAN": {"record": "26-14-7", "rating": 86.36, "agd": 1.10},
+      "ENS": {"record": "unknown", "rating": null, "agd": null},
+      "KIN": {"record": "30-6-11", "rating": 87.59, "agd": 1.76},
+      "WIN": {"record": "19-19-5", "rating": 84.90, "agd": 0.02},
+      "DUR": {"record": "24-16-11", "rating": 85.50, "agd": 0.49},
+      "LON": {"record": "32-7-8", "rating": 87.43, "agd": 1.61},
+      "NHT": {"record": "28-16-12", "rating": 85.10, "agd": 0.35},
+      "WAT": {"record": "30-11-6", "rating": 86.89, "agd": 0.97}
+    }
+  }
 }

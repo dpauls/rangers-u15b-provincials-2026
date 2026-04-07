@@ -32,6 +32,7 @@ from narrative import (
     generate_overall_narrative, generate_overall_narrative_with_context,
     generate_game_final_comment, generate_in_game_comment,
     generate_correction_comment, evaluate_narrative,
+    generate_pregame_talking_points, generate_don_cherry,
 )
 
 log = logging.getLogger(__name__)
@@ -356,11 +357,67 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
     # Generate state.json
     generate(str(DATA_PATH), skip_narrative=True)
 
-    # Inject narrative into state.json if we have one
+    # Generate Coach's Corner content on game finals
+    has_our_final = any(
+        c['type'] == 'game_final' and
+        (c['curr'].get('home') == our_team or c['curr'].get('away') == our_team)
+        for c in changes
+    )
+    has_any_final = any(c['type'] == 'game_final' for c in changes)
+    coaches_corner = tournament_data.get('_coaches_corner', {})
+
+    if not skip_narrative and (has_our_final or has_any_final):
+        our_team_name = tournament_data['teams'][our_team]['name']
+
+        # Build context for Don Cherry
+        recent_results = [e['headline'] for e in events if e['type'] == 'final']
+        cherry_context = f"Tournament state: {', '.join(recent_results[-3:])}"
+
+        don_cherry = generate_don_cherry(cherry_context, our_team_name)
+        if don_cherry:
+            coaches_corner['don_cherry'] = don_cherry
+
+        # Generate pre-game talking points if there's a next game
+        from generate import build_games_list, build_standings
+        upcoming = build_games_list(our_pool, tournament_data, 'scheduled')
+        our_upcoming = [g for g in upcoming if g['home'] == our_team or g['away'] == our_team]
+        if our_upcoming:
+            next_game = our_upcoming[0]
+            opp_id = next_game['away'] if next_game['home'] == our_team else next_game['home']
+            opp_name = tournament_data['teams'].get(opp_id, {}).get('name', opp_id)
+            opp_ranking = tournament_data['teams'].get(opp_id, {}).get('ranking', '?')
+            completed = build_games_list(our_pool, tournament_data, 'final')
+            our_results = [f"{g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']}"
+                          for g in completed
+                          if g['home'] == our_team or g['away'] == our_team]
+
+            # Get our PIM (from standings)
+            our_analysis = enumerate_scenarios(our_pool, tournament_data)
+            standings = build_standings(our_pool, tournament_data, our_analysis)
+            our_standing = next((s for s in standings if s['id'] == our_team), None)
+            our_pim = our_standing.get('pim', 0) if our_standing else 0
+
+            # What's at stake
+            our_count = our_analysis['counts'].get(our_team, 0)
+            det = our_analysis['total'] - our_analysis.get('unresolved_count', 0)
+            stake = f"We win the pool in {our_count} of {det} deterministic scenarios."
+
+            talking_points = generate_pregame_talking_points(
+                our_team_name, opp_name, opp_ranking,
+                our_results, our_pim, stake, stake)
+            if talking_points:
+                coaches_corner['talking_points'] = talking_points
+
+        tournament_data['_coaches_corner'] = coaches_corner
+        DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
+
+    # Inject narrative and coaches corner into state.json
+    state = json.loads(STATE_PATH.read_text())
     if narrative or tournament_data.get('_narrative'):
-        state = json.loads(STATE_PATH.read_text())
         state['narrative'] = narrative or tournament_data.get('_narrative')
-        STATE_PATH.write_text(json.dumps(state, indent=2))
+    if coaches_corner:
+        state['coaches_corner'] = coaches_corner
+    STATE_PATH.write_text(json.dumps(state, indent=2))
 
     # Push to GitHub
     if not skip_push:
