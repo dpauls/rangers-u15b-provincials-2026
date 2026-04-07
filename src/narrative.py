@@ -218,6 +218,166 @@ def generate_correction_comment(game, old_score, new_score, our_team_name):
             f"Analysis has been updated.")
 
 
+def evaluate_narrative(current_narrative, changes, prev_scenarios, curr_scenarios,
+                       our_team, our_team_name):
+    """Decide whether to regenerate the narrative. Returns True/False.
+
+    Uses a mix of heuristics (fast, free) and LLM evaluation (for edge cases).
+    """
+    if not current_narrative:
+        return True  # No narrative yet, always generate
+
+    for c in changes:
+        # Our game final → always regen
+        if c['type'] == 'game_final':
+            g = c['curr']
+            if g.get('home') == our_team or g.get('away') == our_team:
+                log.info('Narrative eval: REGENERATE (our game final)')
+                return True
+
+        # Any Pool C game final → always regen
+        if c['type'] == 'game_final':
+            log.info('Narrative eval: REGENERATE (pool game final)')
+            return True
+
+        # Score correction → always regen
+        if c['type'] == 'correction':
+            log.info('Narrative eval: REGENERATE (score correction)')
+            return True
+
+    # For in-game score changes, apply nuanced evaluation
+    for c in changes:
+        if c['type'] not in ('score_change', 'game_started'):
+            continue
+        g = c['curr']
+        is_our_game = (g.get('home') == our_team or g.get('away') == our_team)
+
+        if is_our_game:
+            # Our game score changed -- always matters emotionally
+            log.info('Narrative eval: REGENERATE (our game score changed)')
+            return True
+
+        # Other pool game: check if the lead changed
+        prev_g = c.get('prev', {})
+        prev_hs = prev_g.get('home_score') or 0
+        prev_as = prev_g.get('away_score') or 0
+        curr_hs = g.get('home_score') or 0
+        curr_as = g.get('away_score') or 0
+
+        prev_leader = 'home' if prev_hs > prev_as else ('away' if prev_as > prev_hs else 'tied')
+        curr_leader = 'home' if curr_hs > curr_as else ('away' if curr_as > curr_hs else 'tied')
+
+        if prev_leader != curr_leader:
+            # Lead changed! But does it actually change our outlook?
+            if prev_scenarios and curr_scenarios:
+                prev_count = prev_scenarios.get('our_count', 0)
+                curr_count = curr_scenarios.get('our_count', 0)
+                if abs(curr_count - prev_count) >= 2:
+                    log.info(f'Narrative eval: REGENERATE (lead flip in other game, scenarios shifted by {abs(curr_count - prev_count)})')
+                    return True
+            else:
+                log.info('Narrative eval: REGENERATE (lead flip in other game)')
+                return True
+
+        # Blowout getting bigger or no lead change -- KEEP
+        log.debug(f'Narrative eval: score change in other game but no lead flip or minimal impact')
+
+    log.info('Narrative eval: KEEP')
+    return False
+
+
+def generate_overall_narrative_with_context(prev_narrative, standings, scenarios,
+                                             our_team_name, our_pool,
+                                             qf_pool_standings, completed_games,
+                                             upcoming_games, recent_changes=None):
+    """Generate narrative with awareness of what was previously said.
+
+    If prev_narrative is provided, the AI is told what it said last time
+    and asked to update rather than write from scratch.
+    """
+    # Build the base context (same as generate_overall_narrative)
+    standings_str = '\n'.join(
+        f"  {r['name']} [provincial rank #{r.get('ranking', '?')}]: "
+        f"{r['w']}W-{r['l']}L-{r['t']}T, {r['pts']}pts (GF={r['gf']} GA={r['ga']})"
+        + (' ← US' if r.get('is_us') else '')
+        for r in standings
+    )
+
+    completed_str = '\n'.join(
+        f"  {g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']}"
+        for g in (completed_games or [])
+    ) or '  No games completed yet.'
+
+    upcoming_str = '\n'.join(
+        f"  {g['home_name']} vs {g['away_name']} ({g['date']})"
+        for g in (upcoming_games or [])[:4]
+    ) or '  No upcoming games.'
+
+    qf_str = '\n'.join(
+        f"  {r['name']} [#{r.get('ranking', '?')}]: {r['w']}W-{r['l']}L-{r['t']}T, {r['pts']}pts"
+        for r in (qf_pool_standings or [])
+    ) or '  No data yet.'
+
+    if scenarios and scenarios.get('total', 0) > 1:
+        det = scenarios.get('deterministic', scenarios['total'])
+        unres = scenarios.get('unresolved', 0)
+        sc_summary = (f"Out of {det} deterministic scenarios, {our_team_name} wins the pool in "
+                      f"{scenarios['our_count']}. {unres} additional scenarios depend on score margins.")
+    elif scenarios and scenarios.get('total') == 1:
+        sc_summary = "All pool games are complete."
+    else:
+        sc_summary = "No scenario data available."
+
+    changes_str = ''
+    if recent_changes:
+        changes_str = '\nWhat just happened:\n' + '\n'.join(f'  - {c}' for c in recent_changes)
+
+    context_str = ''
+    if prev_narrative:
+        context_str = f"""
+Here is what you wrote in your PREVIOUS update:
+---
+{prev_narrative}
+---
+Build on this. Reference what you said before where appropriate (e.g., "Earlier we said
+we needed a win -- well, we got it!" or "The situation has changed since our last update").
+Don't repeat yourself. Update the story, don't restart it.
+"""
+
+    prompt = f"""You are the tournament analyst for the {our_team_name} at the OWHA U15B Provincial Championships.
+{context_str}
+Pool {our_pool} standings:
+{standings_str}
+
+Recent results:
+{completed_str}
+
+Coming up:
+{upcoming_str}
+
+Scenario analysis: {sc_summary}
+{changes_str}
+
+Quarterfinal opponent pool watch:
+{qf_str}
+
+The provincial rankings indicate pre-tournament strength. Lower rank = stronger team.
+A lower-ranked team beating a higher-ranked team is an upset worth noting.
+
+IMPORTANT about scenario numbers: These count possible outcomes, NOT probabilities.
+Don't say "X% chance". Say "X out of Y scenarios" or "most scenarios have us advancing".
+
+Write 2-3 short paragraphs for hockey parents reading on their phones at the rink. Cover:
+1. Where {our_team_name} stands right now in Pool {our_pool}
+2. What the next game means and what result we need -- reference rankings
+3. Who to root for in other pool games and why
+
+Be conversational and specific. No jargon. No filler.
+Keep it under 200 words total."""
+
+    return _call(prompt)
+
+
 # ── CLI test ────────────────────────────────────────────────────
 
 if __name__ == '__main__':

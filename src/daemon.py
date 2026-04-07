@@ -29,8 +29,9 @@ from scraper import (
 from analyze import load_tournament, enumerate_scenarios, compute_standings, compute_h2h
 from generate import generate
 from narrative import (
-    generate_overall_narrative, generate_game_final_comment,
-    generate_in_game_comment, generate_correction_comment,
+    generate_overall_narrative, generate_overall_narrative_with_context,
+    generate_game_final_comment, generate_in_game_comment,
+    generate_correction_comment, evaluate_narrative,
 )
 
 log = logging.getLogger(__name__)
@@ -67,34 +68,59 @@ def load_team_map():
     return data
 
 
+_last_final_time = None  # Track when last game went final for post-game window
+
+
 def get_poll_interval(tournament_data):
-    """Determine poll interval based on game schedule and current state."""
+    """Determine poll interval based on game schedule and current state.
+
+    States: IDLE → PRE-GAME → IN-GAME → POST-GAME → BETWEEN → IDLE
+    """
+    global _last_final_time
     now = datetime.now()
     games = tournament_data.get('pool_games', [])
 
-    # Check for in-progress games
+    # Check for in-progress games (highest priority)
     for g in games:
         if g.get('status') == 'in_progress':
+            log.debug(f'Poll: IN-GAME ({POLL_INGAME}s)')
             return POLL_INGAME
 
-    # Check for recently completed games (post-game window)
-    # We'd need to track completion time -- for now use schedule-based approach
+    # Post-game window: 10 minutes after last final
+    if _last_final_time and (now - _last_final_time).total_seconds() < 600:
+        log.debug(f'Poll: POST-GAME ({POLL_POSTGAME}s)')
+        return POLL_POSTGAME
 
     # Check proximity to next scheduled game
+    next_game_minutes = None
     for g in games:
         if g.get('status') != 'scheduled':
             continue
         try:
             game_time = datetime.fromisoformat(g['date'])
             minutes_until = (game_time - now).total_seconds() / 60
-            if minutes_until <= PREGAME_WINDOW:
-                return POLL_PREGAME
-            if minutes_until <= 60:
-                return POLL_BETWEEN
+            if minutes_until > 0:
+                if next_game_minutes is None or minutes_until < next_game_minutes:
+                    next_game_minutes = minutes_until
         except (ValueError, TypeError):
             continue
 
+    if next_game_minutes is not None:
+        if next_game_minutes <= PREGAME_WINDOW:
+            log.debug(f'Poll: PRE-GAME ({POLL_PREGAME}s, {next_game_minutes:.0f}min to game)')
+            return POLL_PREGAME
+        if next_game_minutes <= 60:
+            log.debug(f'Poll: BETWEEN ({POLL_BETWEEN}s, {next_game_minutes:.0f}min to game)')
+            return POLL_BETWEEN
+
+    log.debug(f'Poll: IDLE ({POLL_IDLE}s)')
     return POLL_IDLE
+
+
+def mark_game_final():
+    """Call when a game goes final to start the post-game polling window."""
+    global _last_final_time
+    _last_final_time = datetime.now()
 
 
 def update_tournament_data(tournament_data, api_games, pool_id):
@@ -194,6 +220,7 @@ def process_changes(changes, tournament_data, prev_scenarios, skip_narrative=Fal
             events.append(create_event('goal', headline, detail))
 
         elif change['type'] == 'game_final':
+            mark_game_final()
             headline = (f"FINAL: {home_name} {g['home_score']} - "
                        f"{g['away_score']} {away_name}")
 
@@ -295,29 +322,36 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
     # Save updated tournament data
     DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
 
-    # Generate narrative for full page (only on game finals)
-    has_final = any(c['type'] == 'game_final' for c in all_changes)
+    # Decide whether to regenerate the narrative
     narrative = None
-    if has_final and not skip_narrative:
-        from generate import build_standings, build_scenario_data
-        standings = build_standings(our_pool, tournament_data,
-                                    enumerate_scenarios(our_pool, tournament_data))
-        scenario_data = build_scenario_data(
-            enumerate_scenarios(our_pool, tournament_data), our_team)
-        qf_standings = build_standings('F', tournament_data,
-                                       enumerate_scenarios('F', tournament_data))
+    if not skip_narrative:
+        prev_narrative = tournament_data.get('_narrative')
+        should_regen = evaluate_narrative(
+            prev_narrative, changes, prev_scenarios, curr_scenarios,
+            our_team, tournament_data['teams'][our_team]['name'])
 
-        from generate import build_games_list
-        completed = build_games_list(our_pool, tournament_data, 'final')
-        upcoming = build_games_list(our_pool, tournament_data, 'scheduled')
+        if should_regen:
+            from generate import build_standings, build_scenario_data, build_games_list
+            our_analysis = enumerate_scenarios(our_pool, tournament_data)
+            standings = build_standings(our_pool, tournament_data, our_analysis)
+            scenario_data = build_scenario_data(our_analysis, our_team)
+            qf_standings = build_standings('F', tournament_data,
+                                           enumerate_scenarios('F', tournament_data))
+            completed = build_games_list(our_pool, tournament_data, 'final')
+            upcoming = build_games_list(our_pool, tournament_data, 'scheduled')
 
-        narrative = generate_overall_narrative(
-            standings, scenario_data, tournament_data['teams'][our_team]['name'],
-            our_pool, qf_standings, completed, upcoming)
+            # Summarize recent changes for context
+            recent_change_descs = [e['headline'] for e in events]
+
+            narrative = generate_overall_narrative_with_context(
+                prev_narrative, standings, scenario_data,
+                tournament_data['teams'][our_team]['name'], our_pool,
+                qf_standings, completed, upcoming, recent_change_descs)
 
     # Store narrative in tournament data for generate.py to pick up
     if narrative:
         tournament_data['_narrative'] = narrative
+        DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
 
     # Generate state.json
     generate(str(DATA_PATH), skip_narrative=True)

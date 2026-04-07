@@ -1,8 +1,8 @@
 [
   {
     "gameNumber": 142,
-    "HomeTeamName": "Kincardine Kinucks #8704",
-    "AwayTeamName": "Windsor Wildcats #4764",
+    "HomeTeamName": "Kincardine Kinucks #8704 (3)",
+    "AwayTeamName": "Windsor Wildcats #4764 (2)",
     "homeScore": 3,
     "awayScore": 2,
     "completed": true,
@@ -20,9 +20,9 @@
     "gameNumber": 143,
     "HomeTeamName": "Kanata Rangers #1755",
     "AwayTeamName": "Ennismore Eagles #6463",
-    "homeScore": 2,
+    "homeScore": 1,
     "awayScore": 0,
-    "completed": true,
+    "completed": false,
     "liveScores": true,
     "sDate": "2026-04-10T09:15:00",
     "sDateString": "Fri, Apr. 10, 2026 9:15 AM",
