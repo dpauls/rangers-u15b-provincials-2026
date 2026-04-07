@@ -90,9 +90,9 @@
       "pool": "C",
       "home": "KIN",
       "away": "WIN",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
+      "home_score": 1,
+      "away_score": 0,
+      "status": "in_progress"
     },
     {
       "game_id": 143,
@@ -100,9 +100,9 @@
       "pool": "C",
       "home": "KAN",
       "away": "ENS",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
+      "home_score": 1,
+      "away_score": 0,
+      "status": "in_progress"
     },
     {
       "game_id": 162,
@@ -251,7 +251,20 @@
       "status": "pending"
     }
   ],
-  "event_log": [],
+  "event_log": [
+    {
+      "time": "Tue Apr 07, 05:13 PM",
+      "type": "goal",
+      "headline": "Game #142 underway: Kincardine Kinucks 1 - 0 Windsor Wildcats",
+      "detail": null
+    },
+    {
+      "time": "Tue Apr 07, 05:13 PM",
+      "type": "goal",
+      "headline": "Game #143 underway: Kanata Rangers 1 - 0 Ennismore Eagles",
+      "detail": null
+    }
+  ],
   "scouting": {
     "description": "This season we've faced 5 teams heading to Provincials across tournament play. We swept St. Catharines Brock Jr. Badgers in two meetings. Against the rest... let's just say we're looking for redemption at Provincials.",
     "pool_f_note": "We haven't faced any Pool F teams in league play -- they're from different regions. We did meet Durham West Lightning once at a November tournament.",
@@ -395,5 +408,6 @@
         "agd": 0.97
       }
     }
-  }
+  },
+  "_narrative": "Great start for the Rangers! We're currently tied for first in Pool C after taking a 1-0 lead over Ennismore. Meanwhile, Kincardine (ranked #3 in the province) is also up 1-0 on Windsor. If both games finish as they stand, we'll have 3 points and be tied with the tournament favorites.\n\nOur next game against Kincardine on Friday morning is massive. They're the #3 seed while we're #18, so beating them would be a huge upset that puts us in excellent position to win the pool. Even a tie keeps us very much alive - we'd need to beat Windsor in our final game, which should be manageable given they're ranked #41.\n\nFor the other games, we want Windsor to beat Ennismore on Friday. That would eliminate a potential rival for pool position. The Kincardine-Windsor result doesn't matter much to us since we play both teams anyway. Bottom line: we control our own destiny. Beat Kincardine and we're likely pool champs. Lose but beat Windsor, and we probably still advance. Out of 72 possible tournament scenarios, we win the pool in 22 of them."
 }
