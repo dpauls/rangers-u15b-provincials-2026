@@ -13,6 +13,7 @@ services:
       - ./.git:/app/.git
       - ./data:/app/data
       - ./docs:/app/docs
+      - ./logs:/app/logs
     restart: unless-stopped
 
   # Step through mock tournament (run with: podman-compose run mock-test)
@@ -31,6 +32,7 @@ services:
       - ./data:/app/data
       - ./docs:/app/docs
       - ./test:/app/test
+      - ./logs:/app/logs
     command: ["--mock-dir", "test/mock_responses", "--once"]
     profiles: ["test"]
 
@@ -50,5 +52,6 @@ services:
       - ./data:/app/data
       - ./docs:/app/docs
       - ./test:/app/test
+      - ./logs:/app/logs
     command: ["--mock-dir", "test/mock_responses", "--mock-reset", "--once"]
     profiles: ["test"]

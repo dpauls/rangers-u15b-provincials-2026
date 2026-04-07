@@ -340,6 +340,7 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
                                            enumerate_scenarios('F', tournament_data))
             completed = build_games_list(our_pool, tournament_data, 'final')
             upcoming = build_games_list(our_pool, tournament_data, 'scheduled')
+            live = build_games_list(our_pool, tournament_data, 'in_progress')
 
             # Summarize recent changes for context
             recent_change_descs = [e['headline'] for e in events]
@@ -347,7 +348,7 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
             narrative = generate_overall_narrative_with_context(
                 prev_narrative, standings, scenario_data,
                 tournament_data['teams'][our_team]['name'], our_pool,
-                qf_standings, completed, upcoming, recent_change_descs)
+                qf_standings, completed, upcoming, recent_change_descs, live)
 
     # Store narrative in tournament data for generate.py to pick up
     if narrative:
@@ -487,7 +488,7 @@ def main():
         log.info('Generating welcome narrative...')
         welcome = generate_overall_narrative(
             standings, scenario_data, our_team_name,
-            our_pool, qf_standings, [], upcoming)
+            our_pool, qf_standings, [], upcoming, [])
         if welcome:
             state['narrative'] = welcome
             tournament_data['_narrative'] = welcome

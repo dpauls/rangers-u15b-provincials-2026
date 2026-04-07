@@ -28,10 +28,20 @@ def _get_client():
         return None
 
 
-def _call(prompt, max_tokens=MAX_TOKENS):
-    """Call Claude API with a prompt. Returns text or None on failure."""
+LLM_LOG_PATH = Path(__file__).parent.parent / 'logs' / 'llm_interactions.log'
+
+
+def _call(prompt, max_tokens=MAX_TOKENS, label='unknown'):
+    """Call Claude API with a prompt. Returns text or None on failure.
+
+    All interactions are logged to logs/llm_interactions.log for debugging.
+    """
+    # Log the prompt
+    _log_interaction(label, 'PROMPT', prompt)
+
     client = _get_client()
     if not client:
+        _log_interaction(label, 'SKIPPED', 'No API client available')
         return None
     try:
         resp = client.messages.create(
@@ -39,10 +49,30 @@ def _call(prompt, max_tokens=MAX_TOKENS):
             max_tokens=max_tokens,
             messages=[{'role': 'user', 'content': prompt}],
         )
-        return resp.content[0].text
+        result = resp.content[0].text
+        _log_interaction(label, 'RESPONSE', result)
+        return result
     except Exception as e:
+        _log_interaction(label, 'ERROR', str(e))
         log.error(f'Claude API error: {e}')
         return None
+
+
+def _log_interaction(label, phase, content):
+    """Log an LLM interaction to the log file."""
+    try:
+        LLM_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+        from datetime import datetime
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        separator = '=' * 80
+        with open(LLM_LOG_PATH, 'a') as f:
+            f.write(f'\n{separator}\n')
+            f.write(f'[{timestamp}] {label} — {phase}\n')
+            f.write(f'{separator}\n')
+            f.write(content)
+            f.write(f'\n{separator}\n\n')
+    except Exception:
+        pass  # Don't let logging failures break the pipeline
 
 
 def _rank_str(r):
@@ -51,8 +81,19 @@ def _rank_str(r):
     return f' (ranked #{rank} provincially)' if rank else ''
 
 
+def _format_date(iso_date):
+    """Convert ISO date to readable format like 'Fri Apr 10, 3:45 PM'."""
+    try:
+        from datetime import datetime
+        dt = datetime.fromisoformat(iso_date)
+        return dt.strftime('%a %b %d, %I:%M %p').replace(' 0', ' ')
+    except (ValueError, TypeError):
+        return str(iso_date)
+
+
 def generate_overall_narrative(standings, scenarios, our_team_name, our_pool,
-                                qf_pool_standings, completed_games, upcoming_games):
+                                qf_pool_standings, completed_games, upcoming_games,
+                                live_games=None):
     """Generate 2-3 paragraph tournament overview for the main page."""
     standings_str = '\n'.join(
         f"  {r['name']} [provincial rank #{r.get('ranking', '?')}]: "
@@ -62,14 +103,31 @@ def generate_overall_narrative(standings, scenarios, our_team_name, our_pool,
     )
 
     completed_str = '\n'.join(
-        f"  {g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']}"
+        f"  FINAL: {g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']}"
         for g in (completed_games or [])
     ) or '  No games completed yet.'
 
+    live_str = '\n'.join(
+        f"  IN PROGRESS: {g['home_name']} {g.get('home_score',0)}-{g.get('away_score',0)} {g['away_name']}"
+        for g in (live_games or [])
+    ) or ''
+
     upcoming_str = '\n'.join(
-        f"  {g['home_name']} vs {g['away_name']} ({g['date']})"
+        f"  SCHEDULED: {g['home_name']} vs {g['away_name']} — {_format_date(g['date'])}"
         for g in (upcoming_games or [])[:4]
     ) or '  No upcoming games.'
+
+    # Find our next scheduled game explicitly
+    our_next = None
+    for g in (upcoming_games or []):
+        if g.get('home') == 'KAN' or g.get('away') == 'KAN' or \
+           'Kanata' in g.get('home_name', '') or 'Kanata' in g.get('away_name', ''):
+            our_next = g
+            break
+    our_next_str = ''
+    if our_next:
+        opp = our_next['away_name'] if 'Kanata' in our_next.get('home_name', '') else our_next['home_name']
+        our_next_str = f'\nOUR NEXT GAME: {our_team_name} vs {opp} — {_format_date(our_next["date"])}'
 
     qf_str = '\n'.join(
         f"  {r['name']}: {r['w']}W-{r['l']}L-{r['t']}T, {r['pts']}pts"
@@ -86,19 +144,27 @@ def generate_overall_narrative(standings, scenarios, our_team_name, our_pool,
 
     prompt = f"""You are the tournament analyst for the {our_team_name} at the OWHA U15B Provincial Championships.
 
+=== FACTS (use these exactly, do NOT invent schedule details) ===
+
 Pool {our_pool} standings:
 {standings_str}
 
-Recent results:
+Games in progress right now:
+{live_str or '  None'}
+
+Completed games:
 {completed_str}
 
-Coming up:
+Upcoming scheduled games:
 {upcoming_str}
+{our_next_str}
 
 Scenario analysis: {sc_summary}
 
-Quarterfinal opponent pool (Pool {qf_pool_standings[0]['name'].split()[0] if qf_pool_standings else '?'} watch):
+Quarterfinal opponent pool watch:
 {qf_str}
+
+=== END FACTS ===
 
 Provincial rankings: #1 is the strongest team in the province, higher numbers are weaker.
 For reference: #3 Kincardine is the strongest in our pool, then #18 Kanata (us),
@@ -113,15 +179,20 @@ IMPORTANT TONE RULES:
 - NEVER say "X% chance" or "probability". Scenario counts are NOT predictions.
   Say "we win the pool in X out of Y scenarios" to illustrate paths, not likelihood.
 
-Write 2-3 short paragraphs for hockey parents reading on their phones at the rink. Cover:
-1. Where {our_team_name} stands right now in Pool {our_pool}
-2. What the next game means -- reference rankings but respect every opponent
-3. Who to root for in other pool games and why
+Write a structured update using **bold section headings** for hockey parents on phones.
+Use exactly these sections:
 
-Be conversational and specific. No jargon. No filler.
-Keep it under 200 words total."""
+**Where We Stand** — 1-2 sentences on our current pool position.
+**Our Next Game** — 1-2 sentences about our upcoming game. ONLY reference the game
+  listed under "OUR NEXT GAME" in the facts. Use the exact opponent and date/time shown.
+  Do NOT invent or guess schedule details.
+**Around the Pool** — 1-2 sentences on other games and who to root for.
 
-    return _call(prompt)
+CRITICAL: Only state facts from the FACTS section above. If a game is in progress, say so.
+Do NOT guess or infer any schedule, score, or matchup not explicitly listed.
+Be conversational and specific. No jargon. Keep it under 150 words total."""
+
+    return _call(prompt, label='overall_narrative')
 
 
 def generate_game_final_comment(game, standings, prev_scenarios, curr_scenarios,
@@ -175,7 +246,7 @@ IMPORTANT: Scenario counts are NOT probabilities. Don't say "X% chance". Instead
 things like "we win the pool in X out of Y outcome combinations" or "most paths have us advancing".
 Write 1-2 sentences explaining what this result means for {our_team_name}. Be specific. Parents are reading on phones."""
 
-    return _call(prompt, max_tokens=200)
+    return _call(prompt, max_tokens=200, label="game_final_comment")
 
 
 def generate_in_game_comment(game, our_team, our_team_name, scenarios_if_holds,
@@ -204,7 +275,7 @@ If the other team comes back to win: {our_team_name} advances in {scenarios_if_r
 
 Write exactly 1 fun, brief sentence about who we're rooting for and why. Reference the scenario numbers."""
 
-    return _call(prompt, max_tokens=100)
+    return _call(prompt, max_tokens=100, label="in_game_comment")
 
 
 def generate_correction_comment(game, old_score, new_score, our_team_name):
@@ -288,13 +359,9 @@ def evaluate_narrative(current_narrative, changes, prev_scenarios, curr_scenario
 def generate_overall_narrative_with_context(prev_narrative, standings, scenarios,
                                              our_team_name, our_pool,
                                              qf_pool_standings, completed_games,
-                                             upcoming_games, recent_changes=None):
-    """Generate narrative with awareness of what was previously said.
-
-    If prev_narrative is provided, the AI is told what it said last time
-    and asked to update rather than write from scratch.
-    """
-    # Build the base context (same as generate_overall_narrative)
+                                             upcoming_games, recent_changes=None,
+                                             live_games=None):
+    """Generate narrative with awareness of what was previously said."""
     standings_str = '\n'.join(
         f"  {r['name']} [provincial rank #{r.get('ranking', '?')}]: "
         f"{r['w']}W-{r['l']}L-{r['t']}T, {r['pts']}pts (GF={r['gf']} GA={r['ga']})"
@@ -303,14 +370,27 @@ def generate_overall_narrative_with_context(prev_narrative, standings, scenarios
     )
 
     completed_str = '\n'.join(
-        f"  {g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']}"
+        f"  FINAL: {g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']}"
         for g in (completed_games or [])
     ) or '  No games completed yet.'
 
+    live_str = '\n'.join(
+        f"  IN PROGRESS: {g['home_name']} {g.get('home_score',0)}-{g.get('away_score',0)} {g['away_name']}"
+        for g in (live_games or [])
+    ) or ''
+
     upcoming_str = '\n'.join(
-        f"  {g['home_name']} vs {g['away_name']} ({g['date']})"
+        f"  SCHEDULED: {g['home_name']} vs {g['away_name']} — {_format_date(g['date'])}"
         for g in (upcoming_games or [])[:4]
     ) or '  No upcoming games.'
+
+    # Find our next scheduled game
+    our_next_str = ''
+    for g in (upcoming_games or []):
+        if 'Kanata' in g.get('home_name', '') or 'Kanata' in g.get('away_name', ''):
+            opp = g['away_name'] if 'Kanata' in g.get('home_name', '') else g['home_name']
+            our_next_str = f'\nOUR NEXT GAME: {our_team_name} vs {opp} — {_format_date(g["date"])}'
+            break
 
     qf_str = '\n'.join(
         f"  {r['name']} [#{r.get('ranking', '?')}]: {r['w']}W-{r['l']}L-{r['t']}T, {r['pts']}pts"
@@ -345,14 +425,21 @@ Don't repeat yourself. Update the story, don't restart it.
 
     prompt = f"""You are the tournament analyst for the {our_team_name} at the OWHA U15B Provincial Championships.
 {context_str}
+
+=== FACTS (use these exactly, do NOT invent schedule details) ===
+
 Pool {our_pool} standings:
 {standings_str}
 
-Recent results:
+Games in progress right now:
+{live_str or '  None'}
+
+Completed games:
 {completed_str}
 
-Coming up:
+Upcoming scheduled games:
 {upcoming_str}
+{our_next_str}
 
 Scenario analysis: {sc_summary}
 {changes_str}
@@ -360,21 +447,20 @@ Scenario analysis: {sc_summary}
 Quarterfinal opponent pool watch:
 {qf_str}
 
-Provincial rankings: #1 is strongest, higher numbers weaker. In our pool:
-#3 Kincardine (strongest), #18 Kanata (us), #25 Ennismore, #41 Windsor (weakest).
+=== END FACTS ===
 
-IMPORTANT TONE: Never call any game "winnable" or "easy". Every team earned their spot.
-Say "rankings suggest we match up well, but they'll come out hungry."
-Scenario counts are NOT predictions -- don't say "X% chance".
+Rankings: #1 strongest, higher numbers weaker. Pool C: #3 Kincardine, #18 Kanata (us), #25 Ennismore, #41 Windsor.
+TONE: Never say "winnable" or "easy". Respect every opponent. Scenarios are counts, not predictions.
 
-Write 2-3 short paragraphs for hockey parents on their phones. Cover:
-1. Where {our_team_name} stands right now
-2. What the next game means -- respect every opponent regardless of ranking
-3. Who to root for in other games and why
+Write a structured update using **bold section headings**:
+**Where We Stand** — 1-2 sentences on current position.
+**Our Next Game** — 1-2 sentences. ONLY use the game from "OUR NEXT GAME" above.
+**Around the Pool** — 1-2 sentences on other games.
 
-Be conversational and specific. No jargon. Keep it under 200 words."""
+CRITICAL: Only state facts from above. Do NOT guess schedule details.
+Keep it under 150 words."""
 
-    return _call(prompt)
+    return _call(prompt, label="narrative_with_context")
 
 
 def generate_pregame_talking_points(our_team_name, opponent_name, opponent_ranking,
@@ -403,7 +489,7 @@ Generate 3-4 concise bullet points for the coaching staff. Cover:
 Keep each bullet to 1-2 sentences. Practical, motivating, not generic.
 These are U15 girls -- age-appropriate language."""
 
-    return _call(prompt, max_tokens=300)
+    return _call(prompt, max_tokens=300, label="pregame_talking_points")
 
 
 def generate_don_cherry(context, our_team_name='Kanata Rangers'):
@@ -422,7 +508,7 @@ Give exactly 1-2 short sentences in Don Cherry's voice. Rules:
 - These are U15 GIRLS -- encouraging about girls growing the game
 - Keep it brief and fun. Less is more."""
 
-    return _call(prompt, max_tokens=100)
+    return _call(prompt, max_tokens=100, label="don_cherry")
 
 
 # ── CLI test ────────────────────────────────────────────────────
