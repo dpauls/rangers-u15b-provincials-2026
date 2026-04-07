@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T19:33:14.300597+00:00",
+  "generated_at": "2026-04-07T17:02:13.459949-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -21753,7 +21753,7 @@
       "detail": null
     }
   ],
-  "narrative": "**Where We Stand**\nThe situation has changed since our last update - we're currently holding a 1-0 lead over Ennismore in our opening game! If this result holds, we'll have the crucial first win we need in this tight four-team Pool C battle.\n\n**Our Next Game**\nOur afternoon matchup against Windsor at 3:45 PM becomes even more significant now. The #41 Wildcats are currently trailing 1-0 to Kincardine, so they'll be looking to bounce back against us.\n\n**Around the Pool**\nKincardine is also up 1-0 against Windsor in the other 9:15 AM game, putting the top-seeded Kinucks in good position. The afternoon slate has us facing Windsor while Ennismore takes on that tough #3 Kincardine squad. Out of 72 possible ways the remaining games could unfold, we win the pool in 22 scenarios, with 9 additional scenarios depending on goal differential.",
+  "narrative": null,
   "scouting": {
     "description": "This season we've faced several teams heading to Provincials across 5 tournaments. We swept St. Catharines Brock Jr. Badgers in two meetings (6-0, 2-0). Against the rest... let's just say we're looking for redemption. Of note: Durham West Lightning (#29) is in our quarterfinal opponent's pool (Pool F) -- they beat us 2-0 in November, but they're not the favourite to win their pool. In tournament play, anything can happen!",
     "matchups": [
@@ -21896,9 +21896,5 @@
         "agd": 0.97
       }
     }
-  },
-  "coaches_corner": {
-    "don_cherry": "I'll tell ya, these Kanata Rangers girls got heart and they're gonna have to dig deep against that tough Kincardine squad - but that's what hockey's all about, and these young ladies are the future of our beautiful game!",
-    "talking_points": "\u2022 **Fresh start energy**: This is our clean slate moment -- first game nerves are normal, but channel that excitement into sharp, focused hockey from the opening faceoff.\n\n\u2022 **Stay disciplined and smart**: We've got zero penalty minutes because we haven't played yet, but good teams like us win by playing hard AND playing smart -- no unnecessary penalties that give them free power plays.\n\n\u2022 **Respect but don't fear #25**: Ennismore earned their ranking, but rankings don't score goals -- we control this game by executing our systems and playing our style of hockey.\n\n\u2022 **Pool winner takes all**: There's no second chances in this format, so treat every shift like it matters because it does -- we need to win this pool to keep our Provincial dreams alive."
   }
 }

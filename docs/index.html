@@ -259,7 +259,7 @@ function renderEventLog(events) {
 }
 
 function renderStandings(rows, showAdv, ourTeam, scenarioTotal) {
-    const advHeader = showAdv ? '<th title="Scenarios where this team wins the pool out of all possible remaining game outcomes">Scenarios</th>' : '';
+    const advHeader = showAdv ? '<th title="Resolved scenarios where this team wins the pool (excludes score-dependent tiebreakers)">Resolved</th>' : '';
     const thead = `<thead><tr><th>Team</th><th>GP</th><th>W</th><th>L</th><th>T</th><th>PTS</th><th>GF</th><th>GA</th><th>GD</th>${advHeader}<th>Status</th></tr></thead>`;
     const tbody = rows.map(r => {
         const usCls = r.is_us ? ' class="team-us"' : '';
@@ -401,11 +401,16 @@ function renderBeyondPool(d) {
     // Scouting Report
     if (d.scouting) {
         html += '<h3 style="font-size:1rem;margin-top:1.5rem">Scouting Report</h3>';
-        html += `<p style="font-size:0.9rem">${esc(d.scouting.description)}</p>`;
-
+        // Split description at "Of note:" to insert matchups between
+        const desc = d.scouting.description || '';
+        const ofNoteIdx = desc.indexOf('Of note:');
+        if (ofNoteIdx > 0) {
+            html += `<p style="font-size:0.9rem">${esc(desc.substring(0, ofNoteIdx).trim())}</p>`;
+        } else {
+            html += `<p style="font-size:0.9rem">${esc(desc)}</p>`;
+        }
 
         if (d.scouting.matchups && d.scouting.matchups.length > 0) {
-            html += '<details><summary>Tournament History vs Provincial Teams</summary>';
             d.scouting.matchups.forEach(m => {
                 const poolTag = m.pool ? ` (Pool ${esc(m.pool)})` : '';
                 const rankTag = m.ranking ? ` #${m.ranking}` : '';
@@ -415,7 +420,11 @@ function renderBeyondPool(d) {
                     html += `<div class="scouting-matchup"><span class="${cls}">${esc(g.score)}</span> <span style="color:var(--pico-muted-color);font-size:0.8rem">${esc(g.date)} &middot; ${esc(g.tournament)}</span></div>`;
                 });
             });
-            html += '</details>';
+        }
+
+        // "Of note:" on its own line after matchups
+        if (ofNoteIdx > 0) {
+            html += `<p style="font-size:0.9rem;margin-top:0.75rem">${esc(desc.substring(ofNoteIdx).trim())}</p>`;
         }
     }
 

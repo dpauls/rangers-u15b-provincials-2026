@@ -470,10 +470,13 @@ def generate_pregame_talking_points(our_team_name, opponent_name, opponent_ranki
     """Generate pre-game talking points for the team meeting."""
     results_str = '\n'.join(f'  - {r}' for r in (our_recent_results or [])) or '  No games yet.'
 
-    prompt = f"""You are helping the coaching staff of the {our_team_name} prepare
-talking points for a pre-game team meeting at the OWHA U15B Provincials.
+    prompt = f"""You are helping the coaching staff of the {our_team_name} (ranked #18 provincially)
+prepare talking points for a pre-game team meeting at the OWHA U15B Provincials.
 
 Next opponent: {opponent_name} (provincial ranking #{opponent_ranking})
+NOTE: Lower ranking number = stronger team. We are #18, they are #{opponent_ranking}.
+{"We are ranked HIGHER (stronger) than them." if isinstance(opponent_ranking, int) and opponent_ranking > 18 else "They are ranked HIGHER (stronger) than us." if isinstance(opponent_ranking, int) and opponent_ranking < 18 else ""}
+
 Our recent results at this tournament:
 {results_str}
 
@@ -481,14 +484,15 @@ Our penalty minutes so far: {our_pim}
 Current standings context: {standings}
 What's at stake: {what_at_stake}
 
-Generate 3-4 concise bullet points for the coaching staff. Cover:
-- Momentum/mindset (bouncing back from a loss OR building on a win)
-- Discipline (mention PIMs if they were high)
-- What we know about the opponent (ranking, what their results suggest)
-- Strategic awareness (do we need a win? Is a tie OK? Does GD matter?)
+Write 3-4 short talking points using **bold headings** followed by 1-2 sentences each.
+Format like:
+**Mindset** — sentence about momentum.
+**Discipline** — sentence about PIMs if relevant.
+**The Opponent** — sentence about what to expect. Never say a game is "easy" or "winnable".
+**What We Need** — sentence about points/strategy.
 
-Keep each bullet to 1-2 sentences. Practical, motivating, not generic.
-These are U15 girls -- age-appropriate language."""
+Do NOT use bullet points or special characters. Just **bold heading** then plain text.
+Practical, motivating, age-appropriate for U15 girls."""
 
     return _call(prompt, max_tokens=300, label="pregame_talking_points")
 
@@ -507,7 +511,8 @@ Give exactly 1-2 short sentences in Don Cherry's voice. Rules:
 - If they lost: encouraging, "dust yourself off"
 - If they won: fired up, "THAT'S how you play hockey!"
 - These are U15 GIRLS -- encouraging about girls growing the game
-- Keep it brief and fun. Less is more."""
+- Do NOT use the phrase "rankings don't score goals" -- be more original
+- Keep it brief and fun. Less is more. Maximum 2 sentences."""
 
     return _call(prompt, max_tokens=100, label="don_cherry")
 
