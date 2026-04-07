@@ -60,23 +60,27 @@ def build_scenario_data(analysis, our_team):
     if not analysis or analysis['total'] <= 1:
         if analysis and analysis['total'] == 1:
             sc = analysis['scenarios'][0]
+            winner = sc['result']['advancing'][0] if sc['result']['advancing'] else None
             return {
                 'total': 1,
                 'our_count': analysis['counts'].get(our_team, 0),
                 'remaining_games': 0,
                 'gd_dependent': 0,
-                'winner': sc['result']['advancing'][0],
+                'unresolved': 0,
+                'winner': winner,
                 'scenarios': [],
             }
         return None
 
     total = analysis['total']
     our_count = analysis['counts'].get(our_team, 0)
+    unresolved_count = analysis.get('unresolved_count', 0)
 
     # Build compact scenario list for JSON
     scenarios = []
     for sc in analysis['scenarios']:
         res = sc['result']
+        is_unresolved = sc.get('unresolved', False)
         tb_info = []
         for tb in res['tb_details']:
             tb_info.append({
@@ -84,22 +88,37 @@ def build_scenario_data(analysis, our_team):
                 'pts': tb['pts'],
                 'lines': tb['lines'],
                 'gd_dep': tb['gd_dep'],
+                'unresolved': tb.get('unresolved', False),
             })
+
         # Classify resolution type
-        if not tb_info:
-            res_type = 'clean'  # no tiebreaker needed
-        elif any('UNRESOLVED' in line for tb in tb_info for line in tb['lines']):
-            res_type = 'unresolved'  # couldn't resolve with available data
+        if is_unresolved:
+            res_type = 'unresolved'
+        elif not tb_info:
+            res_type = 'clean'
         elif sc['gd_dependent']:
-            res_type = 'score_dependent'  # GD or GA decided it
+            res_type = 'score_dependent'
         else:
-            res_type = 'tiebreaker'  # resolved by wins or h2h (deterministic)
+            res_type = 'tiebreaker'
+
+        advancing = res['advancing'] or []
+        eliminated = res['eliminated'] or []
+        unresolved_teams = res.get('unresolved_teams', [])
+
+        # For the winner's points, handle unresolved case
+        if advancing:
+            winner_pts = sc['standings'][advancing[0]]['PTS']
+        elif unresolved_teams:
+            winner_pts = sc['standings'][unresolved_teams[0]]['PTS']
+        else:
+            winner_pts = 0
 
         scenarios.append({
             'labels': sc['labels'],
-            'advancing': res['advancing'],
-            'eliminated': res['eliminated'],
-            'pts': sc['standings'][res['advancing'][0]]['PTS'],
+            'advancing': advancing,
+            'eliminated': eliminated,
+            'unresolved_teams': unresolved_teams,
+            'pts': winner_pts,
             'gd_dep': sc['gd_dependent'],
             'res_type': res_type,
             'tiebreakers': tb_info,
@@ -108,10 +127,13 @@ def build_scenario_data(analysis, our_team):
     remaining = analysis['remaining_games']
     remaining_info = [{'home': g['home'], 'away': g['away'], 'game_id': g['game_id'], 'date': g['date']} for g in remaining]
 
+    deterministic = total - unresolved_count
     return {
         'total': total,
-        'our_count': our_count,
-        'our_pct': round(our_count / total * 100, 1),
+        'deterministic': deterministic,
+        'our_count': our_count,  # deterministic wins only
+        'our_pct': round(our_count / deterministic * 100, 1) if deterministic > 0 else 0,
+        'unresolved': unresolved_count,
         'remaining_games': len(remaining),
         'remaining_info': remaining_info,
         'gd_dependent': analysis['gd_dependent_count'],

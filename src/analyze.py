@@ -157,7 +157,7 @@ def _h2h_record_str(team, group, h2h):
 def resolve_tie(group, st, h2h, spots, indent=''):
     """
     Returns (advancing, eliminated, lines, gd_dependent).
-    lines: list of description strings for verbose output.
+    Returns (None, None, lines, True) if tiebreakers are exhausted (unresolved).
     """
     if len(group) <= spots:
         return list(group), [], [], False
@@ -187,6 +187,9 @@ def resolve_tie(group, st, h2h, spots, indent=''):
             else:
                 lines.append(f'{I}  Still tied ({st[wg[0]]["W"]}W): {",".join(wg)} — {rem} spot{"s" if rem>1 else ""} left')
                 sub_a, sub_e, sub_lines, sub_gd = resolve_tie(wg, st, h2h, rem, indent + '    ')
+                if sub_a is None:
+                    lines.extend(sub_lines)
+                    return None, None, lines, True
                 adv.extend(sub_a); elim.extend(sub_e); lines.extend(sub_lines)
                 gd_dep = gd_dep or sub_gd
         return adv, elim, lines, gd_dep
@@ -209,8 +212,10 @@ def resolve_tie(group, st, h2h, spots, indent=''):
                 adv.extend(hg)
             else:
                 lines.append(f'{I}  Still tied on h2h: {",".join(hg)} — {rem} spot{"s" if rem>1 else ""} left')
-                # Restart full tiebreaker chain for sub-group
                 sub_a, sub_e, sub_lines, sub_gd = resolve_tie(hg, st, h2h, rem, indent + '    ')
+                if sub_a is None:
+                    lines.extend(sub_lines)
+                    return None, None, lines, True
                 adv.extend(sub_a); elim.extend(sub_e); lines.extend(sub_lines)
                 gd_dep = gd_dep or sub_gd
         lines.append(f'{I}  → {",".join(adv)} advance / {",".join(elim)} eliminated')
@@ -247,6 +252,9 @@ def resolve_tie_gd(group, st, h2h, spots, indent=''):
                 adv.extend(gg)
             else:
                 sub_a, sub_e, sub_lines, _ = resolve_tie_ga(gg, st, spots - len(adv), indent + '    ')
+                if sub_a is None:
+                    lines.extend(sub_lines)
+                    return None, None, lines, True
                 adv.extend(sub_a); elim.extend(sub_e); lines.extend(sub_lines)
         lines.append(f'{I}  → {",".join(adv)} advance / {",".join(elim)} eliminated')
         return adv, elim, lines, True
@@ -306,7 +314,9 @@ def resolve_tie_ga(group, st, spots, indent=''):
             return adv, elim, lines, True
 
     lines.append(f'{I}UNRESOLVED — tiebreakers i-iv(+vi) exhausted')
-    return list(group[:spots]), list(group[spots:]), lines, True
+    # Return None for advancing to signal this scenario cannot be resolved
+    # from W/L/T outcomes alone -- it depends on actual scores, PIMs, etc.
+    return None, None, lines, True
 
 
 # ── Top-level pool resolver ─────────────────────────────────────
@@ -327,6 +337,9 @@ def determine_pool_winner(pool_teams, st, h2h, advance_count=1):
     tb_teams = set()
     tb_num = 0
 
+    unresolved = False
+    unresolved_teams = []
+
     for g in gs:
         rem = advance_count - len(result)
         if rem <= 0:
@@ -336,23 +349,46 @@ def determine_pool_winner(pool_teams, st, h2h, advance_count=1):
         else:
             tb_num += 1
             adv, elim, lines, gd_dep = resolve_tie(g, st, h2h, rem, indent='      ')
-            result.extend(adv)
-            tb_teams.update(g)
-            tb_details.append({
-                'num': tb_num,
-                'teams': list(g),
-                'pts': st[g[0]]['PTS'],
-                'spots': rem,
-                'adv': adv,
-                'elim': elim,
-                'lines': lines,
-                'gd_dep': gd_dep,
-            })
+
+            if adv is None:
+                # Tiebreaker chain exhausted -- scenario is unresolved
+                unresolved = True
+                unresolved_teams = list(g)
+                tb_details.append({
+                    'num': tb_num,
+                    'teams': list(g),
+                    'pts': st[g[0]]['PTS'],
+                    'spots': rem,
+                    'adv': [],
+                    'elim': [],
+                    'lines': lines,
+                    'gd_dep': gd_dep,
+                    'unresolved': True,
+                })
+                tb_teams.update(g)
+                # Don't add anyone to result -- leave it incomplete
+                break
+            else:
+                result.extend(adv)
+                tb_teams.update(g)
+                tb_details.append({
+                    'num': tb_num,
+                    'teams': list(g),
+                    'pts': st[g[0]]['PTS'],
+                    'spots': rem,
+                    'adv': adv,
+                    'elim': elim,
+                    'lines': lines,
+                    'gd_dep': gd_dep,
+                    'unresolved': False,
+                })
 
     eliminated = [t for t in pool_teams if t not in result]
     return {
-        'advancing': result,
-        'eliminated': eliminated,
+        'advancing': result if not unresolved else None,
+        'eliminated': eliminated if not unresolved else None,
+        'unresolved': unresolved,
+        'unresolved_teams': unresolved_teams,
         'tb_details': tb_details,
         'tb_teams': tb_teams,
     }
@@ -390,8 +426,9 @@ def enumerate_scenarios(pool_id, tournament_data):
             apply_result(st, h2h, remaining[i]['home'], remaining[i]['away'], o)
 
         res = determine_pool_winner(pool_teams, st, h2h, advance_count)
-        for t in res['advancing']:
-            counts[t] += 1
+        if res['advancing'] is not None:
+            for t in res['advancing']:
+                counts[t] += 1
         gd_dep = any(tb['gd_dep'] for tb in res['tb_details'])
         if gd_dep:
             gd_count += 1
@@ -412,13 +449,16 @@ def enumerate_scenarios(pool_id, tournament_data):
             'standings': st,
             'result': res,
             'gd_dependent': gd_dep,
+            'unresolved': res['unresolved'],
         })
 
+    unresolved_count = sum(1 for s in scenarios if s['unresolved'])
     return {
         'total': total,
         'counts': counts,
         'scenarios': scenarios,
         'gd_dependent_count': gd_count,
+        'unresolved_count': unresolved_count,
         'remaining_games': remaining,
         'pool_teams': pool_teams,
     }
