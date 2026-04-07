@@ -49,6 +49,16 @@
     </div>
 
     <div id="content"><p style="text-align:center;color:var(--pico-muted-color)">Loading...</p></div>
+
+    <details style="margin-top:1rem;font-size:0.8rem">
+        <summary style="color:var(--pico-muted-color)">Legend</summary>
+        <div style="margin-top:0.5rem">
+            <span style="color:#2e7d32;font-weight:bold">GREEN</span>: A tie is fine. Pull the goalie only if losing.<br>
+            <span style="color:#f57f17;font-weight:bold">YELLOW</span>: Tough call. A win helps a lot but a loss hurts.<br>
+            <span style="color:#c62828;font-weight:bold">RED</span>: Consider pulling on a tie. We likely need the win.
+        </div>
+    </details>
+
     <p id="updated"></p>
 </main>
 
@@ -142,30 +152,30 @@ function analyzeGoaliePull(d) {
 
         if (pct > 0.6) {
             html += `<div class="indicator indicator-green">
-                A tie works for us
-                <div class="label">We're in a strong position. A point keeps us in good shape.</div>
+                A tie is fine
+                <div class="label">Pull the goalie only if losing. A point keeps us in good shape.</div>
             </div>`;
         } else if (pct > 0.3) {
             html += `<div class="indicator indicator-yellow">
-                It depends
-                <div class="label">A win would help significantly. Consider the risk/reward carefully.</div>
+                Tough call
+                <div class="label">A win helps significantly, but a loss on an empty-netter would hurt. Weigh the risk.</div>
             </div>`;
         } else {
             html += `<div class="indicator indicator-red">
-                We need the win
-                <div class="label">A tie likely isn't enough based on current standings. The risk may be worth it.</div>
+                Consider pulling on a tie
+                <div class="label">A tie likely isn't enough. The risk of pulling the goalie may be worth it.</div>
             </div>`;
         }
     } else if (upByOne) {
         html += `<div class="indicator indicator-green">
-            We're up by 1
-            <div class="label">Protect the lead. Every point matters.</div>
+            Up by 1 — protect the lead
+            <div class="label">No need to take risks. Keep it tight.</div>
         </div>`;
         factors.push(`Leading ${ourScore}-${theirScore}. Hold on to this.`);
     } else if (downByOne) {
-        html += `<div class="indicator indicator-yellow">
-            Down by 1
-            <div class="label">We need to push for the equalizer. Consider pulling goalie in final minute.</div>
+        html += `<div class="indicator indicator-red">
+            Down by 1 — pull the goalie late
+            <div class="label">We need at least a tie. Pull the goalie in the final minute.</div>
         </div>`;
         factors.push(`Trailing ${ourScore}-${theirScore}. Need at least a tie.`);
     }

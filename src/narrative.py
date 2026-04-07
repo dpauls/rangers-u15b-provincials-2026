@@ -291,69 +291,23 @@ def generate_correction_comment(game, old_score, new_score, our_team_name):
 
 def evaluate_narrative(current_narrative, changes, prev_scenarios, curr_scenarios,
                        our_team, our_team_name):
-    """Decide whether to regenerate the narrative. Returns True/False.
+    """Decide whether to regenerate the main page narrative. Returns True/False.
 
-    Uses a mix of heuristics (fast, free) and LLM evaluation (for edge cases).
+    Simple rule: only regenerate on game finals and corrections.
+    Mid-game updates go to the LIVE banner and event log, not the narrative.
     """
     if not current_narrative:
         return True  # No narrative yet, always generate
 
     for c in changes:
-        # Our game final → always regen
         if c['type'] == 'game_final':
-            g = c['curr']
-            if g.get('home') == our_team or g.get('away') == our_team:
-                log.info('Narrative eval: REGENERATE (our game final)')
-                return True
-
-        # Any Pool C game final → always regen
-        if c['type'] == 'game_final':
-            log.info('Narrative eval: REGENERATE (pool game final)')
+            log.info('Narrative eval: REGENERATE (game final)')
             return True
-
-        # Score correction → always regen
         if c['type'] == 'correction':
             log.info('Narrative eval: REGENERATE (score correction)')
             return True
 
-    # For in-game score changes, apply nuanced evaluation
-    for c in changes:
-        if c['type'] not in ('score_change', 'game_started'):
-            continue
-        g = c['curr']
-        is_our_game = (g.get('home') == our_team or g.get('away') == our_team)
-
-        if is_our_game:
-            # Our game score changed -- always matters emotionally
-            log.info('Narrative eval: REGENERATE (our game score changed)')
-            return True
-
-        # Other pool game: check if the lead changed
-        prev_g = c.get('prev', {})
-        prev_hs = prev_g.get('home_score') or 0
-        prev_as = prev_g.get('away_score') or 0
-        curr_hs = g.get('home_score') or 0
-        curr_as = g.get('away_score') or 0
-
-        prev_leader = 'home' if prev_hs > prev_as else ('away' if prev_as > prev_hs else 'tied')
-        curr_leader = 'home' if curr_hs > curr_as else ('away' if curr_as > curr_hs else 'tied')
-
-        if prev_leader != curr_leader:
-            # Lead changed! But does it actually change our outlook?
-            if prev_scenarios and curr_scenarios:
-                prev_count = prev_scenarios.get('our_count', 0)
-                curr_count = curr_scenarios.get('our_count', 0)
-                if abs(curr_count - prev_count) >= 2:
-                    log.info(f'Narrative eval: REGENERATE (lead flip in other game, scenarios shifted by {abs(curr_count - prev_count)})')
-                    return True
-            else:
-                log.info('Narrative eval: REGENERATE (lead flip in other game)')
-                return True
-
-        # Blowout getting bigger or no lead change -- KEEP
-        log.debug(f'Narrative eval: score change in other game but no lead flip or minimal impact')
-
-    log.info('Narrative eval: KEEP')
+    log.info('Narrative eval: KEEP (no finals or corrections)')
     return False
 
 

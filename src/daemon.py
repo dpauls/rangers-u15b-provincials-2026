@@ -188,8 +188,9 @@ def process_changes(changes, tournament_data, prev_scenarios, skip_narrative=Fal
         if change['type'] == 'game_started':
             hs = g.get('home_score', 0) or 0
             as_ = g.get('away_score', 0) or 0
-            headline = f"Game #{g['game_id']} underway: {home_name} {hs} - {as_} {away_name}"
-            events.append(create_event('goal', headline))
+            headline = f"GAME STARTED: {home_name} vs {away_name} (Game #{g['game_id']})"
+            detail = f"Score: {hs}-{as_}" if (hs or as_) else None
+            events.append(create_event('info', headline, detail))
 
         elif change['type'] == 'score_change':
             hs = g.get('home_score', 0)

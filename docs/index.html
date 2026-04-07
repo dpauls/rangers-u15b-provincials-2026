@@ -205,18 +205,42 @@ function fmtGenerated(iso) {
     return d.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
 }
 
-function renderLiveBanner(liveGames, ourTeam) {
+function renderLiveBanner(liveGames, ourTeam, d) {
     if (!liveGames || liveGames.length === 0) return '';
-    return liveGames.map(g => `
-        <div class="live-banner">
+    return liveGames.map(g => {
+        const hs = g.home_score || 0;
+        const as_ = g.away_score || 0;
+        const isOurGame = (g.home === ourTeam || g.away === ourTeam);
+
+        let commentary = '';
+        if (isOurGame) {
+            const weAreHome = g.home === ourTeam;
+            const ourScore = weAreHome ? hs : as_;
+            const theirScore = weAreHome ? as_ : hs;
+            if (ourScore > theirScore) commentary = 'We have the lead!';
+            else if (theirScore > ourScore) commentary = 'We need to fight back.';
+            else commentary = 'Game is tied.';
+        } else {
+            if (hs > as_) commentary = `${esc(g.home_name.split('#')[0].trim())} leading.`;
+            else if (as_ > hs) commentary = `${esc(g.away_name.split('#')[0].trim())} leading.`;
+            else commentary = 'Game is tied.';
+        }
+
+        // Add live commentary from event log if available
+        const liveEvent = (d.event_log || []).filter(e =>
+            e.headline && e.headline.includes(String(g.game_id)) && e.detail
+        ).pop();
+        const detailHtml = liveEvent ? `<div style="font-size:0.8rem;margin-top:0.3rem;font-style:italic">${esc(liveEvent.detail)}</div>` : '';
+
+        return `<div class="live-banner">
             <span class="live-dot"></span> <strong>LIVE</strong>:
             <span${cls(g.home, ourTeam)}>${esc(g.home_name)}</span>
-            <strong>${g.home_score || 0}</strong> -
-            <strong>${g.away_score || 0}</strong>
+            <strong>${hs}</strong> - <strong>${as_}</strong>
             <span${cls(g.away, ourTeam)}>${esc(g.away_name)}</span>
-            (in progress)
-        </div>
-    `).join('');
+            <span style="font-size:0.85rem;margin-left:0.5rem">${commentary}</span>
+            ${detailHtml}
+        </div>`;
+    }).join('');
 }
 
 function mdToHtml(text) {
@@ -445,7 +469,7 @@ async function loadAndRender() {
         document.getElementById('updated').textContent =
             `Last updated: ${fmtGenerated(d.generated_at)} \u00b7 Auto-refreshes every 2 min`;
 
-        document.getElementById('live-banner-area').innerHTML = renderLiveBanner(d.live_games, d.our_team);
+        document.getElementById('live-banner-area').innerHTML = renderLiveBanner(d.live_games, d.our_team, d);
         document.getElementById('narrative-area').innerHTML = renderNarrative(d.narrative);
         document.getElementById('event-log-area').innerHTML = renderEventLog(d.event_log);
 
