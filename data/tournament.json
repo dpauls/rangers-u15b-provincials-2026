@@ -90,9 +90,9 @@
       "pool": "C",
       "home": "KIN",
       "away": "WIN",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
+      "home_score": 1,
+      "away_score": 0,
+      "status": "in_progress"
     },
     {
       "game_id": 143,
@@ -100,9 +100,9 @@
       "pool": "C",
       "home": "KAN",
       "away": "ENS",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
+      "home_score": 1,
+      "away_score": 0,
+      "status": "in_progress"
     },
     {
       "game_id": 162,
@@ -251,7 +251,20 @@
       "status": "pending"
     }
   ],
-  "event_log": [],
+  "event_log": [
+    {
+      "time": "Tue Apr 07, 09:33 PM",
+      "type": "info",
+      "headline": "GAME STARTED: Kincardine Kinucks vs Windsor Wildcats (Game #142)",
+      "detail": "Score: 1-0"
+    },
+    {
+      "time": "Tue Apr 07, 09:33 PM",
+      "type": "info",
+      "headline": "GAME STARTED: Kanata Rangers vs Ennismore Eagles (Game #143)",
+      "detail": "Score: 1-0"
+    }
+  ],
   "scouting": {
     "description": "This season we've faced several teams heading to Provincials across 5 tournaments. We swept St. Catharines Brock Jr. Badgers in two meetings (6-0, 2-0). Against the rest... let's just say we're looking for redemption. Of note: Durham West Lightning (#29) is in our quarterfinal opponent's pool (Pool F) -- they beat us 2-0 in November, but they're not the favourite to win their pool. In tournament play, anything can happen!",
     "matchups": [
