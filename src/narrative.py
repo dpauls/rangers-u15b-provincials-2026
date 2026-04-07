@@ -279,6 +279,39 @@ Write exactly 1 fun, brief sentence about who we're rooting for and why. Referen
     return _call(prompt, max_tokens=100, label="in_game_comment")
 
 
+def generate_event_impact(event_type, home_name, away_name, home_score, away_score,
+                          is_our_game, our_team_name, scenarios_if_holds=None,
+                          total_scenarios=None):
+    """Generate a 1-sentence impact comment for any game event."""
+    score_str = f"{home_name} {home_score}-{away_score} {away_name}"
+
+    if event_type == 'game_started':
+        if is_our_game:
+            prompt = f"""Our team ({our_team_name}) just started a game at OWHA U15B Provincials.
+Matchup: {score_str}
+Write exactly 1 short, encouraging sentence. Something like "Let's go Rangers!" but specific to the matchup."""
+        else:
+            prompt = f"""A pool game just started at OWHA U15B Provincials. We ({our_team_name}) are not playing.
+Matchup: {score_str}
+Write exactly 1 short sentence about why this game matters to us or who we're watching."""
+    elif event_type == 'score_change':
+        scenario_note = ''
+        if scenarios_if_holds is not None and total_scenarios:
+            scenario_note = f"\nIf this score holds, we win the pool in {scenarios_if_holds} of {total_scenarios} scenarios."
+        if is_our_game:
+            prompt = f"""Score update in our game ({our_team_name}) at OWHA U15B Provincials.
+Current: {score_str}{scenario_note}
+Write exactly 1 short sentence on what this means for us. Encouraging if we're ahead, urgent if behind, tense if tied."""
+        else:
+            prompt = f"""Score update in another pool game at OWHA U15B Provincials. We ({our_team_name}) are not playing.
+Current: {score_str}{scenario_note}
+Write exactly 1 short sentence about the impact on us — who we're rooting for and why."""
+    else:
+        return None
+
+    return _call(prompt, max_tokens=80, label=f"event_impact_{event_type}")
+
+
 def generate_correction_comment(game, old_score, new_score, our_team_name):
     """Generate a note about a post-game score correction."""
     home_name = game.get('home_name', game['home'])

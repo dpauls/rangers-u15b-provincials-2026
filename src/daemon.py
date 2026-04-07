@@ -33,6 +33,7 @@ from narrative import (
     generate_game_final_comment, generate_in_game_comment,
     generate_correction_comment, evaluate_narrative,
     generate_pregame_talking_points, generate_don_cherry,
+    generate_event_impact,
 )
 
 log = logging.getLogger(__name__)
@@ -188,36 +189,39 @@ def process_changes(changes, tournament_data, prev_scenarios, skip_narrative=Fal
         if change['type'] == 'game_started':
             hs = g.get('home_score', 0) or 0
             as_ = g.get('away_score', 0) or 0
+            is_our_game = (g['home'] == our_team or g['away'] == our_team)
             headline = f"GAME STARTED: {home_name} vs {away_name} (Game #{g['game_id']})"
-            detail = f"Score: {hs}-{as_}" if (hs or as_) else None
+
+            detail = None
+            if not skip_narrative:
+                detail = generate_event_impact(
+                    'game_started', home_name, away_name, hs, as_,
+                    is_our_game, our_team_name)
             events.append(create_event('info', headline, detail))
 
         elif change['type'] == 'score_change':
             hs = g.get('home_score', 0)
             as_ = g.get('away_score', 0)
+            is_our_game = (g['home'] == our_team or g['away'] == our_team)
             headline = f"Score update: {home_name} {hs} - {as_} {away_name} (in progress)"
 
-            detail = None
-            if not skip_narrative and g['home'] != our_team and g['away'] != our_team:
-                # Generate rooting interest for non-Kanata game
-                # Run what-if for current score holding vs reversal
-                from analyze import what_if_projection
+            # Run what-if projection for scenario impact
+            from analyze import what_if_projection
+            holds_count = None
+            holds_total = None
+            try:
                 if_holds = what_if_projection(our_pool, tournament_data,
                     [{'game_id': g['game_id'], 'home_score': hs, 'away_score': as_}])
                 holds_count = if_holds['counts'].get(our_team, 0)
+                holds_total = if_holds['total'] - if_holds.get('unresolved_count', 0)
+            except Exception:
+                pass
 
-                # Rough reversal: flip who's winning
-                if hs != as_:
-                    rev_hs, rev_as = (as_, hs)  # simple swap
-                    if_rev = what_if_projection(our_pool, tournament_data,
-                        [{'game_id': g['game_id'], 'home_score': rev_hs, 'away_score': rev_as}])
-                    rev_count = if_rev['counts'].get(our_team, 0)
-                else:
-                    rev_count = holds_count
-
-                detail = generate_in_game_comment(
-                    game_info, our_team, our_team_name,
-                    holds_count, rev_count, if_holds['total'])
+            detail = None
+            if not skip_narrative:
+                detail = generate_event_impact(
+                    'score_change', home_name, away_name, hs, as_,
+                    is_our_game, our_team_name, holds_count, holds_total)
 
             events.append(create_event('goal', headline, detail))
 
