@@ -411,6 +411,7 @@ function renderBeyondPool(d) {
         }
 
         if (d.scouting.matchups && d.scouting.matchups.length > 0) {
+            html += '<details><summary style="font-size:0.9rem;cursor:pointer">How did those go, you ask? Well...</summary>';
             d.scouting.matchups.forEach(m => {
                 const poolTag = m.pool ? ` (Pool ${esc(m.pool)})` : '';
                 const rankTag = m.ranking ? ` #${m.ranking}` : '';
@@ -420,6 +421,7 @@ function renderBeyondPool(d) {
                     html += `<div class="scouting-matchup"><span class="${cls}">${esc(g.score)}</span> <span style="color:var(--pico-muted-color);font-size:0.8rem">${esc(g.date)} &middot; ${esc(g.tournament)}</span></div>`;
                 });
             });
+            html += '</details>';
         }
 
         // "Of note:" on its own line after matchups
