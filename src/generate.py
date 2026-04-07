@@ -35,6 +35,7 @@ def build_standings(pool_id, data, analysis):
     games = data['pool_games']
     st = compute_standings(pool_id, teams, games)
     total = analysis['total'] if analysis else 1
+    deterministic = total - analysis.get('unresolved_count', 0) if analysis else 1
 
     rows = []
     for tid in sorted(st, key=lambda t: (st[t]['PTS'], st[t]['W'], st[t]['GF'] - st[t]['GA']), reverse=True):
@@ -51,7 +52,7 @@ def build_standings(pool_id, data, analysis):
             'pts': s['PTS'], 'gf': s['GF'], 'ga': s['GA'], 'gd': gd,
             'status': get_team_status(tid, analysis, total) if analysis else '',
             'adv_count': count,
-            'adv_pct': round(count / total * 100, 1) if total > 0 else 0,
+            'adv_pct': round(count / deterministic * 100, 1) if deterministic > 0 else 0,
         })
     return rows
 

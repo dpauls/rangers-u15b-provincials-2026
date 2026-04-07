@@ -403,9 +403,6 @@ function renderBeyondPool(d) {
         html += '<h3 style="font-size:1rem;margin-top:1.5rem">Scouting Report</h3>';
         html += `<p style="font-size:0.9rem">${esc(d.scouting.description)}</p>`;
 
-        if (d.scouting.pool_f_note) {
-            html += `<p style="font-size:0.85rem;color:var(--pico-muted-color)">${esc(d.scouting.pool_f_note)}</p>`;
-        }
 
         if (d.scouting.matchups && d.scouting.matchups.length > 0) {
             html += '<details><summary>Tournament History vs Provincial Teams</summary>';

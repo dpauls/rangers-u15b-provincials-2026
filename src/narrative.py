@@ -100,25 +100,24 @@ Scenario analysis: {sc_summary}
 Quarterfinal opponent pool (Pool {qf_pool_standings[0]['name'].split()[0] if qf_pool_standings else '?'} watch):
 {qf_str}
 
-The provincial rankings indicate pre-tournament strength. Lower rank = stronger team.
-A lower-ranked team beating a higher-ranked team is an upset worth noting.
+Provincial rankings: #1 is the strongest team in the province, higher numbers are weaker.
+For reference: #3 Kincardine is the strongest in our pool, then #18 Kanata (us),
+#25 Ennismore, and #41 Windsor is the weakest. A higher-ranked (bigger number) team
+beating a lower-ranked (smaller number) team is an upset.
 
-IMPORTANT about scenario numbers: The scenario analysis counts how many possible
-combinations of remaining game outcomes (win/loss/tie) result in us winning the pool.
-These are NOT probabilities or predictions -- they treat all outcomes as equally likely,
-which they aren't (ties are rarer, higher-ranked teams win more often). So NEVER say
-"29% chance" or "60% probability". Instead say things like "we win the pool in 49 out
-of 81 possible outcome combinations" or "the majority of scenarios have us advancing"
-or "only a narrow set of outcomes would knock us out". Use the numbers to illustrate
-how many paths exist, not to predict likelihood.
+IMPORTANT TONE RULES:
+- NEVER call any game "winnable" or "easy" based on rankings. Every team at Provincials
+  earned their spot and will be fired up. Even if rankings favor us, say things like
+  "rankings suggest we match up well, but they'll come out hungry" or "on paper we have
+  an edge, but anything can happen in tournament hockey."
+- NEVER say "X% chance" or "probability". Scenario counts are NOT predictions.
+  Say "we win the pool in X out of Y scenarios" to illustrate paths, not likelihood.
 
 Write 2-3 short paragraphs for hockey parents reading on their phones at the rink. Cover:
 1. Where {our_team_name} stands right now in Pool {our_pool}
-2. What the next game means and what result we need -- reference the opponent's ranking
-3. Who to root for in other pool games and why -- note when a result would be an upset based on rankings
+2. What the next game means -- reference rankings but respect every opponent
+3. Who to root for in other pool games and why
 
-When discussing matchups, mention rankings naturally (e.g., "our #18 Rangers face #3 Kincardine" or
-"an upset by #25 Ennismore over #3 Kincardine would help us").
 Be conversational and specific. No jargon. No filler.
 Keep it under 200 words total."""
 
@@ -361,19 +360,19 @@ Scenario analysis: {sc_summary}
 Quarterfinal opponent pool watch:
 {qf_str}
 
-The provincial rankings indicate pre-tournament strength. Lower rank = stronger team.
-A lower-ranked team beating a higher-ranked team is an upset worth noting.
+Provincial rankings: #1 is strongest, higher numbers weaker. In our pool:
+#3 Kincardine (strongest), #18 Kanata (us), #25 Ennismore, #41 Windsor (weakest).
 
-IMPORTANT about scenario numbers: These count possible outcomes, NOT probabilities.
-Don't say "X% chance". Say "X out of Y scenarios" or "most scenarios have us advancing".
+IMPORTANT TONE: Never call any game "winnable" or "easy". Every team earned their spot.
+Say "rankings suggest we match up well, but they'll come out hungry."
+Scenario counts are NOT predictions -- don't say "X% chance".
 
-Write 2-3 short paragraphs for hockey parents reading on their phones at the rink. Cover:
-1. Where {our_team_name} stands right now in Pool {our_pool}
-2. What the next game means and what result we need -- reference rankings
-3. Who to root for in other pool games and why
+Write 2-3 short paragraphs for hockey parents on their phones. Cover:
+1. Where {our_team_name} stands right now
+2. What the next game means -- respect every opponent regardless of ranking
+3. Who to root for in other games and why
 
-Be conversational and specific. No jargon. No filler.
-Keep it under 200 words total."""
+Be conversational and specific. No jargon. Keep it under 200 words."""
 
     return _call(prompt)
 
@@ -414,19 +413,16 @@ You're commenting on the {our_team_name} U15B girls team at the OWHA Provincial 
 
 Current situation: {context}
 
-Give a 2-3 sentence Don Cherry-style take. Rules:
+Give exactly 1-2 short sentences in Don Cherry's voice. Rules:
 - Open with "I'll tell ya..." or "Now listen..." or "You kids out there..."
-- Short, punchy, interrupted sentences -- thinking out loud
-- Champion toughness, effort, heart, Canadian pride
-- Reference specific game situations when possible
-- Get excited: "Beauty!" for great plays
-- If they lost: encouraging, "you dust yourself off", "that's hockey"
+- Short, punchy -- thinking out loud
+- Champion toughness, effort, heart
+- If they lost: encouraging, "dust yourself off"
 - If they won: fired up, "THAT'S how you play hockey!"
-- Remember these are U15 GIRLS -- be extra encouraging about girls growing the game
-- Keep it fun and family-friendly
-- Occasional tangent is on-brand"""
+- These are U15 GIRLS -- encouraging about girls growing the game
+- Keep it brief and fun. Less is more."""
 
-    return _call(prompt, max_tokens=200)
+    return _call(prompt, max_tokens=100)
 
 
 # ── CLI test ────────────────────────────────────────────────────

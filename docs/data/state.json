@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T17:13:41.124015+00:00",
+  "generated_at": "2026-04-07T13:16:40.003049-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -77,7 +77,7 @@
       "gd": 1,
       "status": "ALIVE",
       "adv_count": 22,
-      "adv_pct": 27.2
+      "adv_pct": 30.6
     },
     {
       "id": "KIN",
@@ -94,7 +94,7 @@
       "gd": 1,
       "status": "ALIVE",
       "adv_count": 22,
-      "adv_pct": 27.2
+      "adv_pct": 30.6
     },
     {
       "id": "ENS",
@@ -111,7 +111,7 @@
       "gd": -1,
       "status": "ALIVE",
       "adv_count": 14,
-      "adv_pct": 17.3
+      "adv_pct": 19.4
     },
     {
       "id": "WIN",
@@ -128,7 +128,7 @@
       "gd": -1,
       "status": "ALIVE",
       "adv_count": 14,
-      "adv_pct": 17.3
+      "adv_pct": 19.4
     }
   ],
   "scenarios": {
@@ -2291,7 +2291,7 @@
       "gd": 0,
       "status": "ALIVE",
       "adv_count": 156,
-      "adv_pct": 21.4
+      "adv_pct": 25.0
     },
     {
       "id": "LON",
@@ -2308,7 +2308,7 @@
       "gd": 0,
       "status": "ALIVE",
       "adv_count": 156,
-      "adv_pct": 21.4
+      "adv_pct": 25.0
     },
     {
       "id": "NHT",
@@ -2325,7 +2325,7 @@
       "gd": 0,
       "status": "ALIVE",
       "adv_count": 156,
-      "adv_pct": 21.4
+      "adv_pct": 25.0
     },
     {
       "id": "WAT",
@@ -2342,7 +2342,7 @@
       "gd": 0,
       "status": "ALIVE",
       "adv_count": 156,
-      "adv_pct": 21.4
+      "adv_pct": 25.0
     }
   ],
   "qf_scenarios": {
@@ -21753,10 +21753,9 @@
       "detail": null
     }
   ],
-  "narrative": "Great start for the Rangers! We're currently tied for first in Pool C after taking a 1-0 lead over Ennismore. Meanwhile, Kincardine (ranked #3 in the province) is also up 1-0 on Windsor. If both games finish as they stand, we'll have 3 points and be tied with the tournament favorites.\n\nOur next game against Kincardine on Friday morning is massive. They're the #3 seed while we're #18, so beating them would be a huge upset that puts us in excellent position to win the pool. Even a tie keeps us very much alive - we'd need to beat Windsor in our final game, which should be manageable given they're ranked #41.\n\nFor the other games, we want Windsor to beat Ennismore on Friday. That would eliminate a potential rival for pool position. The Kincardine-Windsor result doesn't matter much to us since we play both teams anyway. Bottom line: we control our own destiny. Beat Kincardine and we're likely pool champs. Lose but beat Windsor, and we probably still advance. Out of 72 possible tournament scenarios, we win the pool in 22 of them.",
+  "narrative": null,
   "scouting": {
-    "description": "This season we've faced 5 teams heading to Provincials across tournament play. We swept St. Catharines Brock Jr. Badgers in two meetings. Against the rest... let's just say we're looking for redemption at Provincials.",
-    "pool_f_note": "We haven't faced any Pool F teams in league play -- they're from different regions. We did meet Durham West Lightning once at a November tournament.",
+    "description": "This season we've faced several teams heading to Provincials across 5 tournaments. We swept St. Catharines Brock Jr. Badgers in two meetings (6-0, 2-0). Against the rest... let's just say we're looking for redemption. Of note: Durham West Lightning (#29) is in our quarterfinal opponent's pool (Pool F) -- they beat us 2-0 in November, but they're not the favourite to win their pool. In tournament play, anything can happen!",
     "matchups": [
       {
         "opponent": "Durham West Lightning",

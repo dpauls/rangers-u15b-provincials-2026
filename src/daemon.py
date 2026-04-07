@@ -469,10 +469,10 @@ def main():
     log.info('Initial generate and push...')
     generate(str(DATA_PATH), skip_narrative=True)
 
-    # Generate welcome narrative if no events yet and narrative enabled
+    # Generate welcome narrative + Coach's Corner if no events yet and narrative enabled
     if not args.skip_narrative and not tournament_data.get('event_log'):
-        log.info('Generating welcome narrative...')
         our_team = tournament_data['tournament']['our_team']
+        our_team_name = tournament_data['teams'][our_team]['name']
         our_pool = tournament_data['teams'][our_team]['pool']
         our_analysis = enumerate_scenarios(our_pool, tournament_data)
         from generate import build_standings, build_scenario_data, build_games_list
@@ -480,13 +480,50 @@ def main():
         scenario_data = build_scenario_data(our_analysis, our_team)
         qf_standings = build_standings('F', tournament_data, enumerate_scenarios('F', tournament_data))
         upcoming = build_games_list(our_pool, tournament_data, 'scheduled')
+
+        state = json.loads(STATE_PATH.read_text())
+
+        # Welcome narrative
+        log.info('Generating welcome narrative...')
         welcome = generate_overall_narrative(
-            standings, scenario_data, tournament_data['teams'][our_team]['name'],
+            standings, scenario_data, our_team_name,
             our_pool, qf_standings, [], upcoming)
         if welcome:
-            state = json.loads(STATE_PATH.read_text())
             state['narrative'] = welcome
-            STATE_PATH.write_text(json.dumps(state, indent=2))
+            tournament_data['_narrative'] = welcome
+
+        # Initial Coach's Corner
+        log.info('Generating initial Coach\'s Corner...')
+        coaches_corner = {}
+
+        # Don Cherry for the opening
+        cherry = generate_don_cherry(
+            f"Tournament is about to start. {our_team_name} is ranked #18 in the province. "
+            f"First game is against #25 Ennismore Eagles. Pool also has #3 Kincardine (tough!) "
+            f"and #41 Windsor. Only the pool winner advances to the quarterfinal.",
+            our_team_name)
+        if cherry:
+            coaches_corner['don_cherry'] = cherry
+
+        # Pre-game talking points for first game
+        our_upcoming = [g for g in upcoming if g['home'] == our_team or g['away'] == our_team]
+        if our_upcoming:
+            next_game = our_upcoming[0]
+            opp_id = next_game['away'] if next_game['home'] == our_team else next_game['home']
+            opp_name = tournament_data['teams'].get(opp_id, {}).get('name', opp_id)
+            opp_ranking = tournament_data['teams'].get(opp_id, {}).get('ranking', '?')
+            talking = generate_pregame_talking_points(
+                our_team_name, opp_name, opp_ranking,
+                [], 0, 'First game of the tournament.', 'Every game matters -- only the pool winner advances.')
+            if talking:
+                coaches_corner['talking_points'] = talking
+
+        if coaches_corner:
+            state['coaches_corner'] = coaches_corner
+            tournament_data['_coaches_corner'] = coaches_corner
+
+        STATE_PATH.write_text(json.dumps(state, indent=2))
+        DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
 
     if not args.skip_push:
         git_push()
