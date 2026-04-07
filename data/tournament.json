@@ -90,9 +90,9 @@
       "pool": "C",
       "home": "KIN",
       "away": "WIN",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
+      "home_score": 1,
+      "away_score": 0,
+      "status": "in_progress"
     },
     {
       "game_id": 143,
@@ -100,9 +100,9 @@
       "pool": "C",
       "home": "KAN",
       "away": "ENS",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
+      "home_score": 1,
+      "away_score": 0,
+      "status": "in_progress"
     },
     {
       "game_id": 162,
@@ -251,7 +251,20 @@
       "status": "pending"
     }
   ],
-  "event_log": [],
+  "event_log": [
+    {
+      "time": "Tue Apr 07, 07:33 PM",
+      "type": "goal",
+      "headline": "Game #142 underway: Kincardine Kinucks 1 - 0 Windsor Wildcats",
+      "detail": null
+    },
+    {
+      "time": "Tue Apr 07, 07:33 PM",
+      "type": "goal",
+      "headline": "Game #143 underway: Kanata Rangers 1 - 0 Ennismore Eagles",
+      "detail": null
+    }
+  ],
   "scouting": {
     "description": "This season we've faced several teams heading to Provincials across 5 tournaments. We swept St. Catharines Brock Jr. Badgers in two meetings (6-0, 2-0). Against the rest... let's just say we're looking for redemption. Of note: Durham West Lightning (#29) is in our quarterfinal opponent's pool (Pool F) -- they beat us 2-0 in November, but they're not the favourite to win their pool. In tournament play, anything can happen!",
     "matchups": [
@@ -395,7 +408,7 @@
       }
     }
   },
-  "_narrative": "**Where We Stand**\nWe're all tied up at 0-0-0 heading into the first games of Pool C action. As the #18 seed, we're right in the middle of this four-team battle.\n\n**Our Next Game**\nWe face the Ennismore Eagles on Friday April 10th at 9:15 AM. Rankings suggest we match up well against the #25 Eagles, but they'll come out hungry and ready to make a statement at Provincials.\n\n**Around the Pool**\nThe other 9:15 AM game has #3 Kincardine taking on #41 Windsor - that's our pool's top seed against the lowest ranked team. In the afternoon games, we'll face Windsor while Ennismore battles the tough Kinucks. Out of 729 possible ways the remaining games could play out, we win the pool in 156 of those scenarios.",
+  "_narrative": "**Where We Stand**\nThe situation has changed since our last update - we're currently holding a 1-0 lead over Ennismore in our opening game! If this result holds, we'll have the crucial first win we need in this tight four-team Pool C battle.\n\n**Our Next Game**\nOur afternoon matchup against Windsor at 3:45 PM becomes even more significant now. The #41 Wildcats are currently trailing 1-0 to Kincardine, so they'll be looking to bounce back against us.\n\n**Around the Pool**\nKincardine is also up 1-0 against Windsor in the other 9:15 AM game, putting the top-seeded Kinucks in good position. The afternoon slate has us facing Windsor while Ennismore takes on that tough #3 Kincardine squad. Out of 72 possible ways the remaining games could unfold, we win the pool in 22 scenarios, with 9 additional scenarios depending on goal differential.",
   "_coaches_corner": {
     "don_cherry": "I'll tell ya, these Kanata Rangers girls got heart and they're gonna have to dig deep against that tough Kincardine squad - but that's what hockey's all about, and these young ladies are the future of our beautiful game!",
     "talking_points": "\u2022 **Fresh start energy**: This is our clean slate moment -- first game nerves are normal, but channel that excitement into sharp, focused hockey from the opening faceoff.\n\n\u2022 **Stay disciplined and smart**: We've got zero penalty minutes because we haven't played yet, but good teams like us win by playing hard AND playing smart -- no unnecessary penalties that give them free power plays.\n\n\u2022 **Respect but don't fear #25**: Ennismore earned their ranking, but rankings don't score goals -- we control this game by executing our systems and playing our style of hockey.\n\n\u2022 **Pool winner takes all**: There's no second chances in this format, so treat every shift like it matters because it does -- we need to win this pool to keep our Provincial dreams alive."
