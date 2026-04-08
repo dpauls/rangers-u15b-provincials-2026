@@ -30,7 +30,11 @@ def load_tournament(path='data/tournament.json'):
 
 
 def compute_standings(pool_id, teams, games):
-    """Compute standings from completed/in-progress games for a pool."""
+    """Compute standings from completed games only.
+
+    In-progress games are excluded -- their scores are not yet final
+    and should not affect standings or scenario analysis.
+    """
     pool_teams = {tid: teams[tid] for tid in teams if teams[tid]['pool'] == pool_id}
     st = {}
     for tid in pool_teams:
@@ -39,7 +43,7 @@ def compute_standings(pool_id, teams, games):
     for g in games:
         if g['pool'] != pool_id:
             continue
-        if g['status'] not in ('final', 'in_progress'):
+        if g['status'] != 'final':
             continue
         if g['home_score'] is None or g['away_score'] is None:
             continue
@@ -49,14 +53,13 @@ def compute_standings(pool_id, teams, games):
         st[h]['GA'] += as_
         st[a]['GF'] += as_
         st[a]['GA'] += hs
-        if g['status'] == 'final':
-            if hs > as_:
-                st[h]['W'] += 1; st[h]['PTS'] += 2; st[a]['L'] += 1
-            elif as_ > hs:
-                st[a]['W'] += 1; st[a]['PTS'] += 2; st[h]['L'] += 1
-            else:
-                st[h]['T'] += 1; st[h]['PTS'] += 1
-                st[a]['T'] += 1; st[a]['PTS'] += 1
+        if hs > as_:
+            st[h]['W'] += 1; st[h]['PTS'] += 2; st[a]['L'] += 1
+        elif as_ > hs:
+            st[a]['W'] += 1; st[a]['PTS'] += 2; st[h]['L'] += 1
+        else:
+            st[h]['T'] += 1; st[h]['PTS'] += 1
+            st[a]['T'] += 1; st[a]['PTS'] += 1
 
     return st
 
@@ -81,8 +84,12 @@ def compute_h2h(pool_id, games):
 
 
 def get_remaining_games(pool_id, games):
-    """Return list of games in the pool that haven't been completed."""
-    return [g for g in games if g['pool'] == pool_id and g['status'] == 'scheduled']
+    """Return list of games in the pool that haven't been completed.
+
+    Both 'scheduled' and 'in_progress' games are considered remaining --
+    in-progress games are not yet final and their outcome is still uncertain.
+    """
+    return [g for g in games if g['pool'] == pool_id and g['status'] in ('scheduled', 'in_progress')]
 
 
 # ── Scenario simulation ────────────────────────────────────────
