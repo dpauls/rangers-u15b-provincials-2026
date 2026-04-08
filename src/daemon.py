@@ -125,6 +125,147 @@ def mark_game_final():
     _last_final_time = datetime.now()
 
 
+def compute_bench_analysis(tournament_data, our_team, our_pool):
+    """Compute goalie-pull analysis for bench.html.
+
+    Runs what-if projections for our current game's three outcomes
+    (win/tie/loss), factoring in concurrent game state.
+    Returns data for bench.html to render.
+    """
+    from analyze import what_if_projection, get_remaining_games
+    teams = tournament_data['teams']
+    games = tournament_data['pool_games']
+
+    # Find our in-progress game
+    our_game = None
+    other_live = None
+    for g in games:
+        if g.get('pool') != our_pool or g.get('status') != 'in_progress':
+            continue
+        if g['home'] == our_team or g['away'] == our_team:
+            our_game = g
+        else:
+            other_live = g
+
+    if not our_game:
+        return None
+
+    we_are_home = our_game['home'] == our_team
+    our_score = (our_game.get('home_score') or 0) if we_are_home else (our_game.get('away_score') or 0)
+    their_score = (our_game.get('away_score') or 0) if we_are_home else (our_game.get('home_score') or 0)
+    opp_id = our_game['away'] if we_are_home else our_game['home']
+    opp_name = teams.get(opp_id, {}).get('name', opp_id)
+
+    # What-if: assume our game ends as win, tie, or loss
+    # Use current score +1 for winner to simulate a realistic final
+    results = {}
+    for outcome, label in [(0, 'win'), (1, 'tie'), (2, 'loss')]:
+        if outcome == 0:  # we win
+            hs = max(our_score, their_score) + 1 if we_are_home else their_score
+            as_ = their_score if we_are_home else max(our_score, their_score) + 1
+            if we_are_home:
+                hs = max(our_score + 1, their_score + 1)
+                as_ = their_score
+            else:
+                hs = their_score
+                as_ = max(our_score + 1, their_score + 1)
+        elif outcome == 1:  # tie
+            tied = max(our_score, their_score)
+            hs = tied
+            as_ = tied
+        else:  # we lose
+            if we_are_home:
+                hs = our_score
+                as_ = max(our_score + 1, their_score + 1)
+            else:
+                hs = max(our_score + 1, their_score + 1)
+                as_ = our_score
+
+        assumed = [{'game_id': our_game['game_id'], 'home_score': hs, 'away_score': as_}]
+
+        # Also assume concurrent game holds at current score if in progress
+        if other_live and other_live.get('home_score') is not None:
+            assumed.append({
+                'game_id': other_live['game_id'],
+                'home_score': other_live.get('home_score', 0),
+                'away_score': other_live.get('away_score', 0),
+            })
+
+        try:
+            proj = what_if_projection(our_pool, tournament_data, assumed)
+            adv_count = proj['counts'].get(our_team, 0)
+            det = proj['total'] - proj.get('unresolved_count', 0)
+            results[label] = {
+                'advance': adv_count,
+                'total': det,
+                'advance_any': adv_count > 0,  # can we advance at all?
+            }
+        except Exception as e:
+            log.error(f'Bench projection error ({label}): {e}')
+            results[label] = {'advance': 0, 'total': 0, 'advance_any': False}
+
+    # Determine the indicator color
+    tie_advances = results['tie']['advance_any']
+    tie_count = results['tie']['advance']
+    tie_total = results['tie']['total']
+    win_count = results['win']['advance']
+
+    # Factor in concurrent game
+    other_info = None
+    if other_live:
+        oh = other_live.get('home_score', 0) or 0
+        oa = other_live.get('away_score', 0) or 0
+        other_home_name = teams.get(other_live['home'], {}).get('name', other_live['home'])
+        other_away_name = teams.get(other_live['away'], {}).get('name', other_live['away'])
+        margin = abs(oh - oa)
+        other_info = {
+            'home': other_home_name, 'away': other_away_name,
+            'home_score': oh, 'away_score': oa,
+            'margin': margin,
+        }
+
+    if not tie_advances:
+        # Tie eliminates us in ALL remaining scenarios
+        indicator = 'red'
+        reason = 'A tie eliminates us regardless of other results. We must win.'
+    elif tie_total > 0 and tie_count == tie_total:
+        # Tie guarantees advancement
+        indicator = 'green'
+        reason = 'A tie guarantees we advance. No need to take risks.'
+    elif tie_total > 0 and tie_count / tie_total > 0.7:
+        # Tie advances us in most scenarios
+        indicator = 'green'
+        reason = f'A tie advances us in {tie_count} of {tie_total} remaining scenarios. Safe to play it out.'
+    elif tie_total > 0 and tie_count / tie_total > 0.3:
+        # Mixed -- depends on other results
+        indicator = 'yellow'
+        if other_info and other_info['margin'] >= 2:
+            reason = (f'A tie advances us in {tie_count} of {tie_total} scenarios, '
+                     f'but the other game ({other_info["home"]} {other_info["home_score"]}-{other_info["away_score"]} {other_info["away"]}) '
+                     f'is trending the wrong way. Consider the risk.')
+        else:
+            reason = f'A tie advances us in {tie_count} of {tie_total} scenarios. It depends on the other game.'
+    else:
+        # Tie rarely works
+        indicator = 'yellow'
+        reason = (f'A tie only advances us in {tie_count} of {tie_total} scenarios. '
+                 f'A win is much better ({win_count} of {results["win"]["total"]}). Consider pulling late.')
+
+    return {
+        'our_game': {
+            'home': our_game['home'], 'away': our_game['away'],
+            'home_name': teams.get(our_game['home'], {}).get('name', our_game['home']),
+            'away_name': teams.get(our_game['away'], {}).get('name', our_game['away']),
+            'home_score': our_game.get('home_score', 0),
+            'away_score': our_game.get('away_score', 0),
+        },
+        'other_game': other_info,
+        'projections': results,
+        'indicator': indicator,
+        'reason': reason,
+    }
+
+
 def update_tournament_data(tournament_data, api_games, pool_id):
     """Update tournament.json pool_games with data from API response.
 
@@ -418,12 +559,17 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
         tournament_data['_coaches_corner'] = coaches_corner
         DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
 
-    # Inject narrative and coaches corner into state.json
+    # Compute bench analysis for goalie-pull decisions
+    bench = compute_bench_analysis(tournament_data, our_team, our_pool)
+
+    # Inject narrative, coaches corner, and bench into state.json
     state = json.loads(STATE_PATH.read_text())
     if narrative or tournament_data.get('_narrative'):
         state['narrative'] = narrative or tournament_data.get('_narrative')
     if coaches_corner:
         state['coaches_corner'] = coaches_corner
+    if bench:
+        state['bench'] = bench
     STATE_PATH.write_text(json.dumps(state, indent=2))
 
     # Push to GitHub

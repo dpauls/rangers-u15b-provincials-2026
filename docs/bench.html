@@ -23,19 +23,13 @@
         .indicator-green { background: #e8f5e9; color: #2e7d32; border: 3px solid #2e7d32; }
         .indicator-yellow { background: #fff8e1; color: #f57f17; border: 3px solid #f9a825; }
         .indicator-red { background: #fce4ec; color: #c62828; border: 3px solid #c62828; }
-
         .indicator .label { font-size: 0.9rem; font-weight: normal; margin-top: 0.5rem; }
 
-        .factors { list-style: disc; padding-left: 1.5rem; margin-top: 1rem; font-size: 0.95rem; }
-        .factors li { margin-bottom: 0.5rem; }
-
+        .live-score { font-size: 1.1rem; text-align: center; margin-bottom: 1rem; padding: 0.5rem; background: var(--pico-card-background-color); border-radius: 6px; }
         .scenario-impact { margin-top: 1rem; font-size: 0.9rem; }
         .scenario-impact table { width: 100%; font-size: 0.9rem; }
         .scenario-impact th { text-align: left; }
         .scenario-impact td { text-align: center; }
-
-        .live-score { font-size: 1.1rem; text-align: center; margin-bottom: 1rem; padding: 0.5rem; background: var(--pico-card-background-color); border-radius: 6px; }
-
         #updated { font-size: 0.75rem; color: var(--pico-muted-color); }
     </style>
 </head>
@@ -53,9 +47,9 @@
     <details open style="margin-top:1rem;font-size:0.8rem">
         <summary style="color:var(--pico-muted-color)">Legend</summary>
         <div style="margin-top:0.5rem">
-            <span style="color:#2e7d32;font-weight:bold">GREEN</span>: A tie is fine. Pull the goalie only if losing.<br>
-            <span style="color:#f57f17;font-weight:bold">YELLOW</span>: Tough call. A win helps a lot but a loss hurts.<br>
-            <span style="color:#c62828;font-weight:bold">RED</span>: Consider pulling on a tie. We likely need the win.
+            <span style="color:#2e7d32;font-weight:bold">GREEN</span>: A tie advances us. Pull the goalie only if losing.<br>
+            <span style="color:#f57f17;font-weight:bold">YELLOW</span>: Tough call. A tie might not be enough depending on other results.<br>
+            <span style="color:#c62828;font-weight:bold">RED</span>: A tie eliminates us. We must win — consider pulling on a tie.
         </div>
     </details>
 
@@ -72,121 +66,68 @@ function esc(s) {
     return d.innerHTML;
 }
 
-function analyzeGoaliePull(d) {
-    // Find our in-progress game
-    const ourTeam = d.our_team;
-    const ourGame = (d.live_games || []).find(g => g.home === ourTeam || g.away === ourTeam);
+function renderBench(d) {
+    const bench = d.bench;
 
-    if (!ourGame) {
-        return { status: 'no_game', html: '<p style="text-align:center;font-size:1.1rem">No Kanata game in progress.</p><p style="text-align:center;color:var(--pico-muted-color)">This page is most useful during our games when the score is tied late.</p>' };
+    if (!bench || !bench.our_game) {
+        return '<p style="text-align:center;font-size:1.1rem">No Kanata game in progress.</p>' +
+               '<p style="text-align:center;color:var(--pico-muted-color)">This page is most useful during our games, especially late in a tied game.</p>';
     }
 
-    const hs = ourGame.home_score || 0;
-    const as_ = ourGame.away_score || 0;
-    const weAreHome = ourGame.home === ourTeam;
+    const g = bench.our_game;
+    const ourTeam = d.our_team;
+    const hs = g.home_score || 0;
+    const as_ = g.away_score || 0;
+    const weAreHome = g.home === ourTeam;
     const ourScore = weAreHome ? hs : as_;
     const theirScore = weAreHome ? as_ : hs;
-    const opponentName = weAreHome ? ourGame.away_name : ourGame.home_name;
 
-    // Live score display
+    // Live score
     let html = `<div class="live-score">
-        <strong>${esc(ourGame.home_name)}</strong> ${hs} - ${as_} <strong>${esc(ourGame.away_name)}</strong>
+        <strong>${esc(g.home_name)}</strong> ${hs} - ${as_} <strong>${esc(g.away_name)}</strong>
         <span style="color:#d32f2f"> (LIVE)</span>
     </div>`;
 
-    // If we're winning or losing by 2+, simple assessment
+    // Simple cases: big lead or big deficit
     if (ourScore > theirScore + 1) {
-        html += `<div class="indicator indicator-green">
-            We're up by ${ourScore - theirScore}
-            <div class="label">Protect the lead. No need to take risks.</div>
-        </div>`;
-        return { status: 'winning', html };
+        return html + `<div class="indicator indicator-green">Up by ${ourScore - theirScore} — protect the lead<div class="label">No need to take risks.</div></div>`;
     }
-
     if (theirScore > ourScore + 1) {
-        html += `<div class="indicator indicator-red">
-            We're down by ${theirScore - ourScore}
-            <div class="label">Need goals. Consider aggressive strategies.</div>
-        </div>`;
-        return { status: 'losing', html };
+        return html + `<div class="indicator indicator-red">Down by ${theirScore - ourScore} — need goals<div class="label">Consider pulling the goalie now.</div></div>`;
+    }
+    if (ourScore > theirScore) {
+        html += `<div class="indicator indicator-green">Up by 1 — protect the lead<div class="label">Pull the goalie only if they tie it up.</div></div>`;
+    } else if (theirScore > ourScore) {
+        html += `<div class="indicator indicator-red">Down by 1 — pull the goalie late<div class="label">We need at least a tie. Pull in the final minute.</div></div>`;
+    } else {
+        // TIED — the real analysis
+        const ind = bench.indicator || 'yellow';
+        const cls = ind === 'green' ? 'indicator-green' : ind === 'red' ? 'indicator-red' : 'indicator-yellow';
+        const labels = { green: 'A tie advances us', yellow: 'Tough call', red: 'We need the win' };
+        html += `<div class="indicator ${cls}">${labels[ind] || 'Evaluating...'}<div class="label">${esc(bench.reason || '')}</div></div>`;
     }
 
-    // Close game (tied or within 1) -- this is where it gets interesting
-    const sc = d.scenarios;
-    if (!sc || !sc.scenarios) {
-        html += '<p>Scenario data not available.</p>';
-        return { status: 'unknown', html };
+    // Win / Tie / Loss projection table
+    const proj = bench.projections;
+    if (proj) {
+        html += `<div class="scenario-impact"><table>
+            <tr><th>If we...</th><th>We advance in</th></tr>
+            <tr><td><strong>Win</strong></td><td>${proj.win.advance} of ${proj.win.total} scenarios</td></tr>
+            <tr><td><strong>Tie</strong></td><td>${proj.tie.advance} of ${proj.tie.total} scenarios</td></tr>
+            <tr><td><strong>Lose</strong></td><td>${proj.loss.advance} of ${proj.loss.total} scenarios</td></tr>
+        </table></div>`;
     }
 
-    // Compute scenario impact for win/tie/loss
-    // We can't run the full analyzer client-side, but we can use the pre-computed counts
-    // For now, show what we know about the stakes
-    const isTied = ourScore === theirScore;
-    const upByOne = ourScore === theirScore + 1;
-    const downByOne = theirScore === ourScore + 1;
-
-    // Find the concurrent Pool C game
-    const otherGame = (d.live_games || []).find(g => g.home !== ourTeam && g.away !== ourTeam && g.home_score != null);
-    const completedOther = (d.completed || []).filter(g => true);
-
-    let factors = [];
-
-    if (isTied) {
-        // The key question: do we need the win or is a tie OK?
-        factors.push(`Score is tied ${ourScore}-${theirScore} against ${esc(opponentName)}`);
-
-        if (otherGame) {
-            const oh = otherGame.home_score || 0;
-            const oa = otherGame.away_score || 0;
-            const otherLeader = oh > oa ? otherGame.home_name : (oa > oh ? otherGame.away_name : 'tied');
-            factors.push(`Other game: ${esc(otherGame.home_name)} ${oh}-${oa} ${esc(otherGame.away_name)} (${otherLeader === 'tied' ? 'also tied' : esc(otherLeader) + ' leading'})`);
-        }
-
-        factors.push('A TIE gives us 1 point. Safe but may not be enough.');
-        factors.push('A WIN gives us 2 points but pulling the goalie risks giving up an empty-netter (0 points).');
-
-        // Determine color based on scenario data
-        const ourCount = sc.our_count || 0;
-        const total = sc.deterministic || sc.total;
-        const pct = total > 0 ? ourCount / total : 0;
-
-        if (pct > 0.6) {
-            html += `<div class="indicator indicator-green">
-                A tie is fine
-                <div class="label">Pull the goalie only if losing. A point keeps us in good shape.</div>
-            </div>`;
-        } else if (pct > 0.3) {
-            html += `<div class="indicator indicator-yellow">
-                Tough call
-                <div class="label">A win helps significantly, but a loss on an empty-netter would hurt. Weigh the risk.</div>
-            </div>`;
-        } else {
-            html += `<div class="indicator indicator-red">
-                Consider pulling on a tie
-                <div class="label">A tie likely isn't enough. The risk of pulling the goalie may be worth it.</div>
-            </div>`;
-        }
-    } else if (upByOne) {
-        html += `<div class="indicator indicator-green">
-            Up by 1 — protect the lead
-            <div class="label">No need to take risks. Keep it tight.</div>
-        </div>`;
-        factors.push(`Leading ${ourScore}-${theirScore}. Hold on to this.`);
-    } else if (downByOne) {
-        html += `<div class="indicator indicator-red">
-            Down by 1 — pull the goalie late
-            <div class="label">We need at least a tie. Pull the goalie in the final minute.</div>
-        </div>`;
-        factors.push(`Trailing ${ourScore}-${theirScore}. Need at least a tie.`);
+    // Other game info
+    if (bench.other_game) {
+        const o = bench.other_game;
+        const leader = o.home_score > o.away_score ? o.home : (o.away_score > o.home_score ? o.away : 'Tied');
+        html += `<p style="margin-top:0.75rem;font-size:0.9rem"><strong>Other game:</strong> ${esc(o.home)} ${o.home_score}-${o.away_score} ${esc(o.away)}`;
+        if (o.margin >= 2) html += ` <em>(${o.margin}-goal lead — unlikely to change)</em>`;
+        html += `</p>`;
     }
 
-    if (factors.length > 0) {
-        html += '<ul class="factors">';
-        factors.forEach(f => html += `<li>${f}</li>`);
-        html += '</ul>';
-    }
-
-    return { status: 'active', html };
+    return html;
 }
 
 async function loadAndRender() {
@@ -194,9 +135,7 @@ async function loadAndRender() {
         const resp = await fetch(DATA_URL + '?t=' + Date.now());
         if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
         const d = await resp.json();
-
-        const result = analyzeGoaliePull(d);
-        document.getElementById('content').innerHTML = result.html;
+        document.getElementById('content').innerHTML = renderBench(d);
         document.getElementById('updated').textContent =
             `Updated: ${new Date(d.generated_at).toLocaleTimeString()} \u00b7 Auto-refreshes every 60s`;
     } catch (err) {
