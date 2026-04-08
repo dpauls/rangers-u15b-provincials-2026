@@ -146,26 +146,23 @@ function renderLegend() {
 }
 
 function renderFilters(sc, ourTeam) {
-    const counts = { all: sc.scenarios.length, our_in: 0, our_out: 0, clean: 0, tiebreaker: 0, score_dependent: 0, unresolved: 0 };
+    // Three main categories matching the bar
+    let greenCount = 0, yellowCount = 0, redCount = 0;
     sc.scenarios.forEach(s => {
-        counts[s.res_type] = (counts[s.res_type] || 0);
-        // Already counted in init
-        if (s.advancing.includes(ourTeam)) counts.our_in++;
-        else counts.our_out++;
+        if (s.res_type === 'unresolved' || s.res_type === 'score_dependent') {
+            yellowCount++;
+        } else if (s.advancing && s.advancing.includes(ourTeam)) {
+            greenCount++;
+        } else {
+            redCount++;
+        }
     });
-    // Recount by type
-    counts.clean = sc.scenarios.filter(s => s.res_type === 'clean').length;
-    counts.tiebreaker = sc.scenarios.filter(s => s.res_type === 'tiebreaker').length;
-    counts.score_dependent = sc.scenarios.filter(s => s.res_type === 'score_dependent').length;
-    counts.unresolved = sc.scenarios.filter(s => s.res_type === 'unresolved').length;
 
     const btns = [
-        { key: 'all', label: `All (${counts.all})` },
-        { key: 'our_in', label: `We advance (${counts.our_in})` },
-        { key: 'our_out', label: `We're out (${counts.our_out})` },
-        { key: 'tiebreaker', label: `Tiebreaker (${counts.tiebreaker})` },
-        { key: 'score_dependent', label: `Score-dependent (${counts.score_dependent})` },
-        { key: 'unresolved', label: `Unresolved (${counts.unresolved})` },
+        { key: 'all', label: `All (${sc.scenarios.length})` },
+        { key: 'green', label: `We advance (${greenCount})` },
+        { key: 'yellow', label: `Score-dependent (${yellowCount})` },
+        { key: 'red', label: `We're out (${redCount})` },
     ];
     return `<div class="filters">${btns.map(b =>
         `<button class="${currentFilter === b.key ? 'active' : ''}" onclick="setFilter('${b.key}')">${b.label}</button>`
@@ -174,9 +171,18 @@ function renderFilters(sc, ourTeam) {
 
 function shouldShow(s, ourTeam) {
     if (currentFilter === 'all') return true;
-    if (currentFilter === 'our_in') return s.advancing.includes(ourTeam);
-    if (currentFilter === 'our_out') return !s.advancing.includes(ourTeam);
-    return s.res_type === currentFilter;
+    if (currentFilter === 'green') {
+        return s.res_type !== 'unresolved' && s.res_type !== 'score_dependent'
+            && s.advancing && s.advancing.includes(ourTeam);
+    }
+    if (currentFilter === 'yellow') {
+        return s.res_type === 'unresolved' || s.res_type === 'score_dependent';
+    }
+    if (currentFilter === 'red') {
+        return s.res_type !== 'unresolved' && s.res_type !== 'score_dependent'
+            && (!s.advancing || !s.advancing.includes(ourTeam));
+    }
+    return true;
 }
 
 function renderTable(sc, ourTeam) {
