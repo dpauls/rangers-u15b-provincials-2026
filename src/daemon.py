@@ -518,57 +518,79 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
     # Generate state.json
     generate(str(DATA_PATH), skip_narrative=True)
 
-    # Generate Coach's Corner content on game finals
-    has_our_final = any(
-        c['type'] == 'game_final' and
-        (c['curr'].get('home') == our_team or c['curr'].get('away') == our_team)
-        for c in changes
-    )
-    has_any_final = any(c['type'] == 'game_final' for c in changes)
+    # Generate Coach's Corner content -- only when the "for_game" changes
     coaches_corner = tournament_data.get('_coaches_corner', {})
+    has_any_final = any(c['type'] == 'game_final' for c in changes)
 
-    if not skip_narrative and (has_our_final or has_any_final):
+    if not skip_narrative:
         our_team_name = tournament_data['teams'][our_team]['name']
-
-        # Build context for Don Cherry
-        recent_results = [e['headline'] for e in events if e['type'] == 'final']
-        cherry_context = f"Tournament state: {', '.join(recent_results[-3:])}"
-
-        don_cherry = generate_don_cherry(cherry_context, our_team_name)
-        if don_cherry:
-            coaches_corner['don_cherry'] = don_cherry
-
-        # Generate pre-game talking points if there's a next game
         from generate import build_games_list, build_standings
+
+        # Determine what game Coach's Corner should be about:
+        # If we have an in-progress game, it's about that game
+        # If we have upcoming games, it's about the next one
+        # If no games left, no update
+        live = build_games_list(our_pool, tournament_data, 'in_progress')
         upcoming = build_games_list(our_pool, tournament_data, 'scheduled')
+        our_live = [g for g in live if g['home'] == our_team or g['away'] == our_team]
         our_upcoming = [g for g in upcoming if g['home'] == our_team or g['away'] == our_team]
-        if our_upcoming:
-            next_game = our_upcoming[0]
-            opp_id = next_game['away'] if next_game['home'] == our_team else next_game['home']
-            opp_name = tournament_data['teams'].get(opp_id, {}).get('name', opp_id)
-            opp_ranking = tournament_data['teams'].get(opp_id, {}).get('ranking', '?')
-            completed = build_games_list(our_pool, tournament_data, 'final')
-            our_results = [f"{g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']}"
-                          for g in completed
-                          if g['home'] == our_team or g['away'] == our_team]
 
-            # Get our PIM (from standings)
-            our_analysis = enumerate_scenarios(our_pool, tournament_data)
-            standings = build_standings(our_pool, tournament_data, our_analysis)
-            our_standing = next((s for s in standings if s['id'] == our_team), None)
-            our_pim = our_standing.get('pim', 0) if our_standing else 0
+        # Determine which opponent Coach's Corner should be about
+        # Use just the opponent name (no status suffix) so in-progress
+        # doesn't trigger a re-generation for the same opponent
+        if our_live:
+            g0 = our_live[0]
+            current_for_game = g0['away_name'] if g0['home'] == our_team else g0['home_name']
+        elif our_upcoming:
+            g0 = our_upcoming[0]
+            current_for_game = g0['away_name'] if g0['home'] == our_team else g0['home_name']
+        else:
+            current_for_game = None
 
-            # What's at stake
-            our_count = our_analysis['counts'].get(our_team, 0)
-            det = our_analysis['total'] - our_analysis.get('unresolved_count', 0)
-            stake = f"We win the pool in {our_count} of {det} deterministic scenarios."
+        prev_for_game = coaches_corner.get('for_game')
+        should_regen_corner = (
+            current_for_game is not None and
+            current_for_game != prev_for_game and
+            (has_any_final or not prev_for_game)  # regen on finals or if no content yet
+        )
 
-            talking_points = generate_pregame_talking_points(
-                our_team_name, opp_name, opp_ranking,
-                our_results, our_pim, stake, stake,
-                'Only pool winners advance to the quarterfinal.')
-            if talking_points:
-                coaches_corner['talking_points'] = talking_points
+        if should_regen_corner:
+            log.info(f'Coach\'s Corner: regenerating (was "{prev_for_game}", now "{current_for_game}")')
+            coaches_corner['for_game'] = current_for_game
+
+            # Don Cherry
+            recent_results = [e['headline'] for e in tournament_data.get('event_log', []) if e['type'] == 'final']
+            cherry_context = f"Tournament state: {', '.join(recent_results[-3:])}. Next: {current_for_game}."
+            don_cherry = generate_don_cherry(cherry_context, our_team_name)
+            if don_cherry:
+                coaches_corner['don_cherry'] = don_cherry
+
+            # Pre-game talking points for the relevant game
+            target_game = our_live[0] if our_live else (our_upcoming[0] if our_upcoming else None)
+            if target_game:
+                opp_id = target_game['away'] if target_game['home'] == our_team else target_game['home']
+                opp_name = tournament_data['teams'].get(opp_id, {}).get('name', opp_id)
+                opp_ranking = tournament_data['teams'].get(opp_id, {}).get('ranking', '?')
+                completed = build_games_list(our_pool, tournament_data, 'final')
+                our_results = [f"{g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']}"
+                              for g in completed
+                              if g['home'] == our_team or g['away'] == our_team]
+
+                our_analysis = enumerate_scenarios(our_pool, tournament_data)
+                standings = build_standings(our_pool, tournament_data, our_analysis)
+                our_standing = next((s for s in standings if s['id'] == our_team), None)
+                our_pim = our_standing.get('pim', 0) if our_standing else 0
+
+                our_count = our_analysis['counts'].get(our_team, 0)
+                det = our_analysis['total'] - our_analysis.get('unresolved_count', 0)
+                stake = f"We win the pool in {our_count} of {det} deterministic scenarios."
+
+                talking_points = generate_pregame_talking_points(
+                    our_team_name, opp_name, opp_ranking,
+                    our_results, our_pim, stake, stake,
+                    'Only pool winners advance to the quarterfinal.')
+                if talking_points:
+                    coaches_corner['talking_points'] = talking_points
 
         tournament_data['_coaches_corner'] = coaches_corner
         DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
