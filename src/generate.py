@@ -128,16 +128,32 @@ def build_scenario_data(analysis, our_team):
     remaining = analysis['remaining_games']
     remaining_info = [{'home': g['home'], 'away': g['away'], 'game_id': g['game_id'], 'date': g['date']} for g in remaining]
 
-    deterministic = total - unresolved_count
+    # Three categories for the bar:
+    # GREEN = we win via rules i-ii only (deterministic, score-independent)
+    # YELLOW = score-dependent (rules iii+) or truly unresolved
+    # RED = another team wins via rules i-ii only
+    green = 0  # deterministic IN
+    yellow = 0  # unknown (score-dependent + unresolved)
+    red = 0    # deterministic OUT
+    for sc in scenarios:
+        if sc['res_type'] == 'unresolved' or sc['res_type'] == 'score_dependent':
+            yellow += 1
+        elif sc['advancing'] and our_team in sc['advancing']:
+            green += 1
+        else:
+            red += 1
+
     return {
         'total': total,
-        'deterministic': deterministic,
-        'our_count': our_count,  # deterministic wins only
-        'our_pct': round(our_count / deterministic * 100, 1) if deterministic > 0 else 0,
+        'green': green,
+        'yellow': yellow,
+        'red': red,
+        'our_count': our_count,  # all wins (incl score-dependent) for standings column
+        'our_pct': round(green / (green + red) * 100, 1) if (green + red) > 0 else 0,
         'unresolved': unresolved_count,
+        'gd_dependent': analysis['gd_dependent_count'],
         'remaining_games': len(remaining),
         'remaining_info': remaining_info,
-        'gd_dependent': analysis['gd_dependent_count'],
         'counts': analysis['counts'],
         'scenarios': scenarios,
     }

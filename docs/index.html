@@ -309,33 +309,32 @@ function renderScenarios(sc, ourTeamName, ourPool, ourTeam) {
     }
 
     const total = sc.total;
-    const det = sc.deterministic || (total - (sc.unresolved || 0));
-    const ours = sc.our_count;  // deterministic wins only
-    const unresolved = sc.unresolved || 0;
-    const outCount = det - ours;  // deterministic losses
+    const green = sc.green || 0;   // we win, deterministic (rules i-ii)
+    const yellow = sc.yellow || 0; // score-dependent or unresolved
+    const red = sc.red || 0;       // we lose, deterministic (rules i-ii)
 
     // Percentages for the bar (of total)
-    const inPct = (ours / total * 100);
-    const unresPct = (unresolved / total * 100);
-    const outPct = (outCount / total * 100);
+    const greenPct = (green / total * 100);
+    const yellowPct = (yellow / total * 100);
+    const redPct = (red / total * 100);
 
     html += `<h2>Scenario Analysis</h2>`;
     html += `<p>With <strong>${sc.remaining_games}</strong> game${sc.remaining_games !== 1 ? 's' : ''} remaining, there are <strong>${total}</strong> possible scenarios (each remaining game can be a win, loss, or tie).</p>`;
 
-    // Three-color bar: Green (IN) / Yellow (Unresolved) / Red (OUT)
+    // Three-color bar: Green (IN) / Yellow (Unknown) / Red (OUT)
     html += `<div class="scenario-bar">`;
-    if (ours > 0) html += `<div class="bar-in" style="width:${inPct}%">${ours}</div>`;
-    if (unresolved > 0) html += `<div style="width:${unresPct}%;background:#f9a825;color:#333;display:flex;align-items:center;justify-content:center;font-size:0.8rem">${unresolved}</div>`;
-    if (outCount > 0) html += `<div class="bar-out" style="width:${outPct}%">${outCount}</div>`;
+    if (green > 0) html += `<div class="bar-in" style="width:${greenPct}%">${green}</div>`;
+    if (yellow > 0) html += `<div style="width:${Math.max(yellowPct, 6)}%;background:#f9a825;color:#333;display:flex;align-items:center;justify-content:center;font-size:0.8rem;min-width:2rem">${yellow}</div>`;
+    if (red > 0) html += `<div class="bar-out" style="width:${redPct}%">${red}</div>`;
     html += `</div>`;
 
     // Legend for the bar
     html += `<p style="font-size:0.82rem;line-height:1.6">`;
-    html += `<span style="color:#2e7d32;font-weight:bold">\u25A0</span> <strong>${ours}</strong> scenarios: we win the pool (based on W/L/T and head-to-head)<br>`;
-    if (unresolved > 0) {
-        html += `<span style="color:#f9a825;font-weight:bold">\u25A0</span> <strong>${unresolved}</strong> scenarios: depends on actual scores (goal differential, PIMs, etc.)<br>`;
+    html += `<span style="color:#2e7d32;font-weight:bold">\u25A0</span> <strong>${green}</strong> scenarios: we win the pool (based on W/L/T and head-to-head only)<br>`;
+    if (yellow > 0) {
+        html += `<span style="color:#f9a825;font-weight:bold">\u25A0</span> <strong>${yellow}</strong> scenarios: outcome depends on actual scores (goal differential, goals against, etc.)<br>`;
     }
-    html += `<span style="color:#c62828;font-weight:bold">\u25A0</span> <strong>${outCount}</strong> scenarios: another team wins the pool`;
+    html += `<span style="color:#c62828;font-weight:bold">\u25A0</span> <strong>${red}</strong> scenarios: another team wins (based on W/L/T and head-to-head only)`;
     html += `</p>`;
     html += `<p style="font-size:0.8rem;color:var(--pico-muted-color);font-style:italic">These aren't predictions — they count possible outcomes without weighting for team strength.</p>`;
 
@@ -475,8 +474,8 @@ async function loadAndRender() {
 
         document.getElementById('pool-header').textContent = `Pool ${d.our_pool} Standings`;
         const showAdv = d.scenarios && d.scenarios.total > 1;
-        const scenarioDet = d.scenarios ? (d.scenarios.deterministic || d.scenarios.total) : 0;
-        document.getElementById('standings-area').innerHTML = renderStandings(d.standings, showAdv, d.our_team, scenarioDet);
+        const resolvedTotal = d.scenarios ? ((d.scenarios.green || 0) + (d.scenarios.red || 0)) : 0;
+        document.getElementById('standings-area').innerHTML = renderStandings(d.standings, showAdv, d.our_team, resolvedTotal);
 
         document.getElementById('scenarios-area').innerHTML = renderScenarios(d.scenarios, d.our_team_name, d.our_pool, d.our_team);
 

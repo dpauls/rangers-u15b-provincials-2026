@@ -271,15 +271,19 @@ function render() {
     }
 
     const total = sc.total;
-    const ours = sc.our_count;
-    const inPct = (ours / total * 100).toFixed(1);
-    const outCount = total - ours;
-    const outPct = (100 - inPct).toFixed(1);
+    const green = sc.green || 0;
+    const yellow = sc.yellow || 0;
+    const red = sc.red || 0;
 
-    let summary = `<p><strong>${sc.remaining_games}</strong> game${sc.remaining_games !== 1 ? 's' : ''} remaining &middot; <strong>${total}</strong> possible outcomes &middot; <strong>${d.our_team_name}</strong> wins the pool in <strong>${ours}</strong> (${inPct}%)</p>`;
+    const greenPct = (green / total * 100);
+    const yellowPct = (yellow / total * 100);
+    const redPct = (red / total * 100);
+
+    let summary = `<p><strong>${sc.remaining_games}</strong> game${sc.remaining_games !== 1 ? 's' : ''} remaining &middot; <strong>${total}</strong> possible outcomes &middot; <strong>${d.our_team_name}</strong> wins in <strong>${green}</strong> resolved + <strong>${yellow}</strong> score-dependent</p>`;
     summary += `<div class="scenario-bar">`;
-    if (ours > 0) summary += `<div class="bar-in" style="width:${inPct}%">${ours} IN</div>`;
-    if (outCount > 0) summary += `<div class="bar-out" style="width:${outPct}%">${outCount} OUT</div>`;
+    if (green > 0) summary += `<div class="bar-in" style="width:${greenPct}%">${green} IN</div>`;
+    if (yellow > 0) summary += `<div style="width:${Math.max(yellowPct, 6)}%;background:#f9a825;color:#333;display:flex;align-items:center;justify-content:center;font-size:0.8rem;min-width:2rem">${yellow}</div>`;
+    if (red > 0) summary += `<div class="bar-out" style="width:${redPct}%">${red} OUT</div>`;
     summary += `</div>`;
 
     document.getElementById('summary').innerHTML = summary;

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T20:41:01.526868-04:00",
+  "generated_at": "2026-04-07T20:50:48.290697-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -133,10 +133,13 @@
   ],
   "scenarios": {
     "total": 729,
-    "deterministic": 624,
+    "green": 156,
+    "yellow": 105,
+    "red": 468,
     "our_count": 156,
     "our_pct": 25.0,
     "unresolved": 105,
+    "gd_dependent": 105,
     "remaining_games": 6,
     "remaining_info": [
       {
@@ -176,7 +179,6 @@
         "date": "2026-04-11T10:30"
       }
     ],
-    "gd_dependent": 105,
     "counts": {
       "KAN": 156,
       "ENS": 156,
@@ -19554,10 +19556,13 @@
   ],
   "qf_scenarios": {
     "total": 729,
-    "deterministic": 624,
+    "green": 0,
+    "yellow": 105,
+    "red": 624,
     "our_count": 0,
     "our_pct": 0.0,
     "unresolved": 105,
+    "gd_dependent": 105,
     "remaining_games": 6,
     "remaining_info": [
       {
@@ -19597,7 +19602,6 @@
         "date": "2026-04-11T12:00"
       }
     ],
-    "gd_dependent": 105,
     "counts": {
       "DUR": 156,
       "LON": 156,
