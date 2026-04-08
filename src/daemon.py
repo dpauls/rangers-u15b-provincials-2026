@@ -410,7 +410,8 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
 
             talking_points = generate_pregame_talking_points(
                 our_team_name, opp_name, opp_ranking,
-                our_results, our_pim, stake, stake)
+                our_results, our_pim, stake, stake,
+                'Only pool winners advance to the quarterfinal.')
             if talking_points:
                 coaches_corner['talking_points'] = talking_points
 
