@@ -225,31 +225,45 @@ def compute_bench_analysis(tournament_data, our_team, our_pool):
         }
 
     if not tie_advances:
-        # Tie eliminates us in ALL remaining scenarios
         indicator = 'red'
         reason = 'A tie eliminates us regardless of other results. We must win.'
     elif tie_total > 0 and tie_count == tie_total:
-        # Tie guarantees advancement
         indicator = 'green'
         reason = 'A tie guarantees we advance. No need to take risks.'
     elif tie_total > 0 and tie_count / tie_total > 0.7:
-        # Tie advances us in most scenarios
         indicator = 'green'
         reason = f'A tie advances us in {tie_count} of {tie_total} remaining scenarios. Safe to play it out.'
-    elif tie_total > 0 and tie_count / tie_total > 0.3:
-        # Mixed -- depends on other results
-        indicator = 'yellow'
-        if other_info and other_info['margin'] >= 2:
-            reason = (f'A tie advances us in {tie_count} of {tie_total} scenarios, '
-                     f'but the other game ({other_info["home"]} {other_info["home_score"]}-{other_info["away_score"]} {other_info["away"]}) '
-                     f'is trending the wrong way. Consider the risk.')
-        else:
-            reason = f'A tie advances us in {tie_count} of {tie_total} scenarios. It depends on the other game.'
     else:
-        # Tie rarely works
+        # Yellow: this is the nuanced case. Get LLM commentary.
         indicator = 'yellow'
-        reason = (f'A tie only advances us in {tie_count} of {tie_total} scenarios. '
-                 f'A win is much better ({win_count} of {results["win"]["total"]}). Consider pulling late.')
+
+        # Build rich context for LLM
+        from generate import build_standings
+        our_analysis = enumerate_scenarios(our_pool, tournament_data)
+        standings = build_standings(our_pool, tournament_data, our_analysis)
+        standings_summary = ', '.join(
+            f"{s['name'].split('#')[0].strip()} {s['pts']}pts ({s['w']}W-{s['l']}L-{s['t']}T, GD{'+' if s['gd']>0 else ''}{s['gd']})"
+            for s in standings
+        )
+
+        # Tiebreaker state: current GD, GA for teams near us
+        tb_lines = []
+        for s in standings:
+            tb_lines.append(f"  {s['name'].split('#')[0].strip()}: GD={'+' if s['gd']>0 else ''}{s['gd']}, GA={s['ga']}")
+        tiebreaker_state = '\n'.join(tb_lines)
+
+        from narrative import generate_bench_commentary
+        llm_reason = generate_bench_commentary(
+            teams[our_team]['name'], our_score, their_score, opp_name,
+            results, other_info, standings_summary, tiebreaker_state)
+
+        if llm_reason:
+            reason = llm_reason
+        elif tie_total > 0 and tie_count / tie_total > 0.3:
+            reason = f'A tie advances us in {tie_count} of {tie_total} scenarios. It depends on other results.'
+        else:
+            reason = (f'A tie only advances us in {tie_count} of {tie_total} scenarios. '
+                     f'A win is much better ({win_count} of {results["win"]["total"]}). Consider pulling late.')
 
     return {
         'our_game': {

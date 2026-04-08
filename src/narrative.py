@@ -312,6 +312,47 @@ Write exactly 1 short sentence about the impact on us — who we're rooting for 
     return _call(prompt, max_tokens=80, label=f"event_impact_{event_type}")
 
 
+def generate_bench_commentary(our_team_name, our_score, their_score, opp_name,
+                               projections, other_game_info, standings_summary,
+                               tiebreaker_state):
+    """Generate LLM commentary for yellow bench situations.
+
+    Called when the goalie-pull decision is unclear (tie might or might not
+    advance us depending on other results and score margins).
+    """
+    other_str = 'No concurrent game.'
+    if other_game_info:
+        o = other_game_info
+        other_str = (f"Concurrent game: {o['home']} {o['home_score']}-{o['away_score']} {o['away']} "
+                    f"({'tied' if o['home_score'] == o['away_score'] else str(o['margin']) + '-goal lead'})")
+
+    prompt = f"""You are the tactical analyst for {our_team_name} at OWHA U15B Provincials.
+The coach needs to decide whether to pull the goalie late in a tied game.
+
+CURRENT SITUATION:
+- Our game: {our_team_name} {our_score} - {their_score} {opp_name} (TIED, late in the game)
+- {other_str}
+
+IF WE WIN: We advance in {projections['win']['advance']} of {projections['win']['total']} scenarios
+IF WE TIE: We advance in {projections['tie']['advance']} of {projections['tie']['total']} scenarios
+IF WE LOSE: We advance in {projections['loss']['advance']} of {projections['loss']['total']} scenarios
+
+CURRENT STANDINGS: {standings_summary}
+
+TIEBREAKER STATE (if we tie on points with another team):
+{tiebreaker_state}
+
+Pulling the goalie on a tie INCREASES chance of winning (extra attacker)
+but SIGNIFICANTLY increases chance of giving up an empty-net goal (loss, 0 points).
+
+Write 2-3 concise sentences explaining the key factors for this decision.
+Focus on: Does the concurrent game's current score make a tie likely to work?
+How much does a win vs tie change our outlook? Is the risk worth it?
+Be practical and specific. This is for a coach glancing at a phone on the bench."""
+
+    return _call(prompt, max_tokens=200, label='bench_commentary')
+
+
 def generate_correction_comment(game, old_score, new_score, our_team_name):
     """Generate a note about a post-game score correction."""
     home_name = game.get('home_name', game['home'])
