@@ -4,6 +4,7 @@ services:
     build: .
     environment:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - TZ=${TZ:-America/Toronto}
       - GIT_AUTHOR_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
       - GIT_AUTHOR_EMAIL=${GIT_USER_EMAIL:-tracker@example.com}
       - GIT_COMMITTER_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
@@ -24,6 +25,7 @@ services:
     build: .
     environment:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - TZ=${TZ:-America/Toronto}
       - GIT_AUTHOR_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
       - GIT_AUTHOR_EMAIL=${GIT_USER_EMAIL:-tracker@example.com}
       - GIT_COMMITTER_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
@@ -46,6 +48,7 @@ services:
     build: .
     environment:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - TZ=${TZ:-America/Toronto}
       - GIT_AUTHOR_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
       - GIT_AUTHOR_EMAIL=${GIT_USER_EMAIL:-tracker@example.com}
       - GIT_COMMITTER_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
