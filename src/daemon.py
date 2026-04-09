@@ -553,6 +553,35 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
                         f"TIEBREAKER: {', '.join(tb['teams'])} tied at {tb['pts']}pts. "
                         f"Resolution: {' '.join(tb['lines'])}")
 
+            # Detect elimination or advancement
+            remaining_pool = build_games_list(our_pool, tournament_data, 'scheduled')
+            remaining_live = build_games_list(our_pool, tournament_data, 'in_progress')
+            pool_complete = len(remaining_pool) == 0 and len(remaining_live) == 0
+
+            if pool_complete and our_analysis['total'] == 1:
+                sc = our_analysis['scenarios'][0]
+                if sc['result']['advancing'] and our_team in sc['result']['advancing']:
+                    recent_change_descs.append(
+                        f"WE WON POOL {our_pool}! We advance to the Quarter-Final!")
+                    # Check bracket for QF opponent
+                    for b in tournament_data.get('bracket', []):
+                        if b.get('round') == 'QF' and 'C1' in str(b.get('label', '')):
+                            recent_change_descs.append(
+                                f"Our Quarter-Final is {b.get('date', 'TBD')}.")
+                            break
+                elif sc['result']['advancing'] and our_team not in sc['result']['advancing']:
+                    winner = sc['result']['advancing'][0]
+                    winner_name = tournament_data['teams'].get(winner, {}).get('name', winner)
+                    recent_change_descs.append(
+                        f"ELIMINATED: We did not win Pool {our_pool}. "
+                        f"{winner_name} advances. "
+                        f"Reflect on a great season and tournament effort. "
+                        f"The tone should be proud and forward-looking.")
+                elif sc['result']['unresolved']:
+                    recent_change_descs.append(
+                        f"Pool {our_pool} winner is UNRESOLVED by our tiebreaker data. "
+                        f"Officials will determine the winner.")
+
             narrative = generate_overall_narrative_with_context(
                 prev_narrative, standings, scenario_data,
                 tournament_data['teams'][our_team]['name'], our_pool,
@@ -584,8 +613,6 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
         our_upcoming = [g for g in upcoming if g['home'] == our_team or g['away'] == our_team]
 
         # Determine which opponent Coach's Corner should be about
-        # Use just the opponent name (no status suffix) so in-progress
-        # doesn't trigger a re-generation for the same opponent
         if our_live:
             g0 = our_live[0]
             current_for_game = g0['away_name'] if g0['home'] == our_team else g0['home_name']
@@ -593,7 +620,19 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
             g0 = our_upcoming[0]
             current_for_game = g0['away_name'] if g0['home'] == our_team else g0['home_name']
         else:
-            current_for_game = None
+            # Pool play might be over -- check if we're eliminated or advancing
+            our_analysis_cc = enumerate_scenarios(our_pool, tournament_data)
+            pool_done = len(live) == 0 and len(upcoming) == 0
+            if pool_done and our_analysis_cc['total'] == 1:
+                sc = our_analysis_cc['scenarios'][0]
+                if sc['result']['advancing'] and our_team in sc['result']['advancing']:
+                    current_for_game = 'Quarter-Final'
+                elif sc['result']['advancing']:
+                    current_for_game = 'ELIMINATED'
+                else:
+                    current_for_game = 'ELIMINATED'
+            else:
+                current_for_game = None
 
         prev_for_game = coaches_corner.get('for_game')
         should_regen_corner = (
@@ -608,52 +647,85 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
 
             # Don Cherry
             recent_results = [e['headline'] for e in tournament_data.get('event_log', []) if e['type'] == 'final']
-            cherry_context = f"Tournament state: {', '.join(recent_results[-3:])}. Next: {current_for_game}."
+            if current_for_game == 'ELIMINATED':
+                cherry_context = (f"Tournament is over for us. Results: {', '.join(recent_results[-3:])}. "
+                                  f"We didn't win the pool. Be encouraging about the season and the effort.")
+            elif current_for_game == 'Quarter-Final':
+                cherry_context = (f"We won our pool and advance to the Quarter-Final! "
+                                  f"Results: {', '.join(recent_results[-3:])}.")
+            else:
+                cherry_context = f"Tournament state: {', '.join(recent_results[-3:])}. Next: {current_for_game}."
             don_cherry = generate_don_cherry(cherry_context, our_team_name)
             if don_cherry:
                 coaches_corner['don_cherry'] = don_cherry
 
-            # Pre-game talking points for the relevant game
-            target_game = our_live[0] if our_live else (our_upcoming[0] if our_upcoming else None)
-            if target_game:
-                opp_id = target_game['away'] if target_game['home'] == our_team else target_game['home']
-                opp_name = tournament_data['teams'].get(opp_id, {}).get('name', opp_id)
-                opp_ranking = tournament_data['teams'].get(opp_id, {}).get('ranking', '?')
-                completed = build_games_list(our_pool, tournament_data, 'final')
-                # Build results with most recent first and win/loss indicator
-                our_completed = [g for g in completed
-                                if g['home'] == our_team or g['away'] == our_team]
-                our_results = []
-                for i, g in enumerate(our_completed):
-                    we_home = g['home'] == our_team
-                    our_goals = g['home_score'] if we_home else g['away_score']
-                    their_goals = g['away_score'] if we_home else g['home_score']
-                    if our_goals > their_goals:
-                        result_tag = 'WIN'
-                    elif their_goals > our_goals:
-                        result_tag = 'LOSS'
-                    else:
-                        result_tag = 'TIE'
-                    recency = '(MOST RECENT)' if i == 0 else ''
-                    our_results.append(
-                        f"{g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']} [{result_tag}] {recency}".strip()
-                    )
+            # Pre-game talking points
+            if current_for_game == 'ELIMINATED':
+                # Post-elimination: focus on season recap and looking forward
+                talking = generate_pregame_talking_points(
+                    our_team_name, 'Season Recap', '?',
+                    [e['headline'] for e in tournament_data.get('event_log', []) if e['type'] == 'final'],
+                    0, 'Pool play is over. We did not advance.',
+                    'Tournament is over for us.',
+                    'Focus on the positives from this season and this tournament. Cheer up the players.')
+                if talking:
+                    coaches_corner['talking_points'] = talking
+            elif current_for_game == 'Quarter-Final':
+                # QF prep -- find the QF opponent from bracket
+                qf_opp = 'TBD'
+                for b in tournament_data.get('bracket', []):
+                    if b.get('round') == 'QF' and 'C1' in str(b.get('label', '')):
+                        # Pool F winner
+                        qf_opp = 'the Pool F winner'
+                        break
+                talking = generate_pregame_talking_points(
+                    our_team_name, qf_opp, '?',
+                    [e['headline'] for e in tournament_data.get('event_log', []) if e['type'] == 'final'],
+                    0, 'We won our pool and advance to the Quarter-Final!',
+                    'Single elimination -- win or go home.',
+                    'Quarter-Final game. Everything we worked for comes down to this.')
+                if talking:
+                    coaches_corner['talking_points'] = talking
+            else:
+                target_game = our_live[0] if our_live else (our_upcoming[0] if our_upcoming else None)
+                if target_game:
+                    opp_id = target_game['away'] if target_game['home'] == our_team else target_game['home']
+                    opp_name = tournament_data['teams'].get(opp_id, {}).get('name', opp_id)
+                    opp_ranking = tournament_data['teams'].get(opp_id, {}).get('ranking', '?')
+                    completed = build_games_list(our_pool, tournament_data, 'final')
+                    our_completed = [g for g in completed
+                                    if g['home'] == our_team or g['away'] == our_team]
+                    our_results = []
+                    for i, g in enumerate(our_completed):
+                        we_home = g['home'] == our_team
+                        our_goals = g['home_score'] if we_home else g['away_score']
+                        their_goals = g['away_score'] if we_home else g['home_score']
+                        if our_goals > their_goals:
+                            result_tag = 'WIN'
+                        elif their_goals > our_goals:
+                            result_tag = 'LOSS'
+                        else:
+                            result_tag = 'TIE'
+                        recency = '(MOST RECENT)' if i == 0 else ''
+                        our_results.append(
+                            f"{g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']} [{result_tag}] {recency}".strip()
+                        )
 
-                our_analysis = enumerate_scenarios(our_pool, tournament_data)
-                standings = build_standings(our_pool, tournament_data, our_analysis)
-                our_standing = next((s for s in standings if s['id'] == our_team), None)
-                our_pim = our_standing.get('pim', 0) if our_standing else 0
+                    our_analysis = enumerate_scenarios(our_pool, tournament_data)
+                    standings = build_standings(our_pool, tournament_data, our_analysis)
+                    our_standing = next((s for s in standings if s['id'] == our_team), None)
+                    our_pim = our_standing.get('pim', 0) if our_standing else 0
 
-                our_count = our_analysis['counts'].get(our_team, 0)
-                det = our_analysis['total'] - our_analysis.get('unresolved_count', 0)
-                stake = f"We win the pool in {our_count} of {det} deterministic scenarios."
+                    our_count = our_analysis['counts'].get(our_team, 0)
+                    det = our_analysis['total'] - our_analysis.get('unresolved_count', 0)
+                    stake = f"We win the pool in {our_count} of {det} deterministic scenarios."
 
-                talking_points = generate_pregame_talking_points(
-                    our_team_name, opp_name, opp_ranking,
-                    our_results, our_pim, stake, stake,
-                    'Only pool winners advance to the quarterfinal.')
-                if talking_points:
-                    coaches_corner['talking_points'] = talking_points
+                    talking_points = generate_pregame_talking_points(
+                        our_team_name, opp_name, opp_ranking,
+                        our_results, our_pim, stake, stake,
+                        'Only pool winners advance to the quarterfinal.')
+                    if talking_points:
+                        coaches_corner['talking_points'] = talking_points
 
         tournament_data['_coaches_corner'] = coaches_corner
         DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
