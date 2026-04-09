@@ -146,6 +146,7 @@ def generate_overall_narrative(standings, scenarios, our_team_name, our_pool,
     prompt = f"""You are the tournament analyst for the {our_team_name} at the OWHA U15B Provincial Championships.
 
 === FACTS (use these exactly, do NOT invent schedule details) ===
+SCORING RULES: Win = 2 points, Tie = 1 point each, Loss = 0 points. This is hockey, NOT soccer.
 
 Pool {our_pool} standings:
 {standings_str}
@@ -296,6 +297,7 @@ def generate_event_impact(event_type, home_name, away_name, home_score, away_sco
     if tournament_context:
         ctx = f"""
 === TOURNAMENT CONTEXT ===
+SCORING: Win = 2 points, Tie = 1 point each, Loss = 0 points. (NOT soccer rules!)
 Standings: {tournament_context.get('standings_summary', 'unknown')}
 Completed games: {tournament_context.get('completed_summary', 'unknown')}
 Remaining games: {tournament_context.get('upcoming_summary', 'none')}
@@ -356,6 +358,8 @@ def generate_bench_commentary(our_team_name, our_score, their_score, opp_name,
     prompt = f"""You are the tactical analyst for {our_team_name} at OWHA U15B Provincials.
 The coach needs to decide whether to pull the goalie late in a tied game.
 
+SCORING: Win = 2 points, Tie = 1 point each, Loss = 0 points.
+
 CURRENT SITUATION:
 - Our game: {our_team_name} {our_score} - {their_score} {opp_name} (TIED, late in the game)
 - {other_str}
@@ -392,6 +396,8 @@ def generate_tiebreaker_health(our_team_name, standings_summary, yellow_count,
         return None
 
     prompt = f"""You are analyzing tiebreaker scenarios for {our_team_name} at OWHA U15B Provincials.
+
+SCORING: Win = 2 points, Tie = 1 point each, Loss = 0 points.
 
 === SCENARIO BREAKDOWN ===
 Total scenarios: {total}
@@ -521,6 +527,7 @@ Don't repeat yourself. Update the story, don't restart it.
 {context_str}
 
 === FACTS (use these exactly, do NOT invent schedule details) ===
+SCORING RULES: Win = 2 points, Tie = 1 point each, Loss = 0 points. This is hockey, NOT soccer.
 
 Pool {our_pool} standings:
 {standings_str}
@@ -569,6 +576,7 @@ def generate_pregame_talking_points(our_team_name, opponent_name, opponent_ranki
 prepare talking points for a pre-game team meeting at the OWHA U15B Provincials.
 
 === FACTS ===
+SCORING RULES: Win = 2 points, Tie = 1 point each, Loss = 0 points. This is hockey, NOT soccer.
 Next opponent: {opponent_name} (provincial ranking #{opponent_ranking})
 NOTE: Lower ranking number = stronger team. We are #18, they are #{opponent_ranking}.
 {"We are ranked HIGHER (stronger) than them." if isinstance(opponent_ranking, int) and opponent_ranking > 18 else "They are ranked HIGHER (stronger) than us." if isinstance(opponent_ranking, int) and opponent_ranking < 18 else ""}
