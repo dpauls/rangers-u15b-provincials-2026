@@ -712,6 +712,7 @@ def main():
     parser = argparse.ArgumentParser(description='Kanata Rangers tournament tracker daemon')
     parser.add_argument('--mock-dir', help='Use mock data from directory instead of live API')
     parser.add_argument('--mock-reset', action='store_true', help='Reset mock data to step 0')
+    parser.add_argument('--mock-step', type=int, help='Jump to a specific mock step (resets first, then advances to this step)')
     parser.add_argument('--once', action='store_true', help='Run one cycle and exit')
     parser.add_argument('--skip-narrative', action='store_true', help='Skip Claude API calls')
     parser.add_argument('--skip-push', action='store_true', help='Skip git push (default for mock testing)')
@@ -736,11 +737,13 @@ def main():
     mock_source = None
     if args.mock_dir:
         mock_source = MockDataSource(args.mock_dir)
-        if args.mock_reset:
+        if args.mock_reset or args.mock_step is not None:
             mock_source.reset()
             # Clear event log and reset all game scores to clean state
             tournament_data['event_log'] = []
             tournament_data.pop('_narrative', None)
+            tournament_data.pop('_coaches_corner', None)
+            tournament_data.pop('_tb_health', None)
             for g in tournament_data.get('pool_games', []):
                 g['home_score'] = None
                 g['away_score'] = None
@@ -748,6 +751,12 @@ def main():
             DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
             tournament_data = load_team_map()
             log.info('Mock data reset to step 0 (scores cleared, events cleared)')
+
+        if args.mock_step is not None and args.mock_step > 0:
+            # Jump to the target step by setting the counter
+            mock_source.step = args.mock_step
+            mock_source._save_step()
+            log.info(f'Mock: jumping to step {args.mock_step}')
 
     prev_scenarios = None
     log.info(f'Daemon starting. Mock: {args.mock_dir or "OFF"}, Narrative: {not args.skip_narrative}, Push: {not args.skip_push}')
