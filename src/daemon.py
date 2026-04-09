@@ -544,6 +544,15 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
             # Summarize recent changes for context
             recent_change_descs = [e['headline'] for e in events]
 
+            # Add tiebreaker resolution if pool play is complete
+            from generate import build_tiebreaker_resolution
+            tb_res = build_tiebreaker_resolution(our_pool, tournament_data, our_analysis)
+            if tb_res:
+                for tb in tb_res:
+                    recent_change_descs.append(
+                        f"TIEBREAKER: {', '.join(tb['teams'])} tied at {tb['pts']}pts. "
+                        f"Resolution: {' '.join(tb['lines'])}")
+
             narrative = generate_overall_narrative_with_context(
                 prev_narrative, standings, scenario_data,
                 tournament_data['teams'][our_team]['name'], our_pool,

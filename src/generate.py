@@ -194,6 +194,37 @@ def build_bracket(data):
     return bracket
 
 
+def build_tiebreaker_resolution(pool_id, data, analysis):
+    """Build human-readable tiebreaker resolution when all games are complete.
+
+    Returns a list of resolution descriptions, or None if games remain.
+    """
+    remaining = get_remaining_games(pool_id, data['pool_games'])
+    if remaining:
+        return None  # Games still to play
+
+    # With 0 remaining games, there's exactly 1 scenario
+    if not analysis['scenarios']:
+        return None
+
+    sc = analysis['scenarios'][0]
+    res = sc['result']
+    if not res['tb_details']:
+        return None  # No tiebreaker needed
+
+    resolutions = []
+    for tb in res['tb_details']:
+        lines = [line.strip() for line in tb['lines'] if line.strip()]
+        resolutions.append({
+            'teams': tb['teams'],
+            'pts': tb['pts'],
+            'resolved': not tb.get('unresolved', False),
+            'lines': lines,
+            'summary': ' → '.join(lines[-2:]) if lines else '',
+        })
+    return resolutions
+
+
 def generate(data_path='data/tournament.json', skip_narrative=False):
     data = load_tournament(data_path)
     our_team = data['tournament']['our_team']
@@ -223,6 +254,7 @@ def generate(data_path='data/tournament.json', skip_narrative=False):
         'qf_upcoming': build_games_list(qf_pool, data, 'scheduled'),
 
         'bracket': build_bracket(data),
+        'tiebreaker_resolution': build_tiebreaker_resolution(our_pool, data, our_analysis),
         'event_log': data.get('event_log', []),
         'narrative': None,
         'scouting': data.get('scouting'),

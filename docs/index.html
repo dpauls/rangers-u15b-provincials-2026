@@ -488,7 +488,20 @@ async function loadAndRender() {
         document.getElementById('pool-header').textContent = `Pool ${d.our_pool} Standings`;
         const showAdv = d.scenarios && d.scenarios.total > 1;
         const resolvedTotal = d.scenarios ? ((d.scenarios.green || 0) + (d.scenarios.red || 0)) : 0;
-        document.getElementById('standings-area').innerHTML = renderStandings(d.standings, showAdv, d.our_team, resolvedTotal);
+        let standingsHtml = renderStandings(d.standings, showAdv, d.our_team, resolvedTotal);
+        // Add tiebreaker resolution note if available
+        if (d.tiebreaker_resolution && d.tiebreaker_resolution.length > 0) {
+            standingsHtml += '<div style="font-size:0.82rem;margin-top:0.5rem;padding:0.5rem 0.75rem;background:var(--pico-card-background-color);border-radius:4px">';
+            standingsHtml += '<strong style="font-size:0.8rem">Tiebreaker resolution:</strong>';
+            d.tiebreaker_resolution.forEach(tb => {
+                const teamNames = tb.teams.join(', ');
+                tb.lines.forEach(line => {
+                    standingsHtml += `<div style="margin-top:0.25rem;font-size:0.8rem;color:var(--pico-muted-color)">${esc(line.trim())}</div>`;
+                });
+            });
+            standingsHtml += '</div>';
+        }
+        document.getElementById('standings-area').innerHTML = standingsHtml;
 
         document.getElementById('scenarios-area').innerHTML = renderScenarios(d.scenarios, d.our_team_name, d.our_pool, d.our_team) + renderTiebreakerHealth(d);
 
