@@ -348,9 +348,11 @@ function renderTiebreakerHealth(d) {
     const yellow = d.scenarios ? (d.scenarios.yellow || 0) : 0;
     if (!tbHealth || yellow === 0) return '';
 
+    // Strip LLM preamble like "**Tiebreaker Health Analysis:**" if present
+    let cleanTb = tbHealth.replace(/^\*\*[^*]+\*\*:?\s*/,'').trim();
     return `<div style="background:#fff8e1;border-left:4px solid #f9a825;padding:0.75rem 1rem;border-radius:4px;margin-bottom:1rem">
         <h3 style="margin-top:0;margin-bottom:0.4rem;font-size:0.95rem;color:#f57f17">Tiebreaker Health</h3>
-        <p style="font-size:0.85rem;line-height:1.5;margin:0">${esc(tbHealth)}</p>
+        <p style="font-size:0.85rem;line-height:1.5;margin:0">${esc(cleanTb)}</p>
     </div>`;
 }
 
