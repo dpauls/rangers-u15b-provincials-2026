@@ -311,6 +311,8 @@ Remaining games: {tournament_context.get('upcoming_summary', 'none')}
 - Say "win the pool" or "first in Pool C" — NEVER "first in the tournament" (this is pool play, not finals).
 - Do NOT claim a result "guarantees" anything unless the scenario data explicitly confirms it.
   If scenario data shows we win in X of Y, say "puts us in a strong position" not "guarantees".
+- Scenario counts are NOT probabilities. NEVER say "X in Y chance" or "X% chance".
+  Say "we win the pool in X of Y scenarios" to describe possible outcomes, not likelihood.
 - Win = 2 points, Tie = 1 point, Loss = 0 points (hockey, not soccer)."""
 
     if event_type == 'game_started':
