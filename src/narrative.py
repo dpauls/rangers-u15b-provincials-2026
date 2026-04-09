@@ -281,35 +281,52 @@ Write exactly 1 fun, brief sentence about who we're rooting for and why. Referen
 
 def generate_event_impact(event_type, home_name, away_name, home_score, away_score,
                           is_our_game, our_team_name, scenarios_if_holds=None,
-                          total_scenarios=None):
-    """Generate a 1-sentence impact comment for any game event."""
+                          total_scenarios=None, tournament_context=None):
+    """Generate a 1-sentence impact comment for any game event.
+
+    tournament_context is an optional dict with:
+        standings_summary, completed_summary, upcoming_summary,
+        scenario_detail (for small scenario counts)
+    """
     score_str = f"{home_name} {home_score}-{away_score} {away_name}"
+
+    ctx = ''
+    if tournament_context:
+        ctx = f"""
+=== TOURNAMENT CONTEXT ===
+Standings: {tournament_context.get('standings_summary', 'unknown')}
+Completed games: {tournament_context.get('completed_summary', 'unknown')}
+Remaining games: {tournament_context.get('upcoming_summary', 'none')}
+"""
+        if tournament_context.get('scenario_detail'):
+            ctx += f"Key scenarios: {tournament_context['scenario_detail']}\n"
+        ctx += "=== END CONTEXT ===\n"
 
     if event_type == 'game_started':
         if is_our_game:
-            prompt = f"""Our team ({our_team_name}) just started a game at OWHA U15B Provincials.
+            prompt = f"""{ctx}Our team ({our_team_name}) just started a game at OWHA U15B Provincials.
 Matchup: {score_str}
-Write exactly 1 short, encouraging sentence. Something like "Let's go Rangers!" but specific to the matchup."""
+Write exactly 1 short sentence. Be specific to the situation — is this a must-win? A chance to clinch? Reference the stakes."""
         else:
-            prompt = f"""A pool game just started at OWHA U15B Provincials. We ({our_team_name}) are not playing.
+            prompt = f"""{ctx}A pool game just started at OWHA U15B Provincials. We ({our_team_name}) are not playing.
 Matchup: {score_str}
-Write exactly 1 short sentence about why this game matters to us or who we're watching."""
+Write exactly 1 short sentence about why this specific game matters to us based on the tournament context. Who do we need to win?"""
     elif event_type == 'score_change':
         scenario_note = ''
         if scenarios_if_holds is not None and total_scenarios:
-            scenario_note = f"\nIf this score holds, we win the pool in {scenarios_if_holds} of {total_scenarios} scenarios."
+            scenario_note = f"\nIf this score holds, we win the pool in {scenarios_if_holds} of {total_scenarios} resolved scenarios."
         if is_our_game:
-            prompt = f"""Score update in our game ({our_team_name}) at OWHA U15B Provincials.
+            prompt = f"""{ctx}Score update in our game ({our_team_name}) at OWHA U15B Provincials.
 Current: {score_str}{scenario_note}
-Write exactly 1 short sentence on what this means for us. Encouraging if we're ahead, urgent if behind, tense if tied."""
+Write exactly 1 short sentence. Be specific about the stakes — are we fighting to stay alive? Building a lead? Does goal differential matter?"""
         else:
-            prompt = f"""Score update in another pool game at OWHA U15B Provincials. We ({our_team_name}) are not playing.
+            prompt = f"""{ctx}Score update in another pool game at OWHA U15B Provincials. We ({our_team_name}) are not playing.
 Current: {score_str}{scenario_note}
-Write exactly 1 short sentence about the impact on us — who we're rooting for and why."""
+Write exactly 1 short sentence about the concrete impact on us. Does this result help or hurt us? Does the margin matter for tiebreakers?"""
     else:
         return None
 
-    return _call(prompt, max_tokens=80, label=f"event_impact_{event_type}")
+    return _call(prompt, max_tokens=100, label=f"event_impact_{event_type}")
 
 
 def generate_bench_commentary(our_team_name, our_score, their_score, opp_name,

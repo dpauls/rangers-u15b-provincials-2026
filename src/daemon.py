@@ -26,7 +26,7 @@ from scraper import (
     detect_changes, MockDataSource,
     SEASON_2026, DIVISION_U15B_2026, GT_ROUND_ROBIN,
 )
-from analyze import load_tournament, enumerate_scenarios, compute_standings, compute_h2h
+from analyze import load_tournament, enumerate_scenarios, compute_standings, compute_h2h, get_remaining_games
 from generate import generate
 from narrative import (
     generate_overall_narrative, generate_overall_narrative_with_context,
@@ -331,9 +331,46 @@ def process_changes(changes, tournament_data, prev_scenarios, skip_narrative=Fal
         'total': curr_analysis['total'],
     }
 
-    # Build standings for narrative
-    from generate import build_standings
+    # Build standings and tournament context for event comments
+    from generate import build_standings, build_games_list
     standings = build_standings(our_pool, tournament_data, curr_analysis)
+
+    # Build rich tournament context for event impact comments
+    completed_games = build_games_list(our_pool, tournament_data, 'final')
+    upcoming_games = build_games_list(our_pool, tournament_data, 'scheduled')
+    standings_summary = ', '.join(
+        f"{s['name'].split('#')[0].strip()} {s['pts']}pts ({s['w']}W-{s['l']}L-{s['t']}T)"
+        for s in standings
+    )
+    completed_summary = '; '.join(
+        f"{g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']}"
+        for g in completed_games
+    ) or 'None yet'
+    upcoming_summary = '; '.join(
+        f"{g['home_name']} vs {g['away_name']}"
+        for g in upcoming_games
+    ) or 'No more scheduled games — this is the final round'
+
+    # For small scenario counts, include key scenario outcomes
+    scenario_detail = None
+    remaining_count = len(get_remaining_games(our_pool, tournament_data['pool_games']))
+    if remaining_count <= 3 and curr_analysis['total'] <= 27:
+        # Small enough to summarize meaningfully
+        from collections import Counter
+        outcome_summary = Counter()
+        for sc in curr_analysis['scenarios']:
+            if sc['result']['advancing']:
+                outcome_summary[sc['result']['advancing'][0]] += 1
+            elif sc['unresolved']:
+                outcome_summary['UNRESOLVED'] += 1
+        scenario_detail = ', '.join(f"{t}: {c}/{curr_analysis['total']}" for t, c in outcome_summary.most_common())
+
+    tournament_context = {
+        'standings_summary': standings_summary,
+        'completed_summary': completed_summary,
+        'upcoming_summary': upcoming_summary,
+        'scenario_detail': scenario_detail,
+    }
 
     for change in changes:
         g = change['curr']
@@ -351,7 +388,8 @@ def process_changes(changes, tournament_data, prev_scenarios, skip_narrative=Fal
             if not skip_narrative:
                 detail = generate_event_impact(
                     'game_started', home_name, away_name, hs, as_,
-                    is_our_game, our_team_name)
+                    is_our_game, our_team_name,
+                    tournament_context=tournament_context)
             events.append(create_event('info', headline, detail))
 
         elif change['type'] == 'score_change':
@@ -376,7 +414,8 @@ def process_changes(changes, tournament_data, prev_scenarios, skip_narrative=Fal
             if not skip_narrative:
                 detail = generate_event_impact(
                     'score_change', home_name, away_name, hs, as_,
-                    is_our_game, our_team_name, holds_count, holds_total)
+                    is_our_game, our_team_name, holds_count, holds_total,
+                    tournament_context=tournament_context)
 
             events.append(create_event('goal', headline, detail))
 
