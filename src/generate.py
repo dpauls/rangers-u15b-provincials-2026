@@ -55,8 +55,9 @@ def build_standings(pool_id, data, analysis):
         if len(group) <= 1 or pts == 0:
             continue  # No tie to explain, or all at 0 points
 
-        # Run tiebreaker to get explanation
-        adv, elim, lines, gd_dep = resolve_tie(group, st, h2h, len(group), indent='')
+        # Run tiebreaker with spots=1 to force resolution for ordering explanation
+        # (with spots=len(group), everyone "advances" and no explanation is generated)
+        adv, elim, lines, gd_dep = resolve_tie(group, st, h2h, 1, indent='')
         if adv is None:
             # Unresolved
             for tid in group:
