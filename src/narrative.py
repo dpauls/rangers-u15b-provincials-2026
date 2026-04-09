@@ -370,6 +370,44 @@ Be practical and specific. This is for a coach glancing at a phone on the bench.
     return _call(prompt, max_tokens=200, label='bench_commentary')
 
 
+def generate_tiebreaker_health(our_team_name, standings_summary, yellow_count,
+                                green_count, red_count, total, tiebreaker_state):
+    """Generate LLM analysis of the tiebreaker health for yellow scenarios.
+
+    Called when there are score-dependent or unresolved scenarios.
+    Provides a summary of where we stand on the tiebreaker metrics
+    that could decide those scenarios.
+    """
+    if yellow_count == 0:
+        return None
+
+    prompt = f"""You are analyzing tiebreaker scenarios for {our_team_name} at OWHA U15B Provincials.
+
+=== SCENARIO BREAKDOWN ===
+Total scenarios: {total}
+Green (we win, deterministic): {green_count}
+Yellow (depends on scores/tiebreakers): {yellow_count}
+Red (we lose, deterministic): {red_count}
+
+=== CURRENT STANDINGS ===
+{standings_summary}
+
+=== TIEBREAKER STATE (rules iii-iv that decide yellow scenarios) ===
+{tiebreaker_state}
+
+The yellow scenarios are decided by goal differential (rule iii) or goals
+against (rule iv). These depend on actual game scores, not just W/L/T.
+
+Write 2-3 concise sentences analyzing our tiebreaker health:
+1. Are we currently ahead or behind on GD and GA compared to teams we might tie with?
+2. How fragile is our position? (e.g., "one lopsided loss could erase our GD advantage")
+3. What should we be aware of? (e.g., "every goal matters even in blowouts")
+
+Be specific with numbers. Keep it practical. No filler."""
+
+    return _call(prompt, max_tokens=200, label='tiebreaker_health')
+
+
 def generate_correction_comment(game, old_score, new_score, our_team_name):
     """Generate a note about a post-game score correction."""
     home_name = game.get('home_name', game['home'])

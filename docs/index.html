@@ -343,6 +343,17 @@ function renderScenarios(sc, ourTeamName, ourPool, ourTeam) {
     return html;
 }
 
+function renderTiebreakerHealth(d) {
+    const tbHealth = d.tiebreaker_health;
+    const yellow = d.scenarios ? (d.scenarios.yellow || 0) : 0;
+    if (!tbHealth || yellow === 0) return '';
+
+    return `<div style="background:#fff8e1;border-left:4px solid #f9a825;padding:0.75rem 1rem;border-radius:4px;margin-bottom:1rem">
+        <h3 style="margin-top:0;margin-bottom:0.4rem;font-size:0.95rem;color:#f57f17">Tiebreaker Health</h3>
+        <p style="font-size:0.85rem;line-height:1.5;margin:0">${esc(tbHealth)}</p>
+    </div>`;
+}
+
 function renderGames(games, label, ourTeam, isFinal) {
     if (!games || games.length === 0) return '';
     const items = games.map(g => {
@@ -477,7 +488,7 @@ async function loadAndRender() {
         const resolvedTotal = d.scenarios ? ((d.scenarios.green || 0) + (d.scenarios.red || 0)) : 0;
         document.getElementById('standings-area').innerHTML = renderStandings(d.standings, showAdv, d.our_team, resolvedTotal);
 
-        document.getElementById('scenarios-area').innerHTML = renderScenarios(d.scenarios, d.our_team_name, d.our_pool, d.our_team);
+        document.getElementById('scenarios-area').innerHTML = renderScenarios(d.scenarios, d.our_team_name, d.our_pool, d.our_team) + renderTiebreakerHealth(d);
 
         document.getElementById('upcoming-area').innerHTML =
             d.upcoming && d.upcoming.length > 0

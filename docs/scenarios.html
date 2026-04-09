@@ -101,6 +101,29 @@
     <div id="filters"></div>
     <div id="table-area"><p class="loading">Loading scenarios...</p></div>
 
+    <div id="tiebreaker-health-area"></div>
+
+    <details style="margin-top:1.5rem">
+        <summary style="font-weight:600">Tiebreaker Rules Reference (OWHA Handbook Section C.6)</summary>
+        <div style="font-size:0.85rem;margin-top:0.5rem">
+            <p>If teams are tied in points after round robin play, the following rules are applied in order until the tie is broken:</p>
+            <table style="font-size:0.85rem">
+                <thead><tr><th style="width:2rem">#</th><th>Rule</th><th>Can we track?</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>i</strong></td><td><strong>Number of wins</strong> — Team with more wins ranks higher. Ties are more common at lower levels, so a team that wins outright (rather than tying) is rewarded.</td><td style="color:#2e7d32">Yes — deterministic from W/L/T</td></tr>
+                    <tr><td><strong>ii</strong></td><td><strong>Record against other tied teams</strong> — Head-to-head mini-table among only the tied teams. If Team A beat Team B, A ranks higher in a 2-way tie.</td><td style="color:#2e7d32">Yes — deterministic from game results</td></tr>
+                    <tr><td><strong>iii</strong></td><td><strong>Goal differential</strong> — Goals scored minus goals allowed across all round robin games. Rewards teams that win by larger margins.</td><td style="color:#f57f17">Score-dependent — changes with each goal</td></tr>
+                    <tr><td><strong>iv</strong></td><td><strong>Fewest goals allowed</strong> — Lower GA ranks higher. Rewards strong defensive play.</td><td style="color:#f57f17">Score-dependent</td></tr>
+                    <tr><td><strong>v</strong></td><td><strong>Most periods won</strong> — Count of periods where team outscored opponent across all games. Not available from the scoring API.</td><td style="color:#c62828">Cannot track — no period data in API</td></tr>
+                    <tr><td><strong>vi</strong></td><td><strong>Fewest penalty minutes</strong> — Lower total PIMs ranks higher. Rewards discipline.</td><td style="color:#c62828">Only reachable if v also tied</td></tr>
+                    <tr><td><strong>vii</strong></td><td><strong>First goal scored in series</strong> — The team that scored the first goal in the head-to-head game between the tied teams.</td><td style="color:#c62828">Only reachable if vi also tied</td></tr>
+                    <tr><td><strong>viii</strong></td><td><strong>Coin flip</strong></td><td style="color:#c62828">Last resort</td></tr>
+                </tbody>
+            </table>
+            <p style="margin-top:0.5rem;color:var(--pico-muted-color)"><strong>Green</strong> scenarios on this page are decided by rules i-ii only (deterministic — score-independent). <strong>Yellow</strong> scenarios depend on rules iii+ (score-dependent or unresolvable with available data).</p>
+        </div>
+    </details>
+
     <footer style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--pico-muted-border-color); font-size: 0.8rem; color: var(--pico-muted-color);">
         <p>This page does not auto-refresh. <a href="./">Return to live page</a> for latest standings.</p>
     </footer>
@@ -296,6 +319,18 @@ function render() {
     document.getElementById('legend').innerHTML = renderLegend();
     document.getElementById('filters').innerHTML = renderFilters(sc, ourTeam);
     document.getElementById('table-area').innerHTML = renderTable(sc, ourTeam);
+
+    // Tiebreaker health analysis
+    const tbHealth = d.tiebreaker_health;
+    if (tbHealth && yellow > 0) {
+        document.getElementById('tiebreaker-health-area').innerHTML =
+            `<div style="background:#fff8e1;border-left:4px solid #f9a825;padding:1rem 1.25rem;border-radius:4px;margin-top:1rem">
+                <h3 style="margin-top:0;margin-bottom:0.5rem;font-size:1rem;color:#f57f17">Tiebreaker Health (${yellow} score-dependent scenarios)</h3>
+                <p style="font-size:0.9rem;line-height:1.5">${tbHealth.replace(/\n/g, '<br>')}</p>
+            </div>`;
+    } else {
+        document.getElementById('tiebreaker-health-area').innerHTML = '';
+    }
 }
 
 async function load() {

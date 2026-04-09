@@ -652,7 +652,35 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
     # Compute bench analysis for goalie-pull decisions
     bench = compute_bench_analysis(tournament_data, our_team, our_pool)
 
-    # Inject narrative, coaches corner, and bench into state.json
+    # Generate tiebreaker health analysis on game finals when yellow scenarios exist
+    tb_health = tournament_data.get('_tb_health')
+    has_any_final = any(c['type'] == 'game_final' for c in changes)
+    if not skip_narrative and has_any_final:
+        our_analysis = enumerate_scenarios(our_pool, tournament_data)
+        from generate import build_scenario_data
+        sc_data = build_scenario_data(our_analysis, our_team)
+        if sc_data and sc_data.get('yellow', 0) > 0:
+            standings = build_standings(our_pool, tournament_data, our_analysis)
+            standings_summary = '\n'.join(
+                f"  {s['name']} (#{s.get('ranking','?')}): {s['pts']}pts, "
+                f"GD={'+' if s['gd']>0 else ''}{s['gd']}, GA={s['ga']}"
+                for s in standings
+            )
+            tb_state = '\n'.join(
+                f"  {s['name']}: GF={s['gf']}, GA={s['ga']}, GD={'+' if s['gd']>0 else ''}{s['gd']}"
+                for s in standings
+            )
+            from narrative import generate_tiebreaker_health
+            tb_health = generate_tiebreaker_health(
+                tournament_data['teams'][our_team]['name'],
+                standings_summary, sc_data['yellow'],
+                sc_data['green'], sc_data['red'],
+                sc_data['total'], tb_state)
+            if tb_health:
+                tournament_data['_tb_health'] = tb_health
+                DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
+
+    # Inject narrative, coaches corner, bench, and tb health into state.json
     state = json.loads(STATE_PATH.read_text())
     if narrative or tournament_data.get('_narrative'):
         state['narrative'] = narrative or tournament_data.get('_narrative')
@@ -660,6 +688,8 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
         state['coaches_corner'] = coaches_corner
     if bench:
         state['bench'] = bench
+    if tb_health:
+        state['tiebreaker_health'] = tb_health
     STATE_PATH.write_text(json.dumps(state, indent=2))
 
     # Push to GitHub
