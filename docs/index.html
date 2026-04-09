@@ -301,7 +301,27 @@ function renderStandings(rows, showAdv, ourTeam, scenarioTotal) {
             tbody += `<tr><td colspan="${colCount}" style="font-size:0.78rem;color:var(--pico-muted-color);padding:0.2rem 0.5rem;border-bottom:2px solid var(--pico-muted-border-color)">Tiebreaker: ${esc(r.tie_note)}</td></tr>`;
         }
     });
-    return `<div style="overflow-x:auto"><table>${thead}<tbody>${tbody}</tbody></table></div>`;
+    let html = `<div style="overflow-x:auto"><table>${thead}<tbody>${tbody}</tbody></table></div>`;
+
+    // If any tiebreakers were shown, add a compact rules reference
+    const hasTieNotes = rows.some(r => r.tie_note);
+    if (hasTieNotes) {
+        html += `<details style="margin-top:0.5rem;font-size:0.78rem">
+            <summary style="color:var(--pico-muted-color)">Tiebreaker rules (OWHA Handbook Section C.6)</summary>
+            <div style="margin-top:0.3rem;color:var(--pico-muted-color);line-height:1.6">
+                <strong>i.</strong> Number of wins &nbsp;
+                <strong>ii.</strong> Head-to-head record &nbsp;
+                <strong>iii.</strong> Goal differential &nbsp;
+                <strong>iv.</strong> Fewest goals allowed &nbsp;
+                <strong>v.</strong> Most periods won &nbsp;
+                <strong>vi.</strong> Fewest PIMs &nbsp;
+                <strong>vii.</strong> First goal scored &nbsp;
+                <strong>viii.</strong> Coin flip
+            </div>
+        </details>`;
+    }
+
+    return html;
 }
 
 function renderScenarios(sc, ourTeamName, ourPool, ourTeam) {
