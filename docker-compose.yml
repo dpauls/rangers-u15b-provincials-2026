@@ -63,3 +63,25 @@ services:
       - ./logs:/app/logs
     command: ["--mock-dir", "test/mock_responses", "--mock-reset", "--once", "--skip-push"]
     profiles: ["test"]
+
+  # Jump to a specific mock step (run with: podman-compose run mock-jump 11)
+  #   Resets to clean, then jumps directly to that step.
+  mock-jump:
+    build: .
+    entrypoint: ["sh", "-c", "python3 src/daemon.py --mock-dir test/mock_responses --mock-step ${1:-0} --once --skip-push", "--"]
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - TZ=${TZ:-America/Toronto}
+      - GIT_AUTHOR_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
+      - GIT_AUTHOR_EMAIL=${GIT_USER_EMAIL:-tracker@example.com}
+      - GIT_COMMITTER_NAME=${GIT_USER_NAME:-Rangers Tracker Bot}
+      - GIT_COMMITTER_EMAIL=${GIT_USER_EMAIL:-tracker@example.com}
+    volumes:
+      - ~/.gitconfig:/root/.gitconfig:ro
+      - ~/.git-credentials:/root/.git-credentials:ro
+      - ./.git:/app/.git
+      - ./data:/app/data
+      - ./docs:/app/docs
+      - ./test:/app/test
+      - ./logs:/app/logs
+    profiles: ["test"]
