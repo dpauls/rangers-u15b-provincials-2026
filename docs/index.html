@@ -284,14 +284,23 @@ function renderEventLog(events) {
 
 function renderStandings(rows, showAdv, ourTeam, scenarioTotal) {
     const advHeader = showAdv ? '<th title="Resolved scenarios where this team wins the pool (excludes score-dependent tiebreakers)">Resolved</th>' : '';
+    const colCount = 10 + (showAdv ? 1 : 0);
     const thead = `<thead><tr><th>Team</th><th>GP</th><th>W</th><th>L</th><th>T</th><th>PTS</th><th>GF</th><th>GA</th><th>GD</th>${advHeader}<th>Status</th></tr></thead>`;
-    const tbody = rows.map(r => {
+    let tbody = '';
+    let lastTieNote = null;
+    rows.forEach((r, i) => {
         const usCls = r.is_us ? ' class="team-us"' : '';
         const gd = r.gd > 0 ? `+${r.gd}` : String(r.gd);
         const advCell = showAdv ? `<td>${r.adv_count}/${scenarioTotal} (${r.adv_pct}%)</td>` : '';
         const rankStr = r.ranking ? ` <span class="ranking">(#${r.ranking})</span>` : '';
-        return `<tr${usCls}><td${usCls}>${esc(r.name)}${rankStr}</td><td>${r.gp}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td><strong>${r.pts}</strong></td><td>${r.gf}</td><td>${r.ga}</td><td>${gd}</td>${advCell}<td class="status-${r.status}">${r.status}</td></tr>`;
-    }).join('');
+        tbody += `<tr${usCls}><td${usCls}>${esc(r.name)}${rankStr}</td><td>${r.gp}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td><strong>${r.pts}</strong></td><td>${r.gf}</td><td>${r.ga}</td><td>${gd}</td>${advCell}<td class="status-${r.status}">${r.status}</td></tr>`;
+
+        // Show tie note after the last team in a tied group
+        const nextPts = (i + 1 < rows.length) ? rows[i + 1].pts : -1;
+        if (r.tie_note && r.pts !== nextPts) {
+            tbody += `<tr><td colspan="${colCount}" style="font-size:0.78rem;color:var(--pico-muted-color);padding:0.2rem 0.5rem;border-bottom:2px solid var(--pico-muted-border-color)">Tiebreaker: ${esc(r.tie_note)}</td></tr>`;
+        }
+    });
     return `<div style="overflow-x:auto"><table>${thead}<tbody>${tbody}</tbody></table></div>`;
 }
 

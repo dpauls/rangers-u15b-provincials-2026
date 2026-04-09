@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T19:00:13.895962-04:00",
+  "generated_at": "2026-04-09T19:09:57.028800-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -77,7 +77,8 @@
       "gd": 0,
       "status": "ALIVE",
       "adv_count": 156,
-      "adv_pct": 25.0
+      "adv_pct": 25.0,
+      "tie_note": null
     },
     {
       "id": "ENS",
@@ -94,7 +95,8 @@
       "gd": 0,
       "status": "ALIVE",
       "adv_count": 156,
-      "adv_pct": 25.0
+      "adv_pct": 25.0,
+      "tie_note": null
     },
     {
       "id": "KIN",
@@ -111,7 +113,8 @@
       "gd": 0,
       "status": "ALIVE",
       "adv_count": 156,
-      "adv_pct": 25.0
+      "adv_pct": 25.0,
+      "tie_note": null
     },
     {
       "id": "WIN",
@@ -128,7 +131,8 @@
       "gd": 0,
       "status": "ALIVE",
       "adv_count": 156,
-      "adv_pct": 25.0
+      "adv_pct": 25.0,
+      "tie_note": null
     }
   ],
   "scenarios": {
@@ -19500,7 +19504,8 @@
       "gd": 0,
       "status": "ALIVE",
       "adv_count": 156,
-      "adv_pct": 25.0
+      "adv_pct": 25.0,
+      "tie_note": null
     },
     {
       "id": "LON",
@@ -19517,7 +19522,8 @@
       "gd": 0,
       "status": "ALIVE",
       "adv_count": 156,
-      "adv_pct": 25.0
+      "adv_pct": 25.0,
+      "tie_note": null
     },
     {
       "id": "NHT",
@@ -19534,7 +19540,8 @@
       "gd": 0,
       "status": "ALIVE",
       "adv_count": 156,
-      "adv_pct": 25.0
+      "adv_pct": 25.0,
+      "tie_note": null
     },
     {
       "id": "WAT",
@@ -19551,7 +19558,8 @@
       "gd": 0,
       "status": "ALIVE",
       "adv_count": 156,
-      "adv_pct": 25.0
+      "adv_pct": 25.0,
+      "tie_note": null
     }
   ],
   "qf_scenarios": {

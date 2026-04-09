@@ -34,11 +34,48 @@ def build_standings(pool_id, data, analysis):
     teams = data['teams']
     games = data['pool_games']
     st = compute_standings(pool_id, teams, games)
+    h2h = compute_h2h(pool_id, games)
     total = analysis['total'] if analysis else 1
     deterministic = total - analysis.get('unresolved_count', 0) if analysis else 1
 
+    sorted_teams = sorted(st, key=lambda t: (st[t]['PTS'], st[t]['W'], st[t]['GF'] - st[t]['GA']), reverse=True)
+
+    # Find groups of teams tied on points (>0) and resolve tiebreakers for display
+    from analyze import resolve_tie
+    tie_notes = {}  # tid -> note explaining why they're ranked here
+    i = 0
+    while i < len(sorted_teams):
+        pts = st[sorted_teams[i]]['PTS']
+        # Collect all teams at this point level
+        group = []
+        while i < len(sorted_teams) and st[sorted_teams[i]]['PTS'] == pts:
+            group.append(sorted_teams[i])
+            i += 1
+
+        if len(group) <= 1 or pts == 0:
+            continue  # No tie to explain, or all at 0 points
+
+        # Run tiebreaker to get explanation
+        adv, elim, lines, gd_dep = resolve_tie(group, st, h2h, len(group), indent='')
+        if adv is None:
+            # Unresolved
+            for tid in group:
+                tie_notes[tid] = 'Tied — needs rules v+ to resolve'
+        elif lines:
+            # Extract a concise explanation from the resolution lines
+            for line in lines:
+                line = line.strip()
+                if not line:
+                    continue
+                # Lines like "Rule i (wins): KAN (2W) > WIN (1W)"
+                # or "Rule iii (GD): WIN (+7) > KAN,KIN (+1)"
+                if line.startswith('Rule '):
+                    for tid in group:
+                        tie_notes[tid] = line
+                    break
+
     rows = []
-    for tid in sorted(st, key=lambda t: (st[t]['PTS'], st[t]['W'], st[t]['GF'] - st[t]['GA']), reverse=True):
+    for tid in sorted_teams:
         s = st[tid]
         gp = s['W'] + s['L'] + s['T']
         gd = s['GF'] - s['GA']
@@ -53,6 +90,7 @@ def build_standings(pool_id, data, analysis):
             'status': get_team_status(tid, analysis, total) if analysis else '',
             'adv_count': count,
             'adv_pct': round(count / deterministic * 100, 1) if deterministic > 0 else 0,
+            'tie_note': tie_notes.get(tid),
         })
     return rows
 
