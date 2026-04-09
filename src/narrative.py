@@ -306,19 +306,22 @@ Remaining games: {tournament_context.get('upcoming_summary', 'none')}
             ctx += f"Key scenarios: {tournament_context['scenario_detail']}\n"
         ctx += "=== END CONTEXT ===\n"
 
-    first_person = f"""IMPORTANT: You are writing from the perspective of a {our_team_name} parent/fan.
-Always use "we", "us", "our" when referring to {our_team_name}. NEVER say "them" or "they" for our team.
-Example: "We need this win" not "Kanata Rangers need this win"."""
+    rules = f"""RULES:
+- Use "we", "us", "our" for {our_team_name}. Never "them" or "they" for our team.
+- Say "win the pool" or "first in Pool C" — NEVER "first in the tournament" (this is pool play, not finals).
+- Do NOT claim a result "guarantees" anything unless the scenario data explicitly confirms it.
+  If scenario data shows we win in X of Y, say "puts us in a strong position" not "guarantees".
+- Win = 2 points, Tie = 1 point, Loss = 0 points (hockey, not soccer)."""
 
     if event_type == 'game_started':
         if is_our_game:
-            prompt = f"""{ctx}{first_person}
-We ({our_team_name}) just started a game at OWHA U15B Provincials.
+            prompt = f"""{ctx}{rules}
+We ({our_team_name}) just started a pool play game at OWHA U15B Provincials.
 Matchup: {score_str}
-Write exactly 1 short sentence using "we/us". Is this a must-win? A chance to clinch?"""
+Write exactly 1 short sentence using "we/us". Reference the stakes from the context if available."""
         else:
-            prompt = f"""{ctx}{first_person}
-A pool game just started at OWHA U15B Provincials. We ({our_team_name}) are not playing.
+            prompt = f"""{ctx}{rules}
+A pool play game just started at OWHA U15B Provincials. We ({our_team_name}) are not playing.
 Matchup: {score_str}
 Write exactly 1 short sentence about why this game matters to us. Who do we need to win?"""
     elif event_type == 'score_change':
@@ -326,13 +329,13 @@ Write exactly 1 short sentence about why this game matters to us. Who do we need
         if scenarios_if_holds is not None and total_scenarios:
             scenario_note = f"\nIf this score holds, we win the pool in {scenarios_if_holds} of {total_scenarios} resolved scenarios."
         if is_our_game:
-            prompt = f"""{ctx}{first_person}
-Score update in our game at OWHA U15B Provincials.
+            prompt = f"""{ctx}{rules}
+Score update in our pool play game at OWHA U15B Provincials.
 Current: {score_str}{scenario_note}
-Write exactly 1 short sentence using "we/us". Are we fighting to stay alive? Building a lead?"""
+Write exactly 1 short sentence using "we/us". Be specific but don't overstate — say "strong position" not "guarantees"."""
         else:
-            prompt = f"""{ctx}{first_person}
-Score update in another pool game at OWHA U15B Provincials. We ({our_team_name}) are not playing.
+            prompt = f"""{ctx}{rules}
+Score update in another pool play game at OWHA U15B Provincials. We ({our_team_name}) are not playing.
 Current: {score_str}{scenario_note}
 Write exactly 1 short sentence about the concrete impact on us using "we/us"."""
     else:
