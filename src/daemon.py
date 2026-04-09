@@ -572,9 +572,24 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
                 opp_name = tournament_data['teams'].get(opp_id, {}).get('name', opp_id)
                 opp_ranking = tournament_data['teams'].get(opp_id, {}).get('ranking', '?')
                 completed = build_games_list(our_pool, tournament_data, 'final')
-                our_results = [f"{g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']}"
-                              for g in completed
-                              if g['home'] == our_team or g['away'] == our_team]
+                # Build results with most recent first and win/loss indicator
+                our_completed = [g for g in completed
+                                if g['home'] == our_team or g['away'] == our_team]
+                our_results = []
+                for i, g in enumerate(our_completed):
+                    we_home = g['home'] == our_team
+                    our_goals = g['home_score'] if we_home else g['away_score']
+                    their_goals = g['away_score'] if we_home else g['home_score']
+                    if our_goals > their_goals:
+                        result_tag = 'WIN'
+                    elif their_goals > our_goals:
+                        result_tag = 'LOSS'
+                    else:
+                        result_tag = 'TIE'
+                    recency = '(MOST RECENT)' if i == 0 else ''
+                    our_results.append(
+                        f"{g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']} [{result_tag}] {recency}".strip()
+                    )
 
                 our_analysis = enumerate_scenarios(our_pool, tournament_data)
                 standings = build_standings(our_pool, tournament_data, our_analysis)

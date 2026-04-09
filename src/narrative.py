@@ -501,23 +501,33 @@ def generate_pregame_talking_points(our_team_name, opponent_name, opponent_ranki
     prompt = f"""You are helping the coaching staff of the {our_team_name} (ranked #18 provincially)
 prepare talking points for a pre-game team meeting at the OWHA U15B Provincials.
 
+=== FACTS ===
 Next opponent: {opponent_name} (provincial ranking #{opponent_ranking})
 NOTE: Lower ranking number = stronger team. We are #18, they are #{opponent_ranking}.
 {"We are ranked HIGHER (stronger) than them." if isinstance(opponent_ranking, int) and opponent_ranking > 18 else "They are ranked HIGHER (stronger) than us." if isinstance(opponent_ranking, int) and opponent_ranking < 18 else ""}
 
-Our recent results at this tournament:
+Our results at this tournament (most recent first):
 {results_str}
 
 Our penalty minutes so far: {our_pim}
-Current standings context: {standings}
+Current standings: {standings}
+Scenario analysis: {scenarios_summary}
 What's at stake: {what_at_stake}
+=== END FACTS ===
+
+IMPORTANT: Pay close attention to the MOST RECENT result. If our last game was a
+LOSS, the mindset should be about bouncing back and learning from it -- don't
+ignore it or lead with earlier wins. But DO reference earlier positive results
+as motivation ("Remember how strong we looked against Ennismore? We can play
+like that again."). Think like a real coach: acknowledge what just happened,
+then use the full tournament arc to motivate.
 
 Write 3-4 short talking points using **bold headings** followed by 1-2 sentences each.
 Format like:
-**Mindset** — sentence about momentum.
-**Discipline** — sentence about PIMs if relevant.
-**The Opponent** — sentence about what to expect. Never say a game is "easy" or "winnable".
-**What We Need** — sentence about points/strategy.
+**Mindset** — address the most recent result directly. Bounce back from a loss, or build on a win.
+**Discipline** — mention PIMs if they were high. Otherwise a brief note on staying clean.
+**The Opponent** — what to expect based on their ranking and results. Never say "easy" or "winnable".
+**What We Need** — points, strategy, tiebreaker awareness if relevant.
 
 Do NOT use bullet points or special characters. Just **bold heading** then plain text.
 Practical, motivating, age-appropriate for U15 girls."""
