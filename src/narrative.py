@@ -180,6 +180,8 @@ IMPORTANT TONE RULES:
 - NEVER say "X% chance" or "probability". Scenario counts are NOT predictions.
   Say "we win the pool in X out of Y scenarios" to illustrate paths, not likelihood.
 
+VOICE: Always use "we", "us", "our" when referring to {our_team_name}. Never "them" or "they" for our team.
+
 Write a structured update using **bold section headings** for hockey parents on phones.
 Use exactly these sections:
 
@@ -245,7 +247,7 @@ Scenario impact: Out of {curr_total} remaining outcome combinations, {our_team_n
 If this was an upset based on rankings, mention it. Lower rank number = stronger team.
 IMPORTANT: Scenario counts are NOT probabilities. Don't say "X% chance". Instead say
 things like "we win the pool in X out of Y outcome combinations" or "most paths have us advancing".
-Write 1-2 sentences explaining what this result means for {our_team_name}. Be specific. Parents are reading on phones."""
+Write 1-2 sentences using "we/us/our" (not "them/they") when referring to {our_team_name}. Be specific. Parents are reading on phones."""
 
     return _call(prompt, max_tokens=200, label="game_final_comment")
 
@@ -302,27 +304,35 @@ Remaining games: {tournament_context.get('upcoming_summary', 'none')}
             ctx += f"Key scenarios: {tournament_context['scenario_detail']}\n"
         ctx += "=== END CONTEXT ===\n"
 
+    first_person = f"""IMPORTANT: You are writing from the perspective of a {our_team_name} parent/fan.
+Always use "we", "us", "our" when referring to {our_team_name}. NEVER say "them" or "they" for our team.
+Example: "We need this win" not "Kanata Rangers need this win"."""
+
     if event_type == 'game_started':
         if is_our_game:
-            prompt = f"""{ctx}Our team ({our_team_name}) just started a game at OWHA U15B Provincials.
+            prompt = f"""{ctx}{first_person}
+We ({our_team_name}) just started a game at OWHA U15B Provincials.
 Matchup: {score_str}
-Write exactly 1 short sentence. Be specific to the situation — is this a must-win? A chance to clinch? Reference the stakes."""
+Write exactly 1 short sentence using "we/us". Is this a must-win? A chance to clinch?"""
         else:
-            prompt = f"""{ctx}A pool game just started at OWHA U15B Provincials. We ({our_team_name}) are not playing.
+            prompt = f"""{ctx}{first_person}
+A pool game just started at OWHA U15B Provincials. We ({our_team_name}) are not playing.
 Matchup: {score_str}
-Write exactly 1 short sentence about why this specific game matters to us based on the tournament context. Who do we need to win?"""
+Write exactly 1 short sentence about why this game matters to us. Who do we need to win?"""
     elif event_type == 'score_change':
         scenario_note = ''
         if scenarios_if_holds is not None and total_scenarios:
             scenario_note = f"\nIf this score holds, we win the pool in {scenarios_if_holds} of {total_scenarios} resolved scenarios."
         if is_our_game:
-            prompt = f"""{ctx}Score update in our game ({our_team_name}) at OWHA U15B Provincials.
+            prompt = f"""{ctx}{first_person}
+Score update in our game at OWHA U15B Provincials.
 Current: {score_str}{scenario_note}
-Write exactly 1 short sentence. Be specific about the stakes — are we fighting to stay alive? Building a lead? Does goal differential matter?"""
+Write exactly 1 short sentence using "we/us". Are we fighting to stay alive? Building a lead?"""
         else:
-            prompt = f"""{ctx}Score update in another pool game at OWHA U15B Provincials. We ({our_team_name}) are not playing.
+            prompt = f"""{ctx}{first_person}
+Score update in another pool game at OWHA U15B Provincials. We ({our_team_name}) are not playing.
 Current: {score_str}{scenario_note}
-Write exactly 1 short sentence about the concrete impact on us. Does this result help or hurt us? Does the margin matter for tiebreakers?"""
+Write exactly 1 short sentence about the concrete impact on us using "we/us"."""
     else:
         return None
 
@@ -535,6 +545,8 @@ Quarterfinal opponent pool watch:
 
 Rankings: #1 strongest, higher numbers weaker. Pool C: #3 Kincardine, #18 Kanata (us), #25 Ennismore, #41 Windsor.
 TONE: Never say "winnable" or "easy". Respect every opponent. Scenarios are counts, not predictions.
+
+VOICE: Always use "we", "us", "our" when referring to {our_team_name}. Never "them" or "they" for our team.
 
 Write a structured update using **bold section headings**:
 **Where We Stand** — 1-2 sentences on current position.
