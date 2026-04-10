@@ -744,8 +744,20 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
 
                     our_analysis = enumerate_scenarios(our_pool, tournament_data)
                     standings = build_standings(our_pool, tournament_data, our_analysis)
-                    our_standing = next((s for s in standings if s['id'] == our_team), None)
-                    our_pim = our_standing.get('pim', 0) if our_standing else 0
+
+                    # Get PIM from API standings (not available in per-game data)
+                    our_pim = 0
+                    try:
+                        api_standings = fetch_standings()
+                        if api_standings:
+                            from scraper import standings_to_pool_map, parse_team_id_from_name
+                            pools = standings_to_pool_map(api_standings)
+                            for t in pools.get(our_pool, []):
+                                if t.get('number') == str(tournament_data['teams'][our_team]['number']):
+                                    our_pim = t.get('pim', 0)
+                                    break
+                    except Exception as e:
+                        log.debug(f'Could not fetch PIM from API: {e}')
 
                     our_count = our_analysis['counts'].get(our_team, 0)
                     det = our_analysis['total'] - our_analysis.get('unresolved_count', 0)
