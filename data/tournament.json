@@ -110,7 +110,7 @@
       "pool": "C",
       "home": "WIN",
       "away": "KAN",
-      "home_score": 1,
+      "home_score": 2,
       "away_score": 0,
       "status": "in_progress"
     },
@@ -317,6 +317,12 @@
       "type": "goal",
       "headline": "Score update: Windsor Wildcats 1 - 0 Kanata Rangers (in progress)",
       "detail": "If this score holds, we would be eliminated from contention to win Pool C, as we'd win the pool in 0 of the 27 scenarios."
+    },
+    {
+      "time": "Fri Apr 10, 03:51 PM",
+      "type": "goal",
+      "headline": "Score update: Windsor Wildcats 2 - 0 Kanata Rangers (in progress)",
+      "detail": "If this score holds, we would be eliminated from contention to win Pool C, as we win the pool in 0 of 27 scenarios."
     }
   ],
   "scouting": {
