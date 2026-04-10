@@ -592,7 +592,7 @@ NOTE: Lower ranking number = stronger team. We are #18, they are #{opponent_rank
 Our results at this tournament (most recent first):
 {results_str}
 
-Our penalty minutes so far: {our_pim}
+Our penalty minutes so far: {our_pim} (may not reflect the most recent game)
 Current standings: {standings}
 Scenario analysis: {scenarios_summary}
 What's at stake: {what_at_stake}
