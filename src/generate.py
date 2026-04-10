@@ -265,7 +265,12 @@ def build_tiebreaker_resolution(pool_id, data, analysis):
 
 
 def generate(data_path='data/tournament.json', skip_narrative=False):
-    data = load_tournament(data_path)
+    # In daemon mode, read from shadow file if it exists
+    shadow_data = Path(__file__).parent.parent / 'data' / '.tournament_live.json'
+    if shadow_data.exists():
+        data = json.loads(shadow_data.read_text())
+    else:
+        data = load_tournament(data_path)
     our_team = data['tournament']['our_team']
     our_pool = data['teams'][our_team]['pool']
     qf_pool = 'F'
