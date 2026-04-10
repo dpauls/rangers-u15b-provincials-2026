@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T19:22:46.625570-04:00",
+  "generated_at": "2026-04-09T21:20:15.979277-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -19419,6 +19419,28 @@
   },
   "upcoming": [
     {
+      "game_id": 142,
+      "date": "2026-04-10T09:15",
+      "home": "KIN",
+      "away": "WIN",
+      "home_name": "Kincardine Kinucks",
+      "away_name": "Windsor Wildcats",
+      "home_score": null,
+      "away_score": null,
+      "status": "scheduled"
+    },
+    {
+      "game_id": 143,
+      "date": "2026-04-10T09:15",
+      "home": "KAN",
+      "away": "ENS",
+      "home_name": "Kanata Rangers",
+      "away_name": "Ennismore Eagles",
+      "home_score": null,
+      "away_score": null,
+      "status": "scheduled"
+    },
+    {
       "game_id": 162,
       "date": "2026-04-10T15:45",
       "home": "WIN",
@@ -19464,30 +19486,7 @@
     }
   ],
   "completed": [],
-  "live_games": [
-    {
-      "game_id": 142,
-      "date": "2026-04-10T09:15",
-      "home": "KIN",
-      "away": "WIN",
-      "home_name": "Kincardine Kinucks",
-      "away_name": "Windsor Wildcats",
-      "home_score": 1,
-      "away_score": 0,
-      "status": "in_progress"
-    },
-    {
-      "game_id": 143,
-      "date": "2026-04-10T09:15",
-      "home": "KAN",
-      "away": "ENS",
-      "home_name": "Kanata Rangers",
-      "away_name": "Ennismore Eagles",
-      "home_score": 1,
-      "away_score": 0,
-      "status": "in_progress"
-    }
-  ],
+  "live_games": [],
   "qf_standings": [
     {
       "id": "DUR",
@@ -38959,20 +38958,7 @@
     }
   ],
   "tiebreaker_resolution": null,
-  "event_log": [
-    {
-      "time": "Tue Apr 07, 09:33 PM",
-      "type": "info",
-      "headline": "GAME STARTED: Kincardine Kinucks vs Windsor Wildcats (Game #142)",
-      "detail": "Score: 1-0"
-    },
-    {
-      "time": "Tue Apr 07, 09:33 PM",
-      "type": "info",
-      "headline": "GAME STARTED: Kanata Rangers vs Ennismore Eagles (Game #143)",
-      "detail": "Score: 1-0"
-    }
-  ],
+  "event_log": [],
   "narrative": null,
   "scouting": {
     "description": "This season we've faced several teams heading to Provincials across 5 tournaments. We swept St. Catharines Brock Jr. Badgers in two meetings (6-0, 2-0). Against the rest... let's just say we're looking for redemption. Of note: Durham West Lightning (#29) is in our quarterfinal opponent's pool (Pool F) -- they beat us 2-0 in November, but they're not the favourite to win their pool. In tournament play, anything can happen!",

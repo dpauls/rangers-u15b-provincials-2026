@@ -301,7 +301,13 @@ def generate(data_path='data/tournament.json', skip_narrative=False):
 
     output_dir = Path(__file__).parent.parent / 'docs' / 'data'
     output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = output_dir / 'state.json'
+    shadow_data = Path(__file__).parent.parent / 'data' / '.tournament_live.json'
+    if shadow_data.exists():
+        # Daemon mode: write to shadow state file
+        output_path = output_dir / '.state_live.json'
+    else:
+        # Standalone mode: write to tracked file
+        output_path = output_dir / 'state.json'
     output_path.write_text(json.dumps(state, indent=2))
     print(f'Generated {output_path} ({output_path.stat().st_size} bytes)')
     return state

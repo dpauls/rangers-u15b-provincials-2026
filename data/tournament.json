@@ -90,9 +90,9 @@
       "pool": "C",
       "home": "KIN",
       "away": "WIN",
-      "home_score": 1,
-      "away_score": 0,
-      "status": "in_progress"
+      "home_score": null,
+      "away_score": null,
+      "status": "scheduled"
     },
     {
       "game_id": 143,
@@ -100,9 +100,9 @@
       "pool": "C",
       "home": "KAN",
       "away": "ENS",
-      "home_score": 1,
-      "away_score": 0,
-      "status": "in_progress"
+      "home_score": null,
+      "away_score": null,
+      "status": "scheduled"
     },
     {
       "game_id": 162,
@@ -251,20 +251,7 @@
       "status": "pending"
     }
   ],
-  "event_log": [
-    {
-      "time": "Tue Apr 07, 09:33 PM",
-      "type": "info",
-      "headline": "GAME STARTED: Kincardine Kinucks vs Windsor Wildcats (Game #142)",
-      "detail": "Score: 1-0"
-    },
-    {
-      "time": "Tue Apr 07, 09:33 PM",
-      "type": "info",
-      "headline": "GAME STARTED: Kanata Rangers vs Ennismore Eagles (Game #143)",
-      "detail": "Score: 1-0"
-    }
-  ],
+  "event_log": [],
   "scouting": {
     "description": "This season we've faced several teams heading to Provincials across 5 tournaments. We swept St. Catharines Brock Jr. Badgers in two meetings (6-0, 2-0). Against the rest... let's just say we're looking for redemption. Of note: Durham West Lightning (#29) is in our quarterfinal opponent's pool (Pool F) -- they beat us 2-0 in November, but they're not the favourite to win their pool. In tournament play, anything can happen!",
     "matchups": [
@@ -407,10 +394,5 @@
         "agd": 0.97
       }
     }
-  },
-  "_coaches_corner": {
-    "don_cherry": "I'll tell ya, these Kanata Rangers girls might be ranked 18th but they've got more heart than a lotta teams I've seen in the NHL! You get out there against those Ennismore Eagles and show 'em what REAL hockey looks like - these girls are the future of our game, folks!",
-    "talking_points": "**Mindset** \u2014 This is our first game of the tournament and it sets the tone for everything that follows. Come out strong and play our game from the opening faceoff.\n\n**Discipline** \u2014 We've had a clean tournament so far with zero penalty minutes, and staying out of the box will be crucial today. Smart, controlled hockey wins games at this level.\n\n**The Opponent** \u2014 Ennismore earned their spot here just like we did, and they'll be hungry to prove themselves against a higher-ranked team. Expect them to play fast and physical, especially early in the game.\n\n**What We Need** \u2014 Only pool winners advance, so every shift matters in this tournament format. Execute our systems, support each other, and take advantage of our scoring chances when they come."
-  },
-  "_narrative": "**Where We Stand**\nWe're tied at the top of Pool C with everyone at 0 points as the tournament kicks off. The pool features #3 Kincardine as the top seed, with us at #18, Ennismore at #25, and Windsor at #41.\n\n**Our Next Game**\nWe face the Ennismore Eagles on Friday April 10th at 9:15 AM in our tournament opener. The rankings suggest we match up well, but they'll come out hungry and anything can happen in tournament hockey.\n\n**Around the Pool**\nThe other 9:15 AM game has Kincardine taking on Windsor, so we'll get an early look at both teams. At 3:45 PM, we play Windsor while Ennismore faces Kincardine. Out of 729 possible scenarios for how the remaining games could play out, we win Pool C in 156 of them, showing multiple paths forward."
+  }
 }

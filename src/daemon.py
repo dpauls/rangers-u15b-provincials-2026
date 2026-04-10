@@ -43,10 +43,36 @@ PROJECT_ROOT = Path(__file__).parent.parent
 DATA_PATH = PROJECT_ROOT / 'data' / 'tournament.json'
 STATE_PATH = PROJECT_ROOT / 'docs' / 'data' / 'state.json'
 
+# Shadow files: daemon's source of truth, gitignored, survive git pulls
+SHADOW_DATA_PATH = PROJECT_ROOT / 'data' / '.tournament_live.json'
+SHADOW_STATE_PATH = PROJECT_ROOT / 'docs' / 'data' / '.state_live.json'
+
 
 def _set_data_path(path):
     global DATA_PATH
     DATA_PATH = path
+
+
+def _read_data():
+    """Read tournament data from shadow file (preferred) or tracked file."""
+    if SHADOW_DATA_PATH.exists():
+        return json.loads(SHADOW_DATA_PATH.read_text())
+    return json.loads(DATA_PATH.read_text())
+
+
+def _write_data(data):
+    """Write tournament data to shadow file."""
+    SHADOW_DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
+    SHADOW_DATA_PATH.write_text(json.dumps(data, indent=2))
+
+
+def _publish_to_git():
+    """Copy shadow files to tracked files for git push."""
+    import shutil
+    if SHADOW_DATA_PATH.exists():
+        shutil.copy2(str(SHADOW_DATA_PATH), str(DATA_PATH))
+    if SHADOW_STATE_PATH.exists():
+        shutil.copy2(str(SHADOW_STATE_PATH), str(STATE_PATH))
 
 # Team number -> short ID mapping (built from tournament.json)
 TEAM_MAP = {}
@@ -63,9 +89,13 @@ PREGAME_WINDOW = 20
 
 
 def load_team_map():
-    """Build team number -> short ID mapping from tournament.json."""
+    """Build team number -> short ID mapping from tournament data.
+
+    Reads from shadow file if it exists (preserves live state),
+    otherwise falls back to tracked file.
+    """
     global TEAM_MAP
-    data = load_tournament(str(DATA_PATH))
+    data = _read_data()
     TEAM_MAP = {str(data['teams'][tid]['number']): tid for tid in data['teams']}
     return data
 
@@ -443,8 +473,9 @@ def process_changes(changes, tournament_data, prev_scenarios, skip_narrative=Fal
 
 
 def git_push():
-    """Commit and push changes to GitHub."""
+    """Copy shadow files to tracked files, then commit and push."""
     try:
+        _publish_to_git()
         subprocess.run(
             ['git', 'add', 'docs/data/state.json', 'data/tournament.json'],
             cwd=str(PROJECT_ROOT), check=True, capture_output=True)
@@ -520,7 +551,7 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
     tournament_data.setdefault('event_log', []).extend(events)
 
     # Save updated tournament data
-    DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
+    _write_data(tournament_data)
 
     # Decide whether to regenerate the narrative
     narrative = None
@@ -590,7 +621,7 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
     # Store narrative in tournament data for generate.py to pick up
     if narrative:
         tournament_data['_narrative'] = narrative
-        DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
+        _write_data(tournament_data)
 
     # Generate state.json
     generate(str(DATA_PATH), skip_narrative=True)
@@ -728,7 +759,7 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
                         coaches_corner['talking_points'] = talking_points
 
         tournament_data['_coaches_corner'] = coaches_corner
-        DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
+        _write_data(tournament_data)
 
     # Compute bench analysis for goalie-pull decisions
     bench = compute_bench_analysis(tournament_data, our_team, our_pool)
@@ -759,10 +790,11 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
                 sc_data['total'], tb_state)
             if tb_health:
                 tournament_data['_tb_health'] = tb_health
-                DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
+                _write_data(tournament_data)
 
     # Inject narrative, coaches corner, bench, and tb health into state.json
-    state = json.loads(STATE_PATH.read_text())
+    state_path = SHADOW_STATE_PATH if SHADOW_STATE_PATH.exists() else STATE_PATH
+    state = json.loads(state_path.read_text())
     if narrative or tournament_data.get('_narrative'):
         state['narrative'] = narrative or tournament_data.get('_narrative')
     if coaches_corner:
@@ -771,7 +803,8 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
         state['bench'] = bench
     if tb_health:
         state['tiebreaker_health'] = tb_health
-    STATE_PATH.write_text(json.dumps(state, indent=2))
+    SHADOW_STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    SHADOW_STATE_PATH.write_text(json.dumps(state, indent=2))
 
     # Push to GitHub
     if not skip_push:
@@ -820,7 +853,7 @@ def main():
                 g['home_score'] = None
                 g['away_score'] = None
                 g['status'] = 'scheduled'
-            DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
+            _write_data(tournament_data)
             tournament_data = load_team_map()
             log.info('Mock data reset to step 0 (scores cleared, events cleared)')
 
@@ -849,7 +882,8 @@ def main():
         qf_standings = build_standings('F', tournament_data, enumerate_scenarios('F', tournament_data))
         upcoming = build_games_list(our_pool, tournament_data, 'scheduled')
 
-        state = json.loads(STATE_PATH.read_text())
+        state_path = SHADOW_STATE_PATH if SHADOW_STATE_PATH.exists() else STATE_PATH
+        state = json.loads(state_path.read_text())
 
         # Welcome narrative
         log.info('Generating welcome narrative...')
@@ -891,8 +925,9 @@ def main():
             state['coaches_corner'] = coaches_corner
             tournament_data['_coaches_corner'] = coaches_corner
 
-        STATE_PATH.write_text(json.dumps(state, indent=2))
-        DATA_PATH.write_text(json.dumps(tournament_data, indent=2))
+        SHADOW_STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        SHADOW_STATE_PATH.write_text(json.dumps(state, indent=2))
+        _write_data(tournament_data)
 
     if not args.skip_push:
         git_push()

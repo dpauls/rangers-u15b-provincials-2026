@@ -16,6 +16,7 @@ services:
       - ./data:/app/data
       - ./docs:/app/docs
       - ./logs:/app/logs
+    command: ["--interval", "60"]
     restart: unless-stopped
 
   # Step through mock tournament (default: no push, view at localhost:8000)
