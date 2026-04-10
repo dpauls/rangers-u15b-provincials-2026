@@ -547,6 +547,16 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
     events, curr_scenarios = process_changes(
         changes, tournament_data, prev_scenarios, skip_narrative)
 
+    # Add Pool F final results to event log (finals only, no in-game updates)
+    teams = tournament_data['teams']
+    for change in pool_f_changes:
+        if change['type'] == 'game_final':
+            g = change['curr']
+            home_name = teams.get(g['home'], {}).get('name', g['home'])
+            away_name = teams.get(g['away'], {}).get('name', g['away'])
+            headline = f"Pool F: {home_name} {g['home_score']} - {g['away_score']} {away_name} (Final)"
+            events.append(create_event('info', headline, 'QF opponent pool update.'))
+
     # Add events to log
     tournament_data.setdefault('event_log', []).extend(events)
 
