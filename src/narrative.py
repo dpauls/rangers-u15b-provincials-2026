@@ -186,7 +186,10 @@ VOICE: Always use "we", "us", "our" when referring to {our_team_name}. Never "th
 Write a structured update using **bold section headings** for hockey parents on phones.
 Use exactly these sections:
 
-**Where We Stand** — 1-2 sentences on our current pool position.
+**Where We Stand** — 1-2 sentences on our current pool position. If no games have been
+  played yet, focus on the excitement of the tournament starting. Do NOT say "tied for first"
+  or "four-way tie" when everyone is at 0 points — that's not meaningful. Instead set the scene:
+  "Tournament kicks off today!" or "Pool play is about to begin."
 **Our Next Game** — 1-2 sentences about our upcoming game. ONLY reference the game
   listed under "OUR NEXT GAME" in the facts. Use the exact opponent and date/time shown.
   Do NOT invent or guess schedule details.
