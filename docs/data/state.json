@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T16:10:07.329004-04:00",
+  "generated_at": "2026-04-10T16:27:19.245786-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -2235,7 +2235,7 @@
       "home_name": "Ennismore Eagles",
       "away_name": "Kincardine Kinucks",
       "home_score": 0,
-      "away_score": 1,
+      "away_score": 2,
       "status": "in_progress"
     }
   ],
@@ -4556,6 +4556,12 @@
       "type": "goal",
       "headline": "Score update: Windsor Wildcats 2 - 1 Kanata Rangers (in progress)",
       "detail": "If this score holds, we would be eliminated from contention to win Pool C, as we win the pool in 0 of the 27 possible scenarios."
+    },
+    {
+      "time": "Fri Apr 10, 04:27 PM",
+      "type": "goal",
+      "headline": "Score update: Ennismore Eagles 0 - 2 Kincardine Kinucks (in progress)",
+      "detail": "With Ennismore losing, we would need to beat Kincardine in our final game to have a realistic chance at first in Pool C."
     }
   ],
   "narrative": "**Where We Stand**\nWe sit in the middle of Pool C with 1 point after an opening tie, while Kincardine leads with a win and Windsor trails after taking a loss.\n\n**Our Next Game**\nWe face Windsor Wildcats tomorrow at 3:45 PM on Friday April 10th. The rankings suggest we match up well against the 41st-ranked Wildcats, but they'll be hungry to bounce back from their opening loss and anything can happen in tournament hockey.\n\n**Around the Pool**\nThe other Friday game has Ennismore taking on pool-leading Kincardine at 3:45 PM. We'll want to root for Ennismore to knock off the 3rd-ranked Kinucks and keep the pool wide open. With our scenario analysis showing we win the pool in 12 out of 81 possible combinations, every result matters as we head into the weekend.",
@@ -4720,8 +4726,8 @@
       "home": "Ennismore Eagles",
       "away": "Kincardine Kinucks",
       "home_score": 0,
-      "away_score": 1,
-      "margin": 1
+      "away_score": 2,
+      "margin": 2
     },
     "projections": {
       "win": {
