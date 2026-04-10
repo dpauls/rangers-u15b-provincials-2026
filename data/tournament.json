@@ -101,7 +101,7 @@
       "home": "KAN",
       "away": "ENS",
       "home_score": 1,
-      "away_score": 0,
+      "away_score": 1,
       "status": "in_progress"
     },
     {
@@ -253,22 +253,28 @@
   ],
   "event_log": [
     {
-      "time": "Fri Apr 10, 09:03 AM",
+      "time": "Fri Apr 10, 09:02 AM",
       "type": "info",
       "headline": "GAME STARTED: Kanata Rangers vs Ennismore Eagles (Game #143)",
-      "detail": "We need to get off to a strong start against the Eagles as we begin our quest to win Pool C."
+      "detail": "We're facing the Ennismore Eagles in our opening game of Pool C, where a strong start could set us up well for our remaining matchups against Windsor and Kincardine."
     },
     {
       "time": "Fri Apr 10, 09:25 AM",
       "type": "info",
       "headline": "GAME STARTED: Kincardine Kinucks vs Windsor Wildcats (Game #142)",
-      "detail": "We should cheer for Kincardine Kinucks since their win would give us a better chance to win Pool C by potentially weakening Windsor Wildcats' position before our upcoming matchup against them."
+      "detail": "We should cheer for a tie between Kincardine and Windsor since that would give both teams only 1 point each, keeping our path to winning Pool C wide open when we play our remaining games."
     },
     {
       "time": "Fri Apr 10, 09:31 AM",
       "type": "goal",
       "headline": "Score update: Kanata Rangers 1 - 0 Ennismore Eagles (in progress)",
-      "detail": "If we hold this 1-0 lead against Ennismore Eagles, we put ourselves in a strong position to win Pool C, taking first place in 106 of 214 possible scenarios."
+      "detail": "If we hold this 1-0 lead against Ennismore Eagles, we'll put ourselves in a strong position to win Pool C, succeeding in 106 of 214 scenarios."
+    },
+    {
+      "time": "Fri Apr 10, 09:36 AM",
+      "type": "goal",
+      "headline": "Score update: Kanata Rangers 1 - 1 Ennismore Eagles (in progress)",
+      "detail": "If we can hold this 1-1 tie against Ennismore, it puts us in a strong position to win Pool C, with 38 of 225 scenarios resulting in us finishing first."
     }
   ],
   "scouting": {
@@ -414,10 +420,10 @@
       }
     }
   },
-  "_narrative": "**Where We Stand**\nWe're tied at 0 points with everyone else in Pool C as the tournament kicks off. Rankings suggest we match up well against #25 Ennismore and #41 Windsor, but #3 Kincardine will be a serious test.\n\n**Our Next Game**\nWe face the Ennismore Eagles on Friday April 10 at 9:15 AM in our tournament opener. On paper we have an edge over the #25-ranked Eagles, but anything can happen in tournament hockey and they'll come out hungry.\n\n**Around the Pool**\nThe other 9:15 AM game has #3 Kincardine taking on #41 Windsor - we'll want Windsor to keep that one close or pull an upset to help our pool chances. Then at 3:45 PM, we face Windsor while Ennismore battles the top-seeded Kinucks.",
+  "_narrative": "**Where We Stand**\nTournament kicks off today! Pool C action is about to begin with all four teams at 0 points heading into the opening games.\n\n**Our Next Game**\nWe face the Ennismore Eagles this morning at 9:15 AM on Friday, April 10th. Rankings suggest we match up well as the #18 seed against their #25 ranking, but they'll come out hungry and anything can happen in tournament hockey.\n\n**Around the Pool**\nThe other opening game has #3 Kincardine taking on #41 Windsor at 9:15 AM - that's the heavyweight vs. underdog matchup to watch. Then this afternoon at 3:45 PM, we'll face Windsor while Ennismore battles the top-seeded Kinucks. With 156 out of 729 possible scenarios leading to us winning Pool C, there are plenty of paths forward, but it all starts with taking care of business against Ennismore this morning.",
   "_coaches_corner": {
-    "don_cherry": "I'll tell ya, these Kanata Rangers girls are gonna show those Ennismore Eagles what heart and determination look like out there! You kids are the future of this beautiful game - now get out there and play like champions!",
-    "talking_points": "**Mindset** \u2014 This is our tournament debut and we're here to make a statement. We've earned our #18 ranking through hard work and smart hockey, so let's come out with confidence and play our game from the opening faceoff.\n\n**Discipline** \u2014 We've stayed clean so far with zero penalty minutes, and that discipline needs to continue. Smart, physical play without taking unnecessary penalties will give us the best chance to control this game and stay out of trouble.\n\n**The Opponent** \u2014 Ennismore is ranked #25 but they're here for a reason, and every team at provincials can play. They'll be hungry to prove themselves against a higher-ranked team like us, so we need to match their intensity and impose our style early.\n\n**What We Need** \u2014 Only pool winners advance, so every single point matters. We need to play a complete 60 minutes, support each other through all three zones, and execute the systems we've worked on all season to get that crucial first win.",
+    "don_cherry": "I'll tell ya, these Kanata Rangers girls are gonna show those Ennismore Eagles what real hockey heart looks like! You kids out there, watch these young ladies - they're the future of our great game and they play it the RIGHT way!",
+    "talking_points": "**Mindset** \u2014 This is it, Rangers. First game of provincials and we're ready to show everyone why we earned our spot here. We've prepared well and now it's time to execute everything we've been working on.\n\n**Discipline** \u2014 We're starting with a clean slate at zero penalty minutes. Let's keep our sticks down, play smart hockey, and stay out of the box to give ourselves every advantage.\n\n**The Opponent** \u2014 Ennismore comes in ranked 25th, but they're here for a reason and will be hungry to prove themselves against a higher-ranked team like us. Expect them to come out flying and don't underestimate their speed or compete level.\n\n**What We Need** \u2014 Only pool winners advance, so every single point matters from game one. Play our system, support each other, and take care of the little things that win hockey games.",
     "for_game": "Ennismore Eagles"
   }
 }
