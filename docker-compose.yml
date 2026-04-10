@@ -17,6 +17,8 @@ services:
       - ./docs:/app/docs
       - ./logs:/app/logs
     command: ["--interval", "60"]
+    init: true
+    stop_grace_period: 3s
     restart: unless-stopped
 
   # Step through mock tournament (default: no push, view at localhost:8000)
