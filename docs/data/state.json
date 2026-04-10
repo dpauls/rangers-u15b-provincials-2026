@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T13:03:31.207083-04:00",
+  "generated_at": "2026-04-10T15:30:52.784405-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -2180,17 +2180,6 @@
       "status": "scheduled"
     },
     {
-      "game_id": 163,
-      "date": "2026-04-10T15:45",
-      "home": "ENS",
-      "away": "KIN",
-      "home_name": "Ennismore Eagles",
-      "away_name": "Kincardine Kinucks",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
-    },
-    {
       "game_id": 700,
       "date": "2026-04-11T10:30",
       "home": "KIN",
@@ -2237,7 +2226,19 @@
       "status": "final"
     }
   ],
-  "live_games": [],
+  "live_games": [
+    {
+      "game_id": 163,
+      "date": "2026-04-10T15:45",
+      "home": "ENS",
+      "away": "KIN",
+      "home_name": "Ennismore Eagles",
+      "away_name": "Kincardine Kinucks",
+      "home_score": 0,
+      "away_score": 0,
+      "status": "in_progress"
+    }
+  ],
   "qf_standings": [
     {
       "id": "LON",
@@ -4519,6 +4520,12 @@
       "type": "final",
       "headline": "FINAL: Kincardine Kinucks 2 - 0 Windsor Wildcats",
       "detail": "The #3 ranked Kincardine Kinucks defeated #41 Windsor as expected, putting them in first place with 2 points while we remain tied for second with Ennismore at 1 point each. This result hurt our pool chances significantly - we now win Pool C in only 12 out of the remaining 81 outcome combinations, down from 38 out of 243 before this game."
+    },
+    {
+      "time": "Fri Apr 10, 03:30 PM",
+      "type": "info",
+      "headline": "GAME STARTED: Ennismore Eagles vs Kincardine Kinucks (Game #163)",
+      "detail": "We need Ennismore Eagles to win because it would prevent Kincardine Kinucks from extending their lead at the top of Pool C."
     }
   ],
   "narrative": "**Where We Stand**\nWe sit in the middle of Pool C with 1 point after an opening tie, while Kincardine leads with a win and Windsor trails after taking a loss.\n\n**Our Next Game**\nWe face Windsor Wildcats tomorrow at 3:45 PM on Friday April 10th. The rankings suggest we match up well against the 41st-ranked Wildcats, but they'll be hungry to bounce back from their opening loss and anything can happen in tournament hockey.\n\n**Around the Pool**\nThe other Friday game has Ennismore taking on pool-leading Kincardine at 3:45 PM. We'll want to root for Ennismore to knock off the 3rd-ranked Kinucks and keep the pool wide open. With our scenario analysis showing we win the pool in 12 out of 81 possible combinations, every result matters as we head into the weekend.",
@@ -4666,7 +4673,8 @@
     }
   },
   "coaches_corner": {
-    "don_cherry": "I'll tell ya, that Kanata Rangers girls team showed real heart in that 1-1 tie - sometimes you gotta battle for every inch and that's exactly what they did! You kids out there, THAT'S how you compete at provincials!",
-    "talking_points": "**Mindset** That tie against Ennismore shows we can compete with anyone in this tournament, but we left a point on the table that we needed. We've proven we belong here - now we need to finish plays and capitalize on our chances to get the full two points.\n\n**The Opponent** Windsor is ranked lower than us but they're here for a reason, and every team gets dangerous when their season is on the line. They'll come out hungry and physical, so we need to match their intensity from the first shift and impose our game on them.\n\n**What We Need** With only 12 scenarios out of 77 where we win this pool, we absolutely must get two points today - nothing less will do. Play our system, support each other, and execute the details we've worked on all season because this is likely our last chance to advance.\n\n**Our Opportunity** We're the higher-ranked team and we've shown flashes of our best hockey already this tournament. Trust your skills, play with confidence, and remember that we earned our #18 ranking by beating good teams all year long."
+    "don_cherry": "I'll tell ya, these Kanata Rangers girls showed real heart battling to that 1-1 tie against Ennismore - that's championship hockey right there! Now they gotta dust themselves off and show those Windsor Wildcats what good ol' Ontario hockey looks like!",
+    "talking_points": "**Mindset** That tie against Ennismore shows we can compete with anyone in this tournament, but we left a point on the table that we needed. We've proven we belong here - now we need to finish plays and turn that solid performance into a full win.\n\n**The Opponent** Windsor has fought their way to provincials just like us, and they'll be hungry to prove themselves against a higher-ranked team. They'll come out hard and physical, so we need to match their intensity from the opening faceoff and use our skill advantage to control the pace.\n\n**What We Need** The math is simple - we need wins to have any real chance of advancing to the quarterfinal. One game at a time, but we can't afford to settle for ties or moral victories anymore.\n\n**Our Game Plan** Stick to the systems that got us here and support each other through every shift. When we play disciplined hockey and move the puck quickly, we're tough to beat - let's show them why we're ranked where we are.",
+    "for_game": "Windsor Wildcats"
   }
 }
