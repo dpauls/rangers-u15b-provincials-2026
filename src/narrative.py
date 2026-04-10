@@ -186,14 +186,14 @@ VOICE: Always use "we", "us", "our" when referring to {our_team_name}. Never "th
 Write a structured update using **bold section headings** for hockey parents on phones.
 Use exactly these sections:
 
-**Where We Stand** — 1-2 sentences on our current pool position. If no games have been
+**Where We Stand** 1-2 sentences on our current pool position. If no games have been
   played yet, focus on the excitement of the tournament starting. Do NOT say "tied for first"
   or "four-way tie" when everyone is at 0 points — that's not meaningful. Instead set the scene:
   "Tournament kicks off today!" or "Pool play is about to begin."
-**Our Next Game** — 1-2 sentences about our upcoming game. ONLY reference the game
+**Our Next Game** 1-2 sentences about our upcoming game. ONLY reference the game
   listed under "OUR NEXT GAME" in the facts. Use the exact opponent and date/time shown.
   Do NOT invent or guess schedule details.
-**Around the Pool** — 1-2 sentences on other games and who to root for.
+**Around the Pool** 1-2 sentences on other games and who to root for.
 
 CRITICAL: Only state facts from the FACTS section above. If a game is in progress, say so.
 Do NOT guess or infer any schedule, score, or matchup not explicitly listed.
@@ -564,9 +564,9 @@ TONE: Never say "winnable" or "easy". Respect every opponent. Scenarios are coun
 VOICE: Always use "we", "us", "our" when referring to {our_team_name}. Never "them" or "they" for our team.
 
 Write a structured update using **bold section headings**:
-**Where We Stand** — 1-2 sentences on current position.
-**Our Next Game** — 1-2 sentences. ONLY use the game from "OUR NEXT GAME" above.
-**Around the Pool** — 1-2 sentences on other games.
+**Where We Stand** 1-2 sentences on current position.
+**Our Next Game** 1-2 sentences. ONLY use the game from "OUR NEXT GAME" above.
+**Around the Pool** 1-2 sentences on other games.
 
 CRITICAL: Only state facts from above. Do NOT guess schedule details.
 Keep it under 150 words."""
@@ -592,7 +592,6 @@ NOTE: Lower ranking number = stronger team. We are #18, they are #{opponent_rank
 Our results at this tournament (most recent first):
 {results_str}
 
-Our penalty minutes so far: {our_pim} (may not reflect the most recent game)
 Current standings: {standings}
 Scenario analysis: {scenarios_summary}
 What's at stake: {what_at_stake}
@@ -607,10 +606,9 @@ then use the full tournament arc to motivate.
 
 Write 3-4 short talking points using **bold headings** followed by 1-2 sentences each.
 Format like:
-**Mindset** — address the most recent result directly. Bounce back from a loss, or build on a win.
-**Discipline** — mention PIMs if they were high. Otherwise a brief note on staying clean.
-**The Opponent** — what to expect based on their ranking and results. Never say "easy" or "winnable".
-**What We Need** — points, strategy, tiebreaker awareness if relevant.
+**Mindset** address the most recent result directly. Bounce back from a loss, or build on a win.
+**The Opponent** what to expect based on their ranking and results. Never say "easy" or "winnable".
+**What We Need** points, strategy, tiebreaker awareness if relevant.
 
 Do NOT use bullet points or special characters. Just **bold heading** then plain text.
 Practical, motivating, age-appropriate for U15 girls."""

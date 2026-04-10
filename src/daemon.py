@@ -753,21 +753,6 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
                         )
 
                     our_analysis = enumerate_scenarios(our_pool, tournament_data)
-                    standings = build_standings(our_pool, tournament_data, our_analysis)
-
-                    # Get PIM from API standings (not available in per-game data)
-                    our_pim = 0
-                    try:
-                        api_standings = fetch_standings()
-                        if api_standings:
-                            from scraper import standings_to_pool_map, parse_team_id_from_name
-                            pools = standings_to_pool_map(api_standings)
-                            for t in pools.get(our_pool, []):
-                                if t.get('number') == str(tournament_data['teams'][our_team]['number']):
-                                    our_pim = t.get('pim', 0)
-                                    break
-                    except Exception as e:
-                        log.debug(f'Could not fetch PIM from API: {e}')
 
                     our_count = our_analysis['counts'].get(our_team, 0)
                     det = our_analysis['total'] - our_analysis.get('unresolved_count', 0)
@@ -775,7 +760,7 @@ def run_cycle(tournament_data, mock_source=None, skip_narrative=False, skip_push
 
                     talking_points = generate_pregame_talking_points(
                         our_team_name, opp_name, opp_ranking,
-                        our_results, our_pim, stake, stake,
+                        our_results, 0, stake, stake,
                         'Only pool winners advance to the quarterfinal.')
                     if talking_points:
                         coaches_corner['talking_points'] = talking_points
@@ -933,20 +918,6 @@ def main():
             rec = '(MOST RECENT)' if i == 0 else ''
             our_results_cc.append(f"{g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']} [{tag}] {rec}".strip())
 
-        # Get PIMs from API
-        startup_pim = 0
-        try:
-            api_st = fetch_standings()
-            if api_st:
-                from scraper import standings_to_pool_map
-                pmap = standings_to_pool_map(api_st)
-                for t in pmap.get(our_pool, []):
-                    if t.get('number') == str(tournament_data['teams'][our_team]['number']):
-                        startup_pim = t.get('pim', 0)
-                        break
-        except Exception:
-            pass
-
         # Context strings
         recent_finals = [e['headline'] for e in tournament_data.get('event_log', []) if e['type'] == 'final']
         if recent_finals:
@@ -978,7 +949,7 @@ def main():
             opp_ranking = tournament_data['teams'].get(opp_id, {}).get('ranking', '?')
             talking = generate_pregame_talking_points(
                 our_team_name, opp_name, opp_ranking,
-                our_results_cc, startup_pim, standings_ctx,
+                our_results_cc, 0, standings_ctx,
                 scenarios_ctx, 'Only pool winners advance to the quarterfinal.')
             if talking:
                 coaches_corner['talking_points'] = talking
