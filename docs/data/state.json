@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T15:51:31.096312-04:00",
+  "generated_at": "2026-04-10T16:04:38.938103-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -2235,7 +2235,7 @@
       "home_name": "Ennismore Eagles",
       "away_name": "Kincardine Kinucks",
       "home_score": 0,
-      "away_score": 0,
+      "away_score": 1,
       "status": "in_progress"
     }
   ],
@@ -4544,6 +4544,12 @@
       "type": "goal",
       "headline": "Score update: Windsor Wildcats 2 - 0 Kanata Rangers (in progress)",
       "detail": "If this score holds, we would be eliminated from contention to win Pool C, as we win the pool in 0 of 27 scenarios."
+    },
+    {
+      "time": "Fri Apr 10, 04:04 PM",
+      "type": "goal",
+      "headline": "Score update: Ennismore Eagles 0 - 1 Kincardine Kinucks (in progress)",
+      "detail": "This result puts us in a very challenging position, as we would win the pool in only 3 of 27 scenarios."
     }
   ],
   "narrative": "**Where We Stand**\nWe sit in the middle of Pool C with 1 point after an opening tie, while Kincardine leads with a win and Windsor trails after taking a loss.\n\n**Our Next Game**\nWe face Windsor Wildcats tomorrow at 3:45 PM on Friday April 10th. The rankings suggest we match up well against the 41st-ranked Wildcats, but they'll be hungry to bounce back from their opening loss and anything can happen in tournament hockey.\n\n**Around the Pool**\nThe other Friday game has Ennismore taking on pool-leading Kincardine at 3:45 PM. We'll want to root for Ennismore to knock off the 3rd-ranked Kinucks and keep the pool wide open. With our scenario analysis showing we win the pool in 12 out of 81 possible combinations, every result matters as we head into the weekend.",
@@ -4708,8 +4714,8 @@
       "home": "Ennismore Eagles",
       "away": "Kincardine Kinucks",
       "home_score": 0,
-      "away_score": 0,
-      "margin": 0
+      "away_score": 1,
+      "margin": 1
     },
     "projections": {
       "win": {
@@ -4718,9 +4724,9 @@
         "advance_any": true
       },
       "tie": {
-        "advance": 2,
+        "advance": 0,
         "total": 9,
-        "advance_any": true
+        "advance_any": false
       },
       "loss": {
         "advance": 0,
@@ -4728,7 +4734,7 @@
         "advance_any": false
       }
     },
-    "indicator": "yellow",
-    "reason": "**Don't pull the goalie yet.** The concurrent Eagles-Kinucks game is tied 0-0, meaning both teams will likely get 1 point each, putting Kinucks at 3 points and Eagles at 2 points - making our tie (2 points total) still viable for advancement in 2 of 9 scenarios. While winning gives us slightly better odds (3 of 9), the risk of an empty-net goal that drops us to 0% advancement chances isn't justified when a tie keeps us alive with decent tiebreaker position."
+    "indicator": "red",
+    "reason": "A tie eliminates us regardless of other results. We must win."
   }
 }

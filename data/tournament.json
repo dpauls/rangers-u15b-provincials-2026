@@ -121,7 +121,7 @@
       "home": "ENS",
       "away": "KIN",
       "home_score": 0,
-      "away_score": 0,
+      "away_score": 1,
       "status": "in_progress"
     },
     {
@@ -323,6 +323,12 @@
       "type": "goal",
       "headline": "Score update: Windsor Wildcats 2 - 0 Kanata Rangers (in progress)",
       "detail": "If this score holds, we would be eliminated from contention to win Pool C, as we win the pool in 0 of 27 scenarios."
+    },
+    {
+      "time": "Fri Apr 10, 04:04 PM",
+      "type": "goal",
+      "headline": "Score update: Ennismore Eagles 0 - 1 Kincardine Kinucks (in progress)",
+      "detail": "This result puts us in a very challenging position, as we would win the pool in only 3 of 27 scenarios."
     }
   ],
   "scouting": {
