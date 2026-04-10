@@ -505,8 +505,8 @@ async function loadAndRender() {
         const d = await resp.json();
 
         document.getElementById('team-name').textContent = d.our_team_name;
-        document.getElementById('tournament-info').textContent =
-            `${d.tournament.name} \u00b7 <a href="https://www.google.com/maps/dir/?api=1&destination=Chesswood+Arenas+Toronto+ON" target="_blank" style="color:rgba(255,255,255,0.9)">${d.tournament.location}</a> \u00b7 ${d.tournament.dates}`;
+        document.getElementById('tournament-info').innerHTML =
+            `${esc(d.tournament.name)} \u00b7 <a href="https://www.google.com/maps/dir/?api=1&destination=Chesswood+Arenas+Toronto+ON" target="_blank" style="color:rgba(255,255,255,0.9)">${esc(d.tournament.location)}</a> \u00b7 ${esc(d.tournament.dates)}`;
         document.getElementById('updated').textContent =
             `Last updated: ${fmtGenerated(d.generated_at)} \u00b7 Auto-refreshes every 2 min`;
 
