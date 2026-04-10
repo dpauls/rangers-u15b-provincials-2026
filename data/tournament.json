@@ -122,7 +122,7 @@
       "away": "KIN",
       "home_score": 0,
       "away_score": 2,
-      "status": "in_progress"
+      "status": "final"
     },
     {
       "game_id": 700,
@@ -347,6 +347,12 @@
       "type": "final",
       "headline": "FINAL: Windsor Wildcats 2 - 1 Kanata Rangers",
       "detail": "What a heartbreaking result for us - we've been completely eliminated from Pool C after falling 2-1 to the much lower-ranked Windsor Wildcats in a major upset. Our elimination means we can no longer win the pool in any of the 27 remaining outcome combinations, ending our championship hopes despite being the #18 ranked team facing #41 Windsor."
+    },
+    {
+      "time": "Fri Apr 10, 04:35 PM",
+      "type": "final",
+      "headline": "FINAL: Ennismore Eagles 0 - 2 Kincardine Kinucks",
+      "detail": "This wasn't an upset - higher-ranked Kincardine (#3) defeated lower-ranked Ennismore (#25) as expected. Unfortunately, this result has officially eliminated us from Pool C contention, as we can no longer win the pool in any of the 9 remaining outcome combinations."
     }
   ],
   "scouting": {
@@ -492,7 +498,7 @@
       }
     }
   },
-  "_narrative": "**Where We Stand**\nThe situation has changed since our last update \u2013 we needed that win against Windsor, but unfortunately fell 2-1 to the Wildcats. We now sit tied for third in Pool C with 1 point, while both Kincardine and Windsor have pulled ahead with 2 points each.\n\n**Our Next Game**\nWe face the pool-leading Kincardine Kinucks tomorrow morning at 10:30 AM on Saturday April 11th. The 3rd-ranked Kinucks are currently up 2-0 on Ennismore in their ongoing game, positioning themselves to control the pool heading into our crucial matchup.\n\n**Around the Pool**\nWith Kincardine appearing to extend their lead over Ennismore, the pool dynamics have shifted dramatically from our earlier projections. Our scenario analysis now shows we win the pool in 0 out of 27 possible combinations, meaning we'll need to focus on securing the best possible seeding for the quarterfinals.",
+  "_narrative": "**Where We Stand**\nEarlier we predicted Kincardine would extend their lead over Ennismore, and that's exactly what happened with their 2-0 victory. We remain tied for third in Pool C with 1 point alongside Ennismore, while Kincardine has now pulled away as the clear pool leader with a perfect 4 points from two wins.\n\n**Our Next Game**\nAs anticipated in our last update, we face the pool-leading Kincardine Kinucks tomorrow morning at 10:30 AM on Saturday April 11th. The 3rd-ranked Kinucks have lived up to their billing with two shutout victories, outscoring their opponents 4-0 through their first two games.\n\n**Around the Pool**\nWith Kincardine's latest win confirmed, the pool dynamics remain exactly as we projected \u2013 our scenario analysis continues to show we win the pool in 0 out of 9 possible combinations. Windsor and Ennismore will battle simultaneously at 10:30 AM, with both teams still in contention for second place in the pool.",
   "_coaches_corner": {
     "don_cherry": "I'll tell ya, these Kanata Rangers girls are showing real heart out there - a tie with Ennismore and battling hard against Windsor shows they got that never-quit spirit! Now they got the Kincardine Kinucks next and that's where champions are made, kids!",
     "talking_points": "**Mindset**\nThat loss to Windsor stings, but we showed real character in how we battled back in the third period. Remember how strong we looked against Ennismore when we controlled the pace and created chances - that's the team we are when we play our game.\n\n**The Opponent**\nKincardine is ranked #3 in the province for a reason - they're skilled, disciplined, and they'll capitalize on our mistakes. They've been here before and know how to handle pressure situations, so we need to match their intensity from the opening faceoff.\n\n**What We Need**\nMathematically we're facing long odds, but hockey isn't played on paper - we need a win and help from other games to have any chance at advancing. Play smart, stay out of the penalty box, and make every shift count because this could be our last game of the season.\n\n**Our Game Plan**\nFocus on the systems that got us here - support the puck, finish our checks, and get traffic in front of their goalie. We've got nothing to lose now, so play with confidence and leave everything on the ice.",

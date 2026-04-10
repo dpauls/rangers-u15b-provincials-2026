@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T16:30:45.333341-04:00",
+  "generated_at": "2026-04-10T16:35:36.556863-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -67,18 +67,18 @@
       "name": "Kincardine Kinucks",
       "ranking": 3,
       "is_us": false,
-      "gp": 1,
-      "w": 1,
+      "gp": 2,
+      "w": 2,
       "l": 0,
       "t": 0,
-      "pts": 2,
-      "gf": 2,
+      "pts": 4,
+      "gf": 4,
       "ga": 0,
-      "gd": 2,
-      "status": "ALIVE",
-      "adv_count": 17,
-      "adv_pct": 63.0,
-      "tie_note": "Rule ii (h2h among KIN,WIN):"
+      "gd": 4,
+      "status": "CLINCHED",
+      "adv_count": 9,
+      "adv_pct": 100.0,
+      "tie_note": null
     },
     {
       "id": "WIN",
@@ -93,28 +93,10 @@
       "gf": 2,
       "ga": 3,
       "gd": -1,
-      "status": "ALIVE",
-      "adv_count": 4,
-      "adv_pct": 14.8,
-      "tie_note": "Rule ii (h2h among KIN,WIN):"
-    },
-    {
-      "id": "ENS",
-      "name": "Ennismore Eagles",
-      "ranking": 25,
-      "is_us": false,
-      "gp": 1,
-      "w": 0,
-      "l": 0,
-      "t": 1,
-      "pts": 1,
-      "gf": 1,
-      "ga": 1,
-      "gd": 0,
-      "status": "ALIVE",
-      "adv_count": 6,
-      "adv_pct": 22.2,
-      "tie_note": "Rule iii (GD) [score-dependent]: ENS (+0) > KAN (-1)"
+      "status": "ELIMINATED",
+      "adv_count": 0,
+      "adv_pct": 0.0,
+      "tie_note": null
     },
     {
       "id": "KAN",
@@ -132,26 +114,38 @@
       "status": "ELIMINATED",
       "adv_count": 0,
       "adv_pct": 0.0,
-      "tie_note": "Rule iii (GD) [score-dependent]: ENS (+0) > KAN (-1)"
+      "tie_note": "Rule iii (GD) [score-dependent]: KAN (-1) > ENS (-2)"
+    },
+    {
+      "id": "ENS",
+      "name": "Ennismore Eagles",
+      "ranking": 25,
+      "is_us": false,
+      "gp": 2,
+      "w": 0,
+      "l": 1,
+      "t": 1,
+      "pts": 1,
+      "gf": 1,
+      "ga": 3,
+      "gd": -2,
+      "status": "ELIMINATED",
+      "adv_count": 0,
+      "adv_pct": 0.0,
+      "tie_note": "Rule iii (GD) [score-dependent]: KAN (-1) > ENS (-2)"
     }
   ],
   "scenarios": {
-    "total": 27,
+    "total": 9,
     "green": 0,
-    "yellow": 2,
-    "red": 25,
+    "yellow": 0,
+    "red": 9,
     "our_count": 0,
     "our_pct": 0.0,
     "unresolved": 0,
-    "gd_dependent": 2,
-    "remaining_games": 3,
+    "gd_dependent": 0,
+    "remaining_games": 2,
     "remaining_info": [
-      {
-        "home": "ENS",
-        "away": "KIN",
-        "game_id": 163,
-        "date": "2026-04-10T15:45"
-      },
       {
         "home": "KIN",
         "away": "KAN",
@@ -167,453 +161,13 @@
     ],
     "counts": {
       "KAN": 0,
-      "ENS": 6,
-      "KIN": 17,
-      "WIN": 4
+      "ENS": 0,
+      "KIN": 9,
+      "WIN": 0
     },
     "scenarios": [
       {
         "labels": [
-          "ENSwin",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KIN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule ii (h2h among KIN,WIN):",
-              "        KIN: 2pts (beat WIN)",
-              "        WIN: 0pts (lost to KIN)",
-              "        \u2192 KIN advance / WIN eliminated"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "ENSwin",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "ENS",
-              "KIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule i (wins): KIN (2W) > ENS (1W)",
-              "        KIN advance (2W)",
-              "        ENS eliminated (fewer wins)"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "ENSwin",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "ENSwin",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "ENSwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "ENSwin",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "ENSwin",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "ENSwin",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "ENSwin",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KIN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule i (wins): WIN (2W) > KIN (1W)",
-              "        WIN advance (2W)",
-              "        KIN eliminated (fewer wins)"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "ENS",
-              "KIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iii (GD) [score-dependent]: KIN (+2) > ENS (+1)",
-              "        \u2192 KIN advance / ENS eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 3,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS",
-              "KIN",
-              "WIN"
-            ],
-            "pts": 3,
-            "lines": [
-              "      Rule i (wins): KAN,KIN,WIN (1W) > ENS (0W)",
-              "        Still tied (1W): KAN,KIN,WIN \u2014 1 spot left",
-              "          Rule iii (GD) [score-dependent]: KIN (+1) > KAN (+0) > WIN (-1)",
-              "            \u2192 KIN advance / KAN,WIN eliminated",
-              "        ENS eliminated (fewer wins)"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "KINwin",
           "KINwin",
           "WINwin"
         ],
@@ -634,7 +188,6 @@
       {
         "labels": [
           "KINwin",
-          "KINwin",
           "tie"
         ],
         "advancing": [
@@ -654,7 +207,6 @@
       {
         "labels": [
           "KINwin",
-          "KINwin",
           "ENSwin"
         ],
         "advancing": [
@@ -673,7 +225,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "WINwin"
         ],
@@ -693,7 +244,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "tie"
         ],
@@ -713,7 +263,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "ENSwin"
         ],
@@ -733,7 +282,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "WINwin"
         ],
@@ -769,7 +317,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "tie"
         ],
@@ -789,7 +336,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "ENSwin"
         ],
@@ -846,6 +392,17 @@
       "status": "final"
     },
     {
+      "game_id": 163,
+      "date": "2026-04-10T15:45",
+      "home": "ENS",
+      "away": "KIN",
+      "home_name": "Ennismore Eagles",
+      "away_name": "Kincardine Kinucks",
+      "home_score": 0,
+      "away_score": 2,
+      "status": "final"
+    },
+    {
       "game_id": 142,
       "date": "2026-04-10T09:15",
       "home": "KIN",
@@ -868,19 +425,7 @@
       "status": "final"
     }
   ],
-  "live_games": [
-    {
-      "game_id": 163,
-      "date": "2026-04-10T15:45",
-      "home": "ENS",
-      "away": "KIN",
-      "home_name": "Ennismore Eagles",
-      "away_name": "Kincardine Kinucks",
-      "home_score": 0,
-      "away_score": 2,
-      "status": "in_progress"
-    }
-  ],
+  "live_games": [],
   "qf_standings": [
     {
       "id": "LON",
@@ -3210,9 +2755,15 @@
       "type": "final",
       "headline": "FINAL: Windsor Wildcats 2 - 1 Kanata Rangers",
       "detail": "What a heartbreaking result for us - we've been completely eliminated from Pool C after falling 2-1 to the much lower-ranked Windsor Wildcats in a major upset. Our elimination means we can no longer win the pool in any of the 27 remaining outcome combinations, ending our championship hopes despite being the #18 ranked team facing #41 Windsor."
+    },
+    {
+      "time": "Fri Apr 10, 04:35 PM",
+      "type": "final",
+      "headline": "FINAL: Ennismore Eagles 0 - 2 Kincardine Kinucks",
+      "detail": "This wasn't an upset - higher-ranked Kincardine (#3) defeated lower-ranked Ennismore (#25) as expected. Unfortunately, this result has officially eliminated us from Pool C contention, as we can no longer win the pool in any of the 9 remaining outcome combinations."
     }
   ],
-  "narrative": "**Where We Stand**\nThe situation has changed since our last update \u2013 we needed that win against Windsor, but unfortunately fell 2-1 to the Wildcats. We now sit tied for third in Pool C with 1 point, while both Kincardine and Windsor have pulled ahead with 2 points each.\n\n**Our Next Game**\nWe face the pool-leading Kincardine Kinucks tomorrow morning at 10:30 AM on Saturday April 11th. The 3rd-ranked Kinucks are currently up 2-0 on Ennismore in their ongoing game, positioning themselves to control the pool heading into our crucial matchup.\n\n**Around the Pool**\nWith Kincardine appearing to extend their lead over Ennismore, the pool dynamics have shifted dramatically from our earlier projections. Our scenario analysis now shows we win the pool in 0 out of 27 possible combinations, meaning we'll need to focus on securing the best possible seeding for the quarterfinals.",
+  "narrative": "**Where We Stand**\nEarlier we predicted Kincardine would extend their lead over Ennismore, and that's exactly what happened with their 2-0 victory. We remain tied for third in Pool C with 1 point alongside Ennismore, while Kincardine has now pulled away as the clear pool leader with a perfect 4 points from two wins.\n\n**Our Next Game**\nAs anticipated in our last update, we face the pool-leading Kincardine Kinucks tomorrow morning at 10:30 AM on Saturday April 11th. The 3rd-ranked Kinucks have lived up to their billing with two shutout victories, outscoring their opponents 4-0 through their first two games.\n\n**Around the Pool**\nWith Kincardine's latest win confirmed, the pool dynamics remain exactly as we projected \u2013 our scenario analysis continues to show we win the pool in 0 out of 9 possible combinations. Windsor and Ennismore will battle simultaneously at 10:30 AM, with both teams still in contention for second place in the pool.",
   "scouting": {
     "description": "This season we've faced several teams heading to Provincials across 5 tournaments. We swept St. Catharines Brock Jr. Badgers in two meetings (6-0, 2-0). Against the rest... let's just say we're looking for redemption. Of note: Durham West Lightning (#29) is in our quarterfinal opponent's pool (Pool F) -- they beat us 2-0 in November, but they're not the favourite to win their pool. In tournament play, anything can happen!",
     "matchups": [
