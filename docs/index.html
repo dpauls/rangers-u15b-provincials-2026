@@ -508,7 +508,7 @@ async function loadAndRender() {
         document.getElementById('tournament-info').innerHTML =
             `${esc(d.tournament.name)} \u00b7 <a href="https://www.google.com/maps/dir/?api=1&destination=Chesswood+Arenas+Toronto+ON" rel="noopener" style="color:#fff;text-decoration:underline">${esc(d.tournament.location)}</a> \u00b7 ${esc(d.tournament.dates)}`;
         document.getElementById('updated').textContent =
-            `Last updated: ${fmtGenerated(d.generated_at)} \u00b7 Auto-refreshes every 2 min`;
+            `Last updated: ${fmtGenerated(d.generated_at)} \u00b7 Auto-refreshes every 30s`;
 
         document.getElementById('live-banner-area').innerHTML = renderLiveBanner(d.live_games, d.our_team, d);
         document.getElementById('narrative-area').innerHTML = renderNarrative(d.narrative);
