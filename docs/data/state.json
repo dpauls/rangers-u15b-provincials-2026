@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T22:05:33.392352-04:00",
+  "generated_at": "2026-04-10T09:02:46.847076-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -38959,7 +38959,7 @@
   ],
   "tiebreaker_resolution": null,
   "event_log": [],
-  "narrative": "**Where We Stand**\nTournament kicks off today! Pool C action is about to begin with all four teams at 0 points heading into the opening games.\n\n**Our Next Game**\nWe face the Ennismore Eagles this morning at 9:15 AM on Friday, April 10th. Rankings suggest we match up well as the #18 seed against their #25 ranking, but they'll come out hungry and anything can happen in tournament hockey.\n\n**Around the Pool**\nThe other opening game has #3 Kincardine taking on #41 Windsor at 9:15 AM - that's the heavyweight vs. underdog matchup to watch. Then this afternoon at 3:45 PM, we'll face Windsor while Ennismore battles the top-seeded Kinucks. With 156 out of 729 possible scenarios leading to us winning Pool C, there are plenty of paths forward, but it all starts with taking care of business against Ennismore this morning.",
+  "narrative": "**Where We Stand**\nWe're tied for first in Pool C with everyone at 0 points, as the tournament is just getting underway. Rankings have us as the second-strongest team in the pool behind #3 Kincardine, but anything can happen in tournament hockey.\n\n**Our Next Game**\nWe face the Ennismore Eagles on Friday April 10 at 9:15 AM in our opening game. The rankings suggest we match up well against the #25 Eagles, but they'll come out hungry and fired up for Provincials.\n\n**Around the Pool**\nThe other 9:15 AM game has Kincardine taking on Windsor, which could set the early tone for pool standings. Later at 3:45 PM, we'll face Windsor while Ennismore battles Kincardine - those results will shape how tight this pool race becomes.",
   "scouting": {
     "description": "This season we've faced several teams heading to Provincials across 5 tournaments. We swept St. Catharines Brock Jr. Badgers in two meetings (6-0, 2-0). Against the rest... let's just say we're looking for redemption. Of note: Durham West Lightning (#29) is in our quarterfinal opponent's pool (Pool F) -- they beat us 2-0 in November, but they're not the favourite to win their pool. In tournament play, anything can happen!",
     "matchups": [
@@ -39104,7 +39104,38 @@
     }
   },
   "coaches_corner": {
-    "don_cherry": "I'll tell ya, these Kanata Rangers girls got their work cut out for 'em with that Kincardine powerhouse in their pool, but that's what makes champions - playing tough when nobody expects ya to! You kids out there, watch how these girls battle - heart and hustle beats fancy rankings every time!",
-    "talking_points": "**Mindset** \u2014 This is it, Rangers. First game of provincials and we're ready to show everyone why we earned our spot here. We've prepared well and now it's time to execute everything we've been working on.\n\n**Discipline** \u2014 We're starting with a clean slate at zero penalty minutes. Let's keep our sticks down, play smart hockey, and stay out of the box to give ourselves every advantage.\n\n**The Opponent** \u2014 Ennismore comes in ranked 25th, but they're here for a reason and will be hungry to prove themselves against a higher-ranked team like us. Expect them to come out flying and don't underestimate their speed or compete level.\n\n**What We Need** \u2014 Only pool winners advance, so every single point matters from game one. Play our system, support each other, and take care of the little things that win hockey games."
+    "don_cherry": "I'll tell ya, these Kanata Rangers girls are gonna show those Ennismore Eagles what heart and hustle look like! You kids out there, this is how the game grows - these young ladies are gonna battle hard and make us all proud!",
+    "talking_points": "**First Game Energy** \u2014 This is our chance to set the tone for the entire tournament. We've prepared well and we're ready to show what Kanata Rangers hockey looks like when we execute our systems and support each other on every shift.\n\n**Discipline** \u2014 We've stayed clean so far and that discipline needs to carry into game action. Smart, physical play without taking unnecessary penalties will keep us on the attack and out of penalty trouble that can swing momentum.\n\n**The Opponent** \u2014 Ennismore is here for a reason and they'll be hungry to prove themselves against a higher-ranked team like us. Expect them to come out fast and physical, looking to catch us off-guard early, so we need to match their intensity from the opening faceoff.\n\n**What We Need** \u2014 Only pool winners advance, so every single point matters from game one. We want to start strong with two points today, but more importantly we need to play our complete 200-foot game and build the habits that will carry us through this tournament.",
+    "for_game": "Ennismore Eagles"
+  },
+  "bench": {
+    "our_game": {
+      "home": "KAN",
+      "away": "ENS",
+      "home_name": "Kanata Rangers",
+      "away_name": "Ennismore Eagles",
+      "home_score": 0,
+      "away_score": 0
+    },
+    "other_game": null,
+    "projections": {
+      "win": {
+        "advance": 106,
+        "total": 214,
+        "advance_any": true
+      },
+      "tie": {
+        "advance": 38,
+        "total": 196,
+        "advance_any": true
+      },
+      "loss": {
+        "advance": 12,
+        "total": 214,
+        "advance_any": true
+      }
+    },
+    "indicator": "yellow",
+    "reason": "A tie only advances us in 38 of 196 scenarios. A win is much better (106 of 214). Consider pulling late."
   }
 }
