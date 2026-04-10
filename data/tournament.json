@@ -112,7 +112,7 @@
       "away": "KAN",
       "home_score": 2,
       "away_score": 1,
-      "status": "in_progress"
+      "status": "final"
     },
     {
       "game_id": 163,
@@ -341,6 +341,12 @@
       "type": "goal",
       "headline": "Score update: Ennismore Eagles 0 - 2 Kincardine Kinucks (in progress)",
       "detail": "With Ennismore losing, we would need to beat Kincardine in our final game to have a realistic chance at first in Pool C."
+    },
+    {
+      "time": "Fri Apr 10, 04:30 PM",
+      "type": "final",
+      "headline": "FINAL: Windsor Wildcats 2 - 1 Kanata Rangers",
+      "detail": "What a heartbreaking result for us - we've been completely eliminated from Pool C after falling 2-1 to the much lower-ranked Windsor Wildcats in a major upset. Our elimination means we can no longer win the pool in any of the 27 remaining outcome combinations, ending our championship hopes despite being the #18 ranked team facing #41 Windsor."
     }
   ],
   "scouting": {
@@ -486,10 +492,11 @@
       }
     }
   },
-  "_narrative": "**Where We Stand**\nWe sit in the middle of Pool C with 1 point after an opening tie, while Kincardine leads with a win and Windsor trails after taking a loss.\n\n**Our Next Game**\nWe face Windsor Wildcats tomorrow at 3:45 PM on Friday April 10th. The rankings suggest we match up well against the 41st-ranked Wildcats, but they'll be hungry to bounce back from their opening loss and anything can happen in tournament hockey.\n\n**Around the Pool**\nThe other Friday game has Ennismore taking on pool-leading Kincardine at 3:45 PM. We'll want to root for Ennismore to knock off the 3rd-ranked Kinucks and keep the pool wide open. With our scenario analysis showing we win the pool in 12 out of 81 possible combinations, every result matters as we head into the weekend.",
+  "_narrative": "**Where We Stand**\nThe situation has changed since our last update \u2013 we needed that win against Windsor, but unfortunately fell 2-1 to the Wildcats. We now sit tied for third in Pool C with 1 point, while both Kincardine and Windsor have pulled ahead with 2 points each.\n\n**Our Next Game**\nWe face the pool-leading Kincardine Kinucks tomorrow morning at 10:30 AM on Saturday April 11th. The 3rd-ranked Kinucks are currently up 2-0 on Ennismore in their ongoing game, positioning themselves to control the pool heading into our crucial matchup.\n\n**Around the Pool**\nWith Kincardine appearing to extend their lead over Ennismore, the pool dynamics have shifted dramatically from our earlier projections. Our scenario analysis now shows we win the pool in 0 out of 27 possible combinations, meaning we'll need to focus on securing the best possible seeding for the quarterfinals.",
   "_coaches_corner": {
-    "don_cherry": "I'll tell ya, these Kanata Rangers girls showed real heart battling to that 1-1 tie against Ennismore - that's championship hockey right there! Now they gotta dust themselves off and show those Windsor Wildcats what good ol' Ontario hockey looks like!",
-    "talking_points": "**Mindset** That tie against Ennismore shows we can compete with anyone in this tournament, but we left a point on the table that we needed. We've proven we belong here - now we need to finish plays and turn that solid performance into a full win.\n\n**The Opponent** Windsor has fought their way to provincials just like us, and they'll be hungry to prove themselves against a higher-ranked team. They'll come out hard and physical, so we need to match their intensity from the opening faceoff and use our skill advantage to control the pace.\n\n**What We Need** The math is simple - we need wins to have any real chance of advancing to the quarterfinal. One game at a time, but we can't afford to settle for ties or moral victories anymore.\n\n**Our Game Plan** Stick to the systems that got us here and support each other through every shift. When we play disciplined hockey and move the puck quickly, we're tough to beat - let's show them why we're ranked where we are.",
-    "for_game": "Windsor Wildcats"
-  }
+    "don_cherry": "I'll tell ya, these Kanata Rangers girls are showing real heart out there - a tie with Ennismore and battling hard against Windsor shows they got that never-quit spirit! Now they got the Kincardine Kinucks next and that's where champions are made, kids!",
+    "talking_points": "**Mindset**\nThat loss to Windsor stings, but we showed real character in how we battled back in the third period. Remember how strong we looked against Ennismore when we controlled the pace and created chances - that's the team we are when we play our game.\n\n**The Opponent**\nKincardine is ranked #3 in the province for a reason - they're skilled, disciplined, and they'll capitalize on our mistakes. They've been here before and know how to handle pressure situations, so we need to match their intensity from the opening faceoff.\n\n**What We Need**\nMathematically we're facing long odds, but hockey isn't played on paper - we need a win and help from other games to have any chance at advancing. Play smart, stay out of the penalty box, and make every shift count because this could be our last game of the season.\n\n**Our Game Plan**\nFocus on the systems that got us here - support the puck, finish our checks, and get traffic in front of their goalie. We've got nothing to lose now, so play with confidence and leave everything on the ice.",
+    "for_game": "Kincardine Kinucks"
+  },
+  "_tb_health": "**Tiebreaker Health Analysis:**\n\nWe're currently tied with Windsor on both goal differential (-1) and goals against (3), meaning any tie with them goes to the next tiebreaker rule. We're behind Ennismore on both metrics (they have 0 GD vs our -1, and 1 GA vs our 3), so we'd lose head-to-head tiebreakers against them.\n\nOur position is extremely fragile - even one additional goal allowed puts us further behind on GA, and we have no cushion on goal differential. Since we're already at the bottom of the tiebreaker hierarchy among tied teams, every goal against us matters significantly.\n\nWe need to focus on defensive play and goal differential management, as we cannot afford to fall further behind on either metric in our remaining games."
 }
