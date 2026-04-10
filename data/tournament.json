@@ -170,9 +170,9 @@
       "pool": "F",
       "home": "NHT",
       "away": "WAT",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
+      "home_score": 0,
+      "away_score": 1,
+      "status": "in_progress"
     },
     {
       "game_id": 169,
