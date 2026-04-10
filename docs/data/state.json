@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T10:40:06.431338-04:00",
+  "generated_at": "2026-04-10T10:40:06.777988-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -21692,52 +21692,52 @@
       "time": "Fri Apr 10, 09:03 AM",
       "type": "info",
       "headline": "GAME STARTED: Kanata Rangers vs Ennismore Eagles (Game #143)",
-      "detail": "We need to get off to a strong start in this opening game as we begin our quest to win Pool C at the OWHA U15B Provincials."
+      "detail": "We need to get off to a strong start in our first game of Pool C play against Ennismore Eagles."
     },
     {
       "time": "Fri Apr 10, 09:25 AM",
       "type": "info",
       "headline": "GAME STARTED: Kincardine Kinucks vs Windsor Wildcats (Game #142)",
-      "detail": "We should cheer for a tie in this Kincardine vs Windsor game, as it would give both teams just 1 point instead of handing either opponent a full 2 points that could hurt our chances to win Pool C."
+      "detail": "We should cheer for a tie in this Kincardine vs Windsor game, as it would give both teams only 1 point each and keep us in a strong position to win Pool C when we play our upcoming games."
     },
     {
       "time": "Fri Apr 10, 09:31 AM",
       "type": "goal",
       "headline": "Score update: Kanata Rangers 1 - 0 Ennismore Eagles (in progress)",
-      "detail": "We're in a strong position to win Pool C, as holding this 1-0 lead over Ennismore puts us ahead in 106 of 214 possible scenarios."
+      "detail": "If we hold this 1-0 lead against Ennismore, we'll put ourselves in a strong position to win Pool C, taking first place in 106 of 214 scenarios."
     },
     {
       "time": "Fri Apr 10, 09:37 AM",
       "type": "goal",
       "headline": "Score update: Kanata Rangers 1 - 1 Ennismore Eagles (in progress)",
-      "detail": "If we hold this tie, we'll be in a strong position to win Pool C, taking first place in 38 of 225 possible scenarios."
+      "detail": "A tie against Ennismore puts us in a strong position to win Pool C, with favorable outcomes in 38 of 225 scenarios."
     },
     {
       "time": "Fri Apr 10, 09:38 AM",
       "type": "goal",
       "headline": "Score update: Kincardine Kinucks 1 - 0 Windsor Wildcats (in progress)",
-      "detail": "This result puts us in a stronger position to win Pool C, as we would win the pool in 48 of 214 scenarios if this score holds."
+      "detail": "This result puts us in a stronger position, as we would win the pool in 48 of 214 scenarios if Kincardine holds on to beat Windsor."
     },
     {
       "time": "Fri Apr 10, 10:07 AM",
       "type": "final",
       "headline": "FINAL: Kanata Rangers 1 - 1 Ennismore Eagles",
-      "detail": "What a gutsy performance by our Rangers! We battled the lower-ranked Ennismore Eagles to a 1-1 tie, though this counts as an upset since they were expected to be the weaker team.\n\nOur path to winning Pool C just got much tougher - we now win the pool in only 38 out of 243 remaining outcome combinations, down significantly from before this game."
+      "detail": "Our tie against Ennismore was disappointing since we were the higher-ranked team (#18 vs #25), and this upset significantly hurt our pool position. We now only win Pool C in 38 out of 243 remaining outcome combinations, making our path to advancement much more difficult."
     },
     {
       "time": "Fri Apr 10, 10:10 AM",
       "type": "goal",
       "headline": "Score update: Kincardine Kinucks 2 - 0 Windsor Wildcats (in progress)",
-      "detail": "This result puts us in a stronger position to win Pool C, as we would win the pool in 12 of 77 scenarios."
+      "detail": "This result puts us in a stronger position to win Pool C, as we would win the pool in 12 of 77 scenarios if Kincardine defeats Windsor."
     },
     {
       "time": "Fri Apr 10, 10:12 AM",
       "type": "final",
       "headline": "FINAL: Kincardine Kinucks 2 - 0 Windsor Wildcats",
-      "detail": "This wasn't an upset - higher-ranked Kincardine (#3) beat Windsor (#41) as expected. With this result, we now win our pool in only 12 of the remaining 81 outcome combinations, making our path to winning Pool C much more difficult."
+      "detail": "This was not an upset - higher-ranked Kincardine (#3) defeated Windsor (#41) as expected. With this result, we now win Pool C in only 12 out of 81 remaining outcome combinations, significantly reducing our chances compared to before this game."
     }
   ],
-  "narrative": "**Where We Stand**\nThe situation has changed since our last update - Kincardine's 2-0 victory over Windsor means the Kinucks now sit alone atop Pool C with 2 points, while we remain tied with Ennismore at 1 point each after our opening draw.\n\n**Our Next Game**\nWe face Windsor (#41) at 3:45 PM today, and the Wildcats are now officially looking for their first point after falling 2-0 to top-seeded Kincardine. They'll be even more desperate to get on the board against us.\n\n**Around the Pool**\nAs we expected to monitor, Kincardine (#3) took care of business with their 2-0 win over Windsor and now controls their own destiny. Meanwhile, Ennismore will get their shot at the Kinucks in the other 3:45 PM game today. Our scenario count has dropped from the 56 we mentioned before - we now have 12 scenarios out of 81 where we win Pool C, plus 4 more that depend on score margins.",
+  "narrative": "**Where We Stand**\nAs predicted in our last update, Kincardine took care of business with a 2-0 victory over Windsor, putting the #3-ranked Kinucks at the top of Pool C with 4 points total. We remain tied for second place with Ennismore at 1 point each, while Windsor sits at the bottom with no points.\n\n**Our Next Game**\nThe situation has changed since our last update - we're back to our originally scheduled 3:45 PM matchup against Windsor. The #41 Wildcats will be looking to bounce back from their shutout loss to Kincardine, making them a motivated opponent despite sitting at the bottom of the standings.\n\n**Around the Pool**\nRunning simultaneously at 3:45 PM, Ennismore takes on pool-leading Kincardine in what shapes up as a crucial battle. That result will significantly impact the pool dynamics heading into tomorrow's final round of games.",
   "scouting": {
     "description": "This season we've faced several teams heading to Provincials across 5 tournaments. We swept St. Catharines Brock Jr. Badgers in two meetings (6-0, 2-0). Against the rest... let's just say we're looking for redemption. Of note: Durham West Lightning (#29) is in our quarterfinal opponent's pool (Pool F) -- they beat us 2-0 in November, but they're not the favourite to win their pool. In tournament play, anything can happen!",
     "matchups": [
@@ -21882,9 +21882,9 @@
     }
   },
   "coaches_corner": {
-    "don_cherry": "I'll tell ya, these Kanata Rangers girls showed real heart battling back to tie it up 1-1 against Ennismore - that's championship hockey right there! Now they gotta dust off and get ready for Windsor because in hockey, it's not how you start, it's how you finish!",
-    "talking_points": "**Mindset** \u2014 That tie against Ennismore shows we can compete with anyone in this tournament when we play our system. We earned a point against a solid team, and now we need to build on that momentum and show what Rangers hockey really looks like.\n\n**Discipline** \u2014 We've stayed completely clean so far with zero penalty minutes, which is outstanding. Keep playing smart, physical hockey without giving Windsor any power play opportunities to get back in games.\n\n**The Opponent** \u2014 Windsor is here for a reason and they'll be desperate for points just like every team at Provincials. They're going to come out hard and test us early, so we need to match their intensity from the opening faceoff.\n\n**What We Need** \u2014 We're in 38 of 225 scenarios to win this pool, so every shift matters since only pool winners advance. Play our game, support each other, and let's put ourselves in the best position possible heading into the final games.",
+    "don_cherry": "I'll tell ya, these Kanata Rangers girls showed real heart battling back for that tie against Ennismore - that's the kind of never-give-up spirit that's gonna make 'em dangerous against Windsor! You kids out there, THAT'S what hockey's all about - these girls are growing the game the right way with pure grit!",
+    "talking_points": "**Mindset** \u2014 That tie against Ennismore shows we can compete with anyone in this tournament when we play our game. We earned a point and now we need to carry that same energy and confidence into this next game against Windsor.\n\n**Discipline** \u2014 We've stayed completely clean with zero penalty minutes so far, which is exactly what championship teams do. Keep playing smart, physical hockey without giving them any free opportunities on the power play.\n\n**The Opponent** \u2014 Windsor is here at provincials for a reason and they'll be hungry to make their mark. They're going to come at us hard, so we need to be ready from the first shift and stick to our systems.\n\n**What We Need** \u2014 We're in a tight race for that pool win and only the winner advances to quarterfinals. Every shift matters now, so let's focus on playing our complete 60-minute game and getting the result we need.",
     "for_game": "Windsor Wildcats"
   },
-  "tiebreaker_health": "We're currently tied with Ennismore on both goal differential (0) and goals against (1), meaning any tiebreaker between us would go to the next rule. Our position is extremely fragile - a single goal difference in any game could decide our fate, whether we win 1-0 or lose 0-1 versus losing 0-3.\n\nEvery goal matters significantly in all remaining games, including blowouts, since 11 of our 81 scenarios depend entirely on goal differential and goals against tiebreakers where we currently have no cushion."
+  "tiebreaker_health": "**Tiebreaker Health Analysis:**\n\nWe're currently tied with Ennismore on both goal differential (0) and goals against (1), meaning any tie in points with them goes to the fifth tiebreaker rule. Against other potential ties, we're behind Kincardine's +2 GD but ahead of Windsor's -2 GD and 2 GA.\n\nOur position is fragile - a single 2-goal loss drops us to -2 GD (matching Windsor's current position), while a 2-goal win puts us at +2 GD. Since we're deadlocked with Ennismore on the primary tiebreakers, every goal scored and conceded directly impacts our standing in yellow scenarios.\n\nEvery goal matters regardless of game outcome - even in lopsided games, the margin affects our tiebreaker position since 11 of 81 scenarios depend on"
 }
