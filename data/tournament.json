@@ -100,7 +100,7 @@
       "pool": "C",
       "home": "KAN",
       "away": "ENS",
-      "home_score": 0,
+      "home_score": 1,
       "away_score": 0,
       "status": "in_progress"
     },
@@ -263,6 +263,12 @@
       "type": "info",
       "headline": "GAME STARTED: Kincardine Kinucks vs Windsor Wildcats (Game #142)",
       "detail": "Since we play both teams in our remaining games, we need to watch how this result affects the pool standings before we face Windsor Wildcats next and then Kincardine Kinucks later."
+    },
+    {
+      "time": "Fri Apr 10, 09:31 AM",
+      "type": "goal",
+      "headline": "Score update: Kanata Rangers 1 - 0 Ennismore Eagles (in progress)",
+      "detail": "If this 1-0 lead holds, we'll be in a strong position to win Pool C, taking first place in 106 of the 214 possible scenarios."
     }
   ],
   "scouting": {
