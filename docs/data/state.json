@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T10:12:02.438682-04:00",
+  "generated_at": "2026-04-10T10:12:07.879120-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -63,6 +63,24 @@
   },
   "standings": [
     {
+      "id": "KIN",
+      "name": "Kincardine Kinucks",
+      "ranking": 3,
+      "is_us": false,
+      "gp": 1,
+      "w": 1,
+      "l": 0,
+      "t": 0,
+      "pts": 2,
+      "gf": 2,
+      "ga": 0,
+      "gd": 2,
+      "status": "ALIVE",
+      "adv_count": 49,
+      "adv_pct": 63.6,
+      "tie_note": null
+    },
+    {
       "id": "KAN",
       "name": "Kanata Rangers",
       "ranking": 18,
@@ -76,8 +94,8 @@
       "ga": 1,
       "gd": 0,
       "status": "ALIVE",
-      "adv_count": 38,
-      "adv_pct": 16.9,
+      "adv_count": 12,
+      "adv_pct": 15.6,
       "tie_note": "Tied \u2014 needs rules v+ to resolve"
     },
     {
@@ -94,64 +112,40 @@
       "ga": 1,
       "gd": 0,
       "status": "ALIVE",
-      "adv_count": 38,
-      "adv_pct": 16.9,
+      "adv_count": 12,
+      "adv_pct": 15.6,
       "tie_note": "Tied \u2014 needs rules v+ to resolve"
-    },
-    {
-      "id": "KIN",
-      "name": "Kincardine Kinucks",
-      "ranking": 3,
-      "is_us": false,
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "gd": 0,
-      "status": "ALIVE",
-      "adv_count": 78,
-      "adv_pct": 34.7,
-      "tie_note": null
     },
     {
       "id": "WIN",
       "name": "Windsor Wildcats",
       "ranking": 41,
       "is_us": false,
-      "gp": 0,
+      "gp": 1,
       "w": 0,
-      "l": 0,
+      "l": 1,
       "t": 0,
       "pts": 0,
       "gf": 0,
-      "ga": 0,
-      "gd": 0,
+      "ga": 2,
+      "gd": -2,
       "status": "ALIVE",
-      "adv_count": 71,
-      "adv_pct": 31.6,
+      "adv_count": 4,
+      "adv_pct": 5.2,
       "tie_note": null
     }
   ],
   "scenarios": {
-    "total": 243,
-    "green": 38,
-    "yellow": 47,
-    "red": 158,
-    "our_count": 38,
-    "our_pct": 19.4,
-    "unresolved": 18,
-    "gd_dependent": 47,
-    "remaining_games": 5,
+    "total": 81,
+    "green": 12,
+    "yellow": 11,
+    "red": 58,
+    "our_count": 12,
+    "our_pct": 17.1,
+    "unresolved": 4,
+    "gd_dependent": 11,
+    "remaining_games": 4,
     "remaining_info": [
-      {
-        "home": "KIN",
-        "away": "WIN",
-        "game_id": 142,
-        "date": "2026-04-10T09:15"
-      },
       {
         "home": "WIN",
         "away": "KAN",
@@ -178,15 +172,14 @@
       }
     ],
     "counts": {
-      "KAN": 38,
-      "ENS": 38,
-      "KIN": 78,
-      "WIN": 71
+      "KAN": 12,
+      "ENS": 12,
+      "KIN": 49,
+      "WIN": 4
     },
     "scenarios": [
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "ENSwin",
           "KINwin",
@@ -224,7 +217,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "ENSwin",
           "KINwin",
@@ -261,7 +253,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "ENSwin",
           "KINwin",
@@ -283,7 +274,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "ENSwin",
           "tie",
@@ -305,7 +295,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "ENSwin",
           "tie",
@@ -327,7 +316,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "ENSwin",
           "tie",
@@ -349,7 +337,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "ENSwin",
           "KANwin",
@@ -371,7 +358,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "ENSwin",
           "KANwin",
@@ -393,7 +379,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "ENSwin",
           "KANwin",
@@ -415,7 +400,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "tie",
           "KINwin",
@@ -437,7 +421,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "tie",
           "KINwin",
@@ -459,7 +442,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "tie",
           "KINwin",
@@ -481,7 +463,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "tie",
           "tie",
@@ -518,7 +499,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "tie",
           "tie",
@@ -540,7 +520,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "tie",
           "tie",
@@ -566,7 +545,7 @@
             ],
             "pts": 4,
             "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN (0GA) > ENS (1GA)",
+              "      Rule iii (GD) [score-dependent]: KIN (+2) > ENS (+1)",
               "        \u2192 KIN advance / ENS eliminated"
             ],
             "gd_dep": true,
@@ -576,7 +555,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "tie",
           "KANwin",
@@ -598,7 +576,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "tie",
           "KANwin",
@@ -628,8 +605,8 @@
             "lines": [
               "      Rule i (wins): KAN,KIN,WIN (1W) > ENS (0W)",
               "        Still tied (1W): KAN,KIN,WIN \u2014 1 spot left",
-              "          Rule iv (GA) [score-dependent]: KIN,WIN (1GA) > KAN (2GA)",
-              "            \u2192 KIN advance / WIN,KAN eliminated",
+              "          Rule iii (GD) [score-dependent]: KIN (+1) > KAN (+0) > WIN (-1)",
+              "            \u2192 KIN advance / KAN,WIN eliminated",
               "        ENS eliminated (fewer wins)"
             ],
             "gd_dep": true,
@@ -639,7 +616,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "tie",
           "KANwin",
@@ -661,7 +637,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "KINwin",
           "KINwin",
@@ -683,7 +658,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "KINwin",
           "KINwin",
@@ -705,7 +679,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "KINwin",
           "KINwin",
@@ -727,7 +700,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "KINwin",
           "tie",
@@ -749,7 +721,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "KINwin",
           "tie",
@@ -771,7 +742,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "KINwin",
           "tie",
@@ -793,7 +763,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "KINwin",
           "KANwin",
@@ -831,7 +800,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "KINwin",
           "KANwin",
@@ -853,7 +821,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "WINwin",
           "KINwin",
           "KANwin",
@@ -875,7 +842,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "ENSwin",
           "KINwin",
@@ -897,7 +863,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "ENSwin",
           "KINwin",
@@ -934,7 +899,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "ENSwin",
           "KINwin",
@@ -956,7 +920,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "ENSwin",
           "tie",
@@ -986,8 +949,8 @@
             "lines": [
               "      Rule i (wins): ENS,KIN,WIN (1W) > KAN (0W)",
               "        Still tied (1W): ENS,KIN,WIN \u2014 1 spot left",
-              "          Rule iv (GA) [score-dependent]: KIN,WIN (1GA) > ENS (2GA)",
-              "            \u2192 KIN advance / WIN,ENS eliminated",
+              "          Rule iii (GD) [score-dependent]: KIN (+1) > ENS (+0) > WIN (-1)",
+              "            \u2192 KIN advance / ENS,WIN eliminated",
               "        KAN eliminated (fewer wins)"
             ],
             "gd_dep": true,
@@ -997,7 +960,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "ENSwin",
           "tie",
@@ -1019,7 +981,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "ENSwin",
           "tie",
@@ -1041,7 +1002,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "ENSwin",
           "KANwin",
@@ -1063,7 +1023,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "ENSwin",
           "KANwin",
@@ -1095,7 +1054,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "ENSwin",
           "KANwin",
@@ -1117,7 +1075,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "tie",
           "KINwin",
@@ -1139,7 +1096,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "tie",
           "KINwin",
@@ -1161,7 +1117,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "tie",
           "KINwin",
@@ -1183,7 +1138,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "tie",
           "tie",
@@ -1205,7 +1159,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "tie",
           "tie",
@@ -1227,7 +1180,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "tie",
           "tie",
@@ -1253,7 +1205,7 @@
             ],
             "pts": 4,
             "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN (0GA) > ENS (1GA)",
+              "      Rule iii (GD) [score-dependent]: KIN (+2) > ENS (+1)",
               "        \u2192 KIN advance / ENS eliminated"
             ],
             "gd_dep": true,
@@ -1263,7 +1215,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "tie",
           "KANwin",
@@ -1285,7 +1236,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "tie",
           "KANwin",
@@ -1307,7 +1257,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "tie",
           "KANwin",
@@ -1339,7 +1288,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "KINwin",
           "KINwin",
@@ -1361,7 +1309,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "KINwin",
           "KINwin",
@@ -1383,7 +1330,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "KINwin",
           "KINwin",
@@ -1405,7 +1351,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "KINwin",
           "tie",
@@ -1427,7 +1372,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "KINwin",
           "tie",
@@ -1449,7 +1393,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "KINwin",
           "tie",
@@ -1471,7 +1414,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "KINwin",
           "KANwin",
@@ -1508,7 +1450,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "KINwin",
           "KANwin",
@@ -1545,7 +1486,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "tie",
           "KINwin",
           "KANwin",
@@ -1582,7 +1522,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "ENSwin",
           "KINwin",
@@ -1604,7 +1543,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "ENSwin",
           "KINwin",
@@ -1641,7 +1579,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "ENSwin",
           "KINwin",
@@ -1663,7 +1600,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "ENSwin",
           "tie",
@@ -1685,7 +1621,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "ENSwin",
           "tie",
@@ -1717,7 +1652,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "ENSwin",
           "tie",
@@ -1739,7 +1673,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "ENSwin",
           "KANwin",
@@ -1761,7 +1694,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "ENSwin",
           "KANwin",
@@ -1783,7 +1715,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "ENSwin",
           "KANwin",
@@ -1815,7 +1746,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "tie",
           "KINwin",
@@ -1837,7 +1767,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "tie",
           "KINwin",
@@ -1859,7 +1788,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "tie",
           "KINwin",
@@ -1881,7 +1809,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "tie",
           "tie",
@@ -1907,7 +1834,7 @@
             ],
             "pts": 4,
             "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN (0GA) > KAN (1GA)",
+              "      Rule iii (GD) [score-dependent]: KIN (+2) > KAN (+1)",
               "        \u2192 KIN advance / KAN eliminated"
             ],
             "gd_dep": true,
@@ -1917,7 +1844,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "tie",
           "tie",
@@ -1943,7 +1869,7 @@
             ],
             "pts": 4,
             "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN (0GA) > KAN (1GA)",
+              "      Rule iii (GD) [score-dependent]: KIN (+2) > KAN (+1)",
               "        \u2192 KIN advance / KAN eliminated"
             ],
             "gd_dep": true,
@@ -1953,7 +1879,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "tie",
           "tie",
@@ -1980,7 +1905,7 @@
             ],
             "pts": 4,
             "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN (0GA) > KAN,ENS (1GA)",
+              "      Rule iii (GD) [score-dependent]: KIN (+2) > KAN,ENS (+1)",
               "        \u2192 KIN advance / KAN,ENS eliminated"
             ],
             "gd_dep": true,
@@ -1990,7 +1915,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "tie",
           "KANwin",
@@ -2012,7 +1936,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "tie",
           "KANwin",
@@ -2034,7 +1957,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "tie",
           "KANwin",
@@ -2056,7 +1978,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "KINwin",
           "KINwin",
@@ -2078,7 +1999,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "KINwin",
           "KINwin",
@@ -2100,7 +2020,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "KINwin",
           "KINwin",
@@ -2122,7 +2041,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "KINwin",
           "tie",
@@ -2144,7 +2062,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "KINwin",
           "tie",
@@ -2166,7 +2083,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "KINwin",
           "tie",
@@ -2188,7 +2104,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "KINwin",
           "KANwin",
@@ -2210,7 +2125,6 @@
       },
       {
         "labels": [
-          "KINwin",
           "KANwin",
           "KINwin",
           "KANwin",
@@ -2232,4173 +2146,6 @@
       },
       {
         "labels": [
-          "KINwin",
-          "KANwin",
-          "KINwin",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "ENSwin",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "ENSwin",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "ENS",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: WIN (0GA) > ENS (1GA)",
-              "        \u2192 WIN advance / ENS eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "ENSwin",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "ENSwin",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "ENSwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "ENS",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: WIN (0GA) > ENS (1GA)",
-              "        \u2192 WIN advance / ENS eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "ENSwin",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "ENSwin",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "ENSwin",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "ENS",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: WIN (0GA) > ENS (1GA)",
-              "        \u2192 WIN advance / ENS eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "ENSwin",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "tie",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "tie",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KIN",
-          "WIN"
-        ],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KIN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "tie",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "ENS",
-              "KIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN (0GA) > ENS (1GA)",
-              "        \u2192 KIN advance / ENS eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "tie",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "tie",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "tie",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "tie",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "tie",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "tie",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "KINwin",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KIN",
-          "WIN"
-        ],
-        "pts": 5,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KIN",
-              "WIN"
-            ],
-            "pts": 5,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "KINwin",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "KINwin",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "KINwin",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "KINwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KIN",
-          "WIN"
-        ],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KIN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "KINwin",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "KINwin",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "KINwin",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WINwin",
-          "KINwin",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 3,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS",
-              "KIN",
-              "WIN"
-            ],
-            "pts": 3,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN,WIN (1GA) > KAN,ENS (2GA)",
-              "        \u2192 KIN advance / WIN,KAN,ENS eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "ENSwin",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "ENSwin",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "ENSwin",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "ENSwin",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "ENSwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "ENSwin",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "ENSwin",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: WIN (0GA) > KAN (1GA)",
-              "        \u2192 WIN advance / KAN eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "ENSwin",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KAN",
-          "ENS"
-        ],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS"
-            ],
-            "pts": 4,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "ENSwin",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "tie",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KIN",
-          "WIN"
-        ],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KIN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "tie",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "tie",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "ENS",
-              "KIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN (0GA) > ENS (1GA)",
-              "        \u2192 KIN advance / ENS eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "tie",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "tie",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 3,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS",
-              "KIN",
-              "WIN"
-            ],
-            "pts": 3,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN,WIN (0GA) > KAN,ENS (1GA)",
-              "        \u2192 KIN advance / WIN,KAN,ENS eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "tie",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "tie",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: WIN (0GA) > KAN (1GA)",
-              "        \u2192 WIN advance / KAN eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "tie",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "tie",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KAN",
-          "ENS"
-        ],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS"
-            ],
-            "pts": 4,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "KINwin",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "KINwin",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "KINwin",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "KINwin",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KIN",
-          "WIN"
-        ],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KIN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "KINwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "KINwin",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "KINwin",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: WIN (0GA) > KAN (1GA)",
-              "        \u2192 WIN advance / KAN eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "KINwin",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "tie",
-          "KINwin",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "ENSwin",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 3,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS",
-              "KIN",
-              "WIN"
-            ],
-            "pts": 3,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN,WIN (1GA) > KAN,ENS (2GA)",
-              "        \u2192 KIN advance / WIN,KAN,ENS eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "ENSwin",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "ENSwin",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "ENSwin",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "ENSwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KAN",
-          "ENS"
-        ],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS"
-            ],
-            "pts": 4,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "ENSwin",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "ENSwin",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "ENSwin",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "ENSwin",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KAN",
-          "ENS"
-        ],
-        "pts": 5,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS"
-            ],
-            "pts": 5,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "tie",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "tie",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "tie",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "ENS",
-              "KIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN (0GA) > ENS (1GA)",
-              "        \u2192 KIN advance / ENS eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "tie",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "tie",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "tie",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KAN",
-          "ENS"
-        ],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS"
-            ],
-            "pts": 4,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "tie",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "tie",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "tie",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "KINwin",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "KINwin",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "KINwin",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "KINwin",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "KIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN (0GA) > KAN (1GA)",
-              "        \u2192 KIN advance / KAN eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "KINwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "KIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN (0GA) > KAN (1GA)",
-              "        \u2192 KIN advance / KAN eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "KINwin",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "KIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: KIN (0GA) > KAN (1GA)",
-              "        \u2192 KIN advance / KAN eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "KINwin",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "KINwin",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "KANwin",
-          "KINwin",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "ENSwin",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "ENSwin",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "ENSwin",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "ENSwin",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "ENSwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "ENSwin",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "ENSwin",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "ENSwin",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "ENSwin",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "tie",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "tie",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "tie",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "ENS",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule i (wins): WIN (2W) > ENS (1W)",
-              "        WIN advance (2W)",
-              "        ENS eliminated (fewer wins)"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "tie",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "tie",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "tie",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "ENS",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule i (wins): WIN (2W) > ENS (1W)",
-              "        WIN advance (2W)",
-              "        ENS eliminated (fewer wins)"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "tie",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "tie",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "tie",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "ENS",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule i (wins): WIN (2W) > ENS (1W)",
-              "        WIN advance (2W)",
-              "        ENS eliminated (fewer wins)"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "KINwin",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "KINwin",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "KINwin",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KIN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule ii (h2h among KIN,WIN):",
-              "        WIN: 2pts (beat KIN)",
-              "        KIN: 0pts (lost to WIN)",
-              "        \u2192 WIN advance / KIN eliminated"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "KINwin",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "KINwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "KINwin",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "KINwin",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "KINwin",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "WINwin",
-          "KINwin",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "ENSwin",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "ENSwin",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "ENS",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: WIN (0GA) > ENS (1GA)",
-              "        \u2192 WIN advance / ENS eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "ENSwin",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "ENSwin",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "ENSwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "ENS",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: WIN (0GA) > ENS (1GA)",
-              "        \u2192 WIN advance / ENS eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "ENSwin",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "ENSwin",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "ENSwin",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: WIN (0GA) > KAN,ENS (1GA)",
-              "        \u2192 WIN advance / KAN,ENS eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "ENSwin",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "tie",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "tie",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "tie",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "tie",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "tie",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "tie",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "tie",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "tie",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: WIN (0GA) > KAN (1GA)",
-              "        \u2192 WIN advance / KAN eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "tie",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KAN",
-          "ENS"
-        ],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS"
-            ],
-            "pts": 4,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "KINwin",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "KINwin",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KIN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule i (wins): KIN (2W) > WIN (1W)",
-              "        KIN advance (2W)",
-              "        WIN eliminated (fewer wins)"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "KINwin",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "KINwin",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "KINwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "KINwin",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 3,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS",
-              "KIN",
-              "WIN"
-            ],
-            "pts": 3,
-            "lines": [
-              "      Rule i (wins): ENS,KIN,WIN (1W) > KAN (0W)",
-              "        Still tied (1W): ENS,KIN,WIN \u2014 1 spot left",
-              "          Rule iv (GA) [score-dependent]: KIN,WIN (1GA) > ENS (2GA)",
-              "            \u2192 KIN advance / WIN,ENS eliminated",
-              "        KAN eliminated (fewer wins)"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "KINwin",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "KINwin",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iv (GA) [score-dependent]: WIN (0GA) > KAN (1GA)",
-              "        \u2192 WIN advance / KAN eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "tie",
-          "KINwin",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "ENSwin",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "ENSwin",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "ENSwin",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "ENSwin",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule i (wins): WIN (2W) > KAN (1W)",
-              "        WIN advance (2W)",
-              "        KAN eliminated (fewer wins)"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "ENSwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KAN",
-          "ENS"
-        ],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS"
-            ],
-            "pts": 4,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "ENSwin",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "ENSwin",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "ENSwin",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "ENSwin",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KAN",
-          "ENS"
-        ],
-        "pts": 5,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS"
-            ],
-            "pts": 5,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "tie",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "tie",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 3,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS",
-              "KIN",
-              "WIN"
-            ],
-            "pts": 3,
-            "lines": [
-              "      Rule i (wins): KAN,KIN,WIN (1W) > ENS (0W)",
-              "        Still tied (1W): KAN,KIN,WIN \u2014 1 spot left",
-              "          Rule iv (GA) [score-dependent]: KIN,WIN (1GA) > KAN (2GA)",
-              "            \u2192 KIN advance / WIN,KAN eliminated",
-              "        ENS eliminated (fewer wins)"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "tie",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "ENS"
-        ],
-        "eliminated": [
-          "KAN",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "tie",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule i (wins): WIN (2W) > KAN (1W)",
-              "        WIN advance (2W)",
-              "        KAN eliminated (fewer wins)"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "tie",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "tie",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [],
-        "eliminated": [],
-        "unresolved_teams": [
-          "KAN",
-          "ENS"
-        ],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "unresolved",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "ENS"
-            ],
-            "pts": 4,
-            "lines": [
-              "      UNRESOLVED \u2014 tiebreakers i-iv(+vi) exhausted"
-            ],
-            "gd_dep": true,
-            "unresolved": true
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "tie",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "tie",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "tie",
-          "KANwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "KINwin",
-          "KINwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KIN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule ii (h2h among KIN,WIN):",
-              "        WIN: 2pts (beat KIN)",
-              "        KIN: 0pts (lost to WIN)",
-              "        \u2192 WIN advance / KIN eliminated"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "KINwin",
-          "KINwin",
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "KINwin",
-          "KINwin",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "KINwin",
-          "tie",
-          "WINwin"
-        ],
-        "advancing": [
-          "WIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "KIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "KAN",
-              "WIN"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule i (wins): WIN (2W) > KAN (1W)",
-              "        WIN advance (2W)",
-              "        KAN eliminated (fewer wins)"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "KINwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "KINwin",
-          "tie",
-          "ENSwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "KINwin",
-          "KANwin",
-          "WINwin"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
-          "KANwin",
-          "KINwin",
-          "KANwin",
-          "tie"
-        ],
-        "advancing": [
-          "KAN"
-        ],
-        "eliminated": [
-          "ENS",
-          "KIN",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WINwin",
           "KANwin",
           "KINwin",
           "KANwin",
@@ -6468,6 +2215,17 @@
   ],
   "completed": [
     {
+      "game_id": 142,
+      "date": "2026-04-10T09:15",
+      "home": "KIN",
+      "away": "WIN",
+      "home_name": "Kincardine Kinucks",
+      "away_name": "Windsor Wildcats",
+      "home_score": 2,
+      "away_score": 0,
+      "status": "final"
+    },
+    {
       "game_id": 143,
       "date": "2026-04-10T09:15",
       "home": "KAN",
@@ -6479,19 +2237,7 @@
       "status": "final"
     }
   ],
-  "live_games": [
-    {
-      "game_id": 142,
-      "date": "2026-04-10T09:15",
-      "home": "KIN",
-      "away": "WIN",
-      "home_name": "Kincardine Kinucks",
-      "away_name": "Windsor Wildcats",
-      "home_score": 2,
-      "away_score": 0,
-      "status": "in_progress"
-    }
-  ],
+  "live_games": [],
   "qf_standings": [
     {
       "id": "DUR",
@@ -25965,49 +21711,55 @@
   "tiebreaker_resolution": null,
   "event_log": [
     {
-      "time": "Fri Apr 10, 09:02 AM",
+      "time": "Fri Apr 10, 09:03 AM",
       "type": "info",
       "headline": "GAME STARTED: Kanata Rangers vs Ennismore Eagles (Game #143)",
-      "detail": "We need to get off to a strong start against Ennismore Eagles as we begin our quest to win Pool C at the OWHA U15B Provincials."
+      "detail": "With five games remaining in Pool C and all teams currently tied at 0 points, we need a strong start against Ennismore Eagles to position ourselves well for first in the pool."
     },
     {
       "time": "Fri Apr 10, 09:25 AM",
       "type": "info",
       "headline": "GAME STARTED: Kincardine Kinucks vs Windsor Wildcats (Game #142)",
-      "detail": "We need to monitor this game closely as both teams are potential rivals for first in Pool C, but neither result significantly favors our path to winning the pool since we still have to play both teams directly."
+      "detail": "Since we play both teams in our remaining games, we need to watch how this result affects the pool standings before we face Windsor Wildcats next and then Kincardine Kinucks later."
     },
     {
       "time": "Fri Apr 10, 09:31 AM",
       "type": "goal",
       "headline": "Score update: Kanata Rangers 1 - 0 Ennismore Eagles (in progress)",
-      "detail": "If we hold this 1-0 lead against Ennismore, we'll be in a strong position to win Pool C, taking first place in 106 of 214 scenarios."
-    },
-    {
-      "time": "Fri Apr 10, 09:37 AM",
-      "type": "goal",
-      "headline": "Score update: Kincardine Kinucks 1 - 0 Windsor Wildcats (in progress)",
-      "detail": "This result would put us in a strong position, as we win Pool C in 48 of 214 scenarios if the score holds."
+      "detail": "If this 1-0 lead holds, we'll be in a strong position to win Pool C, taking first place in 106 of the 214 possible scenarios."
     },
     {
       "time": "Fri Apr 10, 09:37 AM",
       "type": "goal",
       "headline": "Score update: Kanata Rangers 1 - 1 Ennismore Eagles (in progress)",
-      "detail": "A tie puts us in a strong position to win Pool C, as we would take first in 38 of 225 possible scenarios."
+      "detail": "A tie against Ennismore would put us in a strong position to win Pool C, as we'd claim first place in 38 of 225 possible scenarios."
+    },
+    {
+      "time": "Fri Apr 10, 09:38 AM",
+      "type": "goal",
+      "headline": "Score update: Kincardine Kinucks 1 - 0 Windsor Wildcats (in progress)",
+      "detail": "This result would put us in a strong position to win Pool C, as we would win the pool in 48 of 214 scenarios."
     },
     {
       "time": "Fri Apr 10, 10:07 AM",
       "type": "final",
       "headline": "FINAL: Kanata Rangers 1 - 1 Ennismore Eagles",
-      "detail": "This was an upset - we (Kanata Rangers, #18) tied with the lower-ranked Ennismore Eagles (#25), but since ties give both teams a point, it hurts our pool chances. We now win Pool C in only 38 out of 243 remaining outcome combinations, down significantly from our pre-game position of 156 out of 729."
+      "detail": "What a gutsy performance by our Rangers! We tied 1-1 with the lower-ranked Ennismore Eagles (#25), but since they were expected to lose as the weaker team, this counts as an upset against us.\n\nThe tie hurts our pool chances - we now advance in only 38 out of 243 remaining outcome combinations, down significantly from our previous 156 out of 729 paths to win Pool C."
     },
     {
       "time": "Fri Apr 10, 10:10 AM",
       "type": "goal",
       "headline": "Score update: Kincardine Kinucks 2 - 0 Windsor Wildcats (in progress)",
-      "detail": "This result puts us in a strong position as we win the pool in 12 of 77 scenarios if the score holds."
+      "detail": "This result puts us in a strong position, as we would win the pool in 12 of 77 scenarios if the score holds."
+    },
+    {
+      "time": "Fri Apr 10, 10:11 AM",
+      "type": "final",
+      "headline": "FINAL: Kincardine Kinucks 2 - 0 Windsor Wildcats",
+      "detail": "This was not an upset - higher-ranked Kincardine (#3) beat lower-ranked Windsor (#41) as expected. With this result, we now win our pool in only 12 out of 81 remaining outcome combinations, significantly reducing our chances from the 38 out of 243 we had before this game."
     }
   ],
-  "narrative": "**Where We Stand**\nThe situation has changed since our last update \u2014 while we remain at 1 point from our tie with Ennismore, Kincardine has pulled ahead to lead the pool with 2 points after their 2-0 victory over Windsor.\n\n**Our Next Game**\nWe still face the Windsor Wildcats at 3:45 PM this afternoon as scheduled. The #41-ranked Wildcats are now coming off a shutout loss to Kincardine and will be looking to bounce back with their first points of the tournament.\n\n**Around the Pool**\nKincardine's 2-0 win over Windsor is complete, and the Kinucks will face Ennismore at 3:45 PM in the other game happening alongside ours. Our scenario analysis shows we now win the pool in 12 out of 81 possible outcomes, with 4 additional scenarios depending on score margins \u2014 a more concentrated path than before.",
+  "narrative": "**Where We Stand**\nAs we predicted in our last update, Kincardine handled their business against Windsor with a 2-0 victory, putting the #3 Kinucks in clear control of Pool C with 2 points. We remain tied with Ennismore at 1 point each after our opening draw, but now find ourselves 2 points back of the leaders.\n\n**Our Next Game**\nThe situation has changed since our last update - what was already a must-win against Windsor at 3:45 PM today has become even more critical with Kincardine's victory. The #41 Wildcats were shut out by the Kinucks and remain desperate for their first tournament points.\n\n**Around the Pool**\nAt the same 3:45 PM timeslot, Ennismore battles Kincardine in what will determine if the Eagles can keep pace or if the highly-ranked Kinucks pull further ahead. With scenario analysis showing us winning the pool in only 12 of 81 deterministic outcomes, every point matters from here forward.",
   "scouting": {
     "description": "This season we've faced several teams heading to Provincials across 5 tournaments. We swept St. Catharines Brock Jr. Badgers in two meetings (6-0, 2-0). Against the rest... let's just say we're looking for redemption. Of note: Durham West Lightning (#29) is in our quarterfinal opponent's pool (Pool F) -- they beat us 2-0 in November, but they're not the favourite to win their pool. In tournament play, anything can happen!",
     "matchups": [
@@ -26152,9 +21904,9 @@
     }
   },
   "coaches_corner": {
-    "don_cherry": "I'll tell ya, these Kanata Rangers girls showed real heart battling back for that tie against Ennismore - that's the kind of never-quit attitude that's gonna make 'em dangerous against Windsor! You kids out there, THIS is how you grow the game - these young ladies are tough as nails and ready for war!",
-    "talking_points": "**Mindset** \u2014 That tie against Ennismore shows we can compete with anyone when we play our system and stay composed. We need to bring that same energy and focus into this next game, knowing every shift matters at this level.\n\n**Discipline** \u2014 We've stayed completely clean with zero penalty minutes so far, which gives us a huge advantage. Keep playing smart, physical hockey without giving them any free power play opportunities.\n\n**The Opponent** \u2014 Windsor is here for a reason and they'll be hungry to prove themselves against a higher-ranked team like us. Expect them to come out hard and fast, so we need to match their intensity right from the opening faceoff.\n\n**What We Need** \u2014 We're in a tight race for the pool win with only 38 scenarios out of 225 going our way. A regulation win here puts us in great position, but anything less makes our path much harder since only pool winners advance to quarterfinals.",
+    "don_cherry": "I'll tell ya, that Kanata Rangers girls team just showed tremendous heart battling back for that tie - these young ladies are the future of our great game! Now they gotta dig deep against Windsor and show 'em what Ontario hockey is all about!",
+    "talking_points": "**Mindset** \u2014 That tie against Ennismore shows we can compete with anyone when we play our system and support each other. We earned a point, but we know we left more on the table, so let's channel that hunger into a complete 60-minute effort against Windsor.\n\n**Discipline** \u2014 We've stayed completely clean with zero penalty minutes so far, which is outstanding and shows our maturity. Keep playing hard but smart, and don't let Windsor draw us into anything that puts us shorthanded.\n\n**The Opponent** \u2014 Windsor comes in ranked lower than us, but they've made it to provincials for a reason and will be desperate for points. Expect them to come out aggressive and physical, so we need to match their intensity from the opening faceoff.\n\n**What We Need** \u2014 Our pool chances are still alive, but we need every point we can get. Play like the higher-ranked team we are, stick to our game plan, and don't give Windsor any easy opportunities to steal points from us.",
     "for_game": "Windsor Wildcats"
   },
-  "tiebreaker_health": "**Tiebreaker Health Analysis:**\n\nWe're currently tied with Ennismore on both goal differential (0) and goals against (1), meaning any tie in points with them goes to the next tiebreaker rule. Our position is extremely fragile - a single goal difference in any game could determine our fate, since we're deadlocked on the primary tiebreaker metrics.\n\nEvery goal matters critically, even in blowout losses or wins, because the 11 yellow scenarios hinge entirely on goals scored and conceded rather than just game outcomes."
+  "tiebreaker_health": "**Tiebreaker Health Analysis:**\n\nWe're currently tied with Ennismore on both goal differential (0) and goals against (1), meaning any tie with them goes to deeper tiebreakers, while we're 2 goals behind Kincardine on GD (+2 vs 0) if they stumble. Our position is moderately fragile\u2014a 2-goal loss drops us to -2 GD while a 2-goal win puts us at +2, creating significant swings in the yellow scenarios. Every goal matters even in apparent blowouts since GD and GA directly determine 11 of our advancement scenarios."
 }
