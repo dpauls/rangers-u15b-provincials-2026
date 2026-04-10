@@ -917,29 +917,69 @@ def main():
             tournament_data['_narrative'] = welcome
 
         # Initial Coach's Corner
-        log.info('Generating initial Coach\'s Corner...')
+        log.info('Generating Coach\'s Corner...')
         coaches_corner = {}
 
-        # Don Cherry for the opening
-        cherry = generate_don_cherry(
-            f"Tournament is about to start. {our_team_name} is ranked #18 in the province. "
-            f"First game is against #25 Ennismore Eagles. Pool also has #3 Kincardine (tough!) "
-            f"and #41 Windsor. Only the pool winner advances to the quarterfinal.",
-            our_team_name)
+        # Build actual context from current state
+        completed_cc = build_games_list(our_pool, tournament_data, 'final')
+        upcoming_cc = build_games_list(our_pool, tournament_data, 'scheduled')
+        our_completed_cc = [g for g in completed_cc if g['home'] == our_team or g['away'] == our_team]
+        our_results_cc = []
+        for i, g in enumerate(our_completed_cc):
+            we_home = g['home'] == our_team
+            og = g['home_score'] if we_home else g['away_score']
+            tg = g['away_score'] if we_home else g['home_score']
+            tag = 'WIN' if og > tg else ('LOSS' if tg > og else 'TIE')
+            rec = '(MOST RECENT)' if i == 0 else ''
+            our_results_cc.append(f"{g['home_name']} {g['home_score']}-{g['away_score']} {g['away_name']} [{tag}] {rec}".strip())
+
+        # Get PIMs from API
+        startup_pim = 0
+        try:
+            api_st = fetch_standings()
+            if api_st:
+                from scraper import standings_to_pool_map
+                pmap = standings_to_pool_map(api_st)
+                for t in pmap.get(our_pool, []):
+                    if t.get('number') == str(tournament_data['teams'][our_team]['number']):
+                        startup_pim = t.get('pim', 0)
+                        break
+        except Exception:
+            pass
+
+        # Context strings
+        recent_finals = [e['headline'] for e in tournament_data.get('event_log', []) if e['type'] == 'final']
+        if recent_finals:
+            cherry_ctx = f"Tournament state: {', '.join(recent_finals[-3:])}."
+        else:
+            cherry_ctx = (f"Tournament is about to start. {our_team_name} is ranked #18. "
+                         f"Only the pool winner advances.")
+
+        if completed_cc:
+            standings_ctx = f'{len(completed_cc)} pool games completed.'
+            our_count_cc = our_analysis['counts'].get(our_team, 0)
+            det_cc = our_analysis['total'] - our_analysis.get('unresolved_count', 0)
+            scenarios_ctx = f'We win the pool in {our_count_cc} of {det_cc} deterministic scenarios.'
+        else:
+            standings_ctx = 'First game of the tournament.'
+            scenarios_ctx = 'No games played yet.'
+
+        # Don Cherry
+        cherry = generate_don_cherry(cherry_ctx, our_team_name)
         if cherry:
             coaches_corner['don_cherry'] = cherry
 
-        # Pre-game talking points for first game
-        our_upcoming = [g for g in upcoming if g['home'] == our_team or g['away'] == our_team]
-        if our_upcoming:
-            next_game = our_upcoming[0]
+        # Pre-game talking points
+        our_upcoming_cc = [g for g in upcoming_cc if g['home'] == our_team or g['away'] == our_team]
+        if our_upcoming_cc:
+            next_game = our_upcoming_cc[0]
             opp_id = next_game['away'] if next_game['home'] == our_team else next_game['home']
             opp_name = tournament_data['teams'].get(opp_id, {}).get('name', opp_id)
             opp_ranking = tournament_data['teams'].get(opp_id, {}).get('ranking', '?')
             talking = generate_pregame_talking_points(
                 our_team_name, opp_name, opp_ranking,
-                [], 0, 'First game of the tournament.',
-                'No games played yet.', 'Every game matters -- only the pool winner advances.')
+                our_results_cc, startup_pim, standings_ctx,
+                scenarios_ctx, 'Only pool winners advance to the quarterfinal.')
             if talking:
                 coaches_corner['talking_points'] = talking
 
