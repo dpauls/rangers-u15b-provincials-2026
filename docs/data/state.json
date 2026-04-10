@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T17:56:05.530454-04:00",
+  "generated_at": "2026-04-10T17:57:15.963276-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -441,9 +441,27 @@
       "ga": 0,
       "gd": 4,
       "status": "ALIVE",
-      "adv_count": 25,
-      "adv_pct": 92.6,
+      "adv_count": 7,
+      "adv_pct": 77.8,
       "tie_note": null
+    },
+    {
+      "id": "WAT",
+      "name": "Waterloo Ravens",
+      "ranking": 13,
+      "is_us": false,
+      "gp": 2,
+      "w": 1,
+      "l": 1,
+      "t": 0,
+      "pts": 2,
+      "gf": 2,
+      "ga": 1,
+      "gd": 1,
+      "status": "ALIVE",
+      "adv_count": 2,
+      "adv_pct": 22.2,
+      "tie_note": "Rule ii (h2h among WAT,DUR):"
     },
     {
       "id": "DUR",
@@ -461,39 +479,21 @@
       "status": "ELIMINATED",
       "adv_count": 0,
       "adv_pct": 0.0,
-      "tie_note": null
-    },
-    {
-      "id": "WAT",
-      "name": "Waterloo Ravens",
-      "ranking": 13,
-      "is_us": false,
-      "gp": 1,
-      "w": 0,
-      "l": 1,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 1,
-      "gd": -1,
-      "status": "ALIVE",
-      "adv_count": 2,
-      "adv_pct": 7.4,
-      "tie_note": null
+      "tie_note": "Rule ii (h2h among WAT,DUR):"
     },
     {
       "id": "NHT",
       "name": "North Halton Twisters",
       "ranking": 37,
       "is_us": false,
-      "gp": 1,
+      "gp": 2,
       "w": 0,
-      "l": 1,
+      "l": 2,
       "t": 0,
       "pts": 0,
       "gf": 0,
-      "ga": 3,
-      "gd": -3,
+      "ga": 5,
+      "gd": -5,
       "status": "ELIMINATED",
       "adv_count": 0,
       "adv_pct": 0.0,
@@ -501,22 +501,16 @@
     }
   ],
   "qf_scenarios": {
-    "total": 27,
+    "total": 9,
     "green": 0,
     "yellow": 1,
-    "red": 26,
+    "red": 8,
     "our_count": 0,
     "our_pct": 0.0,
     "unresolved": 0,
     "gd_dependent": 1,
-    "remaining_games": 3,
+    "remaining_games": 2,
     "remaining_info": [
-      {
-        "home": "NHT",
-        "away": "WAT",
-        "game_id": 168,
-        "date": "2026-04-10T17:15"
-      },
       {
         "home": "LON",
         "away": "WAT",
@@ -532,14 +526,13 @@
     ],
     "counts": {
       "DUR": 0,
-      "LON": 25,
+      "LON": 7,
       "NHT": 0,
       "WAT": 2
     },
     "scenarios": [
       {
         "labels": [
-          "NHTwin",
           "LONwin",
           "NHTwin"
         ],
@@ -559,7 +552,6 @@
       },
       {
         "labels": [
-          "NHTwin",
           "LONwin",
           "tie"
         ],
@@ -579,219 +571,6 @@
       },
       {
         "labels": [
-          "NHTwin",
-          "LONwin",
-          "DURwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "NHTwin",
-          "tie",
-          "NHTwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "NHTwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "NHTwin",
-          "tie",
-          "DURwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "NHTwin",
-          "WATwin",
-          "NHTwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "LON",
-              "NHT"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule ii (h2h among LON,NHT):",
-              "        LON: 2pts (beat NHT)",
-              "        NHT: 0pts (lost to LON)",
-              "        \u2192 LON advance / NHT eliminated"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "NHTwin",
-          "WATwin",
-          "tie"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "NHTwin",
-          "WATwin",
-          "DURwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "DUR",
-              "LON"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule ii (h2h among DUR,LON):",
-              "        LON: 2pts (beat DUR)",
-              "        DUR: 0pts (lost to LON)",
-              "        \u2192 LON advance / DUR eliminated"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "tie",
-          "LONwin",
-          "NHTwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "LONwin",
-          "tie"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
           "LONwin",
           "DURwin"
         ],
@@ -812,7 +591,6 @@
       {
         "labels": [
           "tie",
-          "tie",
           "NHTwin"
         ],
         "advancing": [
@@ -831,7 +609,6 @@
       },
       {
         "labels": [
-          "tie",
           "tie",
           "tie"
         ],
@@ -852,7 +629,6 @@
       {
         "labels": [
           "tie",
-          "tie",
           "DURwin"
         ],
         "advancing": [
@@ -871,203 +647,6 @@
       },
       {
         "labels": [
-          "tie",
-          "WATwin",
-          "NHTwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WATwin",
-          "tie"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
-          "WATwin",
-          "DURwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "DUR",
-              "LON"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule ii (h2h among DUR,LON):",
-              "        LON: 2pts (beat DUR)",
-              "        DUR: 0pts (lost to LON)",
-              "        \u2192 LON advance / DUR eliminated"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WATwin",
-          "LONwin",
-          "NHTwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WATwin",
-          "LONwin",
-          "tie"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WATwin",
-          "LONwin",
-          "DURwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WATwin",
-          "tie",
-          "NHTwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WATwin",
-          "tie",
-          "tie"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WATwin",
-          "tie",
-          "DURwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 5,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WATwin",
           "WATwin",
           "NHTwin"
         ],
@@ -1104,7 +683,6 @@
       {
         "labels": [
           "WATwin",
-          "WATwin",
           "tie"
         ],
         "advancing": [
@@ -1139,7 +717,6 @@
       },
       {
         "labels": [
-          "WATwin",
           "WATwin",
           "DURwin"
         ],
@@ -1164,8 +741,8 @@
             ],
             "pts": 4,
             "lines": [
-              "      Rule iii (GD) [score-dependent]: LON (+3) > DUR,WAT (+1)",
-              "        \u2192 LON advance / DUR,WAT eliminated"
+              "      Rule iii (GD) [score-dependent]: LON (+3) > WAT (+2) > DUR (+1)",
+              "        \u2192 LON advance / WAT,DUR eliminated"
             ],
             "gd_dep": true,
             "unresolved": false
@@ -1352,6 +929,12 @@
       "time": "Fri Apr 10, 05:55 PM",
       "type": "info",
       "headline": "Pool F: Durham West Lightning 0 - 1 London Devilettes (Final)",
+      "detail": "QF opponent pool update."
+    },
+    {
+      "time": "Fri Apr 10, 05:57 PM",
+      "type": "info",
+      "headline": "Pool F: North Halton Twisters 0 - 2 Waterloo Ravens (Final)",
       "detail": "QF opponent pool update."
     }
   ],

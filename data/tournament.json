@@ -172,7 +172,7 @@
       "away": "WAT",
       "home_score": 0,
       "away_score": 2,
-      "status": "in_progress"
+      "status": "final"
     },
     {
       "game_id": 169,
@@ -358,6 +358,12 @@
       "time": "Fri Apr 10, 05:55 PM",
       "type": "info",
       "headline": "Pool F: Durham West Lightning 0 - 1 London Devilettes (Final)",
+      "detail": "QF opponent pool update."
+    },
+    {
+      "time": "Fri Apr 10, 05:57 PM",
+      "type": "info",
+      "headline": "Pool F: North Halton Twisters 0 - 2 Waterloo Ravens (Final)",
       "detail": "QF opponent pool update."
     }
   ],
