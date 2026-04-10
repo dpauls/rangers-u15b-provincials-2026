@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T09:25:13.933784-04:00",
+  "generated_at": "2026-04-10T09:25:26.351608-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -38961,19 +38961,19 @@
   "tiebreaker_resolution": null,
   "event_log": [
     {
-      "time": "Fri Apr 10, 09:03 AM",
+      "time": "Fri Apr 10, 09:02 AM",
       "type": "info",
       "headline": "GAME STARTED: Kanata Rangers vs Ennismore Eagles (Game #143)",
-      "detail": "We need a strong start against Ennismore Eagles as we begin our quest to win Pool C at the OWHA U15B Provincials."
+      "detail": "We need to get off to a strong start against Ennismore Eagles as we begin our quest to win Pool C at the OWHA U15B Provincials."
     },
     {
       "time": "Fri Apr 10, 09:25 AM",
       "type": "info",
       "headline": "GAME STARTED: Kincardine Kinucks vs Windsor Wildcats (Game #142)",
-      "detail": "We need to closely watch this matchup since both Kincardine and Windsor are direct competitors for first in Pool C, and the result will impact our path to winning the pool."
+      "detail": "We should cheer for a tie in this Kincardine vs Windsor game, as it would give both teams just 1 point and keep our path to winning Pool C wide open when we face each of them later."
     }
   ],
-  "narrative": "**Where We Stand**\nWe're tied at 0 points with everyone else in Pool C as the tournament begins, sitting in a wide-open four-way race with Ennismore Eagles, Kincardine Kinucks, and Windsor Wildcats.\n\n**Our Next Game**\nWe face the Ennismore Eagles on Friday April 10th at 9:15 AM to kick off our tournament. Rankings suggest we match up well against the #25 Eagles, but they'll come out hungry and anything can happen in tournament hockey.\n\n**Around the Pool**\nThe other 9:15 AM game has #3-ranked Kincardine taking on Windsor - we'll want to see that one stay close since Kincardine is the pool favorite. Our scenario analysis shows we win Pool C in 156 out of 729 possible outcomes, so there are plenty of paths forward if we take care of business.",
+  "narrative": "**Where We Stand**\nWe're tied with everyone else at 0 points as Pool C kicks off. With #3 Kincardine as the heavy favorites and us sitting at #18 provincially, we'll need to play smart hockey to advance.\n\n**Our Next Game**\nWe face the Ennismore Eagles Friday April 10th at 9:15 AM to open our tournament. Rankings suggest we match up well against the #25 Eagles, but they'll come out hungry and anything can happen in tournament hockey.\n\n**Around the Pool**\nThe other 9:15 AM game has Kincardine taking on Windsor, where the highly-ranked Kinucks will be heavily favored. At 3:45 PM, we get Windsor while Ennismore battles Kincardine - we'll want to see some upsets there to keep the pool standings tight and give us multiple paths forward.",
   "scouting": {
     "description": "This season we've faced several teams heading to Provincials across 5 tournaments. We swept St. Catharines Brock Jr. Badgers in two meetings (6-0, 2-0). Against the rest... let's just say we're looking for redemption. Of note: Durham West Lightning (#29) is in our quarterfinal opponent's pool (Pool F) -- they beat us 2-0 in November, but they're not the favourite to win their pool. In tournament play, anything can happen!",
     "matchups": [
@@ -39118,8 +39118,8 @@
     }
   },
   "coaches_corner": {
-    "don_cherry": "I'll tell ya, these Kanata Rangers girls are ready to show those Ennismore Eagles what real hockey looks like! You kids out there, watch how these young ladies battle in the corners - they're the future of our great game!",
-    "talking_points": "**Mindset** \u2014 This is our first game at Provincials and we need to come out strong right from the opening faceoff. Let's set the tone early and show everyone why we earned our spot here as the 18th-ranked team in the province.\n\n**Discipline** \u2014 We're starting with a clean slate at zero penalty minutes, so let's keep our sticks down and our heads up. Smart, disciplined hockey will give us more opportunities to control the game and stay out of trouble.\n\n**The Opponent** \u2014 Ennismore comes in ranked 25th but don't let that fool you into thinking this will be easy. Every team here earned their way to Provincials, and they'll be looking to prove their ranking doesn't tell the whole story.\n\n**What We Need** \u2014 Only pool winners advance, so every single point matters from game one. We need to play our system, support each other, and take advantage of our opportunities when they come.",
+    "don_cherry": "I'll tell ya, these Kanata Rangers girls are about to show the Ennismore Eagles what heart and determination look like! You kids out there watching - this is the future of hockey right here, and these young ladies are gonna battle for every inch of ice!",
+    "talking_points": "**Mindset** \u2014 This is it, Rangers. First game of Provincials and we've prepared well for this moment. Let's start strong and set the tone for our entire tournament with confident, focused hockey from the opening faceoff.\n\n**Discipline** \u2014 We're starting with a clean slate at zero penalty minutes and that's exactly how we want to keep it. Stay smart, play hard but controlled, and don't give them any free power play opportunities to get momentum.\n\n**The Opponent** \u2014 Ennismore earned their spot here just like we did, and they'll come out ready to prove themselves against a higher-ranked team. Expect them to play with nothing to lose, so we need to match their intensity while executing our systems.\n\n**What We Need** \u2014 Only pool winners advance, so every single point matters from game one. Play our game, support each other, and take care of the details that have gotten us this far.",
     "for_game": "Ennismore Eagles"
   },
   "bench": {
@@ -39156,6 +39156,6 @@
       }
     },
     "indicator": "yellow",
-    "reason": "**DON'T PULL THE GOALIE.** The concurrent Kincardine-Windsor game is also tied, meaning both those teams will likely get 1 point each, making our tie worth very little (only 14/56 scenarios vs 42/70 for a win). However, the risk is too high - giving up an empty-netter drops us to just 4/70 advancement scenarios, and in a tournament where all teams start 0-0-0, preserving the tie point is crucial since everyone else is likely getting at least 1 point too."
+    "reason": "**PULL THE GOALIE.** A tie only gives us a 25% advancement chance (14/56) while a win jumps to 60% (42/70) - that's a massive difference that justifies the risk. With the other game also tied at 0-0, ties are looking likely across the board, making our tie less valuable for standings separation.\n\nThe math strongly favors going for the win despite empty-net risk."
   }
 }
