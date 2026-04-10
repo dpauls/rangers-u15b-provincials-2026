@@ -182,7 +182,7 @@
       "away": "LON",
       "home_score": 0,
       "away_score": 1,
-      "status": "in_progress"
+      "status": "final"
     },
     {
       "game_id": 706,
@@ -353,6 +353,12 @@
       "type": "final",
       "headline": "FINAL: Ennismore Eagles 0 - 2 Kincardine Kinucks",
       "detail": "This wasn't an upset - higher-ranked Kincardine (#3) defeated lower-ranked Ennismore (#25) as expected. Unfortunately, this result has officially eliminated us from Pool C contention, as we can no longer win the pool in any of the 9 remaining outcome combinations."
+    },
+    {
+      "time": "Fri Apr 10, 05:55 PM",
+      "type": "info",
+      "headline": "Pool F: Durham West Lightning 0 - 1 London Devilettes (Final)",
+      "detail": "QF opponent pool update."
     }
   ],
   "scouting": {
