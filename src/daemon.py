@@ -892,8 +892,8 @@ def main():
     log.info('Initial generate and push...')
     generate(str(DATA_PATH), skip_narrative=True)
 
-    # Generate welcome narrative + Coach's Corner if no events yet and narrative enabled
-    if not args.skip_narrative and not tournament_data.get('event_log') and not tournament_data.get('_narrative'):
+    # Generate narrative + Coach's Corner if missing (startup or after reroll)
+    if not args.skip_narrative and (not tournament_data.get('_narrative') or not tournament_data.get('_coaches_corner')):
         our_team = tournament_data['tournament']['our_team']
         our_team_name = tournament_data['teams'][our_team]['name']
         our_pool = tournament_data['teams'][our_team]['pool']
