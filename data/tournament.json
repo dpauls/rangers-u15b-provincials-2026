@@ -256,25 +256,25 @@
       "time": "Fri Apr 10, 09:03 AM",
       "type": "info",
       "headline": "GAME STARTED: Kanata Rangers vs Ennismore Eagles (Game #143)",
-      "detail": "We need to get off to a strong start in our first game of Pool C play against Ennismore Eagles."
+      "detail": "With five games remaining in Pool C and all teams currently tied at 0 points, we need a strong start against Ennismore Eagles to position ourselves well for first in the pool."
     },
     {
       "time": "Fri Apr 10, 09:25 AM",
       "type": "info",
       "headline": "GAME STARTED: Kincardine Kinucks vs Windsor Wildcats (Game #142)",
-      "detail": "We should cheer for a tie in this Kincardine vs Windsor game, as it would give both teams only 1 point each and keep us in a strong position to win Pool C when we play our upcoming games."
+      "detail": "Since we play both teams in our remaining games, we need to watch how this result affects the pool standings before we face Windsor Wildcats next and then Kincardine Kinucks later."
     },
     {
       "time": "Fri Apr 10, 09:31 AM",
       "type": "goal",
       "headline": "Score update: Kanata Rangers 1 - 0 Ennismore Eagles (in progress)",
-      "detail": "If we hold this 1-0 lead against Ennismore, we'll put ourselves in a strong position to win Pool C, taking first place in 106 of 214 scenarios."
+      "detail": "If this 1-0 lead holds, we'll be in a strong position to win Pool C, taking first place in 106 of the 214 possible scenarios."
     },
     {
       "time": "Fri Apr 10, 09:37 AM",
       "type": "goal",
       "headline": "Score update: Kanata Rangers 1 - 1 Ennismore Eagles (in progress)",
-      "detail": "A tie against Ennismore puts us in a strong position to win Pool C, with favorable outcomes in 38 of 225 scenarios."
+      "detail": "A tie against Ennismore would put us in a strong position to win Pool C, as we'd claim first place in 38 of 225 possible scenarios."
     }
   ],
   "scouting": {
@@ -420,10 +420,10 @@
       }
     }
   },
-  "_narrative": "**Where We Stand**\nWe're tied at 0 points with everyone else in Pool C as the tournament begins. As the #18 seed, rankings suggest we match up well against some teams in our pool, but everyone earned their spot at Provincials and will be fired up.\n\n**Our Next Game**\nWe face the Ennismore Eagles (#25) on Friday April 10th at 9:15 AM. On paper we have an edge, but anything can happen in tournament hockey and they'll come out hungry for an upset.\n\n**Around the Pool**\nThe other 9:15 AM game has #3 Kincardine taking on #41 Windsor - we'll want to see how the pool's top seed performs. With 156 out of 729 possible scenarios leading to us winning Pool C, there are plenty of paths forward, but it all starts with taking care of business in our opener.",
+  "_narrative": "**Where We Stand**\nWe're tied at 0 points with everyone else in Pool C as tournament play begins. With #3 Kincardine as the heavy favorite and us sitting at #18 provincially, we'll need to execute our game plan against the teams we match up better with on paper.\n\n**Our Next Game**\nWe face the Ennismore Eagles at 9:15 AM on Friday April 10th in our tournament opener. Rankings suggest we match up well against the #25 Eagles, but they'll come out hungry and ready to prove themselves at Provincials.\n\n**Around the Pool**\nThe other opening game has #3 Kincardine taking on #41 Windsor at 9:15 AM as well. While Kincardine is heavily favored, we'll be rooting for Windsor to pull off the upset and keep points away from the pool's top seed. Our scenario analysis shows we win the pool in 156 out of 729 possible outcomes.",
   "_coaches_corner": {
-    "don_cherry": "I'll tell ya, these Kanata Rangers girls are gonna show those Ennismore Eagles what heart and determination look like out there! You kids are the future of hockey, and I love seeing these young ladies compete with that fire in their bellies!",
-    "talking_points": "**Mindset** \u2014 This is it, Rangers \u2014 our first game at Provincials and the beginning of what we've been working toward all season. We're here because we've earned it, and now it's time to show everyone why we belong on this stage.\n\n**Discipline** \u2014 We start this tournament with a clean slate and zero penalty minutes. Let's keep our game disciplined and smart \u2014 we can't help our team from the penalty box, especially when every shift matters.\n\n**The Opponent** \u2014 Ennismore earned their spot here just like we did, and they'll be ready to play their best hockey. We need to respect their effort while playing our game from the opening faceoff and never letting up.\n\n**What We Need** \u2014 Only the pool winner advances, so every single point matters in this tournament format. We need to play a complete 60-minute game and execute the systems we've practiced \u2014 support each other, move the puck quickly, and capitalize on our opportunities.",
+    "don_cherry": "I'll tell ya, these Kanata Rangers girls are about to show the Ennismore Eagles what heart and determination look like on the ice! You kids out there, this is exactly why girls hockey is the fastest growing part of our beautiful game - pure grit and passion!",
+    "talking_points": "**Mindset** \u2014 This is our first game at provincials and we need to come out strong from the opening faceoff. Let's set the tone early with our energy and show everyone why we earned our spot here.\n\n**Discipline** \u2014 We've stayed clean so far and that discipline will be crucial today. Stay focused on playing our game and don't let emotions take over when things get physical.\n\n**The Opponent** \u2014 Ennismore earned their way here just like we did, so we can't take anything for granted. They'll be hungry to prove themselves against a higher-ranked team, so we need to match their intensity and impose our game on them.\n\n**What We Need** \u2014 Only the pool winner advances, which means every single point matters. We need to play a complete 60 minutes and execute the systems we've worked on all season to get those two points.",
     "for_game": "Ennismore Eagles"
   }
 }
