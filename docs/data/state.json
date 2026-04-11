@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-11T10:54:21.142712-04:00",
+  "generated_at": "2026-04-11T11:01:41.040555-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -410,7 +410,7 @@
       "away": "KAN",
       "home_name": "Kincardine Kinucks",
       "away_name": "Kanata Rangers",
-      "home_score": 2,
+      "home_score": 3,
       "away_score": 1,
       "status": "in_progress"
     },
@@ -996,6 +996,12 @@
       "type": "goal",
       "headline": "Score update: Windsor Wildcats 4 - 2 Ennismore Eagles (in progress)",
       "detail": "This result would eliminate us from contention for first in Pool C."
+    },
+    {
+      "time": "Sat Apr 11, 11:01 AM",
+      "type": "goal",
+      "headline": "Score update: Kincardine Kinucks 3 - 1 Kanata Rangers (in progress)",
+      "detail": "If this score holds, we would be eliminated from contention to win Pool C, as we would finish with just 1 point total."
     }
   ],
   "narrative": "**Where We Stand**\nEarlier we predicted Kincardine would extend their lead over Ennismore, and that's exactly what happened with their 2-0 victory. We remain tied for third in Pool C with 1 point alongside Ennismore, while Kincardine has now pulled away as the clear pool leader with a perfect 4 points from two wins.\n\n**Our Next Game**\nAs anticipated in our last update, we face the pool-leading Kincardine Kinucks tomorrow morning at 10:30 AM on Saturday April 11th. The 3rd-ranked Kinucks have lived up to their billing with two shutout victories, outscoring their opponents 4-0 through their first two games.\n\n**Around the Pool**\nWith Kincardine's latest win confirmed, the pool dynamics remain exactly as we projected \u2013 our scenario analysis continues to show we win the pool in 0 out of 9 possible combinations. Windsor and Ennismore will battle simultaneously at 10:30 AM, with both teams still in contention for second place in the pool.",
@@ -1153,7 +1159,7 @@
       "away": "KAN",
       "home_name": "Kincardine Kinucks",
       "away_name": "Kanata Rangers",
-      "home_score": 2,
+      "home_score": 3,
       "away_score": 1
     },
     "other_game": {
