@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-11T11:11:18.043257-04:00",
+  "generated_at": "2026-04-11T11:14:40.031156-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -76,7 +76,7 @@
       "ga": 1,
       "gd": 6,
       "status": "CLINCHED",
-      "adv_count": 3,
+      "adv_count": 1,
       "adv_pct": 100.0,
       "tie_note": null
     },
@@ -85,36 +85,18 @@
       "name": "Windsor Wildcats",
       "ranking": 41,
       "is_us": false,
-      "gp": 2,
-      "w": 1,
+      "gp": 3,
+      "w": 2,
       "l": 1,
       "t": 0,
-      "pts": 2,
-      "gf": 2,
-      "ga": 3,
-      "gd": -1,
+      "pts": 4,
+      "gf": 6,
+      "ga": 5,
+      "gd": 1,
       "status": "ELIMINATED",
       "adv_count": 0,
       "adv_pct": 0.0,
       "tie_note": null
-    },
-    {
-      "id": "ENS",
-      "name": "Ennismore Eagles",
-      "ranking": 25,
-      "is_us": false,
-      "gp": 2,
-      "w": 0,
-      "l": 1,
-      "t": 1,
-      "pts": 1,
-      "gf": 1,
-      "ga": 3,
-      "gd": -2,
-      "status": "ELIMINATED",
-      "adv_count": 0,
-      "adv_pct": 0.0,
-      "tie_note": "Rule iii (GD) [score-dependent]: ENS (-2) > KAN (-3)"
     },
     {
       "id": "KAN",
@@ -132,89 +114,35 @@
       "status": "ELIMINATED",
       "adv_count": 0,
       "adv_pct": 0.0,
-      "tie_note": "Rule iii (GD) [score-dependent]: ENS (-2) > KAN (-3)"
+      "tie_note": "Rule iii (GD) [score-dependent]: KAN (-3) > ENS (-4)"
+    },
+    {
+      "id": "ENS",
+      "name": "Ennismore Eagles",
+      "ranking": 25,
+      "is_us": false,
+      "gp": 3,
+      "w": 0,
+      "l": 2,
+      "t": 1,
+      "pts": 1,
+      "gf": 3,
+      "ga": 7,
+      "gd": -4,
+      "status": "ELIMINATED",
+      "adv_count": 0,
+      "adv_pct": 0.0,
+      "tie_note": "Rule iii (GD) [score-dependent]: KAN (-3) > ENS (-4)"
     }
   ],
   "scenarios": {
-    "total": 3,
-    "green": 0,
-    "yellow": 0,
-    "red": 3,
+    "total": 1,
     "our_count": 0,
-    "our_pct": 0.0,
-    "unresolved": 0,
+    "remaining_games": 0,
     "gd_dependent": 0,
-    "remaining_games": 1,
-    "remaining_info": [
-      {
-        "home": "WIN",
-        "away": "ENS",
-        "game_id": 701,
-        "date": "2026-04-11T10:30"
-      }
-    ],
-    "counts": {
-      "KAN": 0,
-      "ENS": 0,
-      "KIN": 3,
-      "WIN": 0
-    },
-    "scenarios": [
-      {
-        "labels": [
-          "WINwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "ENSwin"
-        ],
-        "advancing": [
-          "KIN"
-        ],
-        "eliminated": [
-          "KAN",
-          "ENS",
-          "WIN"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      }
-    ]
+    "unresolved": 0,
+    "winner": "KIN",
+    "scenarios": []
   },
   "upcoming": [],
   "completed": [
@@ -227,6 +155,17 @@
       "away_name": "Kanata Rangers",
       "home_score": 3,
       "away_score": 1,
+      "status": "final"
+    },
+    {
+      "game_id": 701,
+      "date": "2026-04-11T10:30",
+      "home": "WIN",
+      "away": "ENS",
+      "home_name": "Windsor Wildcats",
+      "away_name": "Ennismore Eagles",
+      "home_score": 4,
+      "away_score": 2,
       "status": "final"
     },
     {
@@ -274,19 +213,7 @@
       "status": "final"
     }
   ],
-  "live_games": [
-    {
-      "game_id": 701,
-      "date": "2026-04-11T10:30",
-      "home": "WIN",
-      "away": "ENS",
-      "home_name": "Windsor Wildcats",
-      "away_name": "Ennismore Eagles",
-      "home_score": 4,
-      "away_score": 2,
-      "status": "in_progress"
-    }
-  ],
+  "live_games": [],
   "qf_standings": [
     {
       "id": "LON",
@@ -869,9 +796,15 @@
       "type": "final",
       "headline": "FINAL: Kincardine Kinucks 3 - 1 Kanata Rangers",
       "detail": "Our Kanata Rangers (#18) fell 3-1 to the higher-ranked Kincardine Kinucks (#3) in our final pool game. With this loss, we have been eliminated from Pool C and will not advance to the next round of the OWHA U15B Provincial Championships."
+    },
+    {
+      "time": "Sat Apr 11, 11:14 AM",
+      "type": "final",
+      "headline": "FINAL: Windsor Wildcats 4 - 2 Ennismore Eagles",
+      "detail": "This was definitely an upset - the #41 Windsor Wildcats knocked off the much higher-ranked #25 Ennismore Eagles! Unfortunately, this result has officially eliminated us from Pool C contention, as we can no longer win the pool in any of the remaining outcome combinations."
     }
   ],
-  "narrative": "**Where We Stand**\nEarlier we said this would be our toughest test against the pool-leading Kincardine, and the 3-1 result confirms just how strong the Kinucks are. We remain tied for third place with 1 point, while Kincardine has now swept all three of their games to claim Pool C with a perfect 6 points.\n\n**Our Next Game**\nWith no upcoming games scheduled, our pool play appears to be complete. The situation has changed since our last update \u2013 our scenario analysis now shows we cannot win Pool C in any of the 3 remaining deterministic scenarios.\n\n**Around the Pool**\nAs we predicted, Windsor and Ennismore are battling simultaneously, with Windsor currently leading 4-2 in their game that's still in progress. This result would give Windsor sole possession of second place and eliminate any remaining drama in Pool C standings.",
+  "narrative": "**Where We Stand**\nAs we predicted, Windsor has claimed the 4-2 victory over Ennismore, finalizing the Pool C standings with us tied for third place at 1 point. Our tournament run ends here, as Kincardine advances as pool winners with their perfect 6-point record.\n\n**Our Next Game**\nWith no upcoming games scheduled, our pool play is complete and our Provincial Championships journey has concluded. While we fell short of our quarterfinal aspirations, we competed with heart against some strong competition.\n\n**Around the Pool**\nThe Windsor-Ennismore result we were watching played out exactly as the score suggested when it was in progress, giving Windsor sole possession of second place at 4 points. Pool C concludes with a clear hierarchy: Kincardine's dominant 6 points, Windsor's solid 4 points, and both us and Ennismore finishing with 1 point each after battling hard throughout the weekend.",
   "scouting": {
     "description": "This season we've faced several teams heading to Provincials across 5 tournaments. We swept St. Catharines Brock Jr. Badgers in two meetings (6-0, 2-0). Against the rest... let's just say we're looking for redemption. Of note: Durham West Lightning (#29) is in our quarterfinal opponent's pool (Pool F) -- they beat us 2-0 in November, but they're not the favourite to win their pool. In tournament play, anything can happen!",
     "matchups": [
@@ -1016,9 +949,9 @@
     }
   },
   "coaches_corner": {
-    "don_cherry": "I'll tell ya, these Kanata Rangers girls are showing real heart out there - a tie with Ennismore and battling hard against Windsor shows they got that never-quit spirit! Now they got the Kincardine Kinucks next and that's where champions are made, kids!",
-    "talking_points": "**Mindset**\nThat loss to Windsor stings, but we showed real character in how we battled back in the third period. Remember how strong we looked against Ennismore when we controlled the pace and created chances - that's the team we are when we play our game.\n\n**The Opponent**\nKincardine is ranked #3 in the province for a reason - they're skilled, disciplined, and they'll capitalize on our mistakes. They've been here before and know how to handle pressure situations, so we need to match their intensity from the opening faceoff.\n\n**What We Need**\nMathematically we're facing long odds, but hockey isn't played on paper - we need a win and help from other games to have any chance at advancing. Play smart, stay out of the penalty box, and make every shift count because this could be our last game of the season.\n\n**Our Game Plan**\nFocus on the systems that got us here - support the puck, finish our checks, and get traffic in front of their goalie. We've got nothing to lose now, so play with confidence and leave everything on the ice.",
-    "for_game": "Kincardine Kinucks"
+    "don_cherry": "I'll tell ya, those Kanata Rangers girls gave it everything they had out there, and THAT'S what hockey's all about! You dust yourselves off, keep your heads high, because you're the future of this beautiful game and you played with heart!",
+    "talking_points": "**Focus on Our Growth** Our tournament may be over, but that tie against Ennismore shows exactly what we're capable of when we play our system and support each other. We've competed hard against every team here and shown real character.\n\n**What This Tournament Taught Us** We went toe-to-toe with some strong teams and proved we belong at this level. The gap between us and the top teams is smaller than the rankings suggest - we just need to keep building on what we've learned.\n\n**Finish Strong Mentality** Even though we're not advancing, how we handle this moment matters for next season. Let's use this experience to fuel our training and come back even stronger next year.\n\n**Team Pride** Every shift you've played here has been about representing Kanata Rangers hockey. Hold your heads high - you've competed with heart and shown what our program is all about.",
+    "for_game": "ELIMINATED"
   },
   "tiebreaker_health": "**Tiebreaker Health Analysis:**\n\nWe're currently tied with Windsor on both goal differential (-1) and goals against (3), meaning any tie with them goes to the next tiebreaker rule. We're behind Ennismore on both metrics (they have 0 GD vs our -1, and 1 GA vs our 3), so we'd lose head-to-head tiebreakers against them.\n\nOur position is extremely fragile - even one additional goal allowed puts us further behind on GA, and we have no cushion on goal differential. Since we're already at the bottom of the tiebreaker hierarchy among tied teams, every goal against us matters significantly.\n\nWe need to focus on defensive play and goal differential management, as we cannot afford to fall further behind on either metric in our remaining games."
 }
