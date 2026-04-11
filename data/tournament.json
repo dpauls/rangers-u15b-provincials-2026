@@ -200,9 +200,9 @@
       "pool": "F",
       "home": "NHT",
       "away": "DUR",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
+      "home_score": 0,
+      "away_score": 0,
+      "status": "in_progress"
     }
   ],
   "bracket": [

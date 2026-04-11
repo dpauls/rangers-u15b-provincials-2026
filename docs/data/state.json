@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-11T11:56:59.336217-04:00",
+  "generated_at": "2026-04-11T12:05:20.727406-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -539,19 +539,7 @@
       }
     ]
   },
-  "qf_upcoming": [
-    {
-      "game_id": 707,
-      "date": "2026-04-11T12:00",
-      "home": "NHT",
-      "away": "DUR",
-      "home_name": "North Halton Twisters",
-      "away_name": "Durham West Lightning",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
-    }
-  ],
+  "qf_upcoming": [],
   "bracket": [
     {
       "game_id": 726,
