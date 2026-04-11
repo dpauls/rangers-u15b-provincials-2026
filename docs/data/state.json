@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-11T12:40:28.713116-04:00",
+  "generated_at": "2026-04-11T12:47:49.700130-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -220,17 +220,17 @@
       "name": "London Devilettes",
       "ranking": 5,
       "is_us": false,
-      "gp": 2,
+      "gp": 3,
       "w": 2,
       "l": 0,
-      "t": 0,
-      "pts": 4,
-      "gf": 4,
-      "ga": 0,
+      "t": 1,
+      "pts": 5,
+      "gf": 5,
+      "ga": 1,
       "gd": 4,
-      "status": "ALIVE",
-      "adv_count": 7,
-      "adv_pct": 77.8,
+      "status": "CLINCHED",
+      "adv_count": 3,
+      "adv_pct": 100.0,
       "tie_note": null
     },
     {
@@ -238,18 +238,18 @@
       "name": "Waterloo Ravens",
       "ranking": 13,
       "is_us": false,
-      "gp": 2,
+      "gp": 3,
       "w": 1,
       "l": 1,
-      "t": 0,
-      "pts": 2,
-      "gf": 2,
-      "ga": 1,
+      "t": 1,
+      "pts": 3,
+      "gf": 3,
+      "ga": 2,
       "gd": 1,
-      "status": "ALIVE",
-      "adv_count": 2,
-      "adv_pct": 22.2,
-      "tie_note": "Rule ii (h2h among WAT,DUR):"
+      "status": "ELIMINATED",
+      "adv_count": 0,
+      "adv_pct": 0.0,
+      "tie_note": null
     },
     {
       "id": "DUR",
@@ -267,7 +267,7 @@
       "status": "ELIMINATED",
       "adv_count": 0,
       "adv_pct": 0.0,
-      "tie_note": "Rule ii (h2h among WAT,DUR):"
+      "tie_note": null
     },
     {
       "id": "NHT",
@@ -289,22 +289,16 @@
     }
   ],
   "qf_scenarios": {
-    "total": 9,
+    "total": 3,
     "green": 0,
-    "yellow": 1,
-    "red": 8,
+    "yellow": 0,
+    "red": 3,
     "our_count": 0,
     "our_pct": 0.0,
     "unresolved": 0,
-    "gd_dependent": 1,
-    "remaining_games": 2,
+    "gd_dependent": 0,
+    "remaining_games": 1,
     "remaining_info": [
-      {
-        "home": "LON",
-        "away": "WAT",
-        "game_id": 706,
-        "date": "2026-04-11T12:00"
-      },
       {
         "home": "NHT",
         "away": "DUR",
@@ -314,71 +308,13 @@
     ],
     "counts": {
       "DUR": 0,
-      "LON": 7,
+      "LON": 3,
       "NHT": 0,
-      "WAT": 2
+      "WAT": 0
     },
     "scenarios": [
       {
         "labels": [
-          "LONwin",
-          "NHTwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "LONwin",
-          "tie"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "LONwin",
-          "DURwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 6,
-        "gd_dep": false,
-        "res_type": "clean",
-        "tiebreakers": []
-      },
-      {
-        "labels": [
-          "tie",
           "NHTwin"
         ],
         "advancing": [
@@ -397,7 +333,6 @@
       },
       {
         "labels": [
-          "tie",
           "tie"
         ],
         "advancing": [
@@ -416,7 +351,6 @@
       },
       {
         "labels": [
-          "tie",
           "DURwin"
         ],
         "advancing": [
@@ -432,110 +366,6 @@
         "gd_dep": false,
         "res_type": "clean",
         "tiebreakers": []
-      },
-      {
-        "labels": [
-          "WATwin",
-          "NHTwin"
-        ],
-        "advancing": [
-          "WAT"
-        ],
-        "eliminated": [
-          "DUR",
-          "LON",
-          "NHT"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "LON",
-              "WAT"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule ii (h2h among LON,WAT):",
-              "        WAT: 2pts (beat LON)",
-              "        LON: 0pts (lost to WAT)",
-              "        \u2192 WAT advance / LON eliminated"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WATwin",
-          "tie"
-        ],
-        "advancing": [
-          "WAT"
-        ],
-        "eliminated": [
-          "DUR",
-          "LON",
-          "NHT"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": false,
-        "res_type": "tiebreaker",
-        "tiebreakers": [
-          {
-            "teams": [
-              "LON",
-              "WAT"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule ii (h2h among LON,WAT):",
-              "        WAT: 2pts (beat LON)",
-              "        LON: 0pts (lost to WAT)",
-              "        \u2192 WAT advance / LON eliminated"
-            ],
-            "gd_dep": false,
-            "unresolved": false
-          }
-        ]
-      },
-      {
-        "labels": [
-          "WATwin",
-          "DURwin"
-        ],
-        "advancing": [
-          "LON"
-        ],
-        "eliminated": [
-          "DUR",
-          "NHT",
-          "WAT"
-        ],
-        "unresolved_teams": [],
-        "pts": 4,
-        "gd_dep": true,
-        "res_type": "score_dependent",
-        "tiebreakers": [
-          {
-            "teams": [
-              "DUR",
-              "LON",
-              "WAT"
-            ],
-            "pts": 4,
-            "lines": [
-              "      Rule iii (GD) [score-dependent]: LON (+3) > WAT (+2) > DUR (+1)",
-              "        \u2192 LON advance / WAT,DUR eliminated"
-            ],
-            "gd_dep": true,
-            "unresolved": false
-          }
-        ]
       }
     ]
   },
@@ -779,6 +609,12 @@
       "type": "final",
       "headline": "FINAL: Windsor Wildcats 4 - 2 Ennismore Eagles",
       "detail": "This was definitely an upset - the #41 Windsor Wildcats knocked off the much higher-ranked #25 Ennismore Eagles! Unfortunately, this result has officially eliminated us from Pool C contention, as we can no longer win the pool in any of the remaining outcome combinations."
+    },
+    {
+      "time": "Sat Apr 11, 12:47 PM",
+      "type": "info",
+      "headline": "Pool F: London Devilettes 1 - 1 Waterloo Ravens (Final)",
+      "detail": "QF opponent pool update."
     }
   ],
   "narrative": "**Where We Stand**\nAs we predicted, Windsor has claimed the 4-2 victory over Ennismore, finalizing the Pool C standings with us tied for third place at 1 point. Our tournament run ends here, as Kincardine advances as pool winners with their perfect 6-point record.\n\n**Our Next Game**\nWith no upcoming games scheduled, our pool play is complete and our Provincial Championships journey has concluded. While we fell short of our quarterfinal aspirations, we competed with heart against some strong competition.\n\n**Around the Pool**\nThe Windsor-Ennismore result we were watching played out exactly as the score suggested when it was in progress, giving Windsor sole possession of second place at 4 points. Pool C concludes with a clear hierarchy: Kincardine's dominant 6 points, Windsor's solid 4 points, and both us and Ennismore finishing with 1 point each after battling hard throughout the weekend.",

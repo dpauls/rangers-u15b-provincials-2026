@@ -192,7 +192,7 @@
       "away": "WAT",
       "home_score": 1,
       "away_score": 1,
-      "status": "in_progress"
+      "status": "final"
     },
     {
       "game_id": 707,
@@ -443,6 +443,12 @@
       "type": "final",
       "headline": "FINAL: Windsor Wildcats 4 - 2 Ennismore Eagles",
       "detail": "This was definitely an upset - the #41 Windsor Wildcats knocked off the much higher-ranked #25 Ennismore Eagles! Unfortunately, this result has officially eliminated us from Pool C contention, as we can no longer win the pool in any of the remaining outcome combinations."
+    },
+    {
+      "time": "Sat Apr 11, 12:47 PM",
+      "type": "info",
+      "headline": "Pool F: London Devilettes 1 - 1 Waterloo Ravens (Final)",
+      "detail": "QF opponent pool update."
     }
   ],
   "scouting": {
