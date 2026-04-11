@@ -130,9 +130,9 @@
       "pool": "C",
       "home": "KIN",
       "away": "KAN",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
+      "home_score": 0,
+      "away_score": 1,
+      "status": "in_progress"
     },
     {
       "game_id": 701,
@@ -383,6 +383,12 @@
       "type": "goal",
       "headline": "Score update: Windsor Wildcats 1 - 1 Ennismore Eagles (in progress)",
       "detail": "This tie would eliminate us from contention to win Pool C, as we would be unable to catch the leaders regardless of our final game result."
+    },
+    {
+      "time": "Sat Apr 11, 10:34 AM",
+      "type": "info",
+      "headline": "GAME STARTED: Kincardine Kinucks vs Kanata Rangers (Game #700)",
+      "detail": "With us leading 1-0 against the undefeated Kincardine Kinucks, we're in position to potentially shake up the pool standings in this final round of games."
     }
   ],
   "scouting": {
