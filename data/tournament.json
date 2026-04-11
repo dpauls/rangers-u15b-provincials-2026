@@ -130,7 +130,7 @@
       "pool": "C",
       "home": "KIN",
       "away": "KAN",
-      "home_score": 0,
+      "home_score": 1,
       "away_score": 1,
       "status": "in_progress"
     },
@@ -389,6 +389,12 @@
       "type": "info",
       "headline": "GAME STARTED: Kincardine Kinucks vs Kanata Rangers (Game #700)",
       "detail": "With us leading 1-0 against the undefeated Kincardine Kinucks, we're in position to potentially shake up the pool standings in this final round of games."
+    },
+    {
+      "time": "Sat Apr 11, 10:35 AM",
+      "type": "goal",
+      "headline": "Score update: Kincardine Kinucks 1 - 1 Kanata Rangers (in progress)",
+      "detail": "A tie here would put us in a strong position, as we'd win the pool in 0 of 3 scenarios if this score holds."
     }
   ],
   "scouting": {
