@@ -140,7 +140,7 @@
       "pool": "C",
       "home": "WIN",
       "away": "ENS",
-      "home_score": 2,
+      "home_score": 3,
       "away_score": 1,
       "status": "in_progress"
     },
@@ -400,6 +400,12 @@
       "time": "Sat Apr 11, 10:39 AM",
       "type": "goal",
       "headline": "Score update: Windsor Wildcats 2 - 1 Ennismore Eagles (in progress)",
+      "detail": "If this score holds, we would be eliminated from contention to win the pool."
+    },
+    {
+      "time": "Sat Apr 11, 10:44 AM",
+      "type": "goal",
+      "headline": "Score update: Windsor Wildcats 3 - 1 Ennismore Eagles (in progress)",
       "detail": "If this score holds, we would be eliminated from contention to win the pool."
     }
   ],

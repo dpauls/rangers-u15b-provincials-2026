@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-11T10:39:23.508066-04:00",
+  "generated_at": "2026-04-11T10:44:42.146450-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -421,7 +421,7 @@
       "away": "ENS",
       "home_name": "Windsor Wildcats",
       "away_name": "Ennismore Eagles",
-      "home_score": 2,
+      "home_score": 3,
       "away_score": 1,
       "status": "in_progress"
     }
@@ -972,6 +972,12 @@
       "type": "goal",
       "headline": "Score update: Windsor Wildcats 2 - 1 Ennismore Eagles (in progress)",
       "detail": "If this score holds, we would be eliminated from contention to win the pool."
+    },
+    {
+      "time": "Sat Apr 11, 10:44 AM",
+      "type": "goal",
+      "headline": "Score update: Windsor Wildcats 3 - 1 Ennismore Eagles (in progress)",
+      "detail": "If this score holds, we would be eliminated from contention to win the pool."
     }
   ],
   "narrative": "**Where We Stand**\nEarlier we predicted Kincardine would extend their lead over Ennismore, and that's exactly what happened with their 2-0 victory. We remain tied for third in Pool C with 1 point alongside Ennismore, while Kincardine has now pulled away as the clear pool leader with a perfect 4 points from two wins.\n\n**Our Next Game**\nAs anticipated in our last update, we face the pool-leading Kincardine Kinucks tomorrow morning at 10:30 AM on Saturday April 11th. The 3rd-ranked Kinucks have lived up to their billing with two shutout victories, outscoring their opponents 4-0 through their first two games.\n\n**Around the Pool**\nWith Kincardine's latest win confirmed, the pool dynamics remain exactly as we projected \u2013 our scenario analysis continues to show we win the pool in 0 out of 9 possible combinations. Windsor and Ennismore will battle simultaneously at 10:30 AM, with both teams still in contention for second place in the pool.",
@@ -1135,9 +1141,9 @@
     "other_game": {
       "home": "Windsor Wildcats",
       "away": "Ennismore Eagles",
-      "home_score": 2,
+      "home_score": 3,
       "away_score": 1,
-      "margin": 1
+      "margin": 2
     },
     "projections": {
       "win": {
