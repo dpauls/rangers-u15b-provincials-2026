@@ -140,7 +140,7 @@
       "pool": "C",
       "home": "WIN",
       "away": "ENS",
-      "home_score": 0,
+      "home_score": 1,
       "away_score": 0,
       "status": "in_progress"
     },
@@ -371,6 +371,12 @@
       "type": "info",
       "headline": "GAME STARTED: Windsor Wildcats vs Ennismore Eagles (Game #701)",
       "detail": "We need Windsor to win this game to give us the best chance of winning Pool C, as it would prevent Ennismore from gaining points that could complicate our path to first place."
+    },
+    {
+      "time": "Sat Apr 11, 10:26 AM",
+      "type": "goal",
+      "headline": "Score update: Windsor Wildcats 1 - 0 Ennismore Eagles (in progress)",
+      "detail": "This result would eliminate our chances to win Pool C, as we would need other results to go our way that are no longer possible."
     }
   ],
   "scouting": {
