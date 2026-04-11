@@ -140,9 +140,9 @@
       "pool": "C",
       "home": "WIN",
       "away": "ENS",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
+      "home_score": 0,
+      "away_score": 0,
+      "status": "in_progress"
     },
     {
       "game_id": 148,
@@ -365,6 +365,12 @@
       "type": "info",
       "headline": "Pool F: North Halton Twisters 0 - 2 Waterloo Ravens (Final)",
       "detail": "QF opponent pool update."
+    },
+    {
+      "time": "Sat Apr 11, 10:10 AM",
+      "type": "info",
+      "headline": "GAME STARTED: Windsor Wildcats vs Ennismore Eagles (Game #701)",
+      "detail": "We need Windsor to win this game to give us the best chance of winning Pool C, as it would prevent Ennismore from gaining points that could complicate our path to first place."
     }
   ],
   "scouting": {

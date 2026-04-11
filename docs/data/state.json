@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T17:57:15.963276-04:00",
+  "generated_at": "2026-04-11T10:10:23.698812-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -366,17 +366,6 @@
       "home_score": null,
       "away_score": null,
       "status": "scheduled"
-    },
-    {
-      "game_id": 701,
-      "date": "2026-04-11T10:30",
-      "home": "WIN",
-      "away": "ENS",
-      "home_name": "Windsor Wildcats",
-      "away_name": "Ennismore Eagles",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
     }
   ],
   "completed": [
@@ -425,7 +414,19 @@
       "status": "final"
     }
   ],
-  "live_games": [],
+  "live_games": [
+    {
+      "game_id": 701,
+      "date": "2026-04-11T10:30",
+      "home": "WIN",
+      "away": "ENS",
+      "home_name": "Windsor Wildcats",
+      "away_name": "Ennismore Eagles",
+      "home_score": 0,
+      "away_score": 0,
+      "status": "in_progress"
+    }
+  ],
   "qf_standings": [
     {
       "id": "LON",
@@ -936,6 +937,12 @@
       "type": "info",
       "headline": "Pool F: North Halton Twisters 0 - 2 Waterloo Ravens (Final)",
       "detail": "QF opponent pool update."
+    },
+    {
+      "time": "Sat Apr 11, 10:10 AM",
+      "type": "info",
+      "headline": "GAME STARTED: Windsor Wildcats vs Ennismore Eagles (Game #701)",
+      "detail": "We need Windsor to win this game to give us the best chance of winning Pool C, as it would prevent Ennismore from gaining points that could complicate our path to first place."
     }
   ],
   "narrative": "**Where We Stand**\nEarlier we predicted Kincardine would extend their lead over Ennismore, and that's exactly what happened with their 2-0 victory. We remain tied for third in Pool C with 1 point alongside Ennismore, while Kincardine has now pulled away as the clear pool leader with a perfect 4 points from two wins.\n\n**Our Next Game**\nAs anticipated in our last update, we face the pool-leading Kincardine Kinucks tomorrow morning at 10:30 AM on Saturday April 11th. The 3rd-ranked Kinucks have lived up to their billing with two shutout victories, outscoring their opponents 4-0 through their first two games.\n\n**Around the Pool**\nWith Kincardine's latest win confirmed, the pool dynamics remain exactly as we projected \u2013 our scenario analysis continues to show we win the pool in 0 out of 9 possible combinations. Windsor and Ennismore will battle simultaneously at 10:30 AM, with both teams still in contention for second place in the pool.",
