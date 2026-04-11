@@ -132,7 +132,7 @@
       "away": "KAN",
       "home_score": 3,
       "away_score": 1,
-      "status": "in_progress"
+      "status": "final"
     },
     {
       "game_id": 701,
@@ -431,6 +431,12 @@
       "type": "goal",
       "headline": "Score update: Kincardine Kinucks 3 - 1 Kanata Rangers (in progress)",
       "detail": "If this score holds, we would be eliminated from contention to win Pool C, as we would finish with just 1 point total."
+    },
+    {
+      "time": "Sat Apr 11, 11:11 AM",
+      "type": "final",
+      "headline": "FINAL: Kincardine Kinucks 3 - 1 Kanata Rangers",
+      "detail": "Our Kanata Rangers (#18) fell 3-1 to the higher-ranked Kincardine Kinucks (#3) in our final pool game. With this loss, we have been eliminated from Pool C and will not advance to the next round of the OWHA U15B Provincial Championships."
     }
   ],
   "scouting": {
@@ -576,7 +582,7 @@
       }
     }
   },
-  "_narrative": "**Where We Stand**\nEarlier we predicted Kincardine would extend their lead over Ennismore, and that's exactly what happened with their 2-0 victory. We remain tied for third in Pool C with 1 point alongside Ennismore, while Kincardine has now pulled away as the clear pool leader with a perfect 4 points from two wins.\n\n**Our Next Game**\nAs anticipated in our last update, we face the pool-leading Kincardine Kinucks tomorrow morning at 10:30 AM on Saturday April 11th. The 3rd-ranked Kinucks have lived up to their billing with two shutout victories, outscoring their opponents 4-0 through their first two games.\n\n**Around the Pool**\nWith Kincardine's latest win confirmed, the pool dynamics remain exactly as we projected \u2013 our scenario analysis continues to show we win the pool in 0 out of 9 possible combinations. Windsor and Ennismore will battle simultaneously at 10:30 AM, with both teams still in contention for second place in the pool.",
+  "_narrative": "**Where We Stand**\nEarlier we said this would be our toughest test against the pool-leading Kincardine, and the 3-1 result confirms just how strong the Kinucks are. We remain tied for third place with 1 point, while Kincardine has now swept all three of their games to claim Pool C with a perfect 6 points.\n\n**Our Next Game**\nWith no upcoming games scheduled, our pool play appears to be complete. The situation has changed since our last update \u2013 our scenario analysis now shows we cannot win Pool C in any of the 3 remaining deterministic scenarios.\n\n**Around the Pool**\nAs we predicted, Windsor and Ennismore are battling simultaneously, with Windsor currently leading 4-2 in their game that's still in progress. This result would give Windsor sole possession of second place and eliminate any remaining drama in Pool C standings.",
   "_coaches_corner": {
     "don_cherry": "I'll tell ya, these Kanata Rangers girls are showing real heart out there - a tie with Ennismore and battling hard against Windsor shows they got that never-quit spirit! Now they got the Kincardine Kinucks next and that's where champions are made, kids!",
     "talking_points": "**Mindset**\nThat loss to Windsor stings, but we showed real character in how we battled back in the third period. Remember how strong we looked against Ennismore when we controlled the pace and created chances - that's the team we are when we play our game.\n\n**The Opponent**\nKincardine is ranked #3 in the province for a reason - they're skilled, disciplined, and they'll capitalize on our mistakes. They've been here before and know how to handle pressure situations, so we need to match their intensity from the opening faceoff.\n\n**What We Need**\nMathematically we're facing long odds, but hockey isn't played on paper - we need a win and help from other games to have any chance at advancing. Play smart, stay out of the penalty box, and make every shift count because this could be our last game of the season.\n\n**Our Game Plan**\nFocus on the systems that got us here - support the puck, finish our checks, and get traffic in front of their goalie. We've got nothing to lose now, so play with confidence and leave everything on the ice.",
