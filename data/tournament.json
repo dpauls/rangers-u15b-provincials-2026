@@ -141,7 +141,7 @@
       "home": "WIN",
       "away": "ENS",
       "home_score": 4,
-      "away_score": 1,
+      "away_score": 2,
       "status": "in_progress"
     },
     {
@@ -419,6 +419,12 @@
       "type": "goal",
       "headline": "Score update: Windsor Wildcats 4 - 1 Ennismore Eagles (in progress)",
       "detail": "If this score holds, we would be eliminated from contention to win Pool C."
+    },
+    {
+      "time": "Sat Apr 11, 10:54 AM",
+      "type": "goal",
+      "headline": "Score update: Windsor Wildcats 4 - 2 Ennismore Eagles (in progress)",
+      "detail": "This result would eliminate us from contention for first in Pool C."
     }
   ],
   "scouting": {
