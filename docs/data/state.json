@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-11T11:14:40.031156-04:00",
+  "generated_at": "2026-04-11T11:56:59.336217-04:00",
   "tournament": {
     "name": "OWHA U15B Provincials 2026",
     "location": "Chesswood Arenas, Toronto",
@@ -540,17 +540,6 @@
     ]
   },
   "qf_upcoming": [
-    {
-      "game_id": 706,
-      "date": "2026-04-11T12:00",
-      "home": "LON",
-      "away": "WAT",
-      "home_name": "London Devilettes",
-      "away_name": "Waterloo Ravens",
-      "home_score": null,
-      "away_score": null,
-      "status": "scheduled"
-    },
     {
       "game_id": 707,
       "date": "2026-04-11T12:00",
